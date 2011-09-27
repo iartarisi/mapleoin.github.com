@@ -143,6 +143,11 @@ ul {
 .entry p {
     padding-bottom: 1em;
 }
+
+.entry img {
+    padding: 1em;
+}
+
 * {
     margin: 0;
     padding: 0;
