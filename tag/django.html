@@ -62,7 +62,7 @@ tag/django
 </div><!--sidebar-->
 <div id="content">
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/testing-django-models">testing a django blog's models</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/testing-django-models.html">testing a django blog's models</a></h2>
         <h3>Thursday, September 25, 2008</h3>
         <div class="entry">
              <p>This post is a continuation of <a href="http://mapleoin.eu/perma/blog-database-schema-2/">this post</a> and I&#8217;ll be using that schema to write tests on top of. Here it is, for easy reference:</p>
@@ -295,7 +295,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/blog-database-schema-2">blog database schema cu capsuni - Part 2</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/blog-database-schema-2.html">blog database schema cu capsuni - Part 2</a></h2>
         <h3>Monday, September 22, 2008</h3>
         <div class="entry">
              <p>Tocmai am reușit (am găsit timp &#8212; furat timp) să scriu în django schema din <a href="http://mapleoin.eu/perma/blog-database-schema">postul trecut</a>. Simplicity is divine:</p>
@@ -321,7 +321,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 <p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
-<p>Și acum un mysql describe<sup class="footnote"><a href="#fn93f228a5-555b-4480-8e97-ed4efa692650">3</a></sup> pentru tabelele rezultate:</p>
+<p>Și acum un mysql describe<sup class="footnote"><a href="#fn6f217d5c-9e7e-43a8-8159-fda7bc4903c6">3</a></sup> pentru tabelele rezultate:</p>
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
@@ -364,7 +364,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 <p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
-<p id="fn93f228a5-555b-4480-8e97-ed4efa692650" class="footnote"><sup>3</sup>merci gheorghe!</p>
+<p id="fn6f217d5c-9e7e-43a8-8159-fda7bc4903c6" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
@@ -376,7 +376,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/blog-database-schema">blog database schema cu capsuni</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/blog-database-schema.html">blog database schema cu capsuni</a></h2>
         <h3>Tuesday, September 16, 2008</h3>
         <div class="entry">
              <p>Am reușit să-mi scriu schema bazei de date a viitorului meu blog. Ah, da, m-am apucat de treabă. O să folosesc django cred (și deja mi s-a spus că era previzibil) deși încă mai am timp să mă răzgândesc. N-am găsit în 2 minute un script care să-mi deseneze scheme, așa că pun relațiile în engleză aici. Come bash me!</p>
