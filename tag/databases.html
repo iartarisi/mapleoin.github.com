@@ -65,7 +65,7 @@ tag/databases
         <h2><a href="http://mapleoin.eu/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></h2>
         <h3>Wednesday, February 15, 2012</h3>
         <div class="entry">
-             <p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <span class="caps">SUSE</span> for taking<br />care of my travel expenses! Here is a short review for the projects that<br />I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
+             <p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <a href="http://suse.com">SUSE</a> for taking care of my travel expenses! Here is a short review for the projects that I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
 <h3>Saturday</h3>
 <h4><a href="http://aeolusproject.org/">The Aeolus Project</a></h4>
 <h5>Francesco Vollero &#8211; Red Hat</h5>
@@ -109,6 +109,7 @@ tag/databases
                 <a href="/tag/programming.html">programming</a>
                 <a href="/tag/databases.html">databases</a>
                 <a href="/tag/foss.html">foss</a>
+                <a href="/tag/fedora.html">fedora</a>
         </div>
         <a href="http://mapleoin.eu/perma/FOSDEM-2012-review#disqus_thread" class="comments">Comments</a>
         <img class="separator" alt="post separator" src="/css/separator.png" />
@@ -159,7 +160,7 @@ tag/databases
 </pre></div>
 </div>
 <p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
-<p>Și acum un mysql describe<sup class="footnote"><a href="#fn26240181-6711-4170-81ca-04622c0f07eb">3</a></sup> pentru tabelele rezultate:</p>
+<p>Și acum un mysql describe<sup class="footnote"><a href="#fnefcde8bd-3973-4453-a948-355990dcf92a">3</a></sup> pentru tabelele rezultate:</p>
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
@@ -202,7 +203,7 @@ tag/databases
 </pre></div>
 </div>
 <p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
-<p id="fn26240181-6711-4170-81ca-04622c0f07eb" class="footnote"><sup>3</sup>merci gheorghe!</p>
+<p id="fnefcde8bd-3973-4453-a948-355990dcf92a" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
