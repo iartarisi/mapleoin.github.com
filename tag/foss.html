@@ -25,11 +25,11 @@ tag/foss
 <div id="recent">
 <h4>Recent</h4>
 <ul>
+<li><a href="http://mapleoin.eu/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></li>
 <li><a href="http://mapleoin.eu/perma/sql-and-relational-theory-master">SQL and Relation Theory Master Class</a></li>
 <li><a href="http://mapleoin.eu/perma/copr-final-report">Copr final report</a></li>
 <li><a href="http://mapleoin.eu/perma/moving-on-to-the-buildsystem">FSC: moving to the buildsystem</a></li>
 <li><a href="http://mapleoin.eu/perma/copr-client-part-2">the Copr client part II</a></li>
-<li><a href="http://mapleoin.eu/perma/copr-client">the Copr client</a></li>
 </ul>
 </div><!--recent-->
 <br />
@@ -62,7 +62,59 @@ tag/foss
 </div><!--sidebar-->
 <div id="content">
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/sql-and-relational-theory-master.html">SQL and Relation Theory Master Class</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></h2>
+        <h3>Wednesday, February 15, 2012</h3>
+        <div class="entry">
+             <p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <span class="caps">SUSE</span> for taking<br />care of my travel expenses! Here is a short review for the projects that<br />I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
+<h3>Saturday</h3>
+<h4><a href="http://aeolusproject.org/">The Aeolus Project</a></h4>
+<h5>Francesco Vollero &#8211; Red Hat</h5>
+<p>This is a very interesting project if you can go past how <em>meta</em> it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.</p>
+<p>It relies heavily on the DeltaCloud project.</p>
+<h4>Open Clouds with <a href="http://deltacloud.apache.org/">DeltaCloud</a></h4>
+<h5>Michal Fojtik &#8211; Red Hat</h5>
+<p>DeltaCloud aims to be a RESTful <span class="caps">API</span> that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.</p>
+<h4><span class="caps">DMTF</span> <span class="caps">CIMI</span> and Apache DeltaCloud</h4>
+<h5>Marios Andreou &#8211; Red Hat</h5>
+<p>The <span class="caps">CIMI</span> <span class="caps">API</span> is a specification for interacting with various cloud-resources. A lot of very big companies are part of the <span class="caps">DMTF</span> Cloud Management Working Group: Red Hat, VMware Inc., Oracle, <span class="caps">IBM</span>, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud <span class="caps">API</span>. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the <span class="caps">CIMI</span> <span class="caps">API</span>.</p>
+<h4>Infrastructure as an opensource project</h4>
+<h5>Ryan Lane &#8211; Wikimedia Foundation</h5>
+<p>The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.</p>
+<h4>Orchestration for the cloud &#8211; <a href="https://juju.ubuntu.com/">Juju</a></h4>
+<h5>Dave Walker &#8211; Canonical</h5>
+<p>Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.</p>
+<h4>OpenStack developers meeting</h4>
+<p>This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, <span class="caps">SUSE</span> and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.</p>
+<h4>Rethinking system and distro development</h4>
+<h5>Lars Wirzenius</h5>
+<p>Advanced the idea of maintaining groups of packages, all locked at a specific version. Having the maintainers always know which combination of versions a bug comes from would make the whole environment easier to replicate and the bug easier to reproduce. This would also, supposedly, reduce some of the complexities of dealing with dependencies.</p>
+<p>These groups of packages would be built directly from the upstream&#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.</p>
+<p>If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.</p>
+<p>Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).</p>
+<h3>Sunday</h3>
+<h4>Continuos Integration/ Continuos Delivery</h4>
+<h5>Karanbir Singh &#8211; CentOS</h5>
+<p>The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.</p>
+<h4>The Apache <a href="http://cassandra.apache.org">Cassandra</a> Storage Engine</h4>
+<h5>Sylvain Lebresne</h5>
+<p>A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.</p>
+<h4><a href="http://freedomboxfoundation.org/">Freedom, Out of the Box!</a></h4>
+<h5>Bdale Garbee</h5>
+<p>An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like <span class="caps">GPG</span> keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.</p>
+<hr />
+<p>I&#8217;ve been to a few other talks that I can&#8217;t remember anything from either because of the bad quality of the presentation or because I didn&#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.</p>
+<p>A lot of the talks were recorded and are available over here (with more coming): http://video.fosdem.org/2012/. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &#8211; I had to keep my jacket and hat on.</p>
+        </div>
+        <div class="post_tags">Tags:
+                <a href="/tag/programming.html">programming</a>
+                <a href="/tag/databases.html">databases</a>
+                <a href="/tag/foss.html">foss</a>
+        </div>
+        <a href="http://mapleoin.eu/perma/FOSDEM-2012-review#disqus_thread" class="comments">Comments</a>
+        <img class="separator" alt="post separator" src="/css/separator.png" />
+    </div>
+    <div class="post">
+        <h2><a href="http://mapleoin.eu/perma/sql-and-relational-theory-master">SQL and Relation Theory Master Class</a></h2>
         <h3>Monday, September 26, 2011</h3>
         <div class="entry">
              <p><a href="http://oreilly.com/catalog/0636920010005/" class="img"><img src="http://covers.oreilly.com/images/0636920010005/s.gif" style="float: right;" alt="" /></a> This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.</p>
@@ -81,7 +133,7 @@ tag/foss
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/copr-final-report.html">Copr final report</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/copr-final-report">Copr final report</a></h2>
         <h3>Tuesday, September 28, 2010</h3>
         <div class="entry">
              <p><a href="https://fedoraproject.org/wiki/Summer_Coding_2010">Fedora Summer Coding</a> is now over for me and I&#8217;m really glad of what I learned and coded this summer.</p>
@@ -102,7 +154,7 @@ tag/foss
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/moving-on-to-the-buildsystem.html">FSC: moving to the buildsystem</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/moving-on-to-the-buildsystem">FSC: moving to the buildsystem</a></h2>
         <h3>Monday, September  6, 2010</h3>
         <div class="entry">
              <p>I started working on the buildsystem part of copr this week. Right now, I&#8217;m still getting familiar with <a href="http://fedorahosted.org/func">func</a>. That&#8217;s what we&#8217;ll be using to communicate with the builder machines: get them running errands and get back status reports at any time. I spent a lot of time getting a virtual machine setup with libvirt; networking especially was a pain (mostly because of my pppoe connection I think).</p>
@@ -118,7 +170,7 @@ tag/foss
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/copr-client-part-2.html">the Copr client part II</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/copr-client-part-2">the Copr client part II</a></h2>
         <h3>Monday, August 30, 2010</h3>
         <div class="entry">
              <p>I spent this week finishing up the copr client. It now supports all the functionality that the Copr TG <span class="caps">API</span> supports. It&#8217;s not much, but it&#8217;s a starting point.</p>
@@ -134,7 +186,7 @@ tag/foss
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/copr-client.html">the Copr client</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/copr-client">the Copr client</a></h2>
         <h3>Monday, August 23, 2010</h3>
         <div class="entry">
              <p>This last week I started working on the command line client to <a href="https://fedoraproject.org/wiki/Category:Copr">Copr</a>. Luckily, the <a href="https://fedorahosted.org/python-fedora">python-fedora</a> already has a lot of code in place to make the task of writing clients for TurboGears apps a lot easier. Some of <a href="http://admin.fedoraproject.org/pkgdb">the</a> <a href="http://admin.fedoraproject.org/updates">apps</a> <a href="http://admin.fedoraproject.org/accounts">in</a> infrastructure are already using this library, which make for some good examples.</p>
@@ -172,7 +224,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/ruby-koans.html">Ruby koans</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/ruby-koans">Ruby koans</a></h2>
         <h3>Sunday, August 22, 2010</h3>
         <div class="entry">
              <p>I had a great time today with <a href="http://www.rubykoans.com/">Ruby Koans</a>. It took me about 5 hours in all. A good way to spend a Sunday afternoon I suppose.</p>
@@ -189,7 +241,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/midterm-report.html">Fedora Summer Coding midterm</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/midterm-report">Fedora Summer Coding midterm</a></h2>
         <h3>Monday, August 16, 2010</h3>
         <div class="entry">
              <p>This midterm scared me when I found out about it on Friday when I looked at the schedule I had set myself. However, I have done the work that I should have done by this point in the project. When I wrote the proposal I had assumed that the buildsystem would already be built before me starting coding on the TG app, but that is not the case. Therefore I could only code the user-facing <span class="caps">JSON</span> interface that interacts with the DB as it would if the buildsystem would provide it with packages and repos. Except that there are no packages and repos at this stage.</p>
@@ -215,7 +267,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/copr-design-being-all-things.html">Copr design - being all things to all people</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/copr-design-being-all-things">Copr design - being all things to all people</a></h2>
         <h3>Monday, August  9, 2010</h3>
         <div class="entry">
              <p>Lots of things happened this third Fedora Summer Coding week. Most people are already wrapping up, but I feel like I&#8217;m still at the beginning.</p>
@@ -237,7 +289,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/basic-coprs-crud.html">CRUD for Coprs and testing</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/basic-coprs-crud">CRUD for Coprs and testing</a></h2>
         <h3>Monday, August  2, 2010</h3>
         <div class="entry">
              <p>This last week I worked on the first controller for the <a href="https://fedoraproject.org/wiki/Category:Copr">Copr</a> <a href="https://fedoraproject.org/wiki/Summer_Coding_2010_proposal_-_Copr_TG_app">TG App</a>. There is now a <span class="caps">JSON</span> <span class="caps">API</span> to <span class="caps">CRUD</span> Coprs in the TG App&#8217;s database. It also supports adding/removing Copr dependencies. And everything in this first controller is (mostly?) tested with nose unit tests. The happy thing is I&#8217;m still on schedule, though I&#8217;m not ahead of it anymore, which I actually expected.</p>
@@ -254,7 +306,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/the-late-fedora-summer-coder.html">The late Fedora Summer coder</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/the-late-fedora-summer-coder">The late Fedora Summer coder</a></h2>
         <h3>Sunday, July 25, 2010</h3>
         <div class="entry">
              <p>I started my <a href="https://fedoraproject.org/wiki/Summer_Coding_2010">Fedora Summer Coding</a> last week. Although most people started almost two months ago, I chose (and was allowed to &#8211; Yay, <acronym title="Fedora Summer Coding">FSC</acronym>!) a different schedule because I just finished college last week.</p>
@@ -276,7 +328,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/actualizare-automata-metadata-yum.html">Cum să actualizezi metadatele yum în mod automat</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/actualizare-automata-metadata-yum">Cum să actualizezi metadatele yum în mod automat</a></h2>
         <h3>Thursday, March 18, 2010</h3>
         <div class="entry">
              <p>Unul dintre lucrurile care mă enervează cel mai tare ca utilizator desktop la yum e că de fiecare dată când vreau să caut sau să instalez un pachet, trebuie să aștept câteva secunde bune până își actualizează metadatele pentru toate depozitele active. Astăzi am avut timp să caut o metodă de a scăpa de neplăcerea asta și a fost destul de simplu de găsit.</p>
@@ -302,7 +354,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/packaging-for-fedora.html">Beginning packaging for Fedora</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/packaging-for-fedora">Beginning packaging for Fedora</a></h2>
         <h3>Friday, September 11, 2009</h3>
         <div class="entry">
              <p>With <span class="caps">GSOC</span> now over, which I should write a blogpost about soon, I&#8217;ve taken a break from pkgdb and web programming and started developing another skill.</p>
@@ -320,7 +372,7 @@ authentication:
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/GSOC-it-begins.html">GSOC - it begins...</a></h2>
+        <h2><a href="http://mapleoin.eu/perma/GSOC-it-begins">GSOC - it begins...</a></h2>
         <h3>Thursday, April 23, 2009</h3>
         <div class="entry">
              <p>My Fedora proposal got accepted to this year&#8217;s Google Summer of Code Program. You can look at a short abstract <a href="http://socghop.appspot.com/student_project/show/google/gsoc2009/redhat/t124024691190">here</a> . Now I&#8217;m going to try to explain what this project is about and what I did to prepare for being accepted, hopefully without going mad about how happy I am about it.</p>
