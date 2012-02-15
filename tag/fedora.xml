@@ -5,14 +5,14 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 15 Feb 2012 15:06:07 +0200</pubDate>
+        <pubDate>Wed, 15 Feb 2012 15:25:17 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.eu/perma/FOSDEM-2012-review</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for taking care of my travel expenses! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
-&lt;h3&gt;Saturday&lt;/h3&gt;
+            <description>  &lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
 &lt;h4&gt;&lt;a href="http://aeolusproject.org/"&gt;The Aeolus Project&lt;/a&gt;&lt;/h4&gt;
 &lt;h5&gt;Francesco Vollero &amp;#8211; Red Hat&lt;/h5&gt;
 &lt;p&gt;This is a very interesting project if you can go past how &lt;em&gt;meta&lt;/em&gt; it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;p&gt;These groups of packages would be built directly from the upstream&amp;#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.&lt;/p&gt;
 &lt;p&gt;If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.&lt;/p&gt;
 &lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
-&lt;h3&gt;Sunday&lt;/h3&gt;
+&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
 &lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
 &lt;h5&gt;Karanbir Singh &amp;#8211; CentOS&lt;/h5&gt;
 &lt;p&gt;The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.&lt;/p&gt;

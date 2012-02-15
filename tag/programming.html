@@ -65,8 +65,8 @@ tag/programming
         <h2><a href="http://mapleoin.eu/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></h2>
         <h3>Wednesday, February 15, 2012</h3>
         <div class="entry">
-             <p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <a href="http://suse.com">SUSE</a> for taking care of my travel expenses! Here is a short review for the projects that I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
-<h3>Saturday</h3>
+             <p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <a href="http://suse.com">SUSE</a> for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
+<h4><span class="caps">SATURDAY</span></h4>
 <h4><a href="http://aeolusproject.org/">The Aeolus Project</a></h4>
 <h5>Francesco Vollero &#8211; Red Hat</h5>
 <p>This is a very interesting project if you can go past how <em>meta</em> it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.</p>
@@ -91,7 +91,7 @@ tag/programming
 <p>These groups of packages would be built directly from the upstream&#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.</p>
 <p>If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.</p>
 <p>Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).</p>
-<h3>Sunday</h3>
+<h4><span class="caps">SUNDAY</span></h4>
 <h4>Continuos Integration/ Continuos Delivery</h4>
 <h5>Karanbir Singh &#8211; CentOS</h5>
 <p>The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.</p>
@@ -430,7 +430,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 <p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
-<p>Și acum un mysql describe<sup class="footnote"><a href="#fn7e242f4e-3e72-4883-a0ed-2f7277d03743">3</a></sup> pentru tabelele rezultate:</p>
+<p>Și acum un mysql describe<sup class="footnote"><a href="#fnec53364a-7719-4a3a-b5df-629acacf4767">3</a></sup> pentru tabelele rezultate:</p>
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
@@ -473,7 +473,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 <p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
-<p id="fn7e242f4e-3e72-4883-a0ed-2f7277d03743" class="footnote"><sup>3</sup>merci gheorghe!</p>
+<p id="fnec53364a-7719-4a3a-b5df-629acacf4767" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
