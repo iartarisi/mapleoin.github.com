@@ -11,7 +11,7 @@ G## -*- coding: utf-8 -*-
 feed
 .xml" />
 <title>Revolution blahg 
-    | Eliminate rails caching gap
+    | about
 </title>
 </head>
 <body>
@@ -63,40 +63,13 @@ feed
 </div><!--sidebar-->
 <div id="content">
     <div class="post">
-        <h2><a href="http://mapleoin.eu/perma/eliminate-rails-caching-gap">Eliminate rails caching gap</a></h2>
-        <h3>Tuesday, September 23, 2008</h3>
+        <h2><a href="/about.html">about</a></h2>
         <div class="entry">
-             <p>Yesterday, while working on a soon-to-be <a href="http://en.wikipedia.org/wiki/Planet_(software)">planet</a> for my <span class="caps">LUG</span>, I came up with this ingenious way of eliminating the caching gap that the usual rails ActionController caches_page introduces when used with <a href="http://en.wikipedia.org/wiki/Cron">cron</a> to expire a page at a specified time interval. It&#8217;s amazingly simple. This works ideally for one-page systems (such as this planet), but can probably be extended for many pages.<br />While you would normally develop code like this to put in a cron job:</p>
-<div class="Bash"><div class="highlight"><pre>rm planet.html
-curl http://planet.example.com &gt; planet.html
-</pre></div>
-</div>
-<p>the caching gap is obvious here. Anyone who visits the site while curl (and the aggregating rails app in the back) is doing it&#8217;s job will have to wait for that process to be completed(which on my dev-server can take up to 17secs).</p>
-<p>In order to eliminate the gap <i>and</i> acquire the new page, this is what must be done:</p>
-<div class="Bash"><div class="highlight"><pre>mv planet.html oldplanet
-curl http://planet.example.com &gt; planet.html &amp; mv oldplanet planet.html
-</pre></div>
-</div>
-<p>Notice how the old page is saved <i>and</i> deleted, so rails produces a brand new one for curl and immediately after curl has started, the old page will be put back in the cache so no visitors will notice. After curl finishes it&#8217;s background job, we&#8217;ll have an updated planet and everyone will be happy.</p>
-<p>I searched for days upon days to find the perfect (simplicity was my most important criteria here) caching method for this planet and finally here it is. Hope it helps.<br />This, together with something like rails&#8217;s <a href="http://feed-normalizer.rubyforge.org/">feed-normalizer</a> gem can make writing a rails planet aggregator a breeze.</p>
+             <p>All the content on this site is available under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> license.</p>
+<p>This blog is running pyblee &#8211; a static blogging system written in python. I used a lot of open-source tools to build it: <em>vim, emacs, python, python-textile, python-BeautifulSoup, python-mako, git, gimp, firebug</em>. The sources to all this blog are available <a href="http://github.com/mapleoin/maplepink">on github</a>.</p>
+<p>You can compose my email from the domain name if you want to contact me.</p>
+            <br />
         </div>
-        <br />
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          /** * var disqus_identifier; [Optional but recommended: Define
-          a unique identifier (e.g. post id or slug) for this thread] */
-          (function() { var dsq = document.createElement('script');
-          dsq.type = 'text/javascript'; dsq.async = true; dsq.src =
-          'http://revolutionblahg.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] ||
-          document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view
-        the <a href="http://disqus.com/?ref_noscript=revolutionblahg">comments
-        powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">blog comments
-        powered by <span class="logo-disqus">Disqus</span></a>
     </div>
 </div>
 <div style="clear: right;"></div>
