@@ -202,7 +202,7 @@
 
 	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn760ec8bf-9bd1-4264-8a97-44629c2f4b9a">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote"><a href="#fnfddc5573-6489-4e11-8aa2-aada830b3d33">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -248,7 +248,7 @@
 
 	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p id="fn760ec8bf-9bd1-4264-8a97-44629c2f4b9a" class="footnote"><sup>3</sup>merci gheorghe!</p>
+	<p id="fnfddc5573-6489-4e11-8aa2-aada830b3d33" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
