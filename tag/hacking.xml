@@ -5,7 +5,7 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 15 Feb 2012 15:25:17 +0200</pubDate>
+        <pubDate>Mon, 24 Sep 2012 15:11:14 +0300</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Ruby koans</title>
@@ -121,7 +121,7 @@
 &lt;/div&gt;
 &lt;p&gt;Totul arată bine, deci putem să-l punem în surse:&lt;/p&gt;
 &lt;pre&gt;
-  $ gendiff calibre .no_update &amp;#62; ~/rpmbuild/SOURCES/calibre-no-update.patch
+  $ gendiff calibre .no_update &amp;#38;gt; ~/rpmbuild/SOURCES/calibre-no-update.patch
 &lt;/pre&gt;
 &lt;p&gt;Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:&lt;/p&gt;
 &lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  @@ -1,6 +1,6 @@
@@ -138,7 +138,7 @@
   Patch1:         %{name}-manpages.patch
   +Patch2:         %{name}-no-update.patch
   BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-  BuildRequires:  python &amp;gt;= 2.6
+  BuildRequires:  python &amp;amp;gt;= 2.6
   @@ -72,6 +73,9 @@
   # don&amp;#39;t append calibre1 to the name of the manpages. No need to compress either
   %patch1 -p1 -b .manpages

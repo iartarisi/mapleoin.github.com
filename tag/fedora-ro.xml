@@ -5,14 +5,14 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 15 Feb 2012 15:25:17 +0200</pubDate>
+        <pubDate>Mon, 24 Sep 2012 15:11:14 +0300</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Cum să actualizezi metadatele yum în mod automat</title>
             <link>http://mapleoin.eu/perma/actualizare-automata-metadata-yum</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
             <description>  &lt;p&gt;Unul dintre lucrurile care mă enervează cel mai tare ca utilizator desktop la yum e că de fiecare dată când vreau să caut sau să instalez un pachet, trebuie să aștept câteva secunde bune până își actualizează metadatele pentru toate depozitele active. Astăzi am avut timp să caut o metodă de a scăpa de neplăcerea asta și a fost destul de simplu de găsit.&lt;/p&gt;
-&lt;p&gt;Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&gt; &lt;em&gt;dependency hell&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&amp;gt; &lt;em&gt;dependency hell&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c "yum install yum-updatesd"&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
 &lt;p&gt;După ce l-am instalat, putem modifica &lt;code&gt;/etc/yum/yum-updatesd.conf&lt;/code&gt; dacă vrem să facem lucruri dubioase, cum ar fi să îl lăsăm să instaleze actualizări automat &amp;#8212; pentru că trăim într-o utopie în care actualizările nu strică niciodată nimic &amp;#8212; sau, mai puțin dubios, doar să le descarce.&lt;/p&gt;
 &lt;p&gt;Acum că am terminat cu setările, putem porni serviciul cu:&lt;/p&gt;
@@ -129,7 +129,7 @@
 &lt;/div&gt;
 &lt;p&gt;Totul arată bine, deci putem să-l punem în surse:&lt;/p&gt;
 &lt;pre&gt;
-  $ gendiff calibre .no_update &amp;#62; ~/rpmbuild/SOURCES/calibre-no-update.patch
+  $ gendiff calibre .no_update &amp;#38;gt; ~/rpmbuild/SOURCES/calibre-no-update.patch
 &lt;/pre&gt;
 &lt;p&gt;Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:&lt;/p&gt;
 &lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  @@ -1,6 +1,6 @@
@@ -146,7 +146,7 @@
   Patch1:         %{name}-manpages.patch
   +Patch2:         %{name}-no-update.patch
   BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-  BuildRequires:  python &amp;gt;= 2.6
+  BuildRequires:  python &amp;amp;gt;= 2.6
   @@ -72,6 +73,9 @@
   # don&amp;#39;t append calibre1 to the name of the manpages. No need to compress either
   %patch1 -p1 -b .manpages
