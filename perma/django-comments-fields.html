@@ -63,14 +63,17 @@
         <h2><a href="http://mapleoin.eu/perma/django-comments-fields">Django comments fields</a></h2>
         <h3>Sunday, October 19, 2008</h3>
         <div class="entry">
-             <p>Upon reading the nice <a href="http://docs.djangoproject.com/en/dev/ref/contrib/comments/#module-django.contrib.comments">documentation</a> for the new comment framework in django 1.0, one might wonder what are the fields attached to the comment entity which you are to iterate against:</p>
+            	<p>Upon reading the nice <a href="http://docs.djangoproject.com/en/dev/ref/contrib/comments/#module-django.contrib.comments">documentation</a> for the new comment framework in django 1.0, one might wonder what are the fields attached to the comment entity which you are to iterate against:</p>
+
 <div class="Python"><div class="highlight"><pre><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">comment</span> <span class="ow">in</span> <span class="n">comment_list</span> <span class="o">%</span><span class="p">}</span>
      <span class="o">...</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>There&#8217;s something wrong in that code. The ellipsis!<br />So what should you write in there? There&#8217;s no mention of the comment fields in the docs, so I put on my rubber boots and got down to my dbshell so you don&#8217;t have to.</p>
-<div class="MySQL"><div class="highlight"><pre><span class="n">revolution</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="err">\</span><span class="n">d</span><span class="o">+</span> <span class="n">django_comments</span>
+
+	<p>There&#8217;s something wrong in that code. The ellipsis!<br />So what should you write in there? There&#8217;s no mention of the comment fields in the docs, so I put on my rubber boots and got down to my dbshell so you don&#8217;t have to.</p>
+
+<div class="MySQL"><div class="highlight"><pre><span class="n">revolution</span><span class="o">=&gt;</span> <span class="err">\</span><span class="n">d</span><span class="o">+</span> <span class="n">django_comments</span>
                                              <span class="k">Table</span> <span class="s2">&quot;public.django_comments&quot;</span>
      <span class="k">Column</span>      <span class="o">|</span>           <span class="n">Type</span>           <span class="o">|</span>                          <span class="n">Modifiers</span>                           <span class="o">|</span> <span class="n">Description</span> 
 <span class="o">-----------------+--------------------------+--------------------------------------------------------------+-----------</span><span class="c1">--</span>
@@ -99,14 +102,19 @@
 <span class="n">Has</span> <span class="n">OIDs</span><span class="p">:</span> <span class="n">no</span>
 </pre></div>
 </div>
-<p>So here&#8217;s how a simple django template with comments would look like, the relevant part:</p>
+
+	<p>So here&#8217;s how a simple django template with comments would look like, the relevant part:</p>
+
 <div class="Python"><div class="highlight"><pre><span class="p">{</span><span class="o">%</span> <span class="n">get_comment_count</span> <span class="k">for</span> <span class="n">post</span> <span class="k">as</span> <span class="n">comment_count</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">get_comment_list</span> <span class="k">for</span> <span class="n">post</span> <span class="k">as</span> <span class="n">comment_list</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>You can play with the <em>is_public</em> and <em>is_removed</em> fields in the admin site <del>and you can also modify any other fields in your users&#8217; posts</del>. You could also use the <em>ip_address</em> field to display <a href="http://coulix.net/blog/2006/aug/17/ip-country-flags-django-comments/">country flags in your comments</a> .</p>
-<p>The django comments provide a spam-fighting technique by default, in the form of a <a href="http://docs.djangoproject.com/en/dev/ref/contrib/comments/#notes-on-the-comment-form">honeypot</a> (though I wonder how effective that is) as well as other extras. There are rumours that some sort of captcha system (some say <a href="http://recaptcha.net/">reCaptcha</a> ) will be integrated in the django comments framework.</p>
-<p>Take more risks! Live more dangerously!</p>
+
+	<p>You can play with the <em>is_public</em> and <em>is_removed</em> fields in the admin site <del>and you can also modify any other fields in your users&#8217; posts</del>. You could also use the <em>ip_address</em> field to display <a href="http://coulix.net/blog/2006/aug/17/ip-country-flags-django-comments/">country flags in your comments</a> .</p>
+
+	<p>The django comments provide a spam-fighting technique by default, in the form of a <a href="http://docs.djangoproject.com/en/dev/ref/contrib/comments/#notes-on-the-comment-form">honeypot</a> (though I wonder how effective that is) as well as other extras. There are rumours that some sort of captcha system (some say <a href="http://recaptcha.net/">reCaptcha</a> ) will be integrated in the django comments framework.</p>
+
+	<p>Take more risks! Live more dangerously!</p>
         </div>
         <br />
         <div id="disqus_thread"></div>

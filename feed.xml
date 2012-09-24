@@ -5,112 +5,170 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 15:11:14 +0300</pubDate>
+        <pubDate>Mon, 24 Sep 2012 18:48:21 +0300</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.eu/perma/FOSDEM-2012-review</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
-&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
-&lt;h4&gt;&lt;a href="http://aeolusproject.org/"&gt;The Aeolus Project&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Francesco Vollero &amp;#8211; Red Hat&lt;/h5&gt;
-&lt;p&gt;This is a very interesting project if you can go past how &lt;em&gt;meta&lt;/em&gt; it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.&lt;/p&gt;
-&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
-&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
-&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
-&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
-&lt;h5&gt;Marios Andreou &amp;#8211; Red Hat&lt;/h5&gt;
-&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
-&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
-&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
-&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
-&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Dave Walker &amp;#8211; Canonical&lt;/h5&gt;
-&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
-&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
-&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
-&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
-&lt;h5&gt;Lars Wirzenius&lt;/h5&gt;
-&lt;p&gt;Advanced the idea of maintaining groups of packages, all locked at a specific version. Having the maintainers always know which combination of versions a bug comes from would make the whole environment easier to replicate and the bug easier to reproduce. This would also, supposedly, reduce some of the complexities of dealing with dependencies.&lt;/p&gt;
-&lt;p&gt;These groups of packages would be built directly from the upstream&amp;#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.&lt;/p&gt;
-&lt;p&gt;If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.&lt;/p&gt;
-&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
-&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
-&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
-&lt;h5&gt;Karanbir Singh &amp;#8211; CentOS&lt;/h5&gt;
-&lt;p&gt;The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.&lt;/p&gt;
-&lt;h4&gt;The Apache &lt;a href="http://cassandra.apache.org"&gt;Cassandra&lt;/a&gt; Storage Engine&lt;/h4&gt;
-&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
-&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
-&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
-&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
+            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+
+	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
+
+	&lt;h4&gt;&lt;a href="http://aeolusproject.org/"&gt;The Aeolus Project&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Francesco Vollero &amp;#8211; Red Hat&lt;/h5&gt;
+
+	&lt;p&gt;This is a very interesting project if you can go past how &lt;em&gt;meta&lt;/em&gt; it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.&lt;/p&gt;
+
+	&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
+
+	&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
+
+	&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+
+	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
+
+	&lt;h5&gt;Marios Andreou &amp;#8211; Red Hat&lt;/h5&gt;
+
+	&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
+
+	&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
+
+	&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
+
+	&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
+
+	&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Dave Walker &amp;#8211; Canonical&lt;/h5&gt;
+
+	&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
+
+	&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
+
+	&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
+
+	&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
+
+	&lt;h5&gt;Lars Wirzenius&lt;/h5&gt;
+
+	&lt;p&gt;Advanced the idea of maintaining groups of packages, all locked at a specific version. Having the maintainers always know which combination of versions a bug comes from would make the whole environment easier to replicate and the bug easier to reproduce. This would also, supposedly, reduce some of the complexities of dealing with dependencies.&lt;/p&gt;
+
+	&lt;p&gt;These groups of packages would be built directly from the upstream&amp;#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.&lt;/p&gt;
+
+	&lt;p&gt;If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.&lt;/p&gt;
+
+	&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
+
+	&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
+
+	&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
+
+	&lt;h5&gt;Karanbir Singh &amp;#8211; CentOS&lt;/h5&gt;
+
+	&lt;p&gt;The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.&lt;/p&gt;
+
+	&lt;h4&gt;The Apache &lt;a href="http://cassandra.apache.org"&gt;Cassandra&lt;/a&gt; Storage Engine&lt;/h4&gt;
+
+	&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
+
+	&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
+
+	&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
+
+	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
+
 &lt;hr /&gt;
-&lt;p&gt;I&amp;#8217;ve been to a few other talks that I can&amp;#8217;t remember anything from either because of the bad quality of the presentation or because I didn&amp;#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.&lt;/p&gt;
-&lt;p&gt;A lot of the talks were recorded and are available over here (with more coming): &lt;a href="http://video.fosdem.org/2012/"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt; 2012 videos&lt;/a&gt;. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &amp;#8211; I had to keep my jacket and hat on.&lt;/p&gt; </description>
+
+	&lt;p&gt;I&amp;#8217;ve been to a few other talks that I can&amp;#8217;t remember anything from either because of the bad quality of the presentation or because I didn&amp;#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.&lt;/p&gt;
+
+	&lt;p&gt;A lot of the talks were recorded and are available over here (with more coming): &lt;a href="http://video.fosdem.org/2012/"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt; 2012 videos&lt;/a&gt;. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &amp;#8211; I had to keep my jacket and hat on.&lt;/p&gt; </description>
             <pubDate>Wed, 15 Feb 2012 13:06 GMT</pubDate>
         </item>
         <item>
             <title>Data Visualizations</title>
             <link>http://mapleoin.eu/perma/data-visualizations</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
-&lt;p&gt;There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&amp;#8217;d better leave it to a professional.&lt;/p&gt;
-&lt;p&gt;The book is however very well structured and the quality of the content is very high while entirely theoretical; it won&amp;#8217;t try to tell you what to draw and when; just what a data visualization is, what they usually look like, what they look like when they&amp;#8217;re bad and what they look like when they&amp;#8217;re really good. Some interesting points are raised and explained; for example the fact that color can not be ordered. I think it would be a good high-school level introduction to data visualization and it has a lot of links which might prove useful to someone who would want to go deeper in this topic. On the other hand this book doesn&amp;#8217;t do much on it&amp;#8217;s own.&lt;/p&gt;
-&lt;p&gt;Although this book is available in all the usual ebook formats (&lt;span class="caps"&gt;PDF&lt;/span&gt;, mobi and epub), it has a lot of really big and colourful graphics which don&amp;#8217;t really fit well on an ereader. The authors themselves suggest to look at them on your computer (which means that even though you can read the book on your ereader, you should stay close to a computer in order to comprehend the visualizations.&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
+
+	&lt;p&gt;There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&amp;#8217;d better leave it to a professional.&lt;/p&gt;
+
+	&lt;p&gt;The book is however very well structured and the quality of the content is very high while entirely theoretical; it won&amp;#8217;t try to tell you what to draw and when; just what a data visualization is, what they usually look like, what they look like when they&amp;#8217;re bad and what they look like when they&amp;#8217;re really good. Some interesting points are raised and explained; for example the fact that color can not be ordered. I think it would be a good high-school level introduction to data visualization and it has a lot of links which might prove useful to someone who would want to go deeper in this topic. On the other hand this book doesn&amp;#8217;t do much on it&amp;#8217;s own.&lt;/p&gt;
+
+	&lt;p&gt;Although this book is available in all the usual ebook formats (&lt;span class="caps"&gt;PDF&lt;/span&gt;, mobi and epub), it has a lot of really big and colourful graphics which don&amp;#8217;t really fit well on an ereader. The authors themselves suggest to look at them on your computer (which means that even though you can read the book on your ereader, you should stay close to a computer in order to comprehend the visualizations.&lt;/p&gt; </description>
             <pubDate>Fri, 28 Oct 2011 00:00 GMT</pubDate>
         </item>
         <item>
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.eu/perma/sql-and-relational-theory-master</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
-&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
-&lt;p&gt;C. J. Date sets out to demolish &lt;span class="caps"&gt;SQL&lt;/span&gt; as a language fit for relational theory and databases in general. While going through all the database theory concepts he presents the ideal case and an ideal query language (actually not ideal, but as he demonstrates, the correct ones) contrasting them to generic &lt;span class="caps"&gt;SQL&lt;/span&gt;. He also posits and sets out to prove, in a very interesting argument, that relational databases are the only way to store data and all other data models &lt;strong&gt;will not endure&lt;/strong&gt;. &lt;/p&gt;
-&lt;p&gt;These are the days of &lt;span class="caps"&gt;NOSQL&lt;/span&gt; databases, but I think that the information contained in these lectures will be useful for a lot more time and in a lot more settings than just conventional &lt;span class="caps"&gt;SQL&lt;/span&gt; databases that are used in the majority of current systems. I oftentimes find myself thinking in relational terms even while designing the redis data model that I&amp;#8217;m currently working on.&lt;/p&gt;
-&lt;p&gt;The only problem I have is that I sometimes felt that the lectures were a bit dull. It is also possible that I got this impression because I was watching too many without interruption :). While the content of the lectures is excellent, the presentation could be improved. Often times I felt that the audience present in the classroom could have done more to improve the dynamism of the lectures. It seemed that the only reason why they were there was so that the presenter wouldn&amp;#8217;t feel alone. I would have enjoyed more challenging questions and especially some skeptical comments from industry veterans perhaps. I&amp;#8217;m sure those would have led to very interesting debates considering the high class of the lecturer and presumably, the attendants.&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+
+	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
+
+	&lt;p&gt;C. J. Date sets out to demolish &lt;span class="caps"&gt;SQL&lt;/span&gt; as a language fit for relational theory and databases in general. While going through all the database theory concepts he presents the ideal case and an ideal query language (actually not ideal, but as he demonstrates, the correct ones) contrasting them to generic &lt;span class="caps"&gt;SQL&lt;/span&gt;. He also posits and sets out to prove, in a very interesting argument, that relational databases are the only way to store data and all other data models &lt;strong&gt;will not endure&lt;/strong&gt;. &lt;/p&gt;
+
+	&lt;p&gt;These are the days of &lt;span class="caps"&gt;NOSQL&lt;/span&gt; databases, but I think that the information contained in these lectures will be useful for a lot more time and in a lot more settings than just conventional &lt;span class="caps"&gt;SQL&lt;/span&gt; databases that are used in the majority of current systems. I oftentimes find myself thinking in relational terms even while designing the redis data model that I&amp;#8217;m currently working on.&lt;/p&gt;
+
+	&lt;p&gt;The only problem I have is that I sometimes felt that the lectures were a bit dull. It is also possible that I got this impression because I was watching too many without interruption :). While the content of the lectures is excellent, the presentation could be improved. Often times I felt that the audience present in the classroom could have done more to improve the dynamism of the lectures. It seemed that the only reason why they were there was so that the presenter wouldn&amp;#8217;t feel alone. I would have enjoyed more challenging questions and especially some skeptical comments from industry veterans perhaps. I&amp;#8217;m sure those would have led to very interesting debates considering the high class of the lecturer and presumably, the attendants.&lt;/p&gt; </description>
             <pubDate>Mon, 26 Sep 2011 00:00 GMT</pubDate>
         </item>
         <item>
             <title>Copr final report</title>
             <link>http://mapleoin.eu/perma/copr-final-report</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;&lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; is now over for me and I&amp;#8217;m really glad of what I learned and coded this summer.&lt;/p&gt;
-&lt;p&gt;Our initial goal was to develop a TurboGears2 Web app and &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Fedora Copr&lt;/a&gt;. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&amp;#8217;m glad to have played a role in its development.&lt;/p&gt;
-&lt;p&gt;At first I worked on the web app, modeling the database and the relationship between coprs and repos and packages and then developing the &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;. When the midterm came, my mentor and I decided that I should also contribute to the other parts of Copr. The original schedule had a simple command-line client planned, but we went further than that. In the end all of the functionality of the &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; also got implemented in a client library (based on and very similar to &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt;) and in a command-line client. I also got to dive into python-fedora&amp;#8217;s and repoze.who&amp;#8217;s internals in order to get basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; authentication working for TurboGears2.&lt;/p&gt;
-&lt;p&gt;My latest work has been on the &lt;a href="https://fedorahosted.org/func/"&gt;func&lt;/a&gt; module. This is the buildsystem part of Copr. Func minions running this module will be commanded by &lt;a href="https://fedorahosted.org/headhunter"&gt;headhunter&lt;/a&gt; (Copr&amp;#8217;s scheduler) to build packages in mock and then move them into repositories. The module also creates, updates and deletes package repositories and will check the built packages for Fedora conformance (e.g. licensing) &amp;#8211; this last part is not yet implemented. I got to play with virtual machines and func and &lt;a href="https://fedoraproject.org/wiki/Projects/Mock"&gt;mock&lt;/a&gt; and &lt;a href="http://createrepo.baseurl.org/"&gt;createrepo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;There is a more synthethic overview of all the different things that got implemented &lt;a href="https://fedoraproject.org/wiki/User:Mapleoin/FSC-Copr-status"&gt;on the wiki&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Overall, I&amp;#8217;m really glad of what I learned this summer. This project really got me involved in a lot of different levels of the architecture of a web service and a lot of different technologies. Some of the things I worked on looked really scary at first, but as I went nearer and read more code the mist slowly vanished.&lt;/p&gt;
-&lt;p&gt;My mentor, &lt;a href="http://anonbadger.wordpress.com/"&gt;Toshio Kuratomi&lt;/a&gt; was great as always. This isn&amp;#8217;t the first project I&amp;#8217;ve had him as my mentor. He was always there to talk to and always had great answers to all of my questions. He had great patience in answering and explaining anything I asked about. Our discussions were mostly about the architecture of the app we were building, but he also gave me great tips on the inner workings of python-fedora or on deploying the web app. I felt I had a lot of liberty to decide the way things will get implemented. Regardless of whether we will ever work together again, Toshio will always be a great inspiration for me as a programmer and as a person.&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;&lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; is now over for me and I&amp;#8217;m really glad of what I learned and coded this summer.&lt;/p&gt;
+
+	&lt;p&gt;Our initial goal was to develop a TurboGears2 Web app and &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Fedora Copr&lt;/a&gt;. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&amp;#8217;m glad to have played a role in its development.&lt;/p&gt;
+
+	&lt;p&gt;At first I worked on the web app, modeling the database and the relationship between coprs and repos and packages and then developing the &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;. When the midterm came, my mentor and I decided that I should also contribute to the other parts of Copr. The original schedule had a simple command-line client planned, but we went further than that. In the end all of the functionality of the &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; also got implemented in a client library (based on and very similar to &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt;) and in a command-line client. I also got to dive into python-fedora&amp;#8217;s and repoze.who&amp;#8217;s internals in order to get basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; authentication working for TurboGears2.&lt;/p&gt;
+
+	&lt;p&gt;My latest work has been on the &lt;a href="https://fedorahosted.org/func/"&gt;func&lt;/a&gt; module. This is the buildsystem part of Copr. Func minions running this module will be commanded by &lt;a href="https://fedorahosted.org/headhunter"&gt;headhunter&lt;/a&gt; (Copr&amp;#8217;s scheduler) to build packages in mock and then move them into repositories. The module also creates, updates and deletes package repositories and will check the built packages for Fedora conformance (e.g. licensing) &amp;#8211; this last part is not yet implemented. I got to play with virtual machines and func and &lt;a href="https://fedoraproject.org/wiki/Projects/Mock"&gt;mock&lt;/a&gt; and &lt;a href="http://createrepo.baseurl.org/"&gt;createrepo&lt;/a&gt;.&lt;/p&gt;
+
+	&lt;p&gt;There is a more synthethic overview of all the different things that got implemented &lt;a href="https://fedoraproject.org/wiki/User:Mapleoin/FSC-Copr-status"&gt;on the wiki&lt;/a&gt;.&lt;/p&gt;
+
+	&lt;p&gt;Overall, I&amp;#8217;m really glad of what I learned this summer. This project really got me involved in a lot of different levels of the architecture of a web service and a lot of different technologies. Some of the things I worked on looked really scary at first, but as I went nearer and read more code the mist slowly vanished.&lt;/p&gt;
+
+	&lt;p&gt;My mentor, &lt;a href="http://anonbadger.wordpress.com/"&gt;Toshio Kuratomi&lt;/a&gt; was great as always. This isn&amp;#8217;t the first project I&amp;#8217;ve had him as my mentor. He was always there to talk to and always had great answers to all of my questions. He had great patience in answering and explaining anything I asked about. Our discussions were mostly about the architecture of the app we were building, but he also gave me great tips on the inner workings of python-fedora or on deploying the web app. I felt I had a lot of liberty to decide the way things will get implemented. Regardless of whether we will ever work together again, Toshio will always be a great inspiration for me as a programmer and as a person.&lt;/p&gt; </description>
             <pubDate>Tue, 28 Sep 2010 15:33 GMT</pubDate>
         </item>
         <item>
             <title>FSC: moving to the buildsystem</title>
             <link>http://mapleoin.eu/perma/moving-on-to-the-buildsystem</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;I started working on the buildsystem part of copr this week. Right now, I&amp;#8217;m still getting familiar with &lt;a href="http://fedorahosted.org/func"&gt;func&lt;/a&gt;. That&amp;#8217;s what we&amp;#8217;ll be using to communicate with the builder machines: get them running errands and get back status reports at any time. I spent a lot of time getting a virtual machine setup with libvirt; networking especially was a pain (mostly because of my pppoe connection I think).&lt;/p&gt;
-&lt;p&gt;One nice feature of func that I think we&amp;#8217;ll be using a lot is the &lt;a href="https://fedorahosted.org/func/wiki/AsyncUsage"&gt;async mode&lt;/a&gt;. A mock build takes a lot of time, what with all the yumming and compiling. So starting a task via one of the user interfaces and then choosing whether or not to keep watching it and what to watch for will probably be an essential part of the buildsystem&amp;#8217;s functionality.&lt;/p&gt;
-&lt;p&gt;In the meantime, we&amp;#8217;re slowly &lt;a href="https://fedorahosted.org/fedora-infrastructure/ticket/2339"&gt;getting resources&lt;/a&gt; for the deployment of Copr. Toshio got a running instance of the current state of the TG app on &lt;a href="http://publictest1.fedoraproject.org/copr/"&gt;publictest1&lt;/a&gt;. It looks just like a quickstarted TG app, because it doesn&amp;#8217;t have any WebUI. But it can &lt;span class="caps"&gt;CRUD&lt;/span&gt; coprs, handle dependencies between them, handle permissions and &lt;span class="caps"&gt;CRD&lt;/span&gt; packages. Most of the functions require a &lt;a href="http://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; account, but you don&amp;#8217;t need one to see a &lt;a href="http://publictest1.fedoraproject.org/copr/coprs.json"&gt;list of all the coprs&lt;/a&gt;, or a &lt;a href="http://publictest1.fedoraproject.org/copr/firstcopr/packages.json"&gt;list of packages in a copr&lt;/a&gt;.&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;I started working on the buildsystem part of copr this week. Right now, I&amp;#8217;m still getting familiar with &lt;a href="http://fedorahosted.org/func"&gt;func&lt;/a&gt;. That&amp;#8217;s what we&amp;#8217;ll be using to communicate with the builder machines: get them running errands and get back status reports at any time. I spent a lot of time getting a virtual machine setup with libvirt; networking especially was a pain (mostly because of my pppoe connection I think).&lt;/p&gt;
+
+	&lt;p&gt;One nice feature of func that I think we&amp;#8217;ll be using a lot is the &lt;a href="https://fedorahosted.org/func/wiki/AsyncUsage"&gt;async mode&lt;/a&gt;. A mock build takes a lot of time, what with all the yumming and compiling. So starting a task via one of the user interfaces and then choosing whether or not to keep watching it and what to watch for will probably be an essential part of the buildsystem&amp;#8217;s functionality.&lt;/p&gt;
+
+	&lt;p&gt;In the meantime, we&amp;#8217;re slowly &lt;a href="https://fedorahosted.org/fedora-infrastructure/ticket/2339"&gt;getting resources&lt;/a&gt; for the deployment of Copr. Toshio got a running instance of the current state of the TG app on &lt;a href="http://publictest1.fedoraproject.org/copr/"&gt;publictest1&lt;/a&gt;. It looks just like a quickstarted TG app, because it doesn&amp;#8217;t have any WebUI. But it can &lt;span class="caps"&gt;CRUD&lt;/span&gt; coprs, handle dependencies between them, handle permissions and &lt;span class="caps"&gt;CRD&lt;/span&gt; packages. Most of the functions require a &lt;a href="http://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; account, but you don&amp;#8217;t need one to see a &lt;a href="http://publictest1.fedoraproject.org/copr/coprs.json"&gt;list of all the coprs&lt;/a&gt;, or a &lt;a href="http://publictest1.fedoraproject.org/copr/firstcopr/packages.json"&gt;list of packages in a copr&lt;/a&gt;.&lt;/p&gt; </description>
             <pubDate>Mon, 06 Sep 2010 19:53 GMT</pubDate>
         </item>
         <item>
             <title>the Copr client part II</title>
             <link>http://mapleoin.eu/perma/copr-client-part-2</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;I spent this week finishing up the copr client. It now supports all the functionality that the Copr TG &lt;span class="caps"&gt;API&lt;/span&gt; supports. It&amp;#8217;s not much, but it&amp;#8217;s a starting point.&lt;/p&gt;
-&lt;p&gt;I spent a lot of time trying to understand the way repoze.who works and the authentication plugins that we&amp;#8217;re using for the &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt; &lt;a href="https://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; authentication plugin. I finally understood it, I think&amp;#8230; The Fedora client library didn&amp;#8217;t support basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; Authentication for TG2 apps so I had to figure out how to integrate that into our authentication plugin. It was quite fun all in all, repoze.who has a very interesting way of doing authentication and writing wsgi middleware is always exciting ;). This patch will hopefully go upstream to python-fedora now.&lt;/p&gt;
-&lt;p&gt;This next week I&amp;#8217;ll probably start working on the buildsystem part of Copr. There are a lot of new things to learn there.&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;I spent this week finishing up the copr client. It now supports all the functionality that the Copr TG &lt;span class="caps"&gt;API&lt;/span&gt; supports. It&amp;#8217;s not much, but it&amp;#8217;s a starting point.&lt;/p&gt;
+
+	&lt;p&gt;I spent a lot of time trying to understand the way repoze.who works and the authentication plugins that we&amp;#8217;re using for the &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt; &lt;a href="https://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; authentication plugin. I finally understood it, I think&amp;#8230; The Fedora client library didn&amp;#8217;t support basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; Authentication for TG2 apps so I had to figure out how to integrate that into our authentication plugin. It was quite fun all in all, repoze.who has a very interesting way of doing authentication and writing wsgi middleware is always exciting ;). This patch will hopefully go upstream to python-fedora now.&lt;/p&gt;
+
+	&lt;p&gt;This next week I&amp;#8217;ll probably start working on the buildsystem part of Copr. There are a lot of new things to learn there.&lt;/p&gt; </description>
             <pubDate>Mon, 30 Aug 2010 10:42 GMT</pubDate>
         </item>
         <item>
             <title>the Copr client</title>
             <link>http://mapleoin.eu/perma/copr-client</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;This last week I started working on the command line client to &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Copr&lt;/a&gt;. Luckily, the &lt;a href="https://fedorahosted.org/python-fedora"&gt;python-fedora&lt;/a&gt; already has a lot of code in place to make the task of writing clients for TurboGears apps a lot easier. Some of &lt;a href="http://admin.fedoraproject.org/pkgdb"&gt;the&lt;/a&gt; &lt;a href="http://admin.fedoraproject.org/updates"&gt;apps&lt;/a&gt; &lt;a href="http://admin.fedoraproject.org/accounts"&gt;in&lt;/a&gt; infrastructure are already using this library, which make for some good examples.&lt;/p&gt;
-&lt;p&gt;So I&amp;#8217;m building a client library and a client um&amp;#8230; command line client. The command line client is basically one big &lt;a href="http://docs.python.org/library/argparse.html"&gt;argparse&lt;/a&gt; application that calls the functions in the client library and sometimes does a bit of formatting on the output. The client library implements a fedora.client.BaseClient that mostly just calls json methods on the Copr server.&lt;/p&gt;
-&lt;p&gt;It&amp;#8217;s all pretty simple. The hard part is deciding what the command line client&amp;#8217;s interface will look like. In argparse parlance, which ones should be the positional arguments and which should be the optional arguments. So far I&amp;#8217;ve been inclined to use something that looks like a VCS&amp;#8217;s interface. Here&amp;#8217;s what it looks like so far:&lt;/p&gt;
+            <description> 	&lt;p&gt;This last week I started working on the command line client to &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Copr&lt;/a&gt;. Luckily, the &lt;a href="https://fedorahosted.org/python-fedora"&gt;python-fedora&lt;/a&gt; already has a lot of code in place to make the task of writing clients for TurboGears apps a lot easier. Some of &lt;a href="http://admin.fedoraproject.org/pkgdb"&gt;the&lt;/a&gt; &lt;a href="http://admin.fedoraproject.org/updates"&gt;apps&lt;/a&gt; &lt;a href="http://admin.fedoraproject.org/accounts"&gt;in&lt;/a&gt; infrastructure are already using this library, which make for some good examples.&lt;/p&gt;
+
+	&lt;p&gt;So I&amp;#8217;m building a client library and a client um&amp;#8230; command line client. The command line client is basically one big &lt;a href="http://docs.python.org/library/argparse.html"&gt;argparse&lt;/a&gt; application that calls the functions in the client library and sometimes does a bit of formatting on the output. The client library implements a fedora.client.BaseClient that mostly just calls json methods on the Copr server.&lt;/p&gt;
+
+	&lt;p&gt;It&amp;#8217;s all pretty simple. The hard part is deciding what the command line client&amp;#8217;s interface will look like. In argparse parlance, which ones should be the positional arguments and which should be the optional arguments. So far I&amp;#8217;ve been inclined to use something that looks like a VCS&amp;#8217;s interface. Here&amp;#8217;s what it looks like so far:&lt;/p&gt;
+
 &lt;pre&gt;
 $ python client/bin.py -h
 usage: bin.py [-h] [-v] [-u USERNAME] [-p PASSWORD] [--url URL]
@@ -131,8 +189,10 @@ authentication:
   -u USERNAME, --username USERNAME
   -p PASSWORD, --password PASSWORD
 &lt;/pre&gt;
-&lt;p&gt;Right now, all the copr functions are top-level. I wonder if I&amp;#8217;ll have to create a deeper level of nesting when I start implementing package-related functions.&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;m also having a few problems with the BaseClient that I&amp;#8217;ll probably have to solve this week. All of the other client libraries were written for TurboGears 1.x and it seems that authentication has changed in TurboGears 2. There&amp;#8217;s also no support for &lt;span class="caps"&gt;HTTP&lt;/span&gt; &lt;span class="caps"&gt;PUT&lt;/span&gt; and &lt;span class="caps"&gt;DELETE&lt;/span&gt; which I would like to use since I used RestControllers in the &lt;span class="caps"&gt;API&lt;/span&gt;. I also had to write a patch for file upload support; that seems to work well so far.&lt;/p&gt; </description>
+
+	&lt;p&gt;Right now, all the copr functions are top-level. I wonder if I&amp;#8217;ll have to create a deeper level of nesting when I start implementing package-related functions.&lt;/p&gt;
+
+	&lt;p&gt;I&amp;#8217;m also having a few problems with the BaseClient that I&amp;#8217;ll probably have to solve this week. All of the other client libraries were written for TurboGears 1.x and it seems that authentication has changed in TurboGears 2. There&amp;#8217;s also no support for &lt;span class="caps"&gt;HTTP&lt;/span&gt; &lt;span class="caps"&gt;PUT&lt;/span&gt; and &lt;span class="caps"&gt;DELETE&lt;/span&gt; which I would like to use since I used RestControllers in the &lt;span class="caps"&gt;API&lt;/span&gt;. I also had to write a patch for file upload support; that seems to work well so far.&lt;/p&gt; </description>
             <pubDate>Mon, 23 Aug 2010 10:07 GMT</pubDate>
         </item>
     </channel>

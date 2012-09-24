@@ -5,69 +5,112 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 15:11:14 +0300</pubDate>
+        <pubDate>Mon, 24 Sep 2012 18:48:21 +0300</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.eu/perma/FOSDEM-2012-review</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
-&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
-&lt;h4&gt;&lt;a href="http://aeolusproject.org/"&gt;The Aeolus Project&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Francesco Vollero &amp;#8211; Red Hat&lt;/h5&gt;
-&lt;p&gt;This is a very interesting project if you can go past how &lt;em&gt;meta&lt;/em&gt; it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.&lt;/p&gt;
-&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
-&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
-&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
-&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
-&lt;h5&gt;Marios Andreou &amp;#8211; Red Hat&lt;/h5&gt;
-&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
-&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
-&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
-&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
-&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Dave Walker &amp;#8211; Canonical&lt;/h5&gt;
-&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
-&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
-&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
-&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
-&lt;h5&gt;Lars Wirzenius&lt;/h5&gt;
-&lt;p&gt;Advanced the idea of maintaining groups of packages, all locked at a specific version. Having the maintainers always know which combination of versions a bug comes from would make the whole environment easier to replicate and the bug easier to reproduce. This would also, supposedly, reduce some of the complexities of dealing with dependencies.&lt;/p&gt;
-&lt;p&gt;These groups of packages would be built directly from the upstream&amp;#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.&lt;/p&gt;
-&lt;p&gt;If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.&lt;/p&gt;
-&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
-&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
-&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
-&lt;h5&gt;Karanbir Singh &amp;#8211; CentOS&lt;/h5&gt;
-&lt;p&gt;The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.&lt;/p&gt;
-&lt;h4&gt;The Apache &lt;a href="http://cassandra.apache.org"&gt;Cassandra&lt;/a&gt; Storage Engine&lt;/h4&gt;
-&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
-&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
-&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
-&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
-&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
+            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+
+	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
+
+	&lt;h4&gt;&lt;a href="http://aeolusproject.org/"&gt;The Aeolus Project&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Francesco Vollero &amp;#8211; Red Hat&lt;/h5&gt;
+
+	&lt;p&gt;This is a very interesting project if you can go past how &lt;em&gt;meta&lt;/em&gt; it is.  It wants to be an abstraction over all the existing private and public cloud solutions. The aim of the project is to be able to create and control a virtual system throughout its life cycle. It can be converted from one VM image format to another and be deployed/moved from one cloud provider to another. Groups of images can be setup and controlled together. The way resources are managed and billed would also be cloud-independent.&lt;/p&gt;
+
+	&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
+
+	&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
+
+	&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+
+	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
+
+	&lt;h5&gt;Marios Andreou &amp;#8211; Red Hat&lt;/h5&gt;
+
+	&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
+
+	&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
+
+	&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
+
+	&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
+
+	&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Dave Walker &amp;#8211; Canonical&lt;/h5&gt;
+
+	&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
+
+	&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
+
+	&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
+
+	&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
+
+	&lt;h5&gt;Lars Wirzenius&lt;/h5&gt;
+
+	&lt;p&gt;Advanced the idea of maintaining groups of packages, all locked at a specific version. Having the maintainers always know which combination of versions a bug comes from would make the whole environment easier to replicate and the bug easier to reproduce. This would also, supposedly, reduce some of the complexities of dealing with dependencies.&lt;/p&gt;
+
+	&lt;p&gt;These groups of packages would be built directly from the upstream&amp;#8217;s sources, following rules laid out in a git repository. The speaker also said he wants to get rid of binary packages completely.&lt;/p&gt;
+
+	&lt;p&gt;If this were to be implemented, distributions could write functional tests against whole systems (continuously built images), rather than individual binary packages and ensure that a full configuration works.&lt;/p&gt;
+
+	&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
+
+	&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
+
+	&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
+
+	&lt;h5&gt;Karanbir Singh &amp;#8211; CentOS&lt;/h5&gt;
+
+	&lt;p&gt;The speaker discussed the system which CentOS uses for continuous integration. I liked their laissez-faire approach to which type of functional test language they should be using. They basically allow any type of language/environment to be used when running tests. The only requirement is that the test returns 0 on success and something else on failure. Anyone can write functional tests in any language they want (they just specify the packages as requirements for their test environment). People can choose to maintain different groups of packages along with the tests associated to them.&lt;/p&gt;
+
+	&lt;h4&gt;The Apache &lt;a href="http://cassandra.apache.org"&gt;Cassandra&lt;/a&gt; Storage Engine&lt;/h4&gt;
+
+	&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
+
+	&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
+
+	&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
+
+	&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
+
+	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
+
 &lt;hr /&gt;
-&lt;p&gt;I&amp;#8217;ve been to a few other talks that I can&amp;#8217;t remember anything from either because of the bad quality of the presentation or because I didn&amp;#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.&lt;/p&gt;
-&lt;p&gt;A lot of the talks were recorded and are available over here (with more coming): &lt;a href="http://video.fosdem.org/2012/"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt; 2012 videos&lt;/a&gt;. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &amp;#8211; I had to keep my jacket and hat on.&lt;/p&gt; </description>
+
+	&lt;p&gt;I&amp;#8217;ve been to a few other talks that I can&amp;#8217;t remember anything from either because of the bad quality of the presentation or because I didn&amp;#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.&lt;/p&gt;
+
+	&lt;p&gt;A lot of the talks were recorded and are available over here (with more coming): &lt;a href="http://video.fosdem.org/2012/"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt; 2012 videos&lt;/a&gt;. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &amp;#8211; I had to keep my jacket and hat on.&lt;/p&gt; </description>
             <pubDate>Wed, 15 Feb 2012 13:06 GMT</pubDate>
         </item>
         <item>
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.eu/perma/sql-and-relational-theory-master</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
-&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
-&lt;p&gt;C. J. Date sets out to demolish &lt;span class="caps"&gt;SQL&lt;/span&gt; as a language fit for relational theory and databases in general. While going through all the database theory concepts he presents the ideal case and an ideal query language (actually not ideal, but as he demonstrates, the correct ones) contrasting them to generic &lt;span class="caps"&gt;SQL&lt;/span&gt;. He also posits and sets out to prove, in a very interesting argument, that relational databases are the only way to store data and all other data models &lt;strong&gt;will not endure&lt;/strong&gt;. &lt;/p&gt;
-&lt;p&gt;These are the days of &lt;span class="caps"&gt;NOSQL&lt;/span&gt; databases, but I think that the information contained in these lectures will be useful for a lot more time and in a lot more settings than just conventional &lt;span class="caps"&gt;SQL&lt;/span&gt; databases that are used in the majority of current systems. I oftentimes find myself thinking in relational terms even while designing the redis data model that I&amp;#8217;m currently working on.&lt;/p&gt;
-&lt;p&gt;The only problem I have is that I sometimes felt that the lectures were a bit dull. It is also possible that I got this impression because I was watching too many without interruption :). While the content of the lectures is excellent, the presentation could be improved. Often times I felt that the audience present in the classroom could have done more to improve the dynamism of the lectures. It seemed that the only reason why they were there was so that the presenter wouldn&amp;#8217;t feel alone. I would have enjoyed more challenging questions and especially some skeptical comments from industry veterans perhaps. I&amp;#8217;m sure those would have led to very interesting debates considering the high class of the lecturer and presumably, the attendants.&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+
+	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
+
+	&lt;p&gt;C. J. Date sets out to demolish &lt;span class="caps"&gt;SQL&lt;/span&gt; as a language fit for relational theory and databases in general. While going through all the database theory concepts he presents the ideal case and an ideal query language (actually not ideal, but as he demonstrates, the correct ones) contrasting them to generic &lt;span class="caps"&gt;SQL&lt;/span&gt;. He also posits and sets out to prove, in a very interesting argument, that relational databases are the only way to store data and all other data models &lt;strong&gt;will not endure&lt;/strong&gt;. &lt;/p&gt;
+
+	&lt;p&gt;These are the days of &lt;span class="caps"&gt;NOSQL&lt;/span&gt; databases, but I think that the information contained in these lectures will be useful for a lot more time and in a lot more settings than just conventional &lt;span class="caps"&gt;SQL&lt;/span&gt; databases that are used in the majority of current systems. I oftentimes find myself thinking in relational terms even while designing the redis data model that I&amp;#8217;m currently working on.&lt;/p&gt;
+
+	&lt;p&gt;The only problem I have is that I sometimes felt that the lectures were a bit dull. It is also possible that I got this impression because I was watching too many without interruption :). While the content of the lectures is excellent, the presentation could be improved. Often times I felt that the audience present in the classroom could have done more to improve the dynamism of the lectures. It seemed that the only reason why they were there was so that the presenter wouldn&amp;#8217;t feel alone. I would have enjoyed more challenging questions and especially some skeptical comments from industry veterans perhaps. I&amp;#8217;m sure those would have led to very interesting debates considering the high class of the lecturer and presumably, the attendants.&lt;/p&gt; </description>
             <pubDate>Mon, 26 Sep 2011 00:00 GMT</pubDate>
         </item>
         <item>
             <title>blog database schema cu capsuni - Part 2</title>
             <link>http://mapleoin.eu/perma/blog-database-schema-2</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;Tocmai am reușit (am găsit timp &amp;#8212; furat timp) să scriu în django schema din &lt;a href="http://mapleoin.eu/perma/blog-database-schema"&gt;postul trecut&lt;/a&gt;. Simplicity is divine:&lt;/p&gt;
+            <description> 	&lt;p&gt;Tocmai am reușit (am găsit timp &amp;#8212; furat timp) să scriu în django schema din &lt;a href="http://mapleoin.eu/perma/blog-database-schema"&gt;postul trecut&lt;/a&gt;. Simplicity is divine:&lt;/p&gt;
+
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;nume&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -89,16 +132,19 @@
     &lt;span class="n"&gt;modified_time&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTimeField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;auto_now&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
-&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn94eec139-ef16-4014-a2f6-4a599dc64f07"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
-&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;gt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
+
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn432b84bf-c76e-4f82-b211-e250c9f13593"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+
+&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;        &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;id&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;PRI&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;nume&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
- &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;gt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_post&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_post&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+---------------+-------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt;         &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;        &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+---------------+-------------+------+-----+---------+&lt;/span&gt;
@@ -110,7 +156,7 @@
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;creation_time&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;datetime&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;modified_time&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;datetime&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+---------------+-------------+------+-----+---------+&lt;/span&gt;
- &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;gt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_commentator&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_commentator&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+---------+--------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;         &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; 
  &lt;span class="o"&gt;+---------+--------------+------+-----+---------+&lt;/span&gt;
@@ -119,7 +165,7 @@
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;email&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;UNI&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+---------+--------------+------+-----+---------+&lt;/span&gt;
- &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="n"&gt;gt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_comment&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+ &lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_comment&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+---------------+------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt;         &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+---------------+------------+------+-----+---------+&lt;/span&gt;
@@ -132,42 +178,61 @@
  &lt;span class="o"&gt;+---------------+------------+------+-----+---------+&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
-&lt;p id="fn94eec139-ef16-4014-a2f6-4a599dc64f07" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
+
+	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
+
+	&lt;p id="fn432b84bf-c76e-4f82-b211-e250c9f13593" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>
             <title>blog database schema cu capsuni</title>
             <link>http://mapleoin.eu/perma/blog-database-schema</link>
             <author>mapleoin@lavabit.ro (mapleoin)</author>
-            <description>  &lt;p&gt;Am reușit să-mi scriu schema bazei de date a viitorului meu blog. Ah, da, m-am apucat de treabă. O să folosesc django cred (și deja mi s-a spus că era previzibil) deși încă mai am timp să mă răzgândesc. N-am găsit în 2 minute un script care să-mi deseneze scheme, așa că pun relațiile în engleză aici. Come bash me!&lt;/p&gt;
-&lt;h4&gt;Post&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;belongs_to Category&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;has_many Comments&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Comment&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;has_one Commentator&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;belongs_to Post&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Commentator&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;has_many Comments&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;Category&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;has_many Posts&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ia să încerc să fac și niște tabele din ce scrie mai sus.&lt;/p&gt;
-&lt;p&gt;Post&lt;br /&gt;&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Comment&lt;br /&gt;&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Commentator&lt;br /&gt;&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Category&lt;br /&gt;&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.&lt;/p&gt;
-&lt;p&gt;E evident ceea ce &lt;strong&gt;nu&lt;/strong&gt; am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):&lt;/p&gt;
-&lt;p&gt;Comment&lt;br /&gt;id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
-&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
+            <description> 	&lt;p&gt;Am reușit să-mi scriu schema bazei de date a viitorului meu blog. Ah, da, m-am apucat de treabă. O să folosesc django cred (și deja mi s-a spus că era previzibil) deși încă mai am timp să mă răzgândesc. N-am găsit în 2 minute un script care să-mi deseneze scheme, așa că pun relațiile în engleză aici. Come bash me!&lt;/p&gt;
+
+	&lt;h4&gt;Post&lt;/h4&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;belongs_to Category&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;has_many Comments&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;h4&gt;Comment&lt;/h4&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;has_one Commentator&lt;/code&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;code&gt;belongs_to Post&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;h4&gt;Commentator&lt;/h4&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;has_many Comments&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;h4&gt;Category&lt;/h4&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;&lt;code&gt;has_many Posts&lt;/code&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;p&gt;Ia să încerc să fac și niște tabele din ce scrie mai sus.&lt;/p&gt;
+
+	&lt;p&gt;Post&lt;br /&gt;&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
+
+	&lt;p&gt;Comment&lt;br /&gt;&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
+
+	&lt;p&gt;Commentator&lt;br /&gt;&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
+
+	&lt;p&gt;Category&lt;br /&gt;&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
+
+	&lt;p&gt;Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.&lt;/p&gt;
+
+	&lt;p&gt;E evident ceea ce &lt;strong&gt;nu&lt;/strong&gt; am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):&lt;/p&gt;
+
+	&lt;p&gt;Comment&lt;br /&gt;id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
+
+	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
             <pubDate>Tue, 16 Sep 2008 00:00 GMT</pubDate>
         </item>
     </channel>
