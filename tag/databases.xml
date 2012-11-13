@@ -5,7 +5,7 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 19:33:29 +0300</pubDate>
+        <pubDate>Tue, 13 Nov 2012 02:34:38 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
@@ -83,7 +83,7 @@
 
 	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr/&gt;
 
 	&lt;p&gt;I&amp;#8217;ve been to a few other talks that I can&amp;#8217;t remember anything from either because of the bad quality of the presentation or because I didn&amp;#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.&lt;/p&gt;
 
@@ -135,7 +135,7 @@
 
 	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fnfddc5573-6489-4e11-8aa2-aada830b3d33"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fndda5cf31-02be-4294-bd1f-346fa84a3b26"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
 &lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -181,7 +181,7 @@
 
 	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p id="fnfddc5573-6489-4e11-8aa2-aada830b3d33" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
+	&lt;p id="fndda5cf31-02be-4294-bd1f-346fa84a3b26" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>

@@ -134,7 +134,7 @@
 
 	<p>An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like <span class="caps">GPG</span> keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.</p>
 
-<hr />
+<hr/>
 
 	<p>I&#8217;ve been to a few other talks that I can&#8217;t remember anything from either because of the bad quality of the presentation or because I didn&#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.</p>
 
@@ -226,6 +226,8 @@
 	<p>I spent a lot of time trying to understand the way repoze.who works and the authentication plugins that we&#8217;re using for the <a href="https://fedorahosted.org/python-fedora/">python-fedora</a> <a href="https://admin.fedoraproject.org/accounts">FAS</a> authentication plugin. I finally understood it, I think&#8230; The Fedora client library didn&#8217;t support basic <span class="caps">HTTP</span> Authentication for TG2 apps so I had to figure out how to integrate that into our authentication plugin. It was quite fun all in all, repoze.who has a very interesting way of doing authentication and writing wsgi middleware is always exciting ;). This patch will hopefully go upstream to python-fedora now.</p>
 
 	<p>This next week I&#8217;ll probably start working on the buildsystem part of Copr. There are a lot of new things to learn there.</p>
+
+
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/copr.html">copr</a>
@@ -415,7 +417,7 @@ authentication:
 
 	<p>Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&gt; <em>dependency hell</em>.</p>
 
-	<p>Se pare că există un program <em>yum-updatesd</em> (<code>su -c "yum install yum-updatesd"</code>) care poate actualiza automat metadatele.</p>
+	<p>Se pare că există un program <em>yum-updatesd</em> (<code>su -c &#34;yum install yum-updatesd&#34;</code>) care poate actualiza automat metadatele.</p>
 
 	<p>După ce l-am instalat, putem modifica <code>/etc/yum/yum-updatesd.conf</code> dacă vrem să facem lucruri dubioase, cum ar fi să îl lăsăm să instaleze actualizări automat &#8212; pentru că trăim într-o utopie în care actualizările nu strică niciodată nimic &#8212; sau, mai puțin dubios, doar să le descarce.</p>
 
@@ -452,7 +454,7 @@ authentication:
 
 	<p>I started slow, with quite a complex application to package: <a href="http://calibre.kovidgoyal.net/">Calibre</a>. Having all those different distros is great when you&#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing <a href="http://news.ycombinator.org">Hacker News</a> as usual when I found a link to <a href="http://developers.facebook.com/news.php?blog=1&#38;amp;story=301">facebook&#8217;s opensourcing of their web server framework</a> . I just rushed to the download and installation instructions page and I quickly got it packaged. I&#8217;m not saying it&#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&#8217;s fun to think that you&#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&#8217;ve found someone willing to sponsor me into the <strong>packager</strong> group. Anyone in a package-review mood? ;)</p>
 
-	<p>My journey into the packaging world has been enlightening so far and the good thing is I&#8217;m just beginning. There&#8217;s a whole new world to be discovered out there and also another part of the fedora community.</p>
+	<p>My journey into the packaging world has been enlightening so far and the good thing is I&#8217;m just beginning. There&#8217;s a whole new world to be discovered out there and also another part of the fedora community. </p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/fedora.html">fedora</a>

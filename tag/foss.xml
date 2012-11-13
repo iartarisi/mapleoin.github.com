@@ -5,7 +5,7 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 19:33:29 +0300</pubDate>
+        <pubDate>Tue, 13 Nov 2012 02:34:38 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
@@ -83,7 +83,7 @@
 
 	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr/&gt;
 
 	&lt;p&gt;I&amp;#8217;ve been to a few other talks that I can&amp;#8217;t remember anything from either because of the bad quality of the presentation or because I didn&amp;#8217;t have the prerequisite knowledge to understand what they were talking about. Next time I should also take notes.&lt;/p&gt;
 
@@ -143,7 +143,9 @@
 
 	&lt;p&gt;I spent a lot of time trying to understand the way repoze.who works and the authentication plugins that we&amp;#8217;re using for the &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt; &lt;a href="https://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; authentication plugin. I finally understood it, I think&amp;#8230; The Fedora client library didn&amp;#8217;t support basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; Authentication for TG2 apps so I had to figure out how to integrate that into our authentication plugin. It was quite fun all in all, repoze.who has a very interesting way of doing authentication and writing wsgi middleware is always exciting ;). This patch will hopefully go upstream to python-fedora now.&lt;/p&gt;
 
-	&lt;p&gt;This next week I&amp;#8217;ll probably start working on the buildsystem part of Copr. There are a lot of new things to learn there.&lt;/p&gt; </description>
+	&lt;p&gt;This next week I&amp;#8217;ll probably start working on the buildsystem part of Copr. There are a lot of new things to learn there.&lt;/p&gt;
+
+ </description>
             <pubDate>Mon, 30 Aug 2010 10:42 GMT</pubDate>
         </item>
         <item>
@@ -280,7 +282,7 @@ authentication:
 
 	&lt;p&gt;Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&amp;gt; &lt;em&gt;dependency hell&lt;/em&gt;.&lt;/p&gt;
 
-	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c "yum install yum-updatesd"&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
+	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c &amp;#34;yum install yum-updatesd&amp;#34;&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
 
 	&lt;p&gt;După ce l-am instalat, putem modifica &lt;code&gt;/etc/yum/yum-updatesd.conf&lt;/code&gt; dacă vrem să facem lucruri dubioase, cum ar fi să îl lăsăm să instaleze actualizări automat &amp;#8212; pentru că trăim într-o utopie în care actualizările nu strică niciodată nimic &amp;#8212; sau, mai puțin dubios, doar să le descarce.&lt;/p&gt;
 
@@ -310,7 +312,7 @@ authentication:
 
 	&lt;p&gt;I started slow, with quite a complex application to package: &lt;a href="http://calibre.kovidgoyal.net/"&gt;Calibre&lt;/a&gt;. Having all those different distros is great when you&amp;#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&amp;#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing &lt;a href="http://news.ycombinator.org"&gt;Hacker News&lt;/a&gt; as usual when I found a link to &lt;a href="http://developers.facebook.com/news.php?blog=1&amp;#38;amp;story=301"&gt;facebook&amp;#8217;s opensourcing of their web server framework&lt;/a&gt; . I just rushed to the download and installation instructions page and I quickly got it packaged. I&amp;#8217;m not saying it&amp;#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&amp;#8217;s fun to think that you&amp;#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&amp;#8217;ve found someone willing to sponsor me into the &lt;strong&gt;packager&lt;/strong&gt; group. Anyone in a package-review mood? ;)&lt;/p&gt;
 
-	&lt;p&gt;My journey into the packaging world has been enlightening so far and the good thing is I&amp;#8217;m just beginning. There&amp;#8217;s a whole new world to be discovered out there and also another part of the fedora community.&lt;/p&gt; </description>
+	&lt;p&gt;My journey into the packaging world has been enlightening so far and the good thing is I&amp;#8217;m just beginning. There&amp;#8217;s a whole new world to be discovered out there and also another part of the fedora community. &lt;/p&gt; </description>
             <pubDate>Fri, 11 Sep 2009 10:00 GMT</pubDate>
         </item>
         <item>

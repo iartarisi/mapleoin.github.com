@@ -5,7 +5,7 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 19:33:29 +0300</pubDate>
+        <pubDate>Tue, 13 Nov 2012 02:34:38 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Cum să actualizezi metadatele yum în mod automat</title>
@@ -15,7 +15,7 @@
 
 	&lt;p&gt;Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&amp;gt; &lt;em&gt;dependency hell&lt;/em&gt;.&lt;/p&gt;
 
-	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c "yum install yum-updatesd"&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
+	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c &amp;#34;yum install yum-updatesd&amp;#34;&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
 
 	&lt;p&gt;După ce l-am instalat, putem modifica &lt;code&gt;/etc/yum/yum-updatesd.conf&lt;/code&gt; dacă vrem să facem lucruri dubioase, cum ar fi să îl lăsăm să instaleze actualizări automat &amp;#8212; pentru că trăim într-o utopie în care actualizările nu strică niciodată nimic &amp;#8212; sau, mai puțin dubios, doar să le descarce.&lt;/p&gt;
 
@@ -196,7 +196,12 @@
   @@ -239,6 +243,9 @@
   %{_mandir}/man1/*
   %changelog
-  +* Sat Nov  29 2009 Ionuț C. Arțăriși 
+  +* Sat Nov  29 2009 Ionuț C. Arțăriși &amp;lt;mapleoin@fedoraproject.org&amp;gt; - 0.6.21-2
+    +- patch to stop checking for new upstream version
+    +
+    * Sat Nov  6 2009 Ionuț C. Arțăriși &amp;lt;mapleoin@fedoraproject.org&amp;gt; - 0.6.21-1
+      - new upstream version: http://calibre.kovidgoyal.net/wiki/Changelog#Version0.6.2106Nov2009
+      - added python-BeautifulSoup requirement
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 

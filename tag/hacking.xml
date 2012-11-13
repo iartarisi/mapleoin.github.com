@@ -5,7 +5,7 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 19:33:29 +0300</pubDate>
+        <pubDate>Tue, 13 Nov 2012 02:34:38 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Ruby koans</title>
@@ -185,7 +185,12 @@
   @@ -239,6 +243,9 @@
   %{_mandir}/man1/*
   %changelog
-  +* Sat Nov  29 2009 Ionuț C. Arțăriși 
+  +* Sat Nov  29 2009 Ionuț C. Arțăriși &amp;lt;mapleoin@fedoraproject.org&amp;gt; - 0.6.21-2
+    +- patch to stop checking for new upstream version
+    +
+    * Sat Nov  6 2009 Ionuț C. Arțăriși &amp;lt;mapleoin@fedoraproject.org&amp;gt; - 0.6.21-1
+      - new upstream version: http://calibre.kovidgoyal.net/wiki/Changelog#Version0.6.2106Nov2009
+      - added python-BeautifulSoup requirement
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 

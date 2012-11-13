@@ -67,30 +67,30 @@
 
 	<p><code>quvawgUq</code></p>
 
-	<p>Let&#8217;s break that. If you&#8217;ve ever read any kind of vim tutorial, you&#8217;re probably familiar with it&#8217;s recording feature (otherwise do this: <code>:h recording</code> <span class="caps">NOW</span> GODAMMIT!). So we first choose a letter for our recording (i chose <strong>u</strong>). Afterwards, we go into <span class="caps">VISUAL</span> <span class="caps">MODE</span> (<strong>v</strong>), then we select a(<strong>a</strong>) word(<strong>w</strong>) and uppercase(gU) it (You could also lowercase it by using <strong>gu</strong> instead). So now, that we&#8217;ve stored our magic in the u key, we can use it on any word with <strong>@u</strong>. </p>
+	<p>Let&#8217;s break that. If you&#8217;ve ever read any kind of vim tutorial, you&#8217;re probably familiar with it&#8217;s recording feature (otherwise do this: <code>:h recording</code> <span class="caps">NOW</span> GODAMMIT!). So we first choose a letter for our recording (i chose <strong>u</strong>). Afterwards, we go into <span class="caps">VISUAL</span> <span class="caps">MODE</span> (*v*), then we select a(*a*) word(*w*) and uppercase(gU) it (You could also lowercase it by using <strong>gu</strong> instead). So now, that we&#8217;ve stored our magic in the u key, we can use it on any word with <strong>@u</strong>. </p>
 
 	<p><code>:TOhtml</code></p>
 
 	<p>For people who can&#8217;t be bothered to install those cool plugins on their blog (or make their own) &#8211; now you have a way to output all the html+formatting with this plugin. It&#8217;s got cool options to use your own css <code>:h TOhtml</code> . Here&#8217;s a sneakpeek:</p>
 
 <div style="background-color:#202020;color:wheat;">
-<font color="#8fa5d1">&nbsp;&nbsp;1 </font><span style="background-color: #202020"><font color="#d7a0d7">#!ruby</font></span><br />
-<font color="#8fa5d1">&nbsp;&nbsp;2 </font><span style="background-color: #202020"><font color="#d0d0a0">#!/usr/local/bin/ruby -rubygems</font></span><br />
-<font color="#8fa5d1">&nbsp;&nbsp;3 </font><span style="background-color: #202020"><font color="#d7a0d7">require</font></span>&nbsp;<span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">camping</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
-<font color="#8fa5d1">&nbsp;&nbsp;4 </font><span style="background-color: #202020"><font color="#d7a0d7">require</font></span>&nbsp;<span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">feed-normalizer</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
-<font color="#8fa5d1">&nbsp;&nbsp;5 </font><span style="background-color: #202020"><font color="#d7a0d7">require</font></span>&nbsp;<span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">open-uri</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
-<font color="#8fa5d1">&nbsp;&nbsp;6 </font><br />
-<font color="#8fa5d1">&nbsp;&nbsp;7 </font><span style="background-color: #202020"><font color="#f09479">Camping</font></span>.goes <span style="background-color: #202020"><font color="#87df71">:Planet</font></span><br />
-<font color="#8fa5d1">&nbsp;&nbsp;8 </font><br />
-<font color="#8fa5d1">&nbsp;&nbsp;9 </font><span style="background-color: #202020"><font color="#d7a0d7">module</font></span>&nbsp;<span style="background-color: #202020"><font color="#f09479">Planet</font></span>::<span style="background-color: #202020"><font color="#f09479">Controllers</font></span><br />
-<font color="#8fa5d1">&nbsp;10 </font><br />
-<font color="#8fa5d1">&nbsp;11 </font>&nbsp;&nbsp;<span style="background-color: #202020"><font color="#d0d0a0"># Yay!</font></span><br />
-<font color="#8fa5d1">&nbsp;12 </font>&nbsp;&nbsp;<span style="background-color: #202020"><font color="#d7a0d7">class</font></span>&nbsp;<span style="background-color: #202020"><font color="#f09479">Index</font></span>&nbsp;&lt; <span style="background-color: #202020"><font color="#f09479">R</font></span>&nbsp;<span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">/</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
-<font color="#8fa5d1">&nbsp;13 </font>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #202020"><font color="#d7a0d7">def</font></span>&nbsp;<span style="background-color: #202020"><font color="#7ee0ce">get</font></span><br />
-<font color="#8fa5d1">&nbsp;14 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;render <span style="background-color: #202020"><font color="#87df71">:index</font></span>&nbsp;<br />
-<font color="#8fa5d1">&nbsp;15 </font>&nbsp;&nbsp;&nbsp;&nbsp;<span style="background-color: #202020"><font color="#d7a0d7">end</font></span><br />
-<font color="#8fa5d1">&nbsp;16 </font>&nbsp;&nbsp;<span style="background-color: #202020"><font color="#d7a0d7">end</font></span><br />
-<font color="#8fa5d1">&nbsp;17 </font><span style="background-color: #202020"><font color="#d7a0d7">end</font></span><br /></div>
+<font color="#8fa5d1">  1 </font><span style="background-color: #202020"><font color="#d7a0d7">#!ruby</font></span><br />
+<font color="#8fa5d1">  2 </font><span style="background-color: #202020"><font color="#d0d0a0">#!/usr/local/bin/ruby -rubygems</font></span><br />
+<font color="#8fa5d1">  3 </font><span style="background-color: #202020"><font color="#d7a0d7">require</font></span> <span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">camping</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
+<font color="#8fa5d1">  4 </font><span style="background-color: #202020"><font color="#d7a0d7">require</font></span> <span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">feed-normalizer</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
+<font color="#8fa5d1">  5 </font><span style="background-color: #202020"><font color="#d7a0d7">require</font></span> <span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">open-uri</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
+<font color="#8fa5d1">  6 </font><br />
+<font color="#8fa5d1">  7 </font><span style="background-color: #202020"><font color="#f09479">Camping</font></span>.goes <span style="background-color: #202020"><font color="#87df71">:Planet</font></span><br />
+<font color="#8fa5d1">  8 </font><br />
+<font color="#8fa5d1">  9 </font><span style="background-color: #202020"><font color="#d7a0d7">module</font></span> <span style="background-color: #202020"><font color="#f09479">Planet</font></span>::<span style="background-color: #202020"><font color="#f09479">Controllers</font></span><br />
+<font color="#8fa5d1"> 10 </font><br />
+<font color="#8fa5d1"> 11 </font>  <span style="background-color: #202020"><font color="#d0d0a0"># Yay!</font></span><br />
+<font color="#8fa5d1"> 12 </font>  <span style="background-color: #202020"><font color="#d7a0d7">class</font></span> <span style="background-color: #202020"><font color="#f09479">Index</font></span> &lt; <span style="background-color: #202020"><font color="#f09479">R</font></span> <span style="background-color: #202020"><font color="#e8b87e">'</font></span><span style="background-color: #202020"><font color="#87df71">/</font></span><span style="background-color: #202020"><font color="#e8b87e">'</font></span><br />
+<font color="#8fa5d1"> 13 </font>    <span style="background-color: #202020"><font color="#d7a0d7">def</font></span> <span style="background-color: #202020"><font color="#7ee0ce">get</font></span><br />
+<font color="#8fa5d1"> 14 </font>      render <span style="background-color: #202020"><font color="#87df71">:index</font></span> <br />
+<font color="#8fa5d1"> 15 </font>    <span style="background-color: #202020"><font color="#d7a0d7">end</font></span><br />
+<font color="#8fa5d1"> 16 </font>  <span style="background-color: #202020"><font color="#d7a0d7">end</font></span><br />
+<font color="#8fa5d1"> 17 </font><span style="background-color: #202020"><font color="#d7a0d7">end</font></span><br/></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></div>
 
 	<p><code>-- VISUAL BLOCK --</code><br />There&#8217;s a wonderful way to indent many lines and then unindent them in vim. You can select a block in vim (like a rectangle) by using the <em>visual block</em> mode. Press <code>Ctrl-v</code>. Now you can delete that or if you&#8217;d rather, you can replace it with zeroes by doing <code>r0</code>. To indent a block you would go to the first character on the line, get into <em>visual block</em> mode, and press <code>j</code> until you&#8217;ve selected all your desired lines. Now comes the magic: press <code>I</code> (that&#8217;s an uppercase i) and your desired indenting or number of zeroes if that&#8217;s what you like and then escape. You can thank me for the enlightening now.</p>
         </div>

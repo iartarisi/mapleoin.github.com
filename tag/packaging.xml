@@ -5,7 +5,7 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Mon, 24 Sep 2012 19:33:29 +0300</pubDate>
+        <pubDate>Tue, 13 Nov 2012 02:34:38 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Beginning packaging for Fedora</title>
@@ -19,7 +19,7 @@
 
 	&lt;p&gt;I started slow, with quite a complex application to package: &lt;a href="http://calibre.kovidgoyal.net/"&gt;Calibre&lt;/a&gt;. Having all those different distros is great when you&amp;#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&amp;#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing &lt;a href="http://news.ycombinator.org"&gt;Hacker News&lt;/a&gt; as usual when I found a link to &lt;a href="http://developers.facebook.com/news.php?blog=1&amp;#38;amp;story=301"&gt;facebook&amp;#8217;s opensourcing of their web server framework&lt;/a&gt; . I just rushed to the download and installation instructions page and I quickly got it packaged. I&amp;#8217;m not saying it&amp;#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&amp;#8217;s fun to think that you&amp;#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&amp;#8217;ve found someone willing to sponsor me into the &lt;strong&gt;packager&lt;/strong&gt; group. Anyone in a package-review mood? ;)&lt;/p&gt;
 
-	&lt;p&gt;My journey into the packaging world has been enlightening so far and the good thing is I&amp;#8217;m just beginning. There&amp;#8217;s a whole new world to be discovered out there and also another part of the fedora community.&lt;/p&gt; </description>
+	&lt;p&gt;My journey into the packaging world has been enlightening so far and the good thing is I&amp;#8217;m just beginning. There&amp;#8217;s a whole new world to be discovered out there and also another part of the fedora community. &lt;/p&gt; </description>
             <pubDate>Fri, 11 Sep 2009 10:00 GMT</pubDate>
         </item>
     </channel>
