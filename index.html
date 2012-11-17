@@ -116,8 +116,8 @@
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&quot;builtins.open&quot;</span><span class="p">,</span>
-                   <span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(),</span>
-                                <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
+                    <span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(),</span>
+                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -151,8 +151,8 @@
 
 	<p>Looks good.</p>
 
-<pre><code>RuntimeError: maximum recursion depth exceeded in comparison
-</code></pre>
+<pre>RuntimeError: maximum recursion depth exceeded in comparison
+</pre>
 
 	<p>Oops. It seems that we got into infinite recursion because we&#8217;re calling the mocked <code>open()</code> from the mocking function. We have to make sure that once we&#8217;ve mocked a call to <code>open()</code>, there&#8217;s no way we&#8217;re going to go through that mock again. Thankfully, the mock library provides methods to turn mocking on and off without using the <code>with mock.patch</code> context manager. Take a look at <code>mock.patch</code>&#8217;s <a href="http://www.voidspace.org.uk/python/mock/patch.html#patch-methods-start-and-stop">start and stop methods</a>.</p>
 
@@ -241,7 +241,7 @@
 
 	<p>The <code>try: except:</code> block around <code>yield</code> is for the enclosing context managers. When they get a <code>NotMocked</code> exception by running the code inside them, they check if it&#8217;s the file they&#8217;re mocking, in which case they ignore it. (Basically telling the nested context manager: <em>I&#8217;ve got you covered.</em>). If the <code>NotMocked</code> exception was raised on a file that&#8217;s different than the one they&#8217;re mocking, they simply re-raise it for someone else to deal with (either an enclosing context-manager) or the user.</p>
 
-	<p>If we now added another open file call in our initial <code>get_proxy()</code> function, or inside the with statement in the test case,</p>
+	<p>If we now added another <code>open()</code> call in our initial <code>get_proxy()</code> function, or inside the with statement in the test case,</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
