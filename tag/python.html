@@ -8,6 +8,7 @@
 <link rel="shortcut icon" href="/favico.ico" />
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/tag/python.xml" />
 <title>Revolution blahg 
+    | Articles tagged python
 </title>
 </head>
 <body>
@@ -509,7 +510,7 @@
 
 	<p>Testing for a boolean value is really easy:</p>
 
-<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
+<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">published</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -554,8 +555,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="s">&quot;hackety@example.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">website</span><span class="p">,</span> <span class="s">&quot;example.com&quot;</span><span class="p">)</span>
      <span class="k">def</span> <span class="nf">testUnique</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> 
-                <span class="n">name</span><span class="o">=</span><span class="s">&quot;hacketyhack&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&quot;new@example.com&quot;</span><span class="p">,</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="s">&quot;hacketyhack&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&quot;new@example.com&quot;</span><span class="p">,</span>
                 <span class="n">website</span><span class="o">=</span><span class="s">&quot;example.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span>
                 <span class="n">name</span><span class="o">=</span><span class="s">&quot;nothackety&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&quot;hackety@example.com&quot;</span><span class="p">,</span>
@@ -583,11 +584,11 @@
                 <span class="n">category</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;hacketyhack&quot;</span><span class="p">,</span>
                 <span class="n">email</span><span class="o">=</span><span class="s">&quot;hackety@example.com&quot;</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="s">&quot;example.com&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">Comment</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="s">&quot;If the implementation is </span>
-        <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.</span><span class="s">&quot;, </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">Comment</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="s">&quot;If the implementation is</span>
+        <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.</span><span class="s">&quot;,</span>
         <span class="n">post</span><span class="o">=</span><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">author</span><span class="o">=</span><span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">def</span> <span class="nf">testExist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s">&quot;If the implementation is </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s">&quot;If the implementation is</span>
         <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.</span><span class="s">&quot;)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">post</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
@@ -680,7 +681,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote"><a href="#fne0a15e6b-1610-4597-9037-bfbc469baf43">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn4cb9423f-c760-4988-b101-fda0d0c2a5cd">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -726,7 +727,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p id="fne0a15e6b-1610-4597-9037-bfbc469baf43" class="footnote"><sup>3</sup>merci gheorghe!</p>
+	<p id="fn4cb9423f-c760-4988-b101-fda0d0c2a5cd" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
