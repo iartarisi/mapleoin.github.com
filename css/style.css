@@ -3,7 +3,7 @@ body {
     text-align: justify;
     background-color: #545454; 
     margin: 1em 2em 0;
-    font-family: sans-serif;
+    font-family: Trykker, sans-serif;
     overflow: auto;
     color: #545454;
 }
@@ -16,16 +16,18 @@ a {
     margin: 0;
     border: none;
     font-size: 1.2em;
+    font-family: Trocchi, serif;
     float: right;
     color: #545454;
 }
 h1 {
-    font-family: serif;
+    font-family: Trocchi, serif;
     font-style: italic;
 }
 h2 {
     margin-top: 2em;
-    font-family: serif;
+    font-family: Trocchi, serif;
+    font-weight: normal;
 }
 
 h2 a:link, h2 a:visited {
@@ -40,6 +42,7 @@ h2 a:hover {
 a:visited, a:hover {
     color: #040;
 }
+
 h3 {
     font-size: 1em;
     font-weight: normal;
@@ -50,7 +53,6 @@ h3 {
 
 h4 {
     letter-spacing: 0.1em;
-    color: #232;
 }
 
 pre {
@@ -94,12 +96,13 @@ pre {
 #recent ul {
     clear: both;
     color: #545454;
-    list-style-type: circle;
+    list-style-type: none;
 }
 ul {
     list-style: none;
 }
 #sidebar h4 {
+    font-weight: normal;
     font-family: serif;
     font-size: 1.4em;
     padding-bottom: .5em;
@@ -117,7 +120,7 @@ ul {
 }
 #content {
     padding: .1em 3em 3em 0;
-    border-right: solid 2px #040;
+    border-right: solid 2px #545454;
     width: 70%;
     min-height: 40em;
 }
@@ -152,10 +155,7 @@ ul {
     margin: 0;
     padding: 0;
 }
-.entry ul {
-    list-style-type: square;
-    list-style-position: inside;
-}
+
 code {
     font-family: monospace;
     background-color: #efe;
@@ -186,9 +186,4 @@ a.comments:hover, a.comments:visited {
     font-size: 1em;
     font-style: italic;
     font-family: sans-serif;
-}
-
-#cuZmeura { 
-    float: right;
-    margin: 2em 0 2em;
 }
