@@ -34,6 +34,7 @@ h2 a:link, h2 a:visited {
     text-decoration: none;
     color: #545454;
 }
+
 h2 a:hover {
     color: #080;
     text-decoration: underline;
@@ -47,7 +48,7 @@ h3 {
     font-size: 1em;
     font-weight: normal;
     font-style: italic;
-    font-family: sans-serif;
+    font-family: Trocchi, sans-serif;
     color: #898;
 }
 
@@ -72,7 +73,7 @@ pre {
     border-top: .1em solid #080;
     margin: 0 1em 0 0;
     text-decoration: none;
-    font-family: serif;
+    font-family: Trocchi, serif;
 }
 #header a:hover, #header a:active {
     border-bottom: .1em solid #545454;
@@ -86,8 +87,7 @@ pre {
 #sidebar {
     text-align: right;
     padding: 4em 1em ;
-    font-size: .9em;
-    width: 20%;
+    width: 25%;
     float: right;
 }
 #sidebar ul {
@@ -114,14 +114,13 @@ ul {
     width: auto;
     height: auto;
     line-height: 1.6em;
-    font-size: .9em;
     padding: 2em 2em 0 4em;
     margin: 0 0 2em;
 }
 #content {
     padding: .1em 3em 3em 0;
     border-right: solid 2px #545454;
-    width: 70%;
+    width: 67%;
     min-height: 40em;
 }
 
@@ -130,18 +129,19 @@ ul {
 }
 #smallprint {
     margin: auto;
-    color: #898;
+    color: #ccc;
     text-align: center;
     padding-bottom: 1em;
     font-size: .8em;
 }
 
 #smallprint a {
-    color: #898;
+    color: #ddd;
 }
 
 .entry {
     margin-top: 1em;
+    font-size: 1.1em;
 }
 .entry p {
     padding-bottom: 1em;

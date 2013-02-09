@@ -2,14 +2,16 @@ h1#title{
     text-align: center;
     font-weight: normal;
     font-style: normal;
+    margin-top: 1em;
 }
 
 
-h2.year { 
-    border-bottom: .3em solid;
-    background-color: #ded;
-    padding: .3em;
-    margin-bottom: .5em;
+h2.year {
+    text-align: right;
+    border-top: .1em solid #656565;
+    color: #656565;
+    padding: .7em 0;
+    margin-bottom: -1em;
 }
 
 h3.month {
