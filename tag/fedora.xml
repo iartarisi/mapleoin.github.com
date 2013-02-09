@@ -5,12 +5,12 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 06 Feb 2013 14:31:12 +0200</pubDate>
+        <pubDate>Sat, 09 Feb 2013 22:35:37 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.eu/perma/FOSDEM-2012-review</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
@@ -93,7 +93,7 @@
         <item>
             <title>Copr final report</title>
             <link>http://mapleoin.eu/perma/copr-final-report</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;&lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; is now over for me and I&amp;#8217;m really glad of what I learned and coded this summer.&lt;/p&gt;
 
 	&lt;p&gt;Our initial goal was to develop a TurboGears2 Web app and &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Fedora Copr&lt;/a&gt;. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&amp;#8217;m glad to have played a role in its development.&lt;/p&gt;
@@ -112,7 +112,7 @@
         <item>
             <title>Fedora Summer Coding midterm</title>
             <link>http://mapleoin.eu/perma/midterm-report</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;This midterm scared me when I found out about it on Friday when I looked at the schedule I had set myself. However, I have done the work that I should have done by this point in the project. When I wrote the proposal I had assumed that the buildsystem would already be built before me starting coding on the TG app, but that is not the case. Therefore I could only code the user-facing &lt;span class="caps"&gt;JSON&lt;/span&gt; interface that interacts with the DB as it would if the buildsystem would provide it with packages and repos. Except that there are no packages and repos at this stage.&lt;/p&gt;
 
 	&lt;p&gt;So for this midterm, we&amp;#8217;ve got working Copr &lt;span class="caps"&gt;CRUD&lt;/span&gt;, dependency handling and release/repo editing on a Copr. I also coded the Package &lt;span class="caps"&gt;CRUD&lt;/span&gt;, which basically allows for uploads of SRPMs, stores the info in the db and also allows for information retrieval and deleting packages. Actually building packages and retrieving packagebuilds will have to wait for the buildsystem to be built.&lt;/p&gt;
@@ -136,7 +136,7 @@
         <item>
             <title>Copr design - being all things to all people</title>
             <link>http://mapleoin.eu/perma/copr-design-being-all-things</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;Lots of things happened this third Fedora Summer Coding week. Most people are already wrapping up, but I feel like I&amp;#8217;m still at the beginning.&lt;/p&gt;
 
 	&lt;p&gt;The biggest accomplishment of this week has got to be the fact that we (I and my mentor, Toshio) settled on a stable design for representing Coprs, Repos and their relationships. It was harder than it might seem, since we&amp;#8217;ve got all these different entities in Fedora: we&amp;#8217;ve got repos that you could look at as being either a directory with a release and an architecture or a repofile that is the same across releases and arches. When talking about releases we&amp;#8217;ve got Fedora releases (e.g. Fedora 13, Fedora 14) and then we&amp;#8217;ve got the packages for other distros with their own releases: &lt;span class="caps"&gt;EPEL&lt;/span&gt; and &lt;span class="caps"&gt;OLPC&lt;/span&gt;.&lt;/p&gt;
@@ -157,7 +157,7 @@
         <item>
             <title>CRUD for Coprs and testing</title>
             <link>http://mapleoin.eu/perma/basic-coprs-crud</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;This last week I worked on the first controller for the &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Copr&lt;/a&gt; &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010_proposal_-_Copr_TG_app"&gt;TG App&lt;/a&gt;. There is now a &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; to &lt;span class="caps"&gt;CRUD&lt;/span&gt; Coprs in the TG App&amp;#8217;s database. It also supports adding/removing Copr dependencies. And everything in this first controller is (mostly?) tested with nose unit tests. The happy thing is I&amp;#8217;m still on schedule, though I&amp;#8217;m not ahead of it anymore, which I actually expected.&lt;/p&gt;
 
 	&lt;p&gt;I encountered a couple of problems while setting up testing. I installed python-fedora&amp;#8217;s &lt;span class="caps"&gt;FAS&lt;/span&gt; authorization repoze-who plugin and wasted a lot of time trying to get that working with webtest. In the process I managed to screw up something in my TurboGears installation. Since I was already too deep down the rabbit&amp;#8217;s hole I gave up on it. (I also figured out that I don&amp;#8217;t actually need to test anything about the &lt;span class="caps"&gt;FAS&lt;/span&gt; integration so I don&amp;#8217;t even need to install it). So I proceeded to install TG2 inside a python virtualenv which feels a lot more hygienic and will be a lot easier to replace in case of future screw-ups. I had a few problems there aswell since the documented way to install TurboGears2 without distro-packages is broken &lt;span class="caps"&gt;ATM&lt;/span&gt;, but I now have virtualenv! Yay!&lt;/p&gt;
@@ -168,7 +168,7 @@
         <item>
             <title>The late Fedora Summer coder</title>
             <link>http://mapleoin.eu/perma/the-late-fedora-summer-coder</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I started my &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; last week. Although most people started almost two months ago, I chose (and was allowed to &amp;#8211; Yay, &lt;acronym title="Fedora Summer Coding"&gt;FSC&lt;/acronym&gt;!) a different schedule because I just finished college last week.&lt;/p&gt;
 
 	&lt;p&gt;This summer I&amp;#8217;ll be working on a new project for Fedora &amp;#8211; &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Copr&lt;/a&gt;. Fedora Copr will allow any Fedorian to have their own package repository with packages built and hosted by &lt;a href="https://fedoraproject.org/wiki/Infrastructure"&gt;Fedora&amp;#8217;s Infrastructure&lt;/a&gt;. My mentor this summer will be &lt;a href="http://anonbadger.wordpress.com/"&gt;Toshio&lt;/a&gt;, I&amp;#8217;ve always enjoyed working with him and this summer will be no different. &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010_proposal_-_Copr_TG_app"&gt;Here&lt;/a&gt; is my actual &lt;acronym title="Fedora Summer Coding"&gt;FSC&lt;/acronym&gt; proposal. Although the things written in that proposal are turning out to be a bit inaccurate, it&amp;#8217;s still a good bird&amp;#8217;s eye view of what I&amp;#8217;m going to do this summer. &lt;/p&gt;
@@ -187,7 +187,7 @@
         <item>
             <title>Beginning packaging for Fedora</title>
             <link>http://mapleoin.eu/perma/packaging-for-fedora</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;With &lt;span class="caps"&gt;GSOC&lt;/span&gt; now over, which I should write a blogpost about soon, I&amp;#8217;ve taken a break from pkgdb and web programming and started developing another skill.&lt;/p&gt;
 
 	&lt;p&gt;The fact that &lt;a href="https://admin.fedoraproject.org/pkgdb/users/packages/mapleoin"&gt;this page&lt;/a&gt; is empty has been bugging me for too much time, so I set out to fix it. I also wanted to find out more about the packaging process and the road of a package before it gets accepted into fedora&amp;#8217;s official repos which is a bit complex. This knowledge would also help me better understand the parts of pkgdb which packagers interact with.&lt;/p&gt;
@@ -202,7 +202,7 @@
         <item>
             <title>FUDCon Berlin</title>
             <link>http://mapleoin.eu/perma/fudcon-berlin</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I just got back from this year&amp;#8217;s &lt;acronym title="Europe, the Middle East and Africa"&gt;EMEA&lt;/acronym&gt; &lt;acronym title="Fedora Users and Developers Conference"&gt;FUDCON&lt;/acronym&gt; in Berlin with &lt;a href="http://nicubunu.blogspot.com"&gt;Nicu&lt;/a&gt; . I didn&amp;#8217;t have time to write anything while I was there because so much was happening all the time.&lt;/p&gt;
 
 	&lt;p&gt;&lt;img src="http://fedora.nicubunu.ro/photos/fudcon2009berlin/613-img_1477.jpg.medium.jpeg" alt="" /&gt;&lt;/p&gt;
@@ -229,7 +229,7 @@
         <item>
             <title>eLiberatica - the aftermath!</title>
             <link>http://mapleoin.eu/perma/eLiberatica-aftermath</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;Wow, what an event! It was way more awesome than I expected. This is probably one of the later posts to get to the planet from eLiberatica because I wanted to form a complete opinion on the event.&lt;/p&gt;
 
 	&lt;p&gt;eLiberatica is the first big open source and free software conference I&amp;#8217;ve been to. The scale of it is quite amazing for something this far East in Europe and especially for my country. Some high-profile guest even said that he was astonished at the presence of very influential, key &lt;span class="caps"&gt;FLOSS&lt;/span&gt; personalities that aren&amp;#8217;t present at some bigger events.&lt;br /&gt;the booths&lt;/p&gt;
@@ -260,7 +260,7 @@
         <item>
             <title>Fedora Business Cards</title>
             <link>http://mapleoin.eu/perma/fedora-business-cards</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;A few days ago, me and a few friends from Fedora Romania decided we&amp;#8217;d like some fedora business cards for the upcoming eLiberatica conference. &lt;a href="http://ianweller.org"&gt;Ian Weller&lt;/a&gt; had already developed an official &lt;a href="https://fedoraproject.org/wiki/Business_cards"&gt;template&lt;/a&gt; and even created a cool python generator script and packaged it.&lt;/p&gt;
 
 	&lt;p&gt;The problem, however, was that it only supported US-style business cards which are a bit smaller than the Romanian/Central European ones. Live and learn… It seems that there are a lot of &lt;a href="http://en.wikipedia.org/wiki/Business_cards#Dimensions"&gt;different sizes&lt;/a&gt; actually.&lt;/p&gt;
@@ -275,7 +275,7 @@
         <item>
             <title>GSOC - it begins...</title>
             <link>http://mapleoin.eu/perma/GSOC-it-begins</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;My Fedora proposal got accepted to this year&amp;#8217;s Google Summer of Code Program. You can look at a short abstract &lt;a href="http://socghop.appspot.com/student_project/show/google/gsoc2009/redhat/t124024691190"&gt;here&lt;/a&gt; . Now I&amp;#8217;m going to try to explain what this project is about and what I did to prepare for being accepted, hopefully without going mad about how happy I am about it.&lt;/p&gt;
 
 	&lt;p&gt;I started work on the Fedora Project almost a year ago. One day I popped on the mailing list and then on the irc channel of the infrastructure team and asked for something to do. Luckily, Toshio Kuratomi was on the watch and after giving me a short tour of the various projects he could help me get familiar with, I picked the package database. Most of the work I&amp;#8217;ve done so far is in the &lt;a href="https://admin.fedoraproject.org/pkgdb/"&gt;pkgdb&lt;/a&gt; (the search capability is the most obvious thing I worked on). The overview on the front page describes it quite well; it&amp;#8217;s got package information and it&amp;#8217;s aimed at package developers. It&amp;#8217;s not a very famous part of the fedora project websites, certainly not as famous as something like packages.ubuntu.com is for ubuntu. But that&amp;#8217;s not what it was intended for, even if that&amp;#8217;s what attracted me to the project at first. I liked the exposure of such a website, but also the fact that, at the time, it was easier for me to understand what it did and how it worked :).&lt;/p&gt;

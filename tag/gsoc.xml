@@ -5,12 +5,12 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 06 Feb 2013 14:31:12 +0200</pubDate>
+        <pubDate>Sat, 09 Feb 2013 22:35:37 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>GSOC - it begins...</title>
             <link>http://mapleoin.eu/perma/GSOC-it-begins</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;My Fedora proposal got accepted to this year&amp;#8217;s Google Summer of Code Program. You can look at a short abstract &lt;a href="http://socghop.appspot.com/student_project/show/google/gsoc2009/redhat/t124024691190"&gt;here&lt;/a&gt; . Now I&amp;#8217;m going to try to explain what this project is about and what I did to prepare for being accepted, hopefully without going mad about how happy I am about it.&lt;/p&gt;
 
 	&lt;p&gt;I started work on the Fedora Project almost a year ago. One day I popped on the mailing list and then on the irc channel of the infrastructure team and asked for something to do. Luckily, Toshio Kuratomi was on the watch and after giving me a short tour of the various projects he could help me get familiar with, I picked the package database. Most of the work I&amp;#8217;ve done so far is in the &lt;a href="https://admin.fedoraproject.org/pkgdb/"&gt;pkgdb&lt;/a&gt; (the search capability is the most obvious thing I worked on). The overview on the front page describes it quite well; it&amp;#8217;s got package information and it&amp;#8217;s aimed at package developers. It&amp;#8217;s not a very famous part of the fedora project websites, certainly not as famous as something like packages.ubuntu.com is for ubuntu. But that&amp;#8217;s not what it was intended for, even if that&amp;#8217;s what attracted me to the project at first. I liked the exposure of such a website, but also the fact that, at the time, it was easier for me to understand what it did and how it worked :).&lt;/p&gt;

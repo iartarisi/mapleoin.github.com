@@ -5,12 +5,12 @@
         <link>http://mapleoin.eu/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 06 Feb 2013 14:31:12 +0200</pubDate>
+        <pubDate>Sat, 09 Feb 2013 22:35:37 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Mocking python's file open() builtin</title>
             <link>http://mapleoin.eu/perma/mocking-python-file-open</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I was working on a method to read some proxy information from several files today and then I wanted to test it.&lt;/p&gt;
 
 	&lt;p&gt;A &lt;em&gt;very&lt;/em&gt; simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:&lt;/p&gt;
@@ -314,7 +314,7 @@
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.eu/perma/FOSDEM-2012-review</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
@@ -397,7 +397,7 @@
         <item>
             <title>Data Visualizations</title>
             <link>http://mapleoin.eu/perma/data-visualizations</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
 
 	&lt;p&gt;There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&amp;#8217;d better leave it to a professional.&lt;/p&gt;
@@ -410,7 +410,7 @@
         <item>
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.eu/perma/sql-and-relational-theory-master</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
@@ -425,7 +425,7 @@
         <item>
             <title>Copr final report</title>
             <link>http://mapleoin.eu/perma/copr-final-report</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;&lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; is now over for me and I&amp;#8217;m really glad of what I learned and coded this summer.&lt;/p&gt;
 
 	&lt;p&gt;Our initial goal was to develop a TurboGears2 Web app and &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Fedora Copr&lt;/a&gt;. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&amp;#8217;m glad to have played a role in its development.&lt;/p&gt;
@@ -444,7 +444,7 @@
         <item>
             <title>FSC: moving to the buildsystem</title>
             <link>http://mapleoin.eu/perma/moving-on-to-the-buildsystem</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I started working on the buildsystem part of copr this week. Right now, I&amp;#8217;m still getting familiar with &lt;a href="http://fedorahosted.org/func"&gt;func&lt;/a&gt;. That&amp;#8217;s what we&amp;#8217;ll be using to communicate with the builder machines: get them running errands and get back status reports at any time. I spent a lot of time getting a virtual machine setup with libvirt; networking especially was a pain (mostly because of my pppoe connection I think).&lt;/p&gt;
 
 	&lt;p&gt;One nice feature of func that I think we&amp;#8217;ll be using a lot is the &lt;a href="https://fedorahosted.org/func/wiki/AsyncUsage"&gt;async mode&lt;/a&gt;. A mock build takes a lot of time, what with all the yumming and compiling. So starting a task via one of the user interfaces and then choosing whether or not to keep watching it and what to watch for will probably be an essential part of the buildsystem&amp;#8217;s functionality.&lt;/p&gt;
@@ -455,7 +455,7 @@
         <item>
             <title>the Copr client part II</title>
             <link>http://mapleoin.eu/perma/copr-client-part-2</link>
-            <author>mapleoin@lavabit.ro (mapleoin)</author>
+            <author>mapleoin@lavabit.com (mapleoin)</author>
             <description> 	&lt;p&gt;I spent this week finishing up the copr client. It now supports all the functionality that the Copr TG &lt;span class="caps"&gt;API&lt;/span&gt; supports. It&amp;#8217;s not much, but it&amp;#8217;s a starting point.&lt;/p&gt;
 
 	&lt;p&gt;I spent a lot of time trying to understand the way repoze.who works and the authentication plugins that we&amp;#8217;re using for the &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt; &lt;a href="https://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; authentication plugin. I finally understood it, I think&amp;#8230; The Fedora client library didn&amp;#8217;t support basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; Authentication for TG2 apps so I had to figure out how to integrate that into our authentication plugin. It was quite fun all in all, repoze.who has a very interesting way of doing authentication and writing wsgi middleware is always exciting ;). This patch will hopefully go upstream to python-fedora now.&lt;/p&gt;
