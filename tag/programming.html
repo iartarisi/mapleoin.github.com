@@ -314,6 +314,8 @@
 <pre>AssertionError: The file /dev/null was not opened.
 </pre>
 
+	<p>EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
+
 	<p>So that&#8217;s about it, we now have a rock-solid <code>mock_open</code> function for mocking the builtin <code>open()</code>.</p>
 
 	<p>Before we set it free, we need to add a nice docstring to it:</p>
@@ -333,17 +335,16 @@
 <span class="sd">    not mocked by mock_open.</span>
 <span class="sd">.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">open_files</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
             <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-        <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">open_files</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
     <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -355,7 +356,7 @@
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s">&quot;The file </span><span class="si">%s</span><span class="s"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
@@ -842,7 +843,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn5f823174-1663-46d5-b0a0-0f7b07bd5cdc">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn8ee01709-83c9-457c-9214-d60111176608">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -888,7 +889,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p id="fn5f823174-1663-46d5-b0a0-0f7b07bd5cdc" class="footnote"><sup>3</sup>merci gheorghe!</p>
+	<p id="fn8ee01709-83c9-457c-9214-d60111176608" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
