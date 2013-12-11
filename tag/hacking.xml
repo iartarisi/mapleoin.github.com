@@ -2,15 +2,15 @@
 <rss version="1.0">
     <channel>
         <title>Revolution blahg</title>
-        <link>http://mapleoin.eu/</link>
+        <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 09 Feb 2013 22:35:37 +0200</pubDate>
+        <pubDate>Wed, 11 Dec 2013 18:45:04 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Ruby koans</title>
-            <link>http://mapleoin.eu/perma/ruby-koans</link>
-            <author>mapleoin@lavabit.com (mapleoin)</author>
+            <link>http://mapleoin.github.io/perma/ruby-koans</link>
+            <author>mapleoin</author>
             <description> 	&lt;p&gt;I had a great time today with &lt;a href="http://www.rubykoans.com/"&gt;Ruby Koans&lt;/a&gt;. It took me about 5 hours in all. A good way to spend a Sunday afternoon I suppose.&lt;/p&gt;
 
 	&lt;p&gt;These Ruby Koans are a great way to go on a quick journey through a lot of Ruby&amp;#8217;s common features. You basically have to edit tests in order to get them working. It&amp;#8217;s mostly reading tests actually, but the fact that you have to fill in some blanks keeps the mind from wandering. There are also a couple of exercises which imply a bit more coding.&lt;/p&gt;
@@ -24,8 +24,8 @@
         </item>
         <item>
             <title>Cum să peticești un rpm (patch rpm)</title>
-            <link>http://mapleoin.eu/perma/cum-sa-peticesti-un-rpm</link>
-            <author>mapleoin@lavabit.com (mapleoin)</author>
+            <link>http://mapleoin.github.io/perma/cum-sa-peticesti-un-rpm</link>
+            <author>mapleoin</author>
             <description> 	&lt;p&gt;O să vă descriu cum am aplicat un petec pentru unul dintre pachetele pentru care sunt responsabil la fedora: calibre, în timp ce așteptam să-mi vină pizza http://www.fedoraproject.ro/am-lansat-fedora-12-avans . Petecul este răspunsul la un bug report: https://bugzilla.redhat.com/show_bug.cgi?id=537525 . Calibre verifică de fiecare dată când este pornit dacă pe situl oficial a apărut o nouă versiune și dacă a apărut, îl anunță pe utilizator printr-un pop-up că trebuie să actualizeze aplicația. Cum fedora are propriul management al pachetelor și deci și al actualizărilor, este recomandat ca pachetele noi să fie instalate folosind yum; deci mesajul trebuie eliminat.&lt;/p&gt;
 
 	&lt;p&gt;Mai întâi trebuie să descărcăm sursele actuale ale rpm-ului (în momentul în care am scris patchul, în repo-uri cea mai recentă versiune era 0.6.21-1, acum ar trebui să fie una cu patchul deja aplicat):&lt;/p&gt;
@@ -210,8 +210,8 @@
         </item>
         <item>
             <title>The Productive Programmer</title>
-            <link>http://mapleoin.eu/perma/productive-programmer-review</link>
-            <author>mapleoin@lavabit.com (mapleoin)</author>
+            <link>http://mapleoin.github.io/perma/productive-programmer-review</link>
+            <author>mapleoin</author>
             <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;#38;amp;tag=httpmapleoinb-20&amp;#38;amp;linkCode=as2&amp;#38;amp;camp=1789&amp;#38;amp;creative=390957&amp;#38;amp;creativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
 
 	&lt;p&gt;I&amp;#8217;ve already got a bunch of books piled up and waiting to be read, some of which I&amp;#8217;ve reached the middle of and some of which I&amp;#8217;ve read only the introduction to. I was bored today and this looked like an easy read that I could drop at any time. It is an easy read, but the fact is, it&amp;#8217;s very catchy. It draws you in and doesn&amp;#8217;t want to be let go. It&amp;#8217;s a great way to spend half a day.&lt;/p&gt;
@@ -221,8 +221,8 @@
         </item>
         <item>
             <title>Fedora Business Cards</title>
-            <link>http://mapleoin.eu/perma/fedora-business-cards</link>
-            <author>mapleoin@lavabit.com (mapleoin)</author>
+            <link>http://mapleoin.github.io/perma/fedora-business-cards</link>
+            <author>mapleoin</author>
             <description> 	&lt;p&gt;A few days ago, me and a few friends from Fedora Romania decided we&amp;#8217;d like some fedora business cards for the upcoming eLiberatica conference. &lt;a href="http://ianweller.org"&gt;Ian Weller&lt;/a&gt; had already developed an official &lt;a href="https://fedoraproject.org/wiki/Business_cards"&gt;template&lt;/a&gt; and even created a cool python generator script and packaged it.&lt;/p&gt;
 
 	&lt;p&gt;The problem, however, was that it only supported US-style business cards which are a bit smaller than the Romanian/Central European ones. Live and learn… It seems that there are a lot of &lt;a href="http://en.wikipedia.org/wiki/Business_cards#Dimensions"&gt;different sizes&lt;/a&gt; actually.&lt;/p&gt;
