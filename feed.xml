@@ -5,8 +5,24 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 13 Feb 2016 04:00:05 +0200</pubDate>
+        <pubDate>Sun, 14 Feb 2016 01:36:21 +0200</pubDate>
         <generator>pyBlee!</generator>
+        <item>
+            <title>Change the system timezone for the python interpreter</title>
+            <link>http://mapleoin.github.io/perma/change-external-timezone-in-python</link>
+            <author>mapleoin</author>
+            <description> 	&lt;p&gt;Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in &lt;span class="caps"&gt;GMT&lt;/span&gt; (which is mostly the same as &lt;span class="caps"&gt;UTC&lt;/span&gt;).&lt;/p&gt;
+
+	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
+
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt; </description>
+            <pubDate>Sat, 13 Feb 2016 23:24 GMT</pubDate>
+        </item>
         <item>
             <title>The XY Problem</title>
             <link>http://mapleoin.github.io/perma/xy-problem</link>
@@ -452,17 +468,6 @@
 
 	&lt;p&gt;My mentor, &lt;a href="http://anonbadger.wordpress.com/"&gt;Toshio Kuratomi&lt;/a&gt; was great as always. This isn&amp;#8217;t the first project I&amp;#8217;ve had him as my mentor. He was always there to talk to and always had great answers to all of my questions. He had great patience in answering and explaining anything I asked about. Our discussions were mostly about the architecture of the app we were building, but he also gave me great tips on the inner workings of python-fedora or on deploying the web app. I felt I had a lot of liberty to decide the way things will get implemented. Regardless of whether we will ever work together again, Toshio will always be a great inspiration for me as a programmer and as a person.&lt;/p&gt; </description>
             <pubDate>Tue, 28 Sep 2010 15:33 GMT</pubDate>
-        </item>
-        <item>
-            <title>FSC: moving to the buildsystem</title>
-            <link>http://mapleoin.github.io/perma/moving-on-to-the-buildsystem</link>
-            <author>mapleoin</author>
-            <description> 	&lt;p&gt;I started working on the buildsystem part of copr this week. Right now, I&amp;#8217;m still getting familiar with &lt;a href="http://fedorahosted.org/func"&gt;func&lt;/a&gt;. That&amp;#8217;s what we&amp;#8217;ll be using to communicate with the builder machines: get them running errands and get back status reports at any time. I spent a lot of time getting a virtual machine setup with libvirt; networking especially was a pain (mostly because of my pppoe connection I think).&lt;/p&gt;
-
-	&lt;p&gt;One nice feature of func that I think we&amp;#8217;ll be using a lot is the &lt;a href="https://fedorahosted.org/func/wiki/AsyncUsage"&gt;async mode&lt;/a&gt;. A mock build takes a lot of time, what with all the yumming and compiling. So starting a task via one of the user interfaces and then choosing whether or not to keep watching it and what to watch for will probably be an essential part of the buildsystem&amp;#8217;s functionality.&lt;/p&gt;
-
-	&lt;p&gt;In the meantime, we&amp;#8217;re slowly &lt;a href="https://fedorahosted.org/fedora-infrastructure/ticket/2339"&gt;getting resources&lt;/a&gt; for the deployment of Copr. Toshio got a running instance of the current state of the TG app on &lt;a href="http://publictest1.fedoraproject.org/copr/"&gt;publictest1&lt;/a&gt;. It looks just like a quickstarted TG app, because it doesn&amp;#8217;t have any WebUI. But it can &lt;span class="caps"&gt;CRUD&lt;/span&gt; coprs, handle dependencies between them, handle permissions and &lt;span class="caps"&gt;CRD&lt;/span&gt; packages. Most of the functions require a &lt;a href="http://admin.fedoraproject.org/accounts"&gt;FAS&lt;/a&gt; account, but you don&amp;#8217;t need one to see a &lt;a href="http://publictest1.fedoraproject.org/copr/coprs.json"&gt;list of all the coprs&lt;/a&gt;, or a &lt;a href="http://publictest1.fedoraproject.org/copr/firstcopr/packages.json"&gt;list of packages in a copr&lt;/a&gt;.&lt;/p&gt; </description>
-            <pubDate>Mon, 06 Sep 2010 19:53 GMT</pubDate>
         </item>
     </channel>
 </rss>

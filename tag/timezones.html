@@ -8,9 +8,9 @@
 <link rel="stylesheet" type="text/css" href="/css/pygments.css" />
 <link rel="stylesheet" type="text/css" href="/css/archive.css" />
 <link rel="shortcut icon" href="/favico.ico" />
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/tag/timezones.xml" />
 <title>Revolution blahg 
-    | SQL and Relation Theory Master Class
+    | Change the system timezone for the python interpreter
 </title>
 </head>
 <body>
@@ -64,32 +64,33 @@
 </div><!--sidebar-->
 <div id="content">
     <div class="post">
-        <h2><a href="http://mapleoin.github.io/perma/sql-and-relational-theory-master">SQL and Relation Theory Master Class</a></h2>
-        <h3>Monday, September 26, 2011</h3>
+        <h2><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></h2>
+        <h3>Saturday, February 13, 2016</h3>
         <div class="entry">
-            	<p><a href="http://oreilly.com/catalog/0636920010005/" class="img"><img src="&gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /></a> This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.</p>
+            	<p>Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in <span class="caps">GMT</span> (which is mostly the same as <span class="caps">UTC</span>).</p>
 
-	<p>C. J. Date&#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.</p>
+	<p>I found a way to change the timezone, that is used by most of python&#8217;s stdlib, by changing the <code>TZ</code> environment variable:</p>
 
-	<p>C. J. Date sets out to demolish <span class="caps">SQL</span> as a language fit for relational theory and databases in general. While going through all the database theory concepts he presents the ideal case and an ideal query language (actually not ideal, but as he demonstrates, the correct ones) contrasting them to generic <span class="caps">SQL</span>. He also posits and sets out to prove, in a very interesting argument, that relational databases are the only way to store data and all other data models <strong>will not endure</strong>. </p>
-
-	<p>These are the days of <span class="caps">NOSQL</span> databases, but I think that the information contained in these lectures will be useful for a lot more time and in a lot more settings than just conventional <span class="caps">SQL</span> databases that are used in the majority of current systems. I oftentimes find myself thinking in relational terms even while designing the redis data model that I&#8217;m currently working on.</p>
-
-	<p>The only problem I have is that I sometimes felt that the lectures were a bit dull. It is also possible that I got this impression because I was watching too many without interruption :). While the content of the lectures is excellent, the presentation could be improved. Often times I felt that the audience present in the classroom could have done more to improve the dynamism of the lectures. It seemed that the only reason why they were there was so that the presenter wouldn&#8217;t feel alone. I would have enjoyed more challenging questions and especially some skeptical comments from industry veterans perhaps. I&#8217;m sure those would have led to very interesting debates considering the high class of the lecturer and presumably, the attendants.</p>
+<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
+<span class="o">(</span><span class="s1">&#39;GMT&#39;</span>, <span class="s1">&#39;BST&#39;</span><span class="o">)</span>
+$ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&#39;</span> python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
+<span class="o">(</span><span class="s1">&#39;CET&#39;</span>, <span class="s1">&#39;CEST&#39;</span><span class="o">)</span>
+</pre></div>
+</div>
         </div>
         <div class="post_tags">Tags:
-                <a href="/tag/foss.html">foss</a>
                 <a href="/tag/programming.html">programming</a>
-                <a href="/tag/databases.html">databases</a>
-                <a href="/tag/books.html">books</a>
+                <a href="/tag/python.html">python</a>
+                <a href="/tag/timezones.html">timezones</a>
+                <a href="/tag/TIL.html">TIL</a>
         </div>
         <br />
         <div id="disqus_thread"></div>
         <script>
     /*
     var disqus_config = function () {
-        this.page.url = 'http://mapleoin.github.io/perma/sql-and-relational-theory-master';
-        this.page.identifier = 'sql-and-relational-theory-master';
+        this.page.url = 'http://mapleoin.github.io/perma/change-external-timezone-in-python';
+        this.page.identifier = 'change-external-timezone-in-python';
     };
     */
     (function() {  // DON'T EDIT BELOW THIS LINE
