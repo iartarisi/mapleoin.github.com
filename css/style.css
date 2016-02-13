@@ -187,3 +187,8 @@ a.comments:hover, a.comments:visited {
     font-style: italic;
     font-family: sans-serif;
 }
+
+blockquote {
+    font-style: italic;
+    padding-left: 2em;
+}
