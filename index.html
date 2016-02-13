@@ -24,42 +24,60 @@
 <div id="recent">
 <h4>Recent</h4>
 <ul>
+  <li><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></li>
   <li><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></li>
   <li><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></li>
   <li><a href="http://mapleoin.github.io/perma/data-visualizations">Data Visualizations</a></li>
   <li><a href="http://mapleoin.github.io/perma/sql-and-relational-theory-master">SQL and Relation Theory Master Class</a></li>
-  <li><a href="http://mapleoin.github.io/perma/copr-final-report">Copr final report</a></li>
 </ul>
 </div><!--recent-->
 <br />
 <div id="tags">
 <h4>Tags</h4>
 <ul>
+  <li><a href="/tag/TIL.html">TIL</a></li>
+  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/fedora.html">fedora</a></li>
+  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
   <li><a href="/tag/packaging.html">packaging</a></li>
+  <li><a href="/tag/linux.html">linux</a></li>
+  <li><a href="/tag/copr.html">copr</a></li>
+  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
+  <li><a href="/tag/programming.html">programming</a></li>
+  <li><a href="/tag/hacking.html">hacking</a></li>
+  <li><a href="/tag/django.html">django</a></li>
   <li><a href="/tag/events.html">events</a></li>
   <li><a href="/tag/floss.html">floss</a></li>
-  <li><a href="/tag/foss.html">foss</a></li>
-  <li><a href="/tag/copr.html">copr</a></li>
-  <li><a href="/tag/databases.html">databases</a></li>
-  <li><a href="/tag/programming.html">programming</a></li>
-  <li><a href="/tag/music.html">music</a></li>
-  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
   <li><a href="/tag/python.html">python</a></li>
-  <li><a href="/tag/linux.html">linux</a></li>
-  <li><a href="/tag/unix.html">unix</a></li>
-  <li><a href="/tag/fedora.html">fedora</a></li>
+  <li><a href="/tag/databases.html">databases</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
-  <li><a href="/tag/django.html">django</a></li>
-  <li><a href="/tag/freebsd.html">freebsd</a></li>
-  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
-  <li><a href="/tag/hacking.html">hacking</a></li>
-  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/music.html">music</a></li>
   <li><a href="/tag/gsoc.html">gsoc</a></li>
   <li><a href="/tag/books.html">books</a></li>
+  <li><a href="/tag/freebsd.html">freebsd</a></li>
+  <li><a href="/tag/foss.html">foss</a></li>
+  <li><a href="/tag/unix.html">unix</a></li>
 </ul>
 </div><!--tags-->
 </div><!--sidebar-->
 <div id="content">
+    <div class="post">
+        <h2><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></h2>
+        <h3>Saturday, February 13, 2016</h3>
+        <div class="entry">
+            	<p>So there&#8217;s a website devoted to <a href="http://xyproblem.info/">The XY Problem</a>:</p>
+
+	<blockquote>
+		<p>The XY problem is asking about your attempted solution rather than<br />your actual problem. This leads to enormous amounts of wasted time and<br />energy, both on the part of people asking for help, and on the part of<br />those providing help.</p>
+	</blockquote>
+        </div>
+        <div class="post_tags">Tags:
+                <a href="/tag/programming.html">programming</a>
+                <a href="/tag/TIL.html">TIL</a>
+        </div>
+        <a href="http://mapleoin.github.io/perma/xy-problem#disqus_thread" class="comments">Comments</a>
+        <img class="separator" alt="post separator" src="/css/separator.png" />
+    </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></h2>
         <h3>Thursday, November 15, 2012</h3>
@@ -68,22 +86,22 @@
 
 	<p>A <em>very</em> simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="s">&#39;/etc/sysconfig/proxy&#39;</span>
-<span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="s">&#39;/root/.curlrc&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/etc/sysconfig/proxy&#39;</span>
+<span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/root/.curlrc&#39;</span>
 <span class="k">def</span> <span class="nf">get_proxy</span><span class="p">():</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s">&#39;http_proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
-            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;http_proxy = &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="k">if</span> <span class="s1">&#39;http_proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
+            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;http_proxy = &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
             <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">proxy</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s">&#39;--proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
-            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;--proxy &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="k">if</span> <span class="s1">&#39;--proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
+            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;--proxy &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
             <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">proxy</span>
-    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s">&#39;http_proxy&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;http_proxy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -91,10 +109,10 @@
 
 	<p>In order to intercept calls to python&#8217;s <a href="http://docs.python.org/2/library/functions.html#open">open()</a>, we need to mock the <code>builtins.open</code> function:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s">&#39;http://example.com:1111&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&#39;</span>
 <span class="k">def</span> <span class="nf">test_proxy_url_in_sysproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&quot;builtins.open&quot;</span><span class="p">,</span>
-                    <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s">&quot;http_proxy = &quot;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
+                    <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;http_proxy = &quot;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
          <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -102,9 +120,9 @@
 	<p>We&#8217;re good so far. Now we add the next natural test: we didn&#8217;t find anything in sysconfig, but we find the right proxy <span class="caps">URL</span> on our second try in CURL_PROXY:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&quot;builtins.open&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&quot;builtins.open&quot;</span><span class="p">,</span>
-                        <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
+                        <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -117,9 +135,9 @@
 	<p>Not to worry though. <code>mock</code> <a href="http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.side_effect">side_effect</a> have got us covered!</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&quot;builtins.open&quot;</span><span class="p">,</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
                     <span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(),</span>
-                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
+                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -137,7 +155,7 @@
             <span class="k">return</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">):</span>
         <span class="k">yield</span>
 </pre></div>
 </div>
@@ -146,7 +164,7 @@
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -168,7 +186,7 @@
             <span class="n">open_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">open_file</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">yield</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -183,7 +201,7 @@
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -203,7 +221,7 @@
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NotMocked</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">NotMocked</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span>
-            <span class="s">&quot;The file </span><span class="si">%s</span><span class="s"> was opened, but not mocked.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was opened, but not mocked.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
 </pre></div>
 </div>
@@ -223,7 +241,7 @@
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
             <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -247,9 +265,9 @@
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
-            <span class="nb">open</span><span class="p">(</span><span class="s">&#39;/dev/null&#39;</span><span class="p">)</span>
+            <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -275,7 +293,7 @@
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -286,7 +304,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s">&quot;The file </span><span class="si">%s</span><span class="s"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotMocked</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span>
@@ -301,8 +319,8 @@
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
-            <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="s">&#39;/dev/null&#39;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">):</span>
                 <span class="n">get_proxy</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
@@ -345,7 +363,7 @@
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -357,7 +375,7 @@
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s">&quot;The file </span><span class="si">%s</span><span class="s"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotMocked</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span>
@@ -543,26 +561,6 @@
                 <a href="/tag/foss.html">foss</a>
         </div>
         <a href="http://mapleoin.github.io/perma/moving-on-to-the-buildsystem#disqus_thread" class="comments">Comments</a>
-        <img class="separator" alt="post separator" src="/css/separator.png" />
-    </div>
-    <div class="post">
-        <h2><a href="http://mapleoin.github.io/perma/copr-client-part-2">the Copr client part II</a></h2>
-        <h3>Monday, August 30, 2010</h3>
-        <div class="entry">
-            	<p>I spent this week finishing up the copr client. It now supports all the functionality that the Copr TG <span class="caps">API</span> supports. It&#8217;s not much, but it&#8217;s a starting point.</p>
-
-	<p>I spent a lot of time trying to understand the way repoze.who works and the authentication plugins that we&#8217;re using for the <a href="https://fedorahosted.org/python-fedora/">python-fedora</a> <a href="https://admin.fedoraproject.org/accounts">FAS</a> authentication plugin. I finally understood it, I think&#8230; The Fedora client library didn&#8217;t support basic <span class="caps">HTTP</span> Authentication for TG2 apps so I had to figure out how to integrate that into our authentication plugin. It was quite fun all in all, repoze.who has a very interesting way of doing authentication and writing wsgi middleware is always exciting ;). This patch will hopefully go upstream to python-fedora now.</p>
-
-	<p>This next week I&#8217;ll probably start working on the buildsystem part of Copr. There are a lot of new things to learn there.</p>
-
-
-        </div>
-        <div class="post_tags">Tags:
-                <a href="/tag/copr.html">copr</a>
-                <a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a>
-                <a href="/tag/foss.html">foss</a>
-        </div>
-        <a href="http://mapleoin.github.io/perma/copr-client-part-2#disqus_thread" class="comments">Comments</a>
         <img class="separator" alt="post separator" src="/css/separator.png" />
     </div>
 </div>
