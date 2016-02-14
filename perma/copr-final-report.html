@@ -36,29 +36,29 @@
 <div id="tags">
 <h4>Tags</h4>
 <ul>
-  <li><a href="/tag/TIL.html">TIL</a></li>
-  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
-  <li><a href="/tag/music.html">music</a></li>
-  <li><a href="/tag/python.html">python</a></li>
-  <li><a href="/tag/hacking.html">hacking</a></li>
   <li><a href="/tag/books.html">books</a></li>
-  <li><a href="/tag/django.html">django</a></li>
-  <li><a href="/tag/linux.html">linux</a></li>
-  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
-  <li><a href="/tag/unix.html">unix</a></li>
-  <li><a href="/tag/floss.html">floss</a></li>
+  <li><a href="/tag/databases.html">databases</a></li>
+  <li><a href="/tag/django.html">django</a></li>
+  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/events.html">events</a></li>
   <li><a href="/tag/fedora.html">fedora</a></li>
-  <li><a href="/tag/timezones.html">timezones</a></li>
+  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
+  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
+  <li><a href="/tag/floss.html">floss</a></li>
+  <li><a href="/tag/foss.html">foss</a></li>
+  <li><a href="/tag/freebsd.html">freebsd</a></li>
+  <li><a href="/tag/gsoc.html">gsoc</a></li>
+  <li><a href="/tag/hacking.html">hacking</a></li>
+  <li><a href="/tag/linux.html">linux</a></li>
+  <li><a href="/tag/music.html">music</a></li>
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
-  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
-  <li><a href="/tag/events.html">events</a></li>
-  <li><a href="/tag/freebsd.html">freebsd</a></li>
-  <li><a href="/tag/foss.html">foss</a></li>
-  <li><a href="/tag/gsoc.html">gsoc</a></li>
-  <li><a href="/tag/copr.html">copr</a></li>
-  <li><a href="/tag/databases.html">databases</a></li>
+  <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/TIL.html">TIL</a></li>
+  <li><a href="/tag/timezones.html">timezones</a></li>
+  <li><a href="/tag/unix.html">unix</a></li>
 </ul>
 </div><!--tags-->
 </div><!--sidebar-->
@@ -69,13 +69,13 @@
         <div class="entry">
             	<p><a href="https://fedoraproject.org/wiki/Summer_Coding_2010">Fedora Summer Coding</a> is now over for me and I&#8217;m really glad of what I learned and coded this summer.</p>
 
-	<p>Our initial goal was to develop a TurboGears2 Web app and <span class="caps">JSON</span> <span class="caps">API</span> for <a href="https://fedoraproject.org/wiki/Category:Copr">Fedora Copr</a>. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&#8217;m glad to have played a role in its development.</p>
+	<p>Our initial goal was to develop a TurboGears2 Web app and <span class="caps">JSON</span> <span class="caps">API</span> for <a href="https://fedoraproject.org/wiki/Category%3ACopr">Fedora Copr</a>. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&#8217;m glad to have played a role in its development.</p>
 
 	<p>At first I worked on the web app, modeling the database and the relationship between coprs and repos and packages and then developing the <span class="caps">JSON</span> <span class="caps">API</span>. When the midterm came, my mentor and I decided that I should also contribute to the other parts of Copr. The original schedule had a simple command-line client planned, but we went further than that. In the end all of the functionality of the <span class="caps">JSON</span> <span class="caps">API</span> also got implemented in a client library (based on and very similar to <a href="https://fedorahosted.org/python-fedora/">python-fedora</a>) and in a command-line client. I also got to dive into python-fedora&#8217;s and repoze.who&#8217;s internals in order to get basic <span class="caps">HTTP</span> authentication working for TurboGears2.</p>
 
 	<p>My latest work has been on the <a href="https://fedorahosted.org/func/">func</a> module. This is the buildsystem part of Copr. Func minions running this module will be commanded by <a href="https://fedorahosted.org/headhunter">headhunter</a> (Copr&#8217;s scheduler) to build packages in mock and then move them into repositories. The module also creates, updates and deletes package repositories and will check the built packages for Fedora conformance (e.g. licensing) &#8211; this last part is not yet implemented. I got to play with virtual machines and func and <a href="https://fedoraproject.org/wiki/Projects/Mock">mock</a> and <a href="http://createrepo.baseurl.org/">createrepo</a>.</p>
 
-	<p>There is a more synthethic overview of all the different things that got implemented <a href="https://fedoraproject.org/wiki/User:Mapleoin/FSC-Copr-status">on the wiki</a>.</p>
+	<p>There is a more synthethic overview of all the different things that got implemented <a href="https://fedoraproject.org/wiki/User%3AMapleoin/FSC-Copr-status">on the wiki</a>.</p>
 
 	<p>Overall, I&#8217;m really glad of what I learned this summer. This project really got me involved in a lot of different levels of the architecture of a web service and a lot of different technologies. Some of the things I worked on looked really scary at first, but as I went nearer and read more code the mist slowly vanished.</p>
 

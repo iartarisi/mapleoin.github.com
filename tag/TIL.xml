@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 01:36:21 +0200</pubDate>
+        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Change the system timezone for the python interpreter</title>
@@ -30,7 +30,10 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;
-		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;energy, both on the part of people asking for help, and on the part of&lt;br /&gt;those providing help.&lt;/p&gt;
+		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;
+your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;
+energy, both on the part of people asking for help, and on the part of&lt;br /&gt;
+those providing help.&lt;/p&gt;
 	&lt;/blockquote&gt; </description>
             <pubDate>Sat, 13 Feb 2016 00:32 GMT</pubDate>
         </item>

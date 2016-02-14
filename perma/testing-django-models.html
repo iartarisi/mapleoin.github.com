@@ -36,29 +36,29 @@
 <div id="tags">
 <h4>Tags</h4>
 <ul>
-  <li><a href="/tag/TIL.html">TIL</a></li>
-  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
-  <li><a href="/tag/music.html">music</a></li>
-  <li><a href="/tag/python.html">python</a></li>
-  <li><a href="/tag/hacking.html">hacking</a></li>
   <li><a href="/tag/books.html">books</a></li>
-  <li><a href="/tag/django.html">django</a></li>
-  <li><a href="/tag/linux.html">linux</a></li>
-  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
-  <li><a href="/tag/unix.html">unix</a></li>
-  <li><a href="/tag/floss.html">floss</a></li>
+  <li><a href="/tag/databases.html">databases</a></li>
+  <li><a href="/tag/django.html">django</a></li>
+  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/events.html">events</a></li>
   <li><a href="/tag/fedora.html">fedora</a></li>
-  <li><a href="/tag/timezones.html">timezones</a></li>
+  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
+  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
+  <li><a href="/tag/floss.html">floss</a></li>
+  <li><a href="/tag/foss.html">foss</a></li>
+  <li><a href="/tag/freebsd.html">freebsd</a></li>
+  <li><a href="/tag/gsoc.html">gsoc</a></li>
+  <li><a href="/tag/hacking.html">hacking</a></li>
+  <li><a href="/tag/linux.html">linux</a></li>
+  <li><a href="/tag/music.html">music</a></li>
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
-  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
-  <li><a href="/tag/events.html">events</a></li>
-  <li><a href="/tag/freebsd.html">freebsd</a></li>
-  <li><a href="/tag/foss.html">foss</a></li>
-  <li><a href="/tag/gsoc.html">gsoc</a></li>
-  <li><a href="/tag/copr.html">copr</a></li>
-  <li><a href="/tag/databases.html">databases</a></li>
+  <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/TIL.html">TIL</a></li>
+  <li><a href="/tag/timezones.html">timezones</a></li>
+  <li><a href="/tag/unix.html">unix</a></li>
 </ul>
 </div><!--tags-->
 </div><!--sidebar-->
@@ -94,7 +94,8 @@
 
 	<p>Ok, so here&#8217;s what we&#8217;re testing: our model &#8212; the emphasis is on <i>our</i>, because we&#8217;re only testing our code. And mostly, we&#8217;re actually testing that the code in models.py corresponds with what&#8217;s in the database. All test methods must begin with the word <i>test</i>.</p>
 
-	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />Here&#8217;s the model:</p>
+	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />
+Here&#8217;s the model:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -128,7 +129,8 @@
 
 	<p>The second snippet only calls the <strong>setUp</strong> method once because there is only one other method. But that&#8217;s not very nice. Ideally we&#8217;d to be able to run each test individually, so maybe we can write a <strong>tearDown</strong> method to be run after each other method, to restore the database.</p>
 
-	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />Here is what it looks like now:</p>
+	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />
+Here is what it looks like now:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -155,7 +157,8 @@
 </pre></div>
 </div>
 
-	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
+	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />
+We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -191,7 +194,8 @@
 </pre></div>
 </div>
 
-	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
+	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />
+This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
 
 <div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">modified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
@@ -227,7 +231,7 @@
 </pre></div>
 </div>
 
-	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name=&#34;name&#34;,body=&#34;tralaalal&#34;, category=&#34;ooopsie!&#34;)</code> and see if you get lucky.</p>
+	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name="name",body="tralaalal", category="ooopsie!")</code> and see if you get lucky.</p>
 
 	<p>Ok, passing on to the Commentator class:</p>
 
@@ -238,7 +242,8 @@
 </pre></div>
 </div>
 
-	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />This should seem trivial by now:</p>
+	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />
+This should seem trivial by now:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>

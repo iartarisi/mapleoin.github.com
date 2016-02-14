@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 01:36:21 +0200</pubDate>
+        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Cum să actualizezi metadatele yum în mod automat</title>
@@ -15,7 +15,7 @@
 
 	&lt;p&gt;Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&amp;gt; &lt;em&gt;dependency hell&lt;/em&gt;.&lt;/p&gt;
 
-	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c &amp;#34;yum install yum-updatesd&amp;#34;&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
+	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c "yum install yum-updatesd"&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
 
 	&lt;p&gt;După ce l-am instalat, putem modifica &lt;code&gt;/etc/yum/yum-updatesd.conf&lt;/code&gt; dacă vrem să facem lucruri dubioase, cum ar fi să îl lăsăm să instaleze actualizări automat &amp;#8212; pentru că trăim într-o utopie în care actualizările nu strică niciodată nimic &amp;#8212; sau, mai puțin dubios, doar să le descarce.&lt;/p&gt;
 
@@ -165,7 +165,7 @@
 	&lt;p&gt;Totul arată bine, deci putem să-l punem în surse:&lt;/p&gt;
 
 &lt;pre&gt;
-  $ gendiff calibre .no_update &amp;#38;gt; ~/rpmbuild/SOURCES/calibre-no-update.patch
+  $ gendiff calibre .no_update &amp;amp;gt; ~/rpmbuild/SOURCES/calibre-no-update.patch
 &lt;/pre&gt;
 
 	&lt;p&gt;Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:&lt;/p&gt;

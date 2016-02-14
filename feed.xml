@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 01:36:21 +0200</pubDate>
+        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Change the system timezone for the python interpreter</title>
@@ -30,7 +30,10 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;
-		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;energy, both on the part of people asking for help, and on the part of&lt;br /&gt;those providing help.&lt;/p&gt;
+		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;
+your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;
+energy, both on the part of people asking for help, and on the part of&lt;br /&gt;
+those providing help.&lt;/p&gt;
 	&lt;/blockquote&gt; </description>
             <pubDate>Sat, 13 Feb 2016 00:32 GMT</pubDate>
         </item>
@@ -73,7 +76,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;We&amp;#8217;re good so far. Now we add the next natural test: we didn&amp;#8217;t find anything in sysconfig, but we find the right proxy &lt;span class="caps"&gt;URL&lt;/span&gt; on our second try in CURL_PROXY:&lt;/p&gt;
+	&lt;p&gt;We&amp;#8217;re good so far. Now we add the next natural test: we didn&amp;#8217;t find anything in sysconfig, but we find the right proxy &lt;span class="caps"&gt;URL&lt;/span&gt; on our second try in &lt;code&gt;CURL_PROXY&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;()):&lt;/span&gt;
@@ -287,7 +290,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
 &lt;pre&gt;AssertionError: The file /dev/null was not opened.
 &lt;/pre&gt;
 
-	&lt;p&gt;EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the &lt;code&gt;open_files&lt;/code&gt; list will contain the filename multiple times, but it will only get &lt;code&gt;remove&lt;/code&gt;-ed once. This can be easily solved by making the &lt;code&gt;open_files&lt;/code&gt; list a set instead.&lt;/p&gt;
+	&lt;p&gt;&lt;span class="caps"&gt;EDIT&lt;/span&gt;: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the &lt;code&gt;open_files&lt;/code&gt; list will contain the filename multiple times, but it will only get &lt;code&gt;remove&lt;/code&gt;-ed once. This can be easily solved by making the &lt;code&gt;open_files&lt;/code&gt; list a set instead.&lt;/p&gt;
 
 	&lt;p&gt;So that&amp;#8217;s about it, we now have a rock-solid &lt;code&gt;mock_open&lt;/code&gt; function for mocking the builtin &lt;code&gt;open()&lt;/code&gt;.&lt;/p&gt;
 
@@ -343,7 +346,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.github.io/perma/FOSDEM-2012-review</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt;&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;&lt;span class="caps"&gt;SUSE&lt;/span&gt;&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
 
@@ -359,7 +362,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
-	&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -413,7 +416,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
 
 	&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
 
-	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
+	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from &lt;span class="caps"&gt;DNS&lt;/span&gt;es.&lt;/p&gt;
 
 &lt;hr/&gt;
 
@@ -426,7 +429,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <title>Data Visualizations</title>
             <link>http://mapleoin.github.io/perma/data-visualizations</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
 
 	&lt;p&gt;There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&amp;#8217;d better leave it to a professional.&lt;/p&gt;
 
@@ -439,7 +442,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
 
@@ -456,13 +459,13 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <author>mapleoin</author>
             <description> 	&lt;p&gt;&lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; is now over for me and I&amp;#8217;m really glad of what I learned and coded this summer.&lt;/p&gt;
 
-	&lt;p&gt;Our initial goal was to develop a TurboGears2 Web app and &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Fedora Copr&lt;/a&gt;. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&amp;#8217;m glad to have played a role in its development.&lt;/p&gt;
+	&lt;p&gt;Our initial goal was to develop a TurboGears2 Web app and &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; for &lt;a href="https://fedoraproject.org/wiki/Category%3ACopr"&gt;Fedora Copr&lt;/a&gt;. When finished, Copr should provide everyone with a place to build Fedora packages and host custom repositories for everyone to enjoy. This is a project that should prove quite popular in the Fedora Community when it gets released and I&amp;#8217;m glad to have played a role in its development.&lt;/p&gt;
 
 	&lt;p&gt;At first I worked on the web app, modeling the database and the relationship between coprs and repos and packages and then developing the &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;. When the midterm came, my mentor and I decided that I should also contribute to the other parts of Copr. The original schedule had a simple command-line client planned, but we went further than that. In the end all of the functionality of the &lt;span class="caps"&gt;JSON&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; also got implemented in a client library (based on and very similar to &lt;a href="https://fedorahosted.org/python-fedora/"&gt;python-fedora&lt;/a&gt;) and in a command-line client. I also got to dive into python-fedora&amp;#8217;s and repoze.who&amp;#8217;s internals in order to get basic &lt;span class="caps"&gt;HTTP&lt;/span&gt; authentication working for TurboGears2.&lt;/p&gt;
 
 	&lt;p&gt;My latest work has been on the &lt;a href="https://fedorahosted.org/func/"&gt;func&lt;/a&gt; module. This is the buildsystem part of Copr. Func minions running this module will be commanded by &lt;a href="https://fedorahosted.org/headhunter"&gt;headhunter&lt;/a&gt; (Copr&amp;#8217;s scheduler) to build packages in mock and then move them into repositories. The module also creates, updates and deletes package repositories and will check the built packages for Fedora conformance (e.g. licensing) &amp;#8211; this last part is not yet implemented. I got to play with virtual machines and func and &lt;a href="https://fedoraproject.org/wiki/Projects/Mock"&gt;mock&lt;/a&gt; and &lt;a href="http://createrepo.baseurl.org/"&gt;createrepo&lt;/a&gt;.&lt;/p&gt;
 
-	&lt;p&gt;There is a more synthethic overview of all the different things that got implemented &lt;a href="https://fedoraproject.org/wiki/User:Mapleoin/FSC-Copr-status"&gt;on the wiki&lt;/a&gt;.&lt;/p&gt;
+	&lt;p&gt;There is a more synthethic overview of all the different things that got implemented &lt;a href="https://fedoraproject.org/wiki/User%3AMapleoin/FSC-Copr-status"&gt;on the wiki&lt;/a&gt;.&lt;/p&gt;
 
 	&lt;p&gt;Overall, I&amp;#8217;m really glad of what I learned this summer. This project really got me involved in a lot of different levels of the architecture of a web service and a lot of different technologies. Some of the things I worked on looked really scary at first, but as I went nearer and read more code the mist slowly vanished.&lt;/p&gt;
 

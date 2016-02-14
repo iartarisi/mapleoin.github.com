@@ -36,29 +36,29 @@
 <div id="tags">
 <h4>Tags</h4>
 <ul>
-  <li><a href="/tag/TIL.html">TIL</a></li>
-  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
-  <li><a href="/tag/music.html">music</a></li>
-  <li><a href="/tag/python.html">python</a></li>
-  <li><a href="/tag/hacking.html">hacking</a></li>
   <li><a href="/tag/books.html">books</a></li>
-  <li><a href="/tag/django.html">django</a></li>
-  <li><a href="/tag/linux.html">linux</a></li>
-  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
-  <li><a href="/tag/unix.html">unix</a></li>
-  <li><a href="/tag/floss.html">floss</a></li>
+  <li><a href="/tag/databases.html">databases</a></li>
+  <li><a href="/tag/django.html">django</a></li>
+  <li><a href="/tag/emacs.html">emacs</a></li>
+  <li><a href="/tag/events.html">events</a></li>
   <li><a href="/tag/fedora.html">fedora</a></li>
-  <li><a href="/tag/timezones.html">timezones</a></li>
+  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
+  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
+  <li><a href="/tag/floss.html">floss</a></li>
+  <li><a href="/tag/foss.html">foss</a></li>
+  <li><a href="/tag/freebsd.html">freebsd</a></li>
+  <li><a href="/tag/gsoc.html">gsoc</a></li>
+  <li><a href="/tag/hacking.html">hacking</a></li>
+  <li><a href="/tag/linux.html">linux</a></li>
+  <li><a href="/tag/music.html">music</a></li>
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
-  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
-  <li><a href="/tag/events.html">events</a></li>
-  <li><a href="/tag/freebsd.html">freebsd</a></li>
-  <li><a href="/tag/foss.html">foss</a></li>
-  <li><a href="/tag/gsoc.html">gsoc</a></li>
-  <li><a href="/tag/copr.html">copr</a></li>
-  <li><a href="/tag/databases.html">databases</a></li>
+  <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/TIL.html">TIL</a></li>
+  <li><a href="/tag/timezones.html">timezones</a></li>
+  <li><a href="/tag/unix.html">unix</a></li>
 </ul>
 </div><!--tags-->
 </div><!--sidebar-->
@@ -126,7 +126,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>We&#8217;re good so far. Now we add the next natural test: we didn&#8217;t find anything in sysconfig, but we find the right proxy <span class="caps">URL</span> on our second try in CURL_PROXY:</p>
+	<p>We&#8217;re good so far. Now we add the next natural test: we didn&#8217;t find anything in sysconfig, but we find the right proxy <span class="caps">URL</span> on our second try in <code>CURL_PROXY</code>:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()):</span>
@@ -340,7 +340,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <pre>AssertionError: The file /dev/null was not opened.
 </pre>
 
-	<p>EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
+	<p><span class="caps">EDIT</span>: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
 
 	<p>So that&#8217;s about it, we now have a rock-solid <code>mock_open</code> function for mocking the builtin <code>open()</code>.</p>
 
@@ -429,7 +429,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>Ok, so here&#8217;s what we&#8217;re testing: our model &#8212; the emphasis is on <i>our</i>, because we&#8217;re only testing our code. And mostly, we&#8217;re actually testing that the code in models.py corresponds with what&#8217;s in the database. All test methods must begin with the word <i>test</i>.</p>
 
-	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />Here&#8217;s the model:</p>
+	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />
+Here&#8217;s the model:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -463,7 +464,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>The second snippet only calls the <strong>setUp</strong> method once because there is only one other method. But that&#8217;s not very nice. Ideally we&#8217;d to be able to run each test individually, so maybe we can write a <strong>tearDown</strong> method to be run after each other method, to restore the database.</p>
 
-	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />Here is what it looks like now:</p>
+	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />
+Here is what it looks like now:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -490,7 +492,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
+	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />
+We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -526,7 +529,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
+	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />
+This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
 
 <div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">modified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
@@ -562,7 +566,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name=&#34;name&#34;,body=&#34;tralaalal&#34;, category=&#34;ooopsie!&#34;)</code> and see if you get lucky.</p>
+	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name="name",body="tralaalal", category="ooopsie!")</code> and see if you get lucky.</p>
 
 	<p>Ok, passing on to the Commentator class:</p>
 
@@ -573,7 +577,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />This should seem trivial by now:</p>
+	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />
+This should seem trivial by now:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -708,9 +713,11 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 
-	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
+	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />
+E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
+Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn483a6e15-a438-4c17-8610-6f901fa608f5">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote" id="fnrev2d062a1eb2c042e18ef55dbd85c5a5cc"><a href="#fn2d062a1eb2c042e18ef55dbd85c5a5cc">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -754,9 +761,10 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 
-	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
+	<p><span class="caps">TADA</span>!<br />
+Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p id="fn483a6e15-a438-4c17-8610-6f901fa608f5" class="footnote"><sup>3</sup>merci gheorghe!</p>
+	<p class="footnote" id="fn2d062a1eb2c042e18ef55dbd85c5a5cc"><sup>3</sup> merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
@@ -801,21 +809,27 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>Ia să încerc să fac și niște tabele din ce scrie mai sus.</p>
 
-	<p>Post<br /><code>id || title || body || category_id || created_at || published</code></p>
+	<p>Post<br />
+<code>id || title || body || category_id || created_at || published</code></p>
 
-	<p>Comment<br /><code>id || post_id || commentator_id || body || approved || created_at</code></p>
+	<p>Comment<br />
+<code>id || post_id || commentator_id || body || approved || created_at</code></p>
 
-	<p>Commentator<br /><code>id || name || email || website || gravatar_url</code></p>
+	<p>Commentator<br />
+<code>id || name || email || website || gravatar_url</code></p>
 
-	<p>Category<br /><code>id || name</code></p>
+	<p>Category<br />
+<code>id || name</code></p>
 
 	<p>Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.</p>
 
 	<p>E evident ceea ce <strong>nu</strong> am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):</p>
 
-	<p>Comment<br />id || <span style="color:red;">autor || email || website || gravatar_url</span> || post_id || commentator_id || body || approved || created_at</p>
+	<p>Comment<br />
+id || <span style="color:red;">autor || email || website || gravatar_url</span> || post_id || commentator_id || body || approved || created_at</p>
 
-	<p>Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. <br />Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)</p>
+	<p>Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. <br />
+Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/django.html">django</a>

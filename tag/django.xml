@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 01:36:21 +0200</pubDate>
+        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>testing a django blog's models</title>
@@ -38,7 +38,8 @@
 
 	&lt;p&gt;Ok, so here&amp;#8217;s what we&amp;#8217;re testing: our model &amp;#8212; the emphasis is on &lt;i&gt;our&lt;/i&gt;, because we&amp;#8217;re only testing our code. And mostly, we&amp;#8217;re actually testing that the code in models.py corresponds with what&amp;#8217;s in the database. All test methods must begin with the word &lt;i&gt;test&lt;/i&gt;.&lt;/p&gt;
 
-	&lt;p&gt;One of the most annoying things which took me a while to figure out was that the &lt;strong&gt;setUp&lt;/strong&gt; method is run &lt;i&gt;every time&lt;/i&gt; before one of the other methods is run. That means that if you want to test for uniqueness, you &lt;i&gt;have to&lt;/i&gt; build a &lt;strong&gt;tearDown&lt;/strong&gt; method if you want to run any other independent tests. This is why snippet A won&amp;#8217;t work, but snippet B will.&lt;br /&gt;Here&amp;#8217;s the model:&lt;/p&gt;
+	&lt;p&gt;One of the most annoying things which took me a while to figure out was that the &lt;strong&gt;setUp&lt;/strong&gt; method is run &lt;i&gt;every time&lt;/i&gt; before one of the other methods is run. That means that if you want to test for uniqueness, you &lt;i&gt;have to&lt;/i&gt; build a &lt;strong&gt;tearDown&lt;/strong&gt; method if you want to run any other independent tests. This is why snippet A won&amp;#8217;t work, but snippet B will.&lt;br /&gt;
+Here&amp;#8217;s the model:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -72,7 +73,8 @@
 
 	&lt;p&gt;The second snippet only calls the &lt;strong&gt;setUp&lt;/strong&gt; method once because there is only one other method. But that&amp;#8217;s not very nice. Ideally we&amp;#8217;d to be able to run each test individually, so maybe we can write a &lt;strong&gt;tearDown&lt;/strong&gt; method to be run after each other method, to restore the database.&lt;/p&gt;
 
-	&lt;p&gt;However, there is an easier way to not have to write a &lt;strong&gt;tearDown&lt;/strong&gt; method and that is using the &lt;strong&gt;django.test&lt;/strong&gt; module which is an extention to unittest. All you have to do is &lt;strong&gt;import django.test&lt;/strong&gt; instead of &lt;strong&gt;unittest&lt;/strong&gt; and make every test object a sublclass of &lt;strong&gt;django.test.TestCase&lt;/strong&gt; instead of &lt;strong&gt;unittest.TestCase&lt;/strong&gt;.&lt;br /&gt;Here is what it looks like now:&lt;/p&gt;
+	&lt;p&gt;However, there is an easier way to not have to write a &lt;strong&gt;tearDown&lt;/strong&gt; method and that is using the &lt;strong&gt;django.test&lt;/strong&gt; module which is an extention to unittest. All you have to do is &lt;strong&gt;import django.test&lt;/strong&gt; instead of &lt;strong&gt;unittest&lt;/strong&gt; and make every test object a sublclass of &lt;strong&gt;django.test.TestCase&lt;/strong&gt; instead of &lt;strong&gt;unittest.TestCase&lt;/strong&gt;.&lt;br /&gt;
+Here is what it looks like now:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -99,7 +101,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;There&amp;#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&amp;#8217;s right type/class.&lt;br /&gt;We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.&lt;/p&gt;
+	&lt;p&gt;There&amp;#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&amp;#8217;s right type/class.&lt;br /&gt;
+We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;PostTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -135,7 +138,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;So now, we&amp;#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&amp;#8217;s really very generous since the time it takes to run the test from the time the &lt;i&gt;setUp&lt;/i&gt; method is run is in the range of microseconds.&lt;br /&gt;This test doesn&amp;#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is &lt;i&gt;saved&lt;/i&gt; to the database while creation time is not. So let&amp;#8217;s write a new test based on that knowledge:&lt;/p&gt;
+	&lt;p&gt;So now, we&amp;#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&amp;#8217;s really very generous since the time it takes to run the test from the time the &lt;i&gt;setUp&lt;/i&gt; method is run is in the range of microseconds.&lt;br /&gt;
+This test doesn&amp;#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is &lt;i&gt;saved&lt;/i&gt; to the database while creation time is not. So let&amp;#8217;s write a new test based on that knowledge:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testModifiedVsCreation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;modified&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;modified_time&lt;/span&gt;
@@ -171,7 +175,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;Btw, if you don&amp;#8217;t know the errors (like ValueError &amp;#8212; I didn&amp;#8217;t know it), you can always drop to a &lt;i&gt;manage.py console&lt;/i&gt; and try to &lt;code&gt;Post.object.create(name=&amp;#34;name&amp;#34;,body=&amp;#34;tralaalal&amp;#34;, category=&amp;#34;ooopsie!&amp;#34;)&lt;/code&gt; and see if you get lucky.&lt;/p&gt;
+	&lt;p&gt;Btw, if you don&amp;#8217;t know the errors (like ValueError &amp;#8212; I didn&amp;#8217;t know it), you can always drop to a &lt;i&gt;manage.py console&lt;/i&gt; and try to &lt;code&gt;Post.object.create(name="name",body="tralaalal", category="ooopsie!")&lt;/code&gt; and see if you get lucky.&lt;/p&gt;
 
 	&lt;p&gt;Ok, passing on to the Commentator class:&lt;/p&gt;
 
@@ -182,7 +186,8 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;We&amp;#8217;re only going to test that the data gets to the database and that the &lt;i&gt;name&lt;/i&gt; and &lt;i&gt;email&lt;/i&gt; fields are unique. At this stage we can&amp;#8217;t test the validation of the &lt;i&gt;email&lt;/i&gt; and &lt;i&gt;website&lt;/i&gt; fields. We&amp;#8217;ll be doing that later, when we write the &lt;a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/"&gt;forms&lt;/a&gt;.&lt;br /&gt;This should seem trivial by now:&lt;/p&gt;
+	&lt;p&gt;We&amp;#8217;re only going to test that the data gets to the database and that the &lt;i&gt;name&lt;/i&gt; and &lt;i&gt;email&lt;/i&gt; fields are unique. At this stage we can&amp;#8217;t test the validation of the &lt;i&gt;email&lt;/i&gt; and &lt;i&gt;website&lt;/i&gt; fields. We&amp;#8217;ll be doing that later, when we write the &lt;a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/"&gt;forms&lt;/a&gt;.&lt;br /&gt;
+This should seem trivial by now:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentatorTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -310,9 +315,11 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
+	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;
+E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat &lt;span class="caps"&gt;OOP&lt;/span&gt;-ul.&lt;br /&gt;
+Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi &lt;span class="caps"&gt;URLF&lt;/span&gt;ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn483a6e15-a438-4c17-8610-6f901fa608f5"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote" id="fnrev2d062a1eb2c042e18ef55dbd85c5a5cc"&gt;&lt;a href="#fn2d062a1eb2c042e18ef55dbd85c5a5cc"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
 &lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -356,9 +363,10 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
+	&lt;p&gt;&lt;span class="caps"&gt;TADA&lt;/span&gt;!&lt;br /&gt;
+Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p id="fn483a6e15-a438-4c17-8610-6f901fa608f5" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
+	&lt;p class="footnote" id="fn2d062a1eb2c042e18ef55dbd85c5a5cc"&gt;&lt;sup&gt;3&lt;/sup&gt; merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>
@@ -395,21 +403,27 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;Ia să încerc să fac și niște tabele din ce scrie mai sus.&lt;/p&gt;
 
-	&lt;p&gt;Post&lt;br /&gt;&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Post&lt;br /&gt;
+&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Comment&lt;br /&gt;&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Comment&lt;br /&gt;
+&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Commentator&lt;br /&gt;&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Commentator&lt;br /&gt;
+&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Category&lt;br /&gt;&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Category&lt;br /&gt;
+&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
 
 	&lt;p&gt;Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.&lt;/p&gt;
 
 	&lt;p&gt;E evident ceea ce &lt;strong&gt;nu&lt;/strong&gt; am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):&lt;/p&gt;
 
-	&lt;p&gt;Comment&lt;br /&gt;id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
+	&lt;p&gt;Comment&lt;br /&gt;
+id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
 
-	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
+	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;
+Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
             <pubDate>Tue, 16 Sep 2008 00:00 GMT</pubDate>
         </item>
     </channel>
