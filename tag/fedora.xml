@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
+        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
@@ -121,7 +121,7 @@
 
 	&lt;p&gt;If anyone wants to check out what Copr looks like so far, you&amp;#8217;ll just have to install TurboGears 2.0.x and then:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ bzr branch bzr://bzr.fedorahosted.org/bzr/copr/devel
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ bzr branch bzr://bzr.fedorahosted.org/bzr/copr/devel
  $ &lt;span class="nb"&gt;cd&lt;/span&gt; devel
  $ python setup.py develop
  $ paster setup-app development.ini

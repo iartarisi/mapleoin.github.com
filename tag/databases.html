@@ -25,17 +25,18 @@
 <div id="recent">
 <h4>Recent</h4>
 <ul>
+  <li><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></li>
+  <li><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></li>
   <li><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></li>
   <li><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></li>
   <li><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></li>
-  <li><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></li>
-  <li><a href="http://mapleoin.github.io/perma/data-visualizations">Data Visualizations</a></li>
 </ul>
 </div><!--recent-->
 <br />
 <div id="tags">
 <h4>Tags</h4>
 <ul>
+  <li><a href="/tag/API.html">API</a></li>
   <li><a href="/tag/books.html">books</a></li>
   <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
@@ -56,6 +57,7 @@
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
   <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/REST.html">REST</a></li>
   <li><a href="/tag/TIL.html">TIL</a></li>
   <li><a href="/tag/timezones.html">timezones</a></li>
   <li><a href="/tag/unix.html">unix</a></li>
@@ -183,7 +185,7 @@
         <div class="entry">
             	<p>Tocmai am reușit (am găsit timp &#8212; furat timp) să scriu în django schema din <a href="http://mapleoin.eu/perma/blog-database-schema">postul trecut</a>. Simplicity is divine:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -209,9 +211,9 @@
 E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
 Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote" id="fnrev2d062a1eb2c042e18ef55dbd85c5a5cc"><a href="#fn2d062a1eb2c042e18ef55dbd85c5a5cc">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote" id="fnrev8119206048d7463bb5e4d089b098f1ad"><a href="#fn8119206048d7463bb5e4d089b098f1ad">3</a></sup> pentru tabelele rezultate:</p>
 
-<div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
+<div class="MySQL"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -256,7 +258,7 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 	<p><span class="caps">TADA</span>!<br />
 Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p class="footnote" id="fn2d062a1eb2c042e18ef55dbd85c5a5cc"><sup>3</sup> merci gheorghe!</p>
+	<p class="footnote" id="fn8119206048d7463bb5e4d089b098f1ad"><sup>3</sup> merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>

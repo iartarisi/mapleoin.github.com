@@ -25,17 +25,18 @@
 <div id="recent">
 <h4>Recent</h4>
 <ul>
+  <li><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></li>
+  <li><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></li>
   <li><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></li>
   <li><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></li>
   <li><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></li>
-  <li><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></li>
-  <li><a href="http://mapleoin.github.io/perma/data-visualizations">Data Visualizations</a></li>
 </ul>
 </div><!--recent-->
 <br />
 <div id="tags">
 <h4>Tags</h4>
 <ul>
+  <li><a href="/tag/API.html">API</a></li>
   <li><a href="/tag/books.html">books</a></li>
   <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
@@ -56,6 +57,7 @@
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
   <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/REST.html">REST</a></li>
   <li><a href="/tag/TIL.html">TIL</a></li>
   <li><a href="/tag/timezones.html">timezones</a></li>
   <li><a href="/tag/unix.html">unix</a></li>
@@ -71,7 +73,7 @@
 
 	<p>I found a way to change the timezone, that is used by most of python&#8217;s stdlib, by changing the <code>TZ</code> environment variable:</p>
 
-<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
+<div class="Bash"><div class="highlight"><pre><span></span>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
 <span class="o">(</span><span class="s1">&#39;GMT&#39;</span>, <span class="s1">&#39;BST&#39;</span><span class="o">)</span>
 $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&#39;</span> python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
 <span class="o">(</span><span class="s1">&#39;CET&#39;</span>, <span class="s1">&#39;CEST&#39;</span><span class="o">)</span>

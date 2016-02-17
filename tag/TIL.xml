@@ -5,8 +5,34 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
+        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
         <generator>pyBlee!</generator>
+        <item>
+            <title>HTTP Status Codes Reference</title>
+            <link>http://mapleoin.github.io/perma/http-status-codes-reference</link>
+            <author>mapleoin</author>
+            <description> 	&lt;p&gt;I&amp;#8217;ve been using this reference for &lt;span class="caps"&gt;HTTP&lt;/span&gt; status codes lately: &lt;a href="http://www.restapitutorial.com/httpstatuscodes.html"&gt;http://www.restapitutorial.com/httpstatuscodes.html&lt;/a&gt;&lt;/p&gt;
+
+	&lt;p&gt;It&amp;#8217;s nice to be able to see all of them on one page and expand only the interesting ones.&lt;/p&gt;
+
+	&lt;p&gt;Just found it the other day from someone mentioning it on StackOverflow. I notice now that it&amp;#8217;s easily googleable. I hadn&amp;#8217;t found it before because I always go straight to &lt;a href="https://en.wikipedia.org/wiki/HTTP_418"&gt;Wikipedia&lt;/a&gt;.&lt;/p&gt; </description>
+            <pubDate>Tue, 16 Feb 2016 00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>AST literal_eval</title>
+            <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
+            <author>mapleoin</author>
+            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;
+Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
+
+	&lt;p&gt;This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.&lt;/p&gt;
+
+	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;
+&lt;/blockquote&gt;&lt;/p&gt;
+
+	&lt;p&gt;I use to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.&lt;/p&gt; </description>
+            <pubDate>Mon, 15 Feb 2016 00:00 GMT</pubDate>
+        </item>
         <item>
             <title>Change the system timezone for the python interpreter</title>
             <link>http://mapleoin.github.io/perma/change-external-timezone-in-python</link>
@@ -15,7 +41,7 @@
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;

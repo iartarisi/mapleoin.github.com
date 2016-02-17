@@ -25,17 +25,18 @@
 <div id="recent">
 <h4>Recent</h4>
 <ul>
+  <li><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></li>
+  <li><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></li>
   <li><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></li>
   <li><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></li>
   <li><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></li>
-  <li><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></li>
-  <li><a href="http://mapleoin.github.io/perma/data-visualizations">Data Visualizations</a></li>
 </ul>
 </div><!--recent-->
 <br />
 <div id="tags">
 <h4>Tags</h4>
 <ul>
+  <li><a href="/tag/API.html">API</a></li>
   <li><a href="/tag/books.html">books</a></li>
   <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
@@ -56,6 +57,7 @@
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
   <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/REST.html">REST</a></li>
   <li><a href="/tag/TIL.html">TIL</a></li>
   <li><a href="/tag/timezones.html">timezones</a></li>
   <li><a href="/tag/unix.html">unix</a></li>
@@ -77,14 +79,14 @@
 
 	<p>Acum că am terminat cu setările, putem porni serviciul cu:</p>
 
-<div class="Bash"><div class="highlight"><pre> $ su -c <span class="s2">&quot;service yum-updatesd start&quot;</span>
+<div class="Bash"><div class="highlight"><pre><span></span> $ su -c <span class="s2">&quot;service yum-updatesd start&quot;</span>
  $ cacamaca
 </pre></div>
 </div>
 
 	<p>Și îl putem pune să se pornească automat la fiecare boot:</p>
 
-<div class="Bash"><div class="highlight"><pre> $ su -c <span class="s2">&quot;chkconfig yum-updatesd on&quot;</span>
+<div class="Bash"><div class="highlight"><pre><span></span> $ su -c <span class="s2">&quot;chkconfig yum-updatesd on&quot;</span>
 </pre></div>
 </div>
         </div>
@@ -110,7 +112,7 @@
 
 	<p>și să le despachetăm:</p>
 
-<div class="Bash"><div class="highlight"><pre>  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
+<div class="Bash"><div class="highlight"><pre><span></span>  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
 </pre></div>
 </div>
 
@@ -163,7 +165,7 @@
 
 	<p>Mergând în fișierul respectiv vedem că acel cod face parte dintr-o funcție numită update_found:</p>
 
-<div class="Bash"><div class="highlight"><pre> 
+<div class="Bash"><div class="highlight"><pre><span></span> 
   def update_found<span class="o">(</span>self, version<span class="o">)</span>:
   <span class="nv">os</span> <span class="o">=</span> <span class="s1">&#39;windows&#39;</span> <span class="k">if</span> iswindows <span class="k">else</span> <span class="s1">&#39;osx&#39;</span> <span class="k">if</span> isosx <span class="k">else</span> <span class="s1">&#39;linux&#39;</span>
   <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;http://%s.kovidgoyal.net/download_%s&#39;</span>%<span class="o">(</span>__appname__, os<span class="o">)</span>
@@ -173,7 +175,7 @@
 
 	<p>Ne interesează ca modificarea pe care o vom aduce să fie cât mai lizibilă pentru cei care vor modifica pachetul nostru mai târziu și să fie cât mai ușor de revenit la versiunea nemodificată. Dacă ne uităm mai atent în main, găsim următorul cod:</p>
 
-<div class="Python"><div class="highlight"><pre>  <span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">no_update_check</span><span class="p">:</span>
+<div class="Python"><div class="highlight"><pre><span></span>  <span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">no_update_check</span><span class="p">:</span>
   <span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span> <span class="o">=</span> <span class="n">CheckForUpdates</span><span class="p">()</span>
   <span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span><span class="p">,</span>
   <span class="n">SIGNAL</span><span class="p">(</span><span class="s1">&#39;update_found(PyQt_PyObject)&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_found</span><span class="p">)</span>
@@ -200,7 +202,7 @@
 
 	<p>Ca să generăm petecul vom folosi gendiff din directorul de deasupra directorului rădăcină:</p>
 
-<div class="Diff"><div class="highlight"><pre>    $ cd ~/rpmbuild/BUILD
+<div class="Diff"><div class="highlight"><pre><span></span>    $ cd ~/rpmbuild/BUILD
     $ gendiff calibre .no_update
     diff -up calibre/src/calibre/gui2/main.py.no_update calibre/src/calibre/gui2/main.py
     --- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
@@ -233,7 +235,7 @@
 
 	<p>Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:</p>
 
-<div class="Diff"><div class="highlight"><pre>  @@ -1,6 +1,6 @@
+<div class="Diff"><div class="highlight"><pre><span></span>  @@ -1,6 +1,6 @@
   Name:           calibre
   Version:        0.6.21
   -Release:        1%{?dist}

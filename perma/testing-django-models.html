@@ -25,17 +25,18 @@
 <div id="recent">
 <h4>Recent</h4>
 <ul>
+  <li><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></li>
+  <li><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></li>
   <li><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></li>
   <li><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></li>
   <li><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></li>
-  <li><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></li>
-  <li><a href="http://mapleoin.github.io/perma/data-visualizations">Data Visualizations</a></li>
 </ul>
 </div><!--recent-->
 <br />
 <div id="tags">
 <h4>Tags</h4>
 <ul>
+  <li><a href="/tag/API.html">API</a></li>
   <li><a href="/tag/books.html">books</a></li>
   <li><a href="/tag/copr.html">copr</a></li>
   <li><a href="/tag/creativecommons.html">creativecommons</a></li>
@@ -56,6 +57,7 @@
   <li><a href="/tag/packaging.html">packaging</a></li>
   <li><a href="/tag/programming.html">programming</a></li>
   <li><a href="/tag/python.html">python</a></li>
+  <li><a href="/tag/REST.html">REST</a></li>
   <li><a href="/tag/TIL.html">TIL</a></li>
   <li><a href="/tag/timezones.html">timezones</a></li>
   <li><a href="/tag/unix.html">unix</a></li>
@@ -69,7 +71,7 @@
         <div class="entry">
             	<p>This post is a continuation of <a href="http://mapleoin.eu/perma/blog-database-schema-2/">this post</a> and I&#8217;ll be using that schema to write tests on top of. Here it is, for easy reference:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -97,14 +99,14 @@
 	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />
 Here&#8217;s the model:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<h4>snippet A</h4>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -117,7 +119,7 @@ Here&#8217;s the model:</p>
 
 	<h4>snippet B</h4>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -132,7 +134,7 @@ Here&#8217;s the model:</p>
 	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />
 Here is what it looks like now:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat2&quot;</span><span class="p">)</span>
@@ -147,7 +149,7 @@ Here is what it looks like now:</p>
 
 	<p>Now, let&#8217;s test the <strong>Post class</strong>:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Category</span><span class="p">)</span>
@@ -160,7 +162,7 @@ Here is what it looks like now:</p>
 	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />
 We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post1</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
@@ -170,7 +172,7 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	<p>Next, we need to do a bit of a <i>trivial</i> test to check that the title, the body and the right category get to the db</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s2">&quot;trala lala&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
@@ -179,14 +181,14 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	<p>I think this is a good way to test that the creation_time and modified_time are newly generated datetime.datetime objects:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>No, wait. I think this looks a bit more professional:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
         <span class="n">delta_modified</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
@@ -197,7 +199,7 @@ We setUp a post, but also a category, since the test will be independent, but ne
 	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />
 This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
 
-<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">modified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
         <span class="n">created</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
@@ -208,14 +210,14 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>Testing for a boolean value is really easy:</p>
 
-<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">published</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>And then there&#8217;s more than one way I can think of to test the Category ForeignKey:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
                 <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
@@ -224,7 +226,7 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>In the end, I&#8217;ll go for the more general one, even though the second one is more excentric. So:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
                 <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
@@ -235,7 +237,7 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>Ok, passing on to the Commentator class:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Commentator</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Commentator</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">website</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">(</span><span class="n">verify_exists</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -245,7 +247,7 @@ This test doesn&#8217;t show the true difference between modified and creation t
 	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />
 This should seem trivial by now:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hacketyhack&quot;</span><span class="p">,</span>
                 <span class="n">email</span><span class="o">=</span><span class="s2">&quot;hackety@example.com&quot;</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
@@ -265,7 +267,7 @@ This should seem trivial by now:</p>
 
 	<p>Now, let&#8217;s get to testing the Comment class:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">post</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span>
     <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Commentator</span><span class="p">)</span>
@@ -276,7 +278,7 @@ This should seem trivial by now:</p>
 
 	<p>There won&#8217;t be anything new here. And this is when and why testing is <i>boring</i>. But, hey! A man&#8217;s gotta do, what a man&#8217;s gotta do.</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
@@ -307,7 +309,7 @@ This should seem trivial by now:</p>
 
 	<p>First, you&#8217;ll need to make a copy of django.test.simple (put it in your project&#8217;s directory for example). Then comment these lines:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="c1"># old_name = settings.DATABASE_NAME</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="c1"># old_name = settings.DATABASE_NAME</span>
 <span class="c1"># from django.db import connection</span>
 <span class="c1"># connection.creation.create_test_db(verbosity, autoclobber=not interactive)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
@@ -317,13 +319,13 @@ This should seem trivial by now:</p>
 
 	<p>And now, add this to your settings.py file:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
 </pre></div>
 </div>
 
 	<p>Be careful now. All the data in your database <strong>will</strong> be lost when you run <i>manage.py test</i> the next time. So back it up! First create a new database, say <i>backup</i> and then:</p>
 
-<div class="Bash"><div class="highlight"><pre>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
+<div class="Bash"><div class="highlight"><pre><span></span>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
 </pre></div>
 </div>
 
@@ -331,7 +333,7 @@ This should seem trivial by now:</p>
 
 	<p>Here&#8217;s to show that it works (after I&#8217;ve made a little modification to the model, but not the database):</p>
 
-<div class="Bash"><div class="highlight"><pre>$ python manage.py <span class="nb">test</span>
+<div class="Bash"><div class="highlight"><pre><span></span>$ python manage.py <span class="nb">test</span>
 ..EEE..EEEEEE................
 --&gt; lots of tracebacks &lt;--
 ----------------------------------------------------------------------

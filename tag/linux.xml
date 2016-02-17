@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 14 Feb 2016 02:51:15 +0200</pubDate>
+        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>The late Fedora Summer coder</title>
@@ -40,14 +40,14 @@
 
 	&lt;p&gt;Acum că am terminat cu setările, putem porni serviciul cu:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;service yum-updatesd start&amp;quot;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;service yum-updatesd start&amp;quot;&lt;/span&gt;
  $ cacamaca
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;p&gt;Și îl putem pune să se pornească automat la fiecare boot:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;chkconfig yum-updatesd on&amp;quot;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;chkconfig yum-updatesd on&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt; </description>
             <pubDate>Thu, 18 Mar 2010 14:00 GMT</pubDate>
@@ -66,7 +66,7 @@
 
 	&lt;p&gt;și să le despachetăm:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
@@ -119,7 +119,7 @@
 
 	&lt;p&gt;Mergând în fișierul respectiv vedem că acel cod face parte dintr-o funcție numită update_found:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; 
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
   def update_found&lt;span class="o"&gt;(&lt;/span&gt;self, version&lt;span class="o"&gt;)&lt;/span&gt;:
   &lt;span class="nv"&gt;os&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;windows&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; iswindows &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;osx&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; isosx &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;linux&amp;#39;&lt;/span&gt;
   &lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://%s.kovidgoyal.net/download_%s&amp;#39;&lt;/span&gt;%&lt;span class="o"&gt;(&lt;/span&gt;__appname__, os&lt;span class="o"&gt;)&lt;/span&gt;
@@ -129,7 +129,7 @@
 
 	&lt;p&gt;Ne interesează ca modificarea pe care o vom aduce să fie cât mai lizibilă pentru cei care vor modifica pachetul nostru mai târziu și să fie cât mai ușor de revenit la versiunea nemodificată. Dacă ne uităm mai atent în main, găsim următorul cod:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;no_update_check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;no_update_check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CheckForUpdates&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="n"&gt;QObject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
   &lt;span class="n"&gt;SIGNAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;update_found(PyQt_PyObject)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_found&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -156,7 +156,7 @@
 
 	&lt;p&gt;Ca să generăm petecul vom folosi gendiff din directorul de deasupra directorului rădăcină:&lt;/p&gt;
 
-&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;    $ cd ~/rpmbuild/BUILD
+&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ cd ~/rpmbuild/BUILD
     $ gendiff calibre .no_update
     diff -up calibre/src/calibre/gui2/main.py.no_update calibre/src/calibre/gui2/main.py
     --- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
@@ -189,7 +189,7 @@
 
 	&lt;p&gt;Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:&lt;/p&gt;
 
-&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  @@ -1,6 +1,6 @@
+&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  @@ -1,6 +1,6 @@
   Name:           calibre
   Version:        0.6.21
   -Release:        1%{?dist}
