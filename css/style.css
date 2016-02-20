@@ -2,7 +2,7 @@ body {
     padding: 0;
     text-align: justify;
     /*! background-color: #545454; */
-    margin: 1em 2em 0;
+    margin: 1em 0;
     font-family: Noto Sans, sans-serif;
     overflow: auto;
     color: #545454;
@@ -114,7 +114,7 @@ ul {
     max-width: 760px;
     height: auto;
     line-height: 1.6em;
-    padding: 2em;
+    padding: 2em 0;
     margin: 0 auto;
 }
 #content {
