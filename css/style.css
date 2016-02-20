@@ -80,7 +80,7 @@ pre {
     border-top: .1em solid #545454;
 }
 #header {
-    padding: 0 1em 0 0;
+    padding: 0;
     margin: .5em 0 3em;
     text-align: left;
 }
@@ -110,16 +110,15 @@ ul {
     clear: right;
 }
 #container {
-    background: white no-repeat url(grassy.png);
-    width: auto;
+    background: white;
+    max-width: 760px;
     height: auto;
     line-height: 1.6em;
-    padding: 2em 2em 0 4em;
-    margin: 0 0 2em;
+    padding: 2em;
+    margin: 0 auto;
 }
 #content {
-    padding: .1em 3em 3em 0;
-    width: 67%;
+    padding: .1em;
     min-height: 40em;
     align-content: center;
     margin: 0 auto;
@@ -129,7 +128,7 @@ ul {
     padding-bottom: 4em;
 }
 #smallprint {
-    margin: auto;
+    margin: 2em 0 0 0;
     color: #ccc;
     text-align: center;
     padding-bottom: 1em;
