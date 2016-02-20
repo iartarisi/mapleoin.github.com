@@ -1,7 +1,7 @@
 body {
     padding: 0;
     text-align: justify;
-    background-color: #545454; 
+    /*! background-color: #545454; */
     margin: 1em 2em 0;
     font-family: Trykker, sans-serif;
     overflow: auto;
@@ -119,9 +119,10 @@ ul {
 }
 #content {
     padding: .1em 3em 3em 0;
-    border-right: solid 2px #545454;
     width: 67%;
     min-height: 40em;
+    align-content: center;
+    margin: 0 auto;
 }
 
 .post {

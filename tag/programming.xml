@@ -5,19 +5,17 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
+        <pubDate>Sat, 20 Feb 2016 17:48:32 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>AST literal_eval</title>
             <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;
-Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
 
 	&lt;p&gt;This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.&lt;/p&gt;
 
-	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;
-&lt;/blockquote&gt;&lt;/p&gt;
+	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;/p&gt;
 
 	&lt;p&gt;I use to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.&lt;/p&gt; </description>
             <pubDate>Mon, 15 Feb 2016 00:00 GMT</pubDate>
@@ -30,7 +28,7 @@ Safely evaluate an expression node or a Unicode or Latin-1 encoded string contai
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
@@ -45,10 +43,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;
-		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;
-your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;
-energy, both on the part of people asking for help, and on the part of&lt;br /&gt;
-those providing help.&lt;/p&gt;
+		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;energy, both on the part of people asking for help, and on the part of&lt;br /&gt;those providing help.&lt;/p&gt;
 	&lt;/blockquote&gt; </description>
             <pubDate>Sat, 13 Feb 2016 00:32 GMT</pubDate>
         </item>
@@ -60,7 +55,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;A &lt;em&gt;very&lt;/em&gt; simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/etc/sysconfig/proxy&amp;#39;&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/etc/sysconfig/proxy&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;CURL_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/root/.curlrc&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -83,7 +78,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;In order to intercept calls to python&amp;#8217;s &lt;a href="http://docs.python.org/2/library/functions.html#open"&gt;open()&lt;/a&gt;, we need to mock the &lt;code&gt;builtins.open&lt;/code&gt; function:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://example.com:1111&amp;#39;&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://example.com:1111&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_in_sysproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                     &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http_proxy = &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
@@ -93,7 +88,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;We&amp;#8217;re good so far. Now we add the next natural test: we didn&amp;#8217;t find anything in sysconfig, but we find the right proxy &lt;span class="caps"&gt;URL&lt;/span&gt; on our second try in &lt;code&gt;CURL_PROXY&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;()):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                         &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
@@ -108,7 +103,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;Not to worry though. &lt;code&gt;mock&lt;/code&gt; &lt;a href="http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.side_effect"&gt;side_effect&lt;/a&gt; have got us covered!&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                     &lt;span class="n"&gt;side_effect&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
                                  &lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;)]):&lt;/span&gt;
@@ -122,7 +117,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;So let&amp;#8217;s implement that method. We, of course, want to make it a context manager.&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -136,7 +131,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;So we only intercept the filename that we want to mock and let everything else pass through to &lt;code&gt;builtins.open()&lt;/code&gt;. The &lt;code&gt;yield&lt;/code&gt; is there because a contextmanager should be a generator function. Everything before the &lt;code&gt;yield&lt;/code&gt; gets executed when entering the &lt;code&gt;with mock_open ...&lt;/code&gt; statement, then the content of the &lt;code&gt;with&lt;/code&gt; block is executed and then everything after the &lt;code&gt;yield&lt;/code&gt; in our mock_open function (there&amp;#8217;s nothing there in our case).&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
@@ -150,7 +145,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;Oops. It seems that we got into infinite recursion because we&amp;#8217;re calling the mocked &lt;code&gt;open()&lt;/code&gt; from the mocking function. We have to make sure that once we&amp;#8217;ve mocked a call to &lt;code&gt;open()&lt;/code&gt;, there&amp;#8217;s no way we&amp;#8217;re going to go through that mock again. Thankfully, the mock library provides methods to turn mocking on and off without using the &lt;code&gt;with mock.patch&lt;/code&gt; context manager. Take a look at &lt;code&gt;mock.patch&lt;/code&gt;&amp;#8217;s &lt;a href="http://www.voidspace.org.uk/python/mock/patch.html#patch-methods-start-and-stop"&gt;start and stop methods&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -173,7 +168,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;Test code now looks the same as before:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
@@ -192,7 +187,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;So the exception can be a normal &lt;code&gt;Exception&lt;/code&gt; subclass, but we need an extra bit of information, the &lt;code&gt;filename&lt;/code&gt; that wasn&amp;#8217;t mocked. I&amp;#8217;ll also hardcode an error message in there:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NotMocked&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NotMocked&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;NotMocked&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
             &lt;span class="s2"&gt;&amp;quot;The file &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt; was opened, but not mocked.&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -202,7 +197,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;The updated &lt;code&gt;mock_open&lt;/code&gt; code looks like this:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;complain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;open_files&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -237,7 +232,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;If we now added another &lt;code&gt;open()&lt;/code&gt; call in our initial &lt;code&gt;get_proxy()&lt;/code&gt; function, or inside the with statement in the test case,&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
@@ -253,7 +248,7 @@ those providing help.&lt;/p&gt;
 	&lt;p&gt;Cool. Now how about the opposite? I had to refactor a lot of these test cases and at some point I wasn&amp;#8217;t sure that all those assertions made sense. Was I really hitting all the files I had mocked? Well we could just add another check in our &lt;code&gt;mock_open()&lt;/code&gt; code to see if all the files that were mocked, were actually accessed
  by the test code:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;complain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;open_files&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -291,7 +286,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;If we now added another &lt;code&gt;mock_open&lt;/code&gt; that we weren&amp;#8217;t using to the test code:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/dev/null&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -305,13 +300,13 @@ those providing help.&lt;/p&gt;
 &lt;pre&gt;AssertionError: The file /dev/null was not opened.
 &lt;/pre&gt;
 
-	&lt;p&gt;&lt;span class="caps"&gt;EDIT&lt;/span&gt;: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the &lt;code&gt;open_files&lt;/code&gt; list will contain the filename multiple times, but it will only get &lt;code&gt;remove&lt;/code&gt;-ed once. This can be easily solved by making the &lt;code&gt;open_files&lt;/code&gt; list a set instead.&lt;/p&gt;
+	&lt;p&gt;EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the &lt;code&gt;open_files&lt;/code&gt; list will contain the filename multiple times, but it will only get &lt;code&gt;remove&lt;/code&gt;-ed once. This can be easily solved by making the &lt;code&gt;open_files&lt;/code&gt; list a set instead.&lt;/p&gt;
 
 	&lt;p&gt;So that&amp;#8217;s about it, we now have a rock-solid &lt;code&gt;mock_open&lt;/code&gt; function for mocking the builtin &lt;code&gt;open()&lt;/code&gt;.&lt;/p&gt;
 
 	&lt;p&gt;Before we set it free, we need to add a nice docstring to it:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;complain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Mock the open() builtin function on a specific filename&lt;/span&gt;
 &lt;span class="sd"&gt;.&lt;/span&gt;
@@ -361,7 +356,7 @@ those providing help.&lt;/p&gt;
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.github.io/perma/FOSDEM-2012-review</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt;&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;&lt;span class="caps"&gt;SUSE&lt;/span&gt;&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
 
@@ -377,7 +372,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
-	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+	&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -431,7 +426,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
 
-	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from &lt;span class="caps"&gt;DNS&lt;/span&gt;es.&lt;/p&gt;
+	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
 
 &lt;hr/&gt;
 
@@ -444,7 +439,7 @@ those providing help.&lt;/p&gt;
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
 
@@ -459,14 +454,11 @@ those providing help.&lt;/p&gt;
             <title>The Productive Programmer</title>
             <link>http://mapleoin.github.io/perma/productive-programmer-review</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;amp;amp%3Btag=httpmapleoinb-20&amp;amp;amp%3BlinkCode=as2&amp;amp;amp%3Bcamp=1789&amp;amp;amp%3Bcreative=390957&amp;amp;amp%3BcreativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
+            <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;#38;amp;tag=httpmapleoinb-20&amp;#38;amp;linkCode=as2&amp;#38;amp;camp=1789&amp;#38;amp;creative=390957&amp;#38;amp;creativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
 
 	&lt;p&gt;I&amp;#8217;ve already got a bunch of books piled up and waiting to be read, some of which I&amp;#8217;ve reached the middle of and some of which I&amp;#8217;ve read only the introduction to. I was bored today and this looked like an easy read that I could drop at any time. It is an easy read, but the fact is, it&amp;#8217;s very catchy. It draws you in and doesn&amp;#8217;t want to be let go. It&amp;#8217;s a great way to spend half a day.&lt;/p&gt;
 
-	&lt;p&gt;This could have been another one of those &amp;#8220;94 things you need to know&amp;#8221; books, but I think this title is way better. The tips are divided into 2 big sections and a few separate chapters within each one, giving the book some structure. One of the strange things about it is that its advice spans across 3 different platforms (*nix, OS X and Windows) and they&amp;#8217;re all mingled together in the same chapter. I was put off by this at first, but after I&amp;#8217;d gotten into the book a bit I realized that it is, in fact, a good idea. The whole theme of the book is programmer productivity and the reason it has this title and not a cheesy title with numbers like &amp;#8220;94.3 productivity tips for programmers&amp;#8221; is that the tips aren&amp;#8217;t what&amp;#8217;s important. The book is there to hit people in the head with and open their minds. You aren&amp;#8217;t supposed to just use the tips provided, that&amp;#8217;s unimportant. What&amp;#8217;s important is that you have a shock and realize that you&amp;#8217;ve been the wrong kind of lazy as a programmer. You&amp;#8217;ve stopped automating, you&amp;#8217;ve become a machine; in the author&amp;#8217;s own words, computers have started &amp;#8220;getting together late at night to make fun of their users&amp;#8221;. As soon as I realized what this book was really about, I started reading the Windows tips as well. I also stopped a few times to look in my distro&amp;#8217;s repository for tools that I had known of, but never used before, only now understanding their true purpose. There are many applications that seem just trendy at first, until you realize that even a small productivity boost is a big productivity boost. (Go check out &lt;i&gt;gnome-do&lt;/i&gt; , I&amp;#8217;d heard about it years ago, but never tried it until now).&lt;br /&gt;
-The book contains tips ranging from application launchers, Firefox&amp;#8217;s magic address bar, bash scripting commands to office productivity tips for killing distractions. Once again, the mindset is important, not the tips themselves. The big take-away from this book is beginning to constantly judge everything you do as a programmer. This isn&amp;#8217;t new advice (at least for those who have read &lt;a href="http://www.amazon.com/gp/product/020161622X?ie=UTF8&amp;amp;amp%3Btag=httpmapleoinb-20&amp;amp;amp%3BlinkCode=as2&amp;amp;amp%3Bcamp=1789&amp;amp;amp%3Bcreative=390957&amp;amp;amp%3BcreativeASIN=020161622X"&gt;The Pragmatic Programmer&lt;/a&gt;&amp;#8221;, which by the way is mentioned several times in this book), but I find it&amp;#8217;s better emphasized in this book. At one point in the book, the author explains how it took his team one hour to devise a Ruby script to automate some simple task that would&amp;#8217;ve required 10 minutes if done manually and finally only needed doing 5 times. One could say there was a loss in productivity, but as the author points out, one would be wrong. Those 50 minutes would&amp;#8217;ve been spent with the brain turned off, whereas the hour writing the script was spent &lt;i&gt;learning&lt;/i&gt;, focusing, practicing, gaining knowledge that can later be used on a different project. Some of us would probably have gotten bored in those 50 minutes and fallen into procrastination. That doesn&amp;#8217;t happen when you&amp;#8217;ve got a complex problem to solve.&lt;br /&gt;
-That was the first part of the book, &lt;i&gt;Mechanics&lt;/i&gt;. The second part, &lt;i&gt;Practice&lt;/i&gt; is a bit harder to read, as it&amp;#8217;s not just disparaged tips on very different applications. They&amp;#8217;re quite two separate books actually. The majority of the examples in Part IIare java (they&amp;#8217;re mostly readable even for someone who doesn&amp;#8217;t speak the exact dialect of &lt;span class="caps"&gt;OOP&lt;/span&gt; that java uses) and this part is mostly about software &lt;i&gt;construction&lt;/i&gt; as &lt;a href="http://www.amazon.com/gp/product/0735619670?ie=UTF8&amp;amp;amp%3Btag=httpmapleoinb-20&amp;amp;amp%3BlinkCode=as2&amp;amp;amp%3Bcamp=1789&amp;amp;amp%3Bcreative=390957&amp;amp;amp%3BcreativeASIN=0735619670"&gt;Steve McConnell&lt;/a&gt; would say, but it&amp;#8217;s also about Java. I learned a new acronym: &lt;acronym title="You Ain’t Gonna Need It"&gt;&lt;span class="caps"&gt;YAGNI&lt;/span&gt;&lt;/acronym&gt; which basically means that thinking ahead is bad. This is probably one of the advices that I feel the least guilty about, but which I sometime observe in people around me. Never program a feature you don&amp;#8217;t urgently have a need for.&lt;br /&gt;
-One of the good points of this book is the originality with which the ideas are expressed. Most of these ideas aren&amp;#8217;t new, especially to anyone who&amp;#8217;s read other software engineering books. The text is spiced up with little narratives of different adventures from the author&amp;#8217;s experience as a consultant and there is also an &lt;i&gt;Ancient Philosophers&lt;/i&gt; chapter and an explanation of the PacMan game&amp;#8217;s way of functioning (although I didn&amp;#8217;t understand how that&amp;#8217;s supposed to make the game less enjoyable).&lt;/p&gt; </description>
+	&lt;p&gt;This could have been another one of those &amp;#8220;94 things you need to know&amp;#8221; books, but I think this title is way better. The tips are divided into 2 big sections and a few separate chapters within each one, giving the book some structure. One of the strange things about it is that its advice spans across 3 different platforms (*nix, OS X and Windows) and they&amp;#8217;re all mingled together in the same chapter. I was put off by this at first, but after I&amp;#8217;d gotten into the book a bit I realized that it is, in fact, a good idea. The whole theme of the book is programmer productivity and the reason it has this title and not a cheesy title with numbers like &amp;#8220;94.3 productivity tips for programmers&amp;#8221; is that the tips aren&amp;#8217;t what&amp;#8217;s important. The book is there to hit people in the head with and open their minds. You aren&amp;#8217;t supposed to just use the tips provided, that&amp;#8217;s unimportant. What&amp;#8217;s important is that you have a shock and realize that you&amp;#8217;ve been the wrong kind of lazy as a programmer. You&amp;#8217;ve stopped automating, you&amp;#8217;ve become a machine; in the author&amp;#8217;s own words, computers have started &amp;#8220;getting together late at night to make fun of their users&amp;#8221;. As soon as I realized what this book was really about, I started reading the Windows tips as well. I also stopped a few times to look in my distro&amp;#8217;s repository for tools that I had known of, but never used before, only now understanding their true purpose. There are many applications that seem just trendy at first, until you realize that even a small productivity boost is a big productivity boost. (Go check out &lt;i&gt;gnome-do&lt;/i&gt; , I&amp;#8217;d heard about it years ago, but never tried it until now).&lt;br /&gt;The book contains tips ranging from application launchers, Firefox&amp;#8217;s magic address bar, bash scripting commands to office productivity tips for killing distractions. Once again, the mindset is important, not the tips themselves. The big take-away from this book is beginning to constantly judge everything you do as a programmer. This isn&amp;#8217;t new advice (at least for those who have read &lt;a href="http://www.amazon.com/gp/product/020161622X?ie=UTF8&amp;#38;amp;tag=httpmapleoinb-20&amp;#38;amp;linkCode=as2&amp;#38;amp;camp=1789&amp;#38;amp;creative=390957&amp;#38;amp;creativeASIN=020161622X"&gt;The Pragmatic Programmer&lt;/a&gt;&amp;#8221;, which by the way is mentioned several times in this book), but I find it&amp;#8217;s better emphasized in this book. At one point in the book, the author explains how it took his team one hour to devise a Ruby script to automate some simple task that would&amp;#8217;ve required 10 minutes if done manually and finally only needed doing 5 times. One could say there was a loss in productivity, but as the author points out, one would be wrong. Those 50 minutes would&amp;#8217;ve been spent with the brain turned off, whereas the hour writing the script was spent &lt;i&gt;learning&lt;/i&gt;, focusing, practicing, gaining knowledge that can later be used on a different project. Some of us would probably have gotten bored in those 50 minutes and fallen into procrastination. That doesn&amp;#8217;t happen when you&amp;#8217;ve got a complex problem to solve.&lt;br /&gt;That was the first part of the book, &lt;i&gt;Mechanics&lt;/i&gt;. The second part, &lt;i&gt;Practice&lt;/i&gt; is a bit harder to read, as it&amp;#8217;s not just disparaged tips on very different applications. They&amp;#8217;re quite two separate books actually. The majority of the examples in Part IIare java (they&amp;#8217;re mostly readable even for someone who doesn&amp;#8217;t speak the exact dialect of &lt;span class="caps"&gt;OOP&lt;/span&gt; that java uses) and this part is mostly about software &lt;i&gt;construction&lt;/i&gt; as &lt;a href="http://www.amazon.com/gp/product/0735619670?ie=UTF8&amp;#38;amp;tag=httpmapleoinb-20&amp;#38;amp;linkCode=as2&amp;#38;amp;camp=1789&amp;#38;amp;creative=390957&amp;#38;amp;creativeASIN=0735619670"&gt;Steve McConnell&lt;/a&gt; would say, but it&amp;#8217;s also about Java. I learned a new acronym: &lt;acronym title="You Ain’t Gonna Need It"&gt;YAGNI&lt;/acronym&gt; which basically means that thinking ahead is bad. This is probably one of the advices that I feel the least guilty about, but which I sometime observe in people around me. Never program a feature you don&amp;#8217;t urgently have a need for.&lt;br /&gt;One of the good points of this book is the originality with which the ideas are expressed. Most of these ideas aren&amp;#8217;t new, especially to anyone who&amp;#8217;s read other software engineering books. The text is spiced up with little narratives of different adventures from the author&amp;#8217;s experience as a consultant and there is also an &lt;i&gt;Ancient Philosophers&lt;/i&gt; chapter and an explanation of the PacMan game&amp;#8217;s way of functioning (although I didn&amp;#8217;t understand how that&amp;#8217;s supposed to make the game less enjoyable).&lt;/p&gt; </description>
             <pubDate>Fri, 18 Sep 2009 14:00 GMT</pubDate>
         </item>
         <item>
@@ -494,7 +486,7 @@ One of the good points of this book is the originality with which the ideas are 
             <author>mapleoin</author>
             <description> 	&lt;p&gt;This post is a continuation of &lt;a href="http://mapleoin.eu/perma/blog-database-schema-2/"&gt;this post&lt;/a&gt; and I&amp;#8217;ll be using that schema to write tests on top of. Here it is, for easy reference:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;nume&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -519,17 +511,16 @@ One of the good points of this book is the originality with which the ideas are 
 
 	&lt;p&gt;Ok, so here&amp;#8217;s what we&amp;#8217;re testing: our model &amp;#8212; the emphasis is on &lt;i&gt;our&lt;/i&gt;, because we&amp;#8217;re only testing our code. And mostly, we&amp;#8217;re actually testing that the code in models.py corresponds with what&amp;#8217;s in the database. All test methods must begin with the word &lt;i&gt;test&lt;/i&gt;.&lt;/p&gt;
 
-	&lt;p&gt;One of the most annoying things which took me a while to figure out was that the &lt;strong&gt;setUp&lt;/strong&gt; method is run &lt;i&gt;every time&lt;/i&gt; before one of the other methods is run. That means that if you want to test for uniqueness, you &lt;i&gt;have to&lt;/i&gt; build a &lt;strong&gt;tearDown&lt;/strong&gt; method if you want to run any other independent tests. This is why snippet A won&amp;#8217;t work, but snippet B will.&lt;br /&gt;
-Here&amp;#8217;s the model:&lt;/p&gt;
+	&lt;p&gt;One of the most annoying things which took me a while to figure out was that the &lt;strong&gt;setUp&lt;/strong&gt; method is run &lt;i&gt;every time&lt;/i&gt; before one of the other methods is run. That means that if you want to test for uniqueness, you &lt;i&gt;have to&lt;/i&gt; build a &lt;strong&gt;tearDown&lt;/strong&gt; method if you want to run any other independent tests. This is why snippet A won&amp;#8217;t work, but snippet B will.&lt;br /&gt;Here&amp;#8217;s the model:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;h4&gt;snippet A&lt;/h4&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testexist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -542,7 +533,7 @@ Here&amp;#8217;s the model:&lt;/p&gt;
 
 	&lt;h4&gt;snippet B&lt;/h4&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testexist&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -554,10 +545,9 @@ Here&amp;#8217;s the model:&lt;/p&gt;
 
 	&lt;p&gt;The second snippet only calls the &lt;strong&gt;setUp&lt;/strong&gt; method once because there is only one other method. But that&amp;#8217;s not very nice. Ideally we&amp;#8217;d to be able to run each test individually, so maybe we can write a &lt;strong&gt;tearDown&lt;/strong&gt; method to be run after each other method, to restore the database.&lt;/p&gt;
 
-	&lt;p&gt;However, there is an easier way to not have to write a &lt;strong&gt;tearDown&lt;/strong&gt; method and that is using the &lt;strong&gt;django.test&lt;/strong&gt; module which is an extention to unittest. All you have to do is &lt;strong&gt;import django.test&lt;/strong&gt; instead of &lt;strong&gt;unittest&lt;/strong&gt; and make every test object a sublclass of &lt;strong&gt;django.test.TestCase&lt;/strong&gt; instead of &lt;strong&gt;unittest.TestCase&lt;/strong&gt;.&lt;br /&gt;
-Here is what it looks like now:&lt;/p&gt;
+	&lt;p&gt;However, there is an easier way to not have to write a &lt;strong&gt;tearDown&lt;/strong&gt; method and that is using the &lt;strong&gt;django.test&lt;/strong&gt; module which is an extention to unittest. All you have to do is &lt;strong&gt;import django.test&lt;/strong&gt; instead of &lt;strong&gt;unittest&lt;/strong&gt; and make every test object a sublclass of &lt;strong&gt;django.test.TestCase&lt;/strong&gt; instead of &lt;strong&gt;unittest.TestCase&lt;/strong&gt;.&lt;br /&gt;Here is what it looks like now:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CategoryTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat2&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -572,7 +562,7 @@ Here is what it looks like now:&lt;/p&gt;
 
 	&lt;p&gt;Now, let&amp;#8217;s test the &lt;strong&gt;Post class&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;category&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -582,10 +572,9 @@ Here is what it looks like now:&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;There&amp;#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&amp;#8217;s right type/class.&lt;br /&gt;
-We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.&lt;/p&gt;
+	&lt;p&gt;There&amp;#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&amp;#8217;s right type/class.&lt;br /&gt;We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;PostTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;PostTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;trala lala&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -595,7 +584,7 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	&lt;p&gt;Next, we need to do a bit of a &lt;i&gt;trivial&lt;/i&gt; test to check that the title, the body and the right category get to the db&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testtrivial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testtrivial&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;trala lala&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
@@ -604,14 +593,14 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	&lt;p&gt;I think this is a good way to test that the creation_time and modified_time are newly generated datetime.datetime objects:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testtime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testtime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;creation_time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hour&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;p&gt;No, wait. I think this looks a bit more professional:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testtime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testtime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;creation_time&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assert_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;seconds&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;delta_modified&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;modified_time&lt;/span&gt;
@@ -619,10 +608,9 @@ We setUp a post, but also a category, since the test will be independent, but ne
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;So now, we&amp;#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&amp;#8217;s really very generous since the time it takes to run the test from the time the &lt;i&gt;setUp&lt;/i&gt; method is run is in the range of microseconds.&lt;br /&gt;
-This test doesn&amp;#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is &lt;i&gt;saved&lt;/i&gt; to the database while creation time is not. So let&amp;#8217;s write a new test based on that knowledge:&lt;/p&gt;
+	&lt;p&gt;So now, we&amp;#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&amp;#8217;s really very generous since the time it takes to run the test from the time the &lt;i&gt;setUp&lt;/i&gt; method is run is in the range of microseconds.&lt;br /&gt;This test doesn&amp;#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is &lt;i&gt;saved&lt;/i&gt; to the database while creation time is not. So let&amp;#8217;s write a new test based on that knowledge:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testModifiedVsCreation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testModifiedVsCreation&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="n"&gt;modified&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;modified_time&lt;/span&gt;
         &lt;span class="n"&gt;created&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;creation_time&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -633,14 +621,14 @@ This test doesn&amp;#8217;t show the true difference between modified and creati
 
 	&lt;p&gt;Testing for a boolean value is really easy:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testpublished&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testpublished&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;published&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;p&gt;And then there&amp;#8217;s more than one way I can think of to test the Category ForeignKey:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testcategory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testcategory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertRaises&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                 &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;tralaalal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ooopsie!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -649,28 +637,27 @@ This test doesn&amp;#8217;t show the true difference between modified and creati
 
 	&lt;p&gt;In the end, I&amp;#8217;ll go for the more general one, even though the second one is more excentric. So:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testcategory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;testcategory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEquals&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__class__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertRaises&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;ValueError&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                 &lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;tralaalal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ooopsie!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;Btw, if you don&amp;#8217;t know the errors (like ValueError &amp;#8212; I didn&amp;#8217;t know it), you can always drop to a &lt;i&gt;manage.py console&lt;/i&gt; and try to &lt;code&gt;Post.object.create(name="name",body="tralaalal", category="ooopsie!")&lt;/code&gt; and see if you get lucky.&lt;/p&gt;
+	&lt;p&gt;Btw, if you don&amp;#8217;t know the errors (like ValueError &amp;#8212; I didn&amp;#8217;t know it), you can always drop to a &lt;i&gt;manage.py console&lt;/i&gt; and try to &lt;code&gt;Post.object.create(name=&amp;#34;name&amp;#34;,body=&amp;#34;tralaalal&amp;#34;, category=&amp;#34;ooopsie!&amp;#34;)&lt;/code&gt; and see if you get lucky.&lt;/p&gt;
 
 	&lt;p&gt;Ok, passing on to the Commentator class:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Commentator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Commentator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;EmailField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;website&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;URLField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verify_exists&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;blank&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;We&amp;#8217;re only going to test that the data gets to the database and that the &lt;i&gt;name&lt;/i&gt; and &lt;i&gt;email&lt;/i&gt; fields are unique. At this stage we can&amp;#8217;t test the validation of the &lt;i&gt;email&lt;/i&gt; and &lt;i&gt;website&lt;/i&gt; fields. We&amp;#8217;ll be doing that later, when we write the &lt;a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/"&gt;forms&lt;/a&gt;.&lt;br /&gt;
-This should seem trivial by now:&lt;/p&gt;
+	&lt;p&gt;We&amp;#8217;re only going to test that the data gets to the database and that the &lt;i&gt;name&lt;/i&gt; and &lt;i&gt;email&lt;/i&gt; fields are unique. At this stage we can&amp;#8217;t test the validation of the &lt;i&gt;email&lt;/i&gt; and &lt;i&gt;website&lt;/i&gt; fields. We&amp;#8217;ll be doing that later, when we write the &lt;a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/"&gt;forms&lt;/a&gt;.&lt;br /&gt;This should seem trivial by now:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentatorTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentatorTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;comtor&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Commentator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;hacketyhack&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                 &lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;hackety@example.com&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;website&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;example.com&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -690,7 +677,7 @@ This should seem trivial by now:&lt;/p&gt;
 
 	&lt;p&gt;Now, let&amp;#8217;s get to testing the Comment class:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Comment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="n"&gt;post&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;author&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Commentator&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -701,7 +688,7 @@ This should seem trivial by now:&lt;/p&gt;
 
 	&lt;p&gt;There won&amp;#8217;t be anything new here. And this is when and why testing is &lt;i&gt;boring&lt;/i&gt;. But, hey! A man&amp;#8217;s gotta do, what a man&amp;#8217;s gotta do.&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;CommentTest&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;test&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TestCase&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;setUp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Category&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cat1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Post&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;body&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;trala lala&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -732,7 +719,7 @@ This should seem trivial by now:&lt;/p&gt;
 
 	&lt;p&gt;First, you&amp;#8217;ll need to make a copy of django.test.simple (put it in your project&amp;#8217;s directory for example). Then comment these lines:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# old_name = settings.DATABASE_NAME&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c1"&gt;# old_name = settings.DATABASE_NAME&lt;/span&gt;
 &lt;span class="c1"&gt;# from django.db import connection&lt;/span&gt;
 &lt;span class="c1"&gt;# connection.creation.create_test_db(verbosity, autoclobber=not interactive)&lt;/span&gt;
 &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unittest&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextTestRunner&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;verbosity&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;suite&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -742,13 +729,13 @@ This should seem trivial by now:&lt;/p&gt;
 
 	&lt;p&gt;And now, add this to your settings.py file:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TEST_RUNNER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;myproject.simple.run_tests&amp;#39;&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;TEST_RUNNER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;myproject.simple.run_tests&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;p&gt;Be careful now. All the data in your database &lt;strong&gt;will&lt;/strong&gt; be lost when you run &lt;i&gt;manage.py test&lt;/i&gt; the next time. So back it up! First create a new database, say &lt;i&gt;backup&lt;/i&gt; and then:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mysqldump -u DB_USER --password&lt;span class="o"&gt;=&lt;/span&gt;DB_PASS DB_NAME&lt;span class="p"&gt;|&lt;/span&gt;mysql -u DB_USER --password&lt;span class="o"&gt;=&lt;/span&gt;DB_PASSWD -h localhost backup
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;mysqldump -u DB_USER --password&lt;span class="o"&gt;=&lt;/span&gt;DB_PASS DB_NAME&lt;span class="p"&gt;|&lt;/span&gt;mysql -u DB_USER --password&lt;span class="o"&gt;=&lt;/span&gt;DB_PASSWD -h localhost backup
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
@@ -756,7 +743,7 @@ This should seem trivial by now:&lt;/p&gt;
 
 	&lt;p&gt;Here&amp;#8217;s to show that it works (after I&amp;#8217;ve made a little modification to the model, but not the database):&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python manage.py &lt;span class="nb"&gt;test&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python manage.py &lt;span class="nb"&gt;test&lt;/span&gt;
 ..EEE..EEEEEE................
 --&amp;gt; lots of tracebacks &amp;lt;--
 ----------------------------------------------------------------------
@@ -774,7 +761,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
             <author>mapleoin</author>
             <description> 	&lt;p&gt;Tocmai am reușit (am găsit timp &amp;#8212; furat timp) să scriu în django schema din &lt;a href="http://mapleoin.eu/perma/blog-database-schema"&gt;postul trecut&lt;/a&gt;. Simplicity is divine:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;nume&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -796,13 +783,11 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;
-E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat &lt;span class="caps"&gt;OOP&lt;/span&gt;-ul.&lt;br /&gt;
-Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi &lt;span class="caps"&gt;URLF&lt;/span&gt;ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
+	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote" id="fnrev8119206048d7463bb5e4d089b098f1ad"&gt;&lt;a href="#fn8119206048d7463bb5e4d089b098f1ad"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn363dcb43-a3e0-415c-8d89-44a763a7d135"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
-&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;        &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -844,10 +829,9 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;&lt;span class="caps"&gt;TADA&lt;/span&gt;!&lt;br /&gt;
-Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
+	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p class="footnote" id="fn8119206048d7463bb5e4d089b098f1ad"&gt;&lt;sup&gt;3&lt;/sup&gt; merci gheorghe!&lt;/p&gt; </description>
+	&lt;p id="fn363dcb43-a3e0-415c-8d89-44a763a7d135" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>
@@ -884,27 +868,21 @@ Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie s�
 
 	&lt;p&gt;Ia să încerc să fac și niște tabele din ce scrie mai sus.&lt;/p&gt;
 
-	&lt;p&gt;Post&lt;br /&gt;
-&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Post&lt;br /&gt;&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Comment&lt;br /&gt;
-&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Comment&lt;br /&gt;&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Commentator&lt;br /&gt;
-&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Commentator&lt;br /&gt;&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Category&lt;br /&gt;
-&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Category&lt;br /&gt;&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
 
 	&lt;p&gt;Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.&lt;/p&gt;
 
 	&lt;p&gt;E evident ceea ce &lt;strong&gt;nu&lt;/strong&gt; am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):&lt;/p&gt;
 
-	&lt;p&gt;Comment&lt;br /&gt;
-id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
+	&lt;p&gt;Comment&lt;br /&gt;id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
 
-	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;
-Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
+	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
             <pubDate>Tue, 16 Sep 2008 00:00 GMT</pubDate>
         </item>
     </channel>

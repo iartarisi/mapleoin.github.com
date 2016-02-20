@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
+        <pubDate>Sat, 20 Feb 2016 17:48:32 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>HTTP Status Codes Reference</title>
@@ -22,13 +22,11 @@
             <title>AST literal_eval</title>
             <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;
-Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
 
 	&lt;p&gt;This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.&lt;/p&gt;
 
-	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;
-&lt;/blockquote&gt;&lt;/p&gt;
+	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;/p&gt;
 
 	&lt;p&gt;I use to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.&lt;/p&gt; </description>
             <pubDate>Mon, 15 Feb 2016 00:00 GMT</pubDate>
@@ -41,7 +39,7 @@ Safely evaluate an expression node or a Unicode or Latin-1 encoded string contai
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
@@ -56,10 +54,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;
-		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;
-your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;
-energy, both on the part of people asking for help, and on the part of&lt;br /&gt;
-those providing help.&lt;/p&gt;
+		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;energy, both on the part of people asking for help, and on the part of&lt;br /&gt;those providing help.&lt;/p&gt;
 	&lt;/blockquote&gt; </description>
             <pubDate>Sat, 13 Feb 2016 00:32 GMT</pubDate>
         </item>

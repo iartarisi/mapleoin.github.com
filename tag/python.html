@@ -21,61 +21,16 @@
     <a href="/archive">archive</a>
     <a href="/about">about</a>
   </div>
-<div id="sidebar">
-<div id="recent">
-<h4>Recent</h4>
-<ul>
-  <li><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></li>
-  <li><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></li>
-  <li><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></li>
-  <li><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></li>
-  <li><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></li>
-</ul>
-</div><!--recent-->
-<br />
-<div id="tags">
-<h4>Tags</h4>
-<ul>
-  <li><a href="/tag/API.html">API</a></li>
-  <li><a href="/tag/books.html">books</a></li>
-  <li><a href="/tag/copr.html">copr</a></li>
-  <li><a href="/tag/creativecommons.html">creativecommons</a></li>
-  <li><a href="/tag/databases.html">databases</a></li>
-  <li><a href="/tag/django.html">django</a></li>
-  <li><a href="/tag/emacs.html">emacs</a></li>
-  <li><a href="/tag/events.html">events</a></li>
-  <li><a href="/tag/fedora.html">fedora</a></li>
-  <li><a href="/tag/fedora-ro.html">fedora-ro</a></li>
-  <li><a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a></li>
-  <li><a href="/tag/floss.html">floss</a></li>
-  <li><a href="/tag/foss.html">foss</a></li>
-  <li><a href="/tag/freebsd.html">freebsd</a></li>
-  <li><a href="/tag/gsoc.html">gsoc</a></li>
-  <li><a href="/tag/hacking.html">hacking</a></li>
-  <li><a href="/tag/linux.html">linux</a></li>
-  <li><a href="/tag/music.html">music</a></li>
-  <li><a href="/tag/packaging.html">packaging</a></li>
-  <li><a href="/tag/programming.html">programming</a></li>
-  <li><a href="/tag/python.html">python</a></li>
-  <li><a href="/tag/REST.html">REST</a></li>
-  <li><a href="/tag/TIL.html">TIL</a></li>
-  <li><a href="/tag/timezones.html">timezones</a></li>
-  <li><a href="/tag/unix.html">unix</a></li>
-</ul>
-</div><!--tags-->
-</div><!--sidebar-->
 <div id="content">
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></h2>
         <h3>Monday, February 15, 2016</h3>
         <div class="entry">
-            	<p><blockquote><br />
-Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.</p>
+            	<p><blockquote><br />Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.</p>
 
 	<p>This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.</p>
 
-	<p><cite>&#8212;From python&#8217;s <a href="https://docs.python.org/library/ast.html#ast.literal_eval">ast library</a></cite><br />
-</blockquote></p>
+	<p><cite>&#8212;From python&#8217;s <a href="https://docs.python.org/library/ast.html#ast.literal_eval">ast library</a></cite><br /></blockquote></p>
 
 	<p>I use to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.</p>
         </div>
@@ -95,7 +50,7 @@ Safely evaluate an expression node or a Unicode or Latin-1 encoded string contai
 
 	<p>I found a way to change the timezone, that is used by most of python&#8217;s stdlib, by changing the <code>TZ</code> environment variable:</p>
 
-<div class="Bash"><div class="highlight"><pre><span></span>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
+<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
 <span class="o">(</span><span class="s1">&#39;GMT&#39;</span>, <span class="s1">&#39;BST&#39;</span><span class="o">)</span>
 $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&#39;</span> python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
 <span class="o">(</span><span class="s1">&#39;CET&#39;</span>, <span class="s1">&#39;CEST&#39;</span><span class="o">)</span>
@@ -119,7 +74,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>A <em>very</em> simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/etc/sysconfig/proxy&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/etc/sysconfig/proxy&#39;</span>
 <span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/root/.curlrc&#39;</span>
 <span class="k">def</span> <span class="nf">get_proxy</span><span class="p">():</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -142,7 +97,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>In order to intercept calls to python&#8217;s <a href="http://docs.python.org/2/library/functions.html#open">open()</a>, we need to mock the <code>builtins.open</code> function:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&#39;</span>
 <span class="k">def</span> <span class="nf">test_proxy_url_in_sysproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
                     <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;http_proxy = &quot;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
@@ -152,7 +107,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>We&#8217;re good so far. Now we add the next natural test: we didn&#8217;t find anything in sysconfig, but we find the right proxy <span class="caps">URL</span> on our second try in <code>CURL_PROXY</code>:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()):</span>
         <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
                         <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
@@ -167,7 +122,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>Not to worry though. <code>mock</code> <a href="http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.side_effect">side_effect</a> have got us covered!</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
                     <span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(),</span>
                                  <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
@@ -181,7 +136,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>So let&#8217;s implement that method. We, of course, want to make it a context manager.</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="nd">@contextmanager</span>
+<div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
@@ -195,7 +150,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>So we only intercept the filename that we want to mock and let everything else pass through to <code>builtins.open()</code>. The <code>yield</code> is there because a contextmanager should be a generator function. Everything before the <code>yield</code> gets executed when entering the <code>with mock_open ...</code> statement, then the content of the <code>with</code> block is executed and then everything after the <code>yield</code> in our mock_open function (there&#8217;s nothing there in our case).</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
@@ -209,7 +164,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>Oops. It seems that we got into infinite recursion because we&#8217;re calling the mocked <code>open()</code> from the mocking function. We have to make sure that once we&#8217;ve mocked a call to <code>open()</code>, there&#8217;s no way we&#8217;re going to go through that mock again. Thankfully, the mock library provides methods to turn mocking on and off without using the <code>with mock.patch</code> context manager. Take a look at <code>mock.patch</code>&#8217;s <a href="http://www.voidspace.org.uk/python/mock/patch.html#patch-methods-start-and-stop">start and stop methods</a>.</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="nd">@contextmanager</span>
+<div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
@@ -232,7 +187,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>Test code now looks the same as before:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
@@ -251,7 +206,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>So the exception can be a normal <code>Exception</code> subclass, but we need an extra bit of information, the <code>filename</code> that wasn&#8217;t mocked. I&#8217;ll also hardcode an error message in there:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NotMocked</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NotMocked</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">NotMocked</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span>
             <span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was opened, but not mocked.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
@@ -261,7 +216,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>The updated <code>mock_open</code> code looks like this:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="nd">@contextmanager</span>
+<div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -296,7 +251,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>If we now added another <code>open()</code> call in our initial <code>get_proxy()</code> function, or inside the with statement in the test case,</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
@@ -312,7 +267,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>Cool. Now how about the opposite? I had to refactor a lot of these test cases and at some point I wasn&#8217;t sure that all those assertions made sense. Was I really hitting all the files I had mocked? Well we could just add another check in our <code>mock_open()</code> code to see if all the files that were mocked, were actually accessed
  by the test code:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="nd">@contextmanager</span>
+<div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -350,7 +305,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>If we now added another <code>mock_open</code> that we weren&#8217;t using to the test code:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">):</span>
@@ -364,13 +319,13 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <pre>AssertionError: The file /dev/null was not opened.
 </pre>
 
-	<p><span class="caps">EDIT</span>: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
+	<p>EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
 
 	<p>So that&#8217;s about it, we now have a rock-solid <code>mock_open</code> function for mocking the builtin <code>open()</code>.</p>
 
 	<p>Before we set it free, we need to add a nice docstring to it:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="nd">@contextmanager</span>
+<div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Mock the open() builtin function on a specific filename</span>
 <span class="sd">.</span>
@@ -428,7 +383,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
         <div class="entry">
             	<p>This post is a continuation of <a href="http://mapleoin.eu/perma/blog-database-schema-2/">this post</a> and I&#8217;ll be using that schema to write tests on top of. Here it is, for easy reference:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -453,17 +408,16 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>Ok, so here&#8217;s what we&#8217;re testing: our model &#8212; the emphasis is on <i>our</i>, because we&#8217;re only testing our code. And mostly, we&#8217;re actually testing that the code in models.py corresponds with what&#8217;s in the database. All test methods must begin with the word <i>test</i>.</p>
 
-	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />
-Here&#8217;s the model:</p>
+	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />Here&#8217;s the model:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<h4>snippet A</h4>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -476,7 +430,7 @@ Here&#8217;s the model:</p>
 
 	<h4>snippet B</h4>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -488,10 +442,9 @@ Here&#8217;s the model:</p>
 
 	<p>The second snippet only calls the <strong>setUp</strong> method once because there is only one other method. But that&#8217;s not very nice. Ideally we&#8217;d to be able to run each test individually, so maybe we can write a <strong>tearDown</strong> method to be run after each other method, to restore the database.</p>
 
-	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />
-Here is what it looks like now:</p>
+	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />Here is what it looks like now:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat2&quot;</span><span class="p">)</span>
@@ -506,7 +459,7 @@ Here is what it looks like now:</p>
 
 	<p>Now, let&#8217;s test the <strong>Post class</strong>:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Category</span><span class="p">)</span>
@@ -516,10 +469,9 @@ Here is what it looks like now:</p>
 </pre></div>
 </div>
 
-	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />
-We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
+	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post1</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
@@ -529,7 +481,7 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	<p>Next, we need to do a bit of a <i>trivial</i> test to check that the title, the body and the right category get to the db</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s2">&quot;trala lala&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
@@ -538,14 +490,14 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	<p>I think this is a good way to test that the creation_time and modified_time are newly generated datetime.datetime objects:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>No, wait. I think this looks a bit more professional:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
         <span class="n">delta_modified</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
@@ -553,10 +505,9 @@ We setUp a post, but also a category, since the test will be independent, but ne
 </pre></div>
 </div>
 
-	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />
-This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
+	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">modified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
         <span class="n">created</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
@@ -567,14 +518,14 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>Testing for a boolean value is really easy:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">published</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>And then there&#8217;s more than one way I can think of to test the Category ForeignKey:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
                 <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
@@ -583,28 +534,27 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>In the end, I&#8217;ll go for the more general one, even though the second one is more excentric. So:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
                 <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
-	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name="name",body="tralaalal", category="ooopsie!")</code> and see if you get lucky.</p>
+	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name=&#34;name&#34;,body=&#34;tralaalal&#34;, category=&#34;ooopsie!&#34;)</code> and see if you get lucky.</p>
 
 	<p>Ok, passing on to the Commentator class:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Commentator</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Commentator</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">website</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">(</span><span class="n">verify_exists</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 
-	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />
-This should seem trivial by now:</p>
+	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />This should seem trivial by now:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hacketyhack&quot;</span><span class="p">,</span>
                 <span class="n">email</span><span class="o">=</span><span class="s2">&quot;hackety@example.com&quot;</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
@@ -624,7 +574,7 @@ This should seem trivial by now:</p>
 
 	<p>Now, let&#8217;s get to testing the Comment class:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">post</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span>
     <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Commentator</span><span class="p">)</span>
@@ -635,7 +585,7 @@ This should seem trivial by now:</p>
 
 	<p>There won&#8217;t be anything new here. And this is when and why testing is <i>boring</i>. But, hey! A man&#8217;s gotta do, what a man&#8217;s gotta do.</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
@@ -666,7 +616,7 @@ This should seem trivial by now:</p>
 
 	<p>First, you&#8217;ll need to make a copy of django.test.simple (put it in your project&#8217;s directory for example). Then comment these lines:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="c1"># old_name = settings.DATABASE_NAME</span>
+<div class="Python"><div class="highlight"><pre><span class="c1"># old_name = settings.DATABASE_NAME</span>
 <span class="c1"># from django.db import connection</span>
 <span class="c1"># connection.creation.create_test_db(verbosity, autoclobber=not interactive)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
@@ -676,13 +626,13 @@ This should seem trivial by now:</p>
 
 	<p>And now, add this to your settings.py file:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
 </pre></div>
 </div>
 
 	<p>Be careful now. All the data in your database <strong>will</strong> be lost when you run <i>manage.py test</i> the next time. So back it up! First create a new database, say <i>backup</i> and then:</p>
 
-<div class="Bash"><div class="highlight"><pre><span></span>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
+<div class="Bash"><div class="highlight"><pre>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
 </pre></div>
 </div>
 
@@ -690,7 +640,7 @@ This should seem trivial by now:</p>
 
 	<p>Here&#8217;s to show that it works (after I&#8217;ve made a little modification to the model, but not the database):</p>
 
-<div class="Bash"><div class="highlight"><pre><span></span>$ python manage.py <span class="nb">test</span>
+<div class="Bash"><div class="highlight"><pre>$ python manage.py <span class="nb">test</span>
 ..EEE..EEEEEE................
 --&gt; lots of tracebacks &lt;--
 ----------------------------------------------------------------------
@@ -715,7 +665,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
         <div class="entry">
             	<p>Tocmai am reușit (am găsit timp &#8212; furat timp) să scriu în django schema din <a href="http://mapleoin.eu/perma/blog-database-schema">postul trecut</a>. Simplicity is divine:</p>
 
-<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -737,13 +687,11 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 </pre></div>
 </div>
 
-	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />
-E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
-Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
+	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote" id="fnrev8119206048d7463bb5e4d089b098f1ad"><a href="#fn8119206048d7463bb5e4d089b098f1ad">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn363dcb43-a3e0-415c-8d89-44a763a7d135">3</a></sup> pentru tabelele rezultate:</p>
 
-<div class="MySQL"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
+<div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -785,10 +733,9 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 </pre></div>
 </div>
 
-	<p><span class="caps">TADA</span>!<br />
-Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
+	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p class="footnote" id="fn8119206048d7463bb5e4d089b098f1ad"><sup>3</sup> merci gheorghe!</p>
+	<p id="fn363dcb43-a3e0-415c-8d89-44a763a7d135" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/programming.html">programming</a>
@@ -833,27 +780,21 @@ Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie s�
 
 	<p>Ia să încerc să fac și niște tabele din ce scrie mai sus.</p>
 
-	<p>Post<br />
-<code>id || title || body || category_id || created_at || published</code></p>
+	<p>Post<br /><code>id || title || body || category_id || created_at || published</code></p>
 
-	<p>Comment<br />
-<code>id || post_id || commentator_id || body || approved || created_at</code></p>
+	<p>Comment<br /><code>id || post_id || commentator_id || body || approved || created_at</code></p>
 
-	<p>Commentator<br />
-<code>id || name || email || website || gravatar_url</code></p>
+	<p>Commentator<br /><code>id || name || email || website || gravatar_url</code></p>
 
-	<p>Category<br />
-<code>id || name</code></p>
+	<p>Category<br /><code>id || name</code></p>
 
 	<p>Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.</p>
 
 	<p>E evident ceea ce <strong>nu</strong> am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):</p>
 
-	<p>Comment<br />
-id || <span style="color:red;">autor || email || website || gravatar_url</span> || post_id || commentator_id || body || approved || created_at</p>
+	<p>Comment<br />id || <span style="color:red;">autor || email || website || gravatar_url</span> || post_id || commentator_id || body || approved || created_at</p>
 
-	<p>Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. <br />
-Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)</p>
+	<p>Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. <br />Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)</p>
         </div>
         <div class="post_tags">Tags:
                 <a href="/tag/django.html">django</a>

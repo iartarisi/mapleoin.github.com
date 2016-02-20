@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
+        <pubDate>Sat, 20 Feb 2016 17:48:32 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>HTTP Status Codes Reference</title>
@@ -22,13 +22,11 @@
             <title>AST literal_eval</title>
             <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;
-Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
 
 	&lt;p&gt;This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.&lt;/p&gt;
 
-	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;
-&lt;/blockquote&gt;&lt;/p&gt;
+	&lt;p&gt;&lt;cite&gt;&amp;#8212;From python&amp;#8217;s &lt;a href="https://docs.python.org/library/ast.html#ast.literal_eval"&gt;ast library&lt;/a&gt;&lt;/cite&gt;&lt;br /&gt;&lt;/blockquote&gt;&lt;/p&gt;
 
 	&lt;p&gt;I use to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.&lt;/p&gt; </description>
             <pubDate>Mon, 15 Feb 2016 00:00 GMT</pubDate>
@@ -41,7 +39,7 @@ Safely evaluate an expression node or a Unicode or Latin-1 encoded string contai
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
@@ -56,10 +54,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;
-		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;
-your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;
-energy, both on the part of people asking for help, and on the part of&lt;br /&gt;
-those providing help.&lt;/p&gt;
+		&lt;p&gt;The XY problem is asking about your attempted solution rather than&lt;br /&gt;your actual problem. This leads to enormous amounts of wasted time and&lt;br /&gt;energy, both on the part of people asking for help, and on the part of&lt;br /&gt;those providing help.&lt;/p&gt;
 	&lt;/blockquote&gt; </description>
             <pubDate>Sat, 13 Feb 2016 00:32 GMT</pubDate>
         </item>
@@ -71,7 +66,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;A &lt;em&gt;very&lt;/em&gt; simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/etc/sysconfig/proxy&amp;#39;&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/etc/sysconfig/proxy&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;CURL_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/root/.curlrc&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -94,7 +89,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;In order to intercept calls to python&amp;#8217;s &lt;a href="http://docs.python.org/2/library/functions.html#open"&gt;open()&lt;/a&gt;, we need to mock the &lt;code&gt;builtins.open&lt;/code&gt; function:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://example.com:1111&amp;#39;&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://example.com:1111&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_in_sysproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                     &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;http_proxy = &amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
@@ -104,7 +99,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;We&amp;#8217;re good so far. Now we add the next natural test: we didn&amp;#8217;t find anything in sysconfig, but we find the right proxy &lt;span class="caps"&gt;URL&lt;/span&gt; on our second try in &lt;code&gt;CURL_PROXY&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;()):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                         &lt;span class="n"&gt;return_value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt;
@@ -119,7 +114,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;Not to worry though. &lt;code&gt;mock&lt;/code&gt; &lt;a href="http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.side_effect"&gt;side_effect&lt;/a&gt; have got us covered!&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;patch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;builtins.open&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
                     &lt;span class="n"&gt;side_effect&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
                                  &lt;span class="n"&gt;io&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;StringIO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;)]):&lt;/span&gt;
@@ -133,7 +128,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;So let&amp;#8217;s implement that method. We, of course, want to make it a context manager.&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -147,7 +142,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;So we only intercept the filename that we want to mock and let everything else pass through to &lt;code&gt;builtins.open()&lt;/code&gt;. The &lt;code&gt;yield&lt;/code&gt; is there because a contextmanager should be a generator function. Everything before the &lt;code&gt;yield&lt;/code&gt; gets executed when entering the &lt;code&gt;with mock_open ...&lt;/code&gt; statement, then the content of the &lt;code&gt;with&lt;/code&gt; block is executed and then everything after the &lt;code&gt;yield&lt;/code&gt; in our mock_open function (there&amp;#8217;s nothing there in our case).&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
@@ -161,7 +156,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;Oops. It seems that we got into infinite recursion because we&amp;#8217;re calling the mocked &lt;code&gt;open()&lt;/code&gt; from the mocking function. We have to make sure that once we&amp;#8217;ve mocked a call to &lt;code&gt;open()&lt;/code&gt;, there&amp;#8217;s no way we&amp;#8217;re going to go through that mock again. Thankfully, the mock library provides methods to turn mocking on and off without using the &lt;code&gt;with mock.patch&lt;/code&gt; context manager. Take a look at &lt;code&gt;mock.patch&lt;/code&gt;&amp;#8217;s &lt;a href="http://www.voidspace.org.uk/python/mock/patch.html#patch-methods-start-and-stop"&gt;start and stop methods&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
@@ -184,7 +179,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;Test code now looks the same as before:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
@@ -203,7 +198,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;So the exception can be a normal &lt;code&gt;Exception&lt;/code&gt; subclass, but we need an extra bit of information, the &lt;code&gt;filename&lt;/code&gt; that wasn&amp;#8217;t mocked. I&amp;#8217;ll also hardcode an error message in there:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NotMocked&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;NotMocked&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;NotMocked&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
             &lt;span class="s2"&gt;&amp;quot;The file &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt; was opened, but not mocked.&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -213,7 +208,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;The updated &lt;code&gt;mock_open&lt;/code&gt; code looks like this:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;complain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;open_files&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -248,7 +243,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;If we now added another &lt;code&gt;open()&lt;/code&gt; call in our initial &lt;code&gt;get_proxy()&lt;/code&gt; function, or inside the with statement in the test case,&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;assertEqual&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;get_proxy&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
@@ -264,7 +259,7 @@ those providing help.&lt;/p&gt;
 	&lt;p&gt;Cool. Now how about the opposite? I had to refactor a lot of these test cases and at some point I wasn&amp;#8217;t sure that all those assertions made sense. Was I really hitting all the files I had mocked? Well we could just add another check in our &lt;code&gt;mock_open()&lt;/code&gt; code to see if all the files that were mocked, were actually accessed
  by the test code:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;complain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;open_files&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_file&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -302,7 +297,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;p&gt;If we now added another &lt;code&gt;mock_open&lt;/code&gt; that we weren&amp;#8217;t using to the test code:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_proxy_url_not_in_sysproxy_but_in_yastproxy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SYS_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CURL_PROXY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39; --proxy &amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;TEST_PROXY&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
             &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/dev/null&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -316,13 +311,13 @@ those providing help.&lt;/p&gt;
 &lt;pre&gt;AssertionError: The file /dev/null was not opened.
 &lt;/pre&gt;
 
-	&lt;p&gt;&lt;span class="caps"&gt;EDIT&lt;/span&gt;: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the &lt;code&gt;open_files&lt;/code&gt; list will contain the filename multiple times, but it will only get &lt;code&gt;remove&lt;/code&gt;-ed once. This can be easily solved by making the &lt;code&gt;open_files&lt;/code&gt; list a set instead.&lt;/p&gt;
+	&lt;p&gt;EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the &lt;code&gt;open_files&lt;/code&gt; list will contain the filename multiple times, but it will only get &lt;code&gt;remove&lt;/code&gt;-ed once. This can be easily solved by making the &lt;code&gt;open_files&lt;/code&gt; list a set instead.&lt;/p&gt;
 
 	&lt;p&gt;So that&amp;#8217;s about it, we now have a rock-solid &lt;code&gt;mock_open&lt;/code&gt; function for mocking the builtin &lt;code&gt;open()&lt;/code&gt;.&lt;/p&gt;
 
 	&lt;p&gt;Before we set it free, we need to add a nice docstring to it:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@contextmanager&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mock_open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;complain&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;Mock the open() builtin function on a specific filename&lt;/span&gt;
 &lt;span class="sd"&gt;.&lt;/span&gt;
@@ -372,7 +367,7 @@ those providing help.&lt;/p&gt;
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.github.io/perma/FOSDEM-2012-review</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt;&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;&lt;span class="caps"&gt;SUSE&lt;/span&gt;&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
 
@@ -388,7 +383,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
-	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+	&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -442,7 +437,7 @@ those providing help.&lt;/p&gt;
 
 	&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
 
-	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from &lt;span class="caps"&gt;DNS&lt;/span&gt;es.&lt;/p&gt;
+	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
 
 &lt;hr/&gt;
 
@@ -455,7 +450,7 @@ those providing help.&lt;/p&gt;
             <title>Data Visualizations</title>
             <link>http://mapleoin.github.io/perma/data-visualizations</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
 
 	&lt;p&gt;There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&amp;#8217;d better leave it to a professional.&lt;/p&gt;
 

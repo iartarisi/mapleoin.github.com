@@ -5,13 +5,13 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 18 Feb 2016 00:17:05 +0200</pubDate>
+        <pubDate>Sat, 20 Feb 2016 17:48:32 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.github.io/perma/FOSDEM-2012-review</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt;&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;&lt;span class="caps"&gt;SUSE&lt;/span&gt;&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
+            <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
 
@@ -27,7 +27,7 @@
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
-	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+	&lt;p&gt;DeltaCloud aims to be a RESTful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud APIs, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -81,7 +81,7 @@
 
 	&lt;h5&gt;Bdale Garbee&lt;/h5&gt;
 
-	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from &lt;span class="caps"&gt;DNS&lt;/span&gt;es.&lt;/p&gt;
+	&lt;p&gt;An interesting project about making a truly free easily available software as well as hardware system. Some interesting concepts are used in this project like &lt;span class="caps"&gt;GPG&lt;/span&gt; keys for authentication, but also for the trust required to provide a truly decentralized peer based network, free from DNSes.&lt;/p&gt;
 
 &lt;hr/&gt;
 
@@ -94,7 +94,7 @@
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
             <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
 
@@ -111,7 +111,7 @@
             <author>mapleoin</author>
             <description> 	&lt;p&gt;Tocmai am reușit (am găsit timp &amp;#8212; furat timp) să scriu în django schema din &lt;a href="http://mapleoin.eu/perma/blog-database-schema"&gt;postul trecut&lt;/a&gt;. Simplicity is divine:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;nume&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -133,13 +133,11 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;
-E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat &lt;span class="caps"&gt;OOP&lt;/span&gt;-ul.&lt;br /&gt;
-Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi &lt;span class="caps"&gt;URLF&lt;/span&gt;ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
+	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote" id="fnrev8119206048d7463bb5e4d089b098f1ad"&gt;&lt;a href="#fn8119206048d7463bb5e4d089b098f1ad"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn363dcb43-a3e0-415c-8d89-44a763a7d135"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
-&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;        &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -181,10 +179,9 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
-	&lt;p&gt;&lt;span class="caps"&gt;TADA&lt;/span&gt;!&lt;br /&gt;
-Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
+	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p class="footnote" id="fn8119206048d7463bb5e4d089b098f1ad"&gt;&lt;sup&gt;3&lt;/sup&gt; merci gheorghe!&lt;/p&gt; </description>
+	&lt;p id="fn363dcb43-a3e0-415c-8d89-44a763a7d135" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>
@@ -221,27 +218,21 @@ Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie s�
 
 	&lt;p&gt;Ia să încerc să fac și niște tabele din ce scrie mai sus.&lt;/p&gt;
 
-	&lt;p&gt;Post&lt;br /&gt;
-&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Post&lt;br /&gt;&lt;code&gt;id || title || body || category_id || created_at || published&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Comment&lt;br /&gt;
-&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Comment&lt;br /&gt;&lt;code&gt;id || post_id || commentator_id || body || approved || created_at&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Commentator&lt;br /&gt;
-&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Commentator&lt;br /&gt;&lt;code&gt;id || name || email || website || gravatar_url&lt;/code&gt;&lt;/p&gt;
 
-	&lt;p&gt;Category&lt;br /&gt;
-&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
+	&lt;p&gt;Category&lt;br /&gt;&lt;code&gt;id || name&lt;/code&gt;&lt;/p&gt;
 
 	&lt;p&gt;Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.&lt;/p&gt;
 
 	&lt;p&gt;E evident ceea ce &lt;strong&gt;nu&lt;/strong&gt; am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):&lt;/p&gt;
 
-	&lt;p&gt;Comment&lt;br /&gt;
-id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
+	&lt;p&gt;Comment&lt;br /&gt;id || &lt;span style="color:red;"&gt;autor || email || website || gravatar_url&lt;/span&gt; || post_id || commentator_id || body || approved || created_at&lt;/p&gt;
 
-	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;
-Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
+	&lt;p&gt;Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. &lt;br /&gt;Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)&lt;/p&gt; </description>
             <pubDate>Tue, 16 Sep 2008 00:00 GMT</pubDate>
         </item>
     </channel>
