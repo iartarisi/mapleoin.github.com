@@ -24,7 +24,7 @@
 <div id="content">
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/moving-on-to-the-buildsystem">FSC: moving to the buildsystem</a></h2>
-        <h3>Monday, September  6, 2010</h3>
+        <div class="postmeta">Monday, September  6, 2010</div>
         <div class="entry">
             	<p>I started working on the buildsystem part of copr this week. Right now, I&#8217;m still getting familiar with <a href="http://fedorahosted.org/func">func</a>. That&#8217;s what we&#8217;ll be using to communicate with the builder machines: get them running errands and get back status reports at any time. I spent a lot of time getting a virtual machine setup with libvirt; networking especially was a pain (mostly because of my pppoe connection I think).</p>
 
@@ -32,7 +32,8 @@
 
 	<p>In the meantime, we&#8217;re slowly <a href="https://fedorahosted.org/fedora-infrastructure/ticket/2339">getting resources</a> for the deployment of Copr. Toshio got a running instance of the current state of the TG app on <a href="http://publictest1.fedoraproject.org/copr/">publictest1</a>. It looks just like a quickstarted TG app, because it doesn&#8217;t have any WebUI. But it can <span class="caps">CRUD</span> coprs, handle dependencies between them, handle permissions and <span class="caps">CRD</span> packages. Most of the functions require a <a href="http://admin.fedoraproject.org/accounts">FAS</a> account, but you don&#8217;t need one to see a <a href="http://publictest1.fedoraproject.org/copr/coprs.json">list of all the coprs</a>, or a <a href="http://publictest1.fedoraproject.org/copr/firstcopr/packages.json">list of packages in a copr</a>.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/copr.html">copr</a>
                 <a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a>
                 <a href="/tag/foss.html">foss</a>

@@ -24,7 +24,7 @@
 <div id="content">
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></h2>
-        <h3>Wednesday, February 15, 2012</h3>
+        <div class="postmeta">Wednesday, February 15, 2012</div>
         <div class="entry">
             	<p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <a href="http://suse.com">SUSE</a> for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
 
@@ -104,7 +104,8 @@
 
 	<p>A lot of the talks were recorded and are available over here (with more coming): <a href="http://video.fosdem.org/2012/"><span class="caps">FOSDEM</span> 2012 videos</a>. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &#8211; I had to keep my jacket and hat on.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/programming.html">programming</a>
                 <a href="/tag/databases.html">databases</a>
                 <a href="/tag/foss.html">foss</a>
@@ -114,7 +115,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/copr-final-report">Copr final report</a></h2>
-        <h3>Tuesday, September 28, 2010</h3>
+        <div class="postmeta">Tuesday, September 28, 2010</div>
         <div class="entry">
             	<p><a href="https://fedoraproject.org/wiki/Summer_Coding_2010">Fedora Summer Coding</a> is now over for me and I&#8217;m really glad of what I learned and coded this summer.</p>
 
@@ -130,7 +131,8 @@
 
 	<p>My mentor, <a href="http://anonbadger.wordpress.com/">Toshio Kuratomi</a> was great as always. This isn&#8217;t the first project I&#8217;ve had him as my mentor. He was always there to talk to and always had great answers to all of my questions. He had great patience in answering and explaining anything I asked about. Our discussions were mostly about the architecture of the app we were building, but he also gave me great tips on the inner workings of python-fedora or on deploying the web app. I felt I had a lot of liberty to decide the way things will get implemented. Regardless of whether we will ever work together again, Toshio will always be a great inspiration for me as a programmer and as a person.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/copr.html">copr</a>
                 <a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a>
@@ -140,7 +142,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/midterm-report">Fedora Summer Coding midterm</a></h2>
-        <h3>Monday, August 16, 2010</h3>
+        <div class="postmeta">Monday, August 16, 2010</div>
         <div class="entry">
             	<p>This midterm scared me when I found out about it on Friday when I looked at the schedule I had set myself. However, I have done the work that I should have done by this point in the project. When I wrote the proposal I had assumed that the buildsystem would already be built before me starting coding on the TG app, but that is not the case. Therefore I could only code the user-facing <span class="caps">JSON</span> interface that interacts with the DB as it would if the buildsystem would provide it with packages and repos. Except that there are no packages and repos at this stage.</p>
 
@@ -161,7 +163,8 @@
 
 	<p>Congratulations to everyone who is finishing their <span class="caps">FSC</span> adventure today! I&#8217;ll still be coding for another month or so.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/copr.html">copr</a>
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/foss.html">foss</a>
@@ -171,7 +174,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/copr-design-being-all-things">Copr design - being all things to all people</a></h2>
-        <h3>Monday, August  9, 2010</h3>
+        <div class="postmeta">Monday, August  9, 2010</div>
         <div class="entry">
             	<p>Lots of things happened this third Fedora Summer Coding week. Most people are already wrapping up, but I feel like I&#8217;m still at the beginning.</p>
 
@@ -189,7 +192,8 @@
 
 	<p>Fedora Summer Coding! Yay!</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/copr.html">copr</a>
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/foss.html">foss</a>
@@ -199,7 +203,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/basic-coprs-crud">CRUD for Coprs and testing</a></h2>
-        <h3>Monday, August  2, 2010</h3>
+        <div class="postmeta">Monday, August  2, 2010</div>
         <div class="entry">
             	<p>This last week I worked on the first controller for the <a href="https://fedoraproject.org/wiki/Category:Copr">Copr</a> <a href="https://fedoraproject.org/wiki/Summer_Coding_2010_proposal_-_Copr_TG_app">TG App</a>. There is now a <span class="caps">JSON</span> <span class="caps">API</span> to <span class="caps">CRUD</span> Coprs in the TG App&#8217;s database. It also supports adding/removing Copr dependencies. And everything in this first controller is (mostly?) tested with nose unit tests. The happy thing is I&#8217;m still on schedule, though I&#8217;m not ahead of it anymore, which I actually expected.</p>
 
@@ -207,7 +211,8 @@
 
 	<p>Now the next step is to figure out the right relationship between Coprs and Repos and write some code to manage Repos transparently for the user. I also have to learn to write more frequent status updates.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/foss.html">foss</a>
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a>
@@ -217,7 +222,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/the-late-fedora-summer-coder">The late Fedora Summer coder</a></h2>
-        <h3>Sunday, July 25, 2010</h3>
+        <div class="postmeta">Sunday, July 25, 2010</div>
         <div class="entry">
             	<p>I started my <a href="https://fedoraproject.org/wiki/Summer_Coding_2010">Fedora Summer Coding</a> last week. Although most people started almost two months ago, I chose (and was allowed to &#8211; Yay, <acronym title="Fedora Summer Coding">FSC</acronym>!) a different schedule because I just finished college last week.</p>
 
@@ -233,7 +238,8 @@
 
 	<p>This next week I&#8217;ll probably get some work done on Copr controllers. Implementing the ability to <span class="caps">CRUD</span> Coprs and Repos.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/linux.html">linux</a>
                 <a href="/tag/foss.html">foss</a>
                 <a href="/tag/fedora.html">fedora</a>
@@ -244,7 +250,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/packaging-for-fedora">Beginning packaging for Fedora</a></h2>
-        <h3>Friday, September 11, 2009</h3>
+        <div class="postmeta">Friday, September 11, 2009</div>
         <div class="entry">
             	<p>With <span class="caps">GSOC</span> now over, which I should write a blogpost about soon, I&#8217;ve taken a break from pkgdb and web programming and started developing another skill.</p>
 
@@ -256,7 +262,8 @@
 
 	<p>My journey into the packaging world has been enlightening so far and the good thing is I&#8217;m just beginning. There&#8217;s a whole new world to be discovered out there and also another part of the fedora community. </p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/foss.html">foss</a>
                 <a href="/tag/packaging.html">packaging</a>
@@ -265,7 +272,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/fudcon-berlin">FUDCon Berlin</a></h2>
-        <h3>Monday, June 29, 2009</h3>
+        <div class="postmeta">Monday, June 29, 2009</div>
         <div class="entry">
             	<p>I just got back from this year&#8217;s <acronym title="Europe, the Middle East and Africa">EMEA</acronym> <acronym title="Fedora Users and Developers Conference">FUDCON</acronym> in Berlin with <a href="http://nicubunu.blogspot.com">Nicu</a> . I didn&#8217;t have time to write anything while I was there because so much was happening all the time.</p>
 
@@ -289,7 +296,8 @@
 
 	<p>Overall I think it was a great experience. I got to meet a lot of interesting and smart people from all over the world who all shared a passion for their work and for Fedora.<br />So these are sort of the words to <a href="http://fedora.nicubunu.ro/photos/fudcon2009berlin/">Nicu&#8217;s photos</a> which explain the rest, only better.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/events.html">events</a>
         </div>
@@ -297,7 +305,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/eLiberatica-aftermath">eLiberatica - the aftermath!</a></h2>
-        <h3>Sunday, May 24, 2009</h3>
+        <div class="postmeta">Sunday, May 24, 2009</div>
         <div class="entry">
             	<p>Wow, what an event! It was way more awesome than I expected. This is probably one of the later posts to get to the planet from eLiberatica because I wanted to form a complete opinion on the event.</p>
 
@@ -325,7 +333,8 @@
 
 	<p>The good news is I&#8217;m going to FUDCon Berlin with Nicu. I hope to meet a lot of cool fedorians there aswell.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/events.html">events</a>
                 <a href="/tag/floss.html">floss</a>
@@ -334,7 +343,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/fedora-business-cards">Fedora Business Cards</a></h2>
-        <h3>Friday, April 24, 2009</h3>
+        <div class="postmeta">Friday, April 24, 2009</div>
         <div class="entry">
             	<p>A few days ago, me and a few friends from Fedora Romania decided we&#8217;d like some fedora business cards for the upcoming eLiberatica conference. <a href="http://ianweller.org">Ian Weller</a> had already developed an official <a href="https://fedoraproject.org/wiki/Business_cards">template</a> and even created a cool python generator script and packaged it.</p>
 
@@ -346,7 +355,8 @@
 
 	<p>Now I&#8217;m waiting for an answer to the patch that I sent to bugzilla. Hopefully it&#8217;ll be accepted and will be available in Fedora, soon, so that others may enjoy and cherish the coolness that it be!</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/hacking.html">hacking</a>
         </div>
@@ -354,7 +364,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/GSOC-it-begins">GSOC - it begins...</a></h2>
-        <h3>Thursday, April 23, 2009</h3>
+        <div class="postmeta">Thursday, April 23, 2009</div>
         <div class="entry">
             	<p>My Fedora proposal got accepted to this year&#8217;s Google Summer of Code Program. You can look at a short abstract <a href="http://socghop.appspot.com/student_project/show/google/gsoc2009/redhat/t124024691190">here</a> . Now I&#8217;m going to try to explain what this project is about and what I did to prepare for being accepted, hopefully without going mad about how happy I am about it.</p>
 
@@ -370,7 +380,8 @@
 
 	<p>And hello, fedora planet! Sorry for being late.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/gsoc.html">gsoc</a>
                 <a href="/tag/fedora.html">fedora</a>
                 <a href="/tag/programming.html">programming</a>

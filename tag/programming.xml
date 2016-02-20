@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 20 Feb 2016 18:05:47 +0200</pubDate>
+        <pubDate>Sat, 20 Feb 2016 18:13:31 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>AST literal_eval</title>
@@ -785,7 +785,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn7ca18eb4-fee1-40a7-8c1f-0d249fd70ae0"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn19d56cd1-26d4-4a07-811c-895fd56ecbb9"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
 &lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -831,7 +831,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p id="fn7ca18eb4-fee1-40a7-8c1f-0d249fd70ae0" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
+	&lt;p id="fn19d56cd1-26d4-4a07-811c-895fd56ecbb9" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>

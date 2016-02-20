@@ -24,7 +24,7 @@
 <div id="content">
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/copr-client">the Copr client</a></h2>
-        <h3>Monday, August 23, 2010</h3>
+        <div class="postmeta">Monday, August 23, 2010</div>
         <div class="entry">
             	<p>This last week I started working on the command line client to <a href="https://fedoraproject.org/wiki/Category:Copr">Copr</a>. Luckily, the <a href="https://fedorahosted.org/python-fedora">python-fedora</a> already has a lot of code in place to make the task of writing clients for TurboGears apps a lot easier. Some of <a href="http://admin.fedoraproject.org/pkgdb">the</a> <a href="http://admin.fedoraproject.org/updates">apps</a> <a href="http://admin.fedoraproject.org/accounts">in</a> infrastructure are already using this library, which make for some good examples.</p>
 
@@ -57,7 +57,8 @@ authentication:
 
 	<p>I&#8217;m also having a few problems with the BaseClient that I&#8217;ll probably have to solve this week. All of the other client libraries were written for TurboGears 1.x and it seems that authentication has changed in TurboGears 2. There&#8217;s also no support for <span class="caps">HTTP</span> <span class="caps">PUT</span> and <span class="caps">DELETE</span> which I would like to use since I used RestControllers in the <span class="caps">API</span>. I also had to write a patch for file upload support; that seems to work well so far.</p>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/copr.html">copr</a>
                 <a href="/tag/foss.html">foss</a>
                 <a href="/tag/fedora-summer-coding.html">fedora-summer-coding</a>

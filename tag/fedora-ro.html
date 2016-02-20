@@ -24,7 +24,7 @@
 <div id="content">
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/actualizare-automata-metadata-yum">Cum să actualizezi metadatele yum în mod automat</a></h2>
-        <h3>Thursday, March 18, 2010</h3>
+        <div class="postmeta">Thursday, March 18, 2010</div>
         <div class="entry">
             	<p>Unul dintre lucrurile care mă enervează cel mai tare ca utilizator desktop la yum e că de fiecare dată când vreau să caut sau să instalez un pachet, trebuie să aștept câteva secunde bune până își actualizează metadatele pentru toate depozitele active. Astăzi am avut timp să caut o metodă de a scăpa de neplăcerea asta și a fost destul de simplu de găsit.</p>
 
@@ -47,7 +47,8 @@
 </pre></div>
 </div>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora-ro.html">fedora-ro</a>
                 <a href="/tag/linux.html">linux</a>
                 <a href="/tag/foss.html">foss</a>
@@ -56,7 +57,7 @@
     </div>
     <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/cum-sa-peticesti-un-rpm">Cum să peticești un rpm (patch rpm)</a></h2>
-        <h3>Monday, November 30, 2009</h3>
+        <div class="postmeta">Monday, November 30, 2009</div>
         <div class="entry">
             	<p>O să vă descriu cum am aplicat un petec pentru unul dintre pachetele pentru care sunt responsabil la fedora: calibre, în timp ce așteptam să-mi vină pizza http://www.fedoraproject.ro/am-lansat-fedora-12-avans . Petecul este răspunsul la un bug report: https://bugzilla.redhat.com/show_bug.cgi?id=537525 . Calibre verifică de fiecare dată când este pornit dacă pe situl oficial a apărut o nouă versiune și dacă a apărut, îl anunță pe utilizator printr-un pop-up că trebuie să actualizeze aplicația. Cum fedora are propriul management al pachetelor și deci și al actualizărilor, este recomandat ca pachetele noi să fie instalate folosind yum; deci mesajul trebuie eliminat.</p>
 
@@ -234,7 +235,8 @@
   $ su -c &#34;yum localinstall -y --nogpgcheck ~/rpmbuild/RPMS/x86_64/calibre-0.6.21-2.fc12.x86_64.rpm&#34;
 </pre>
         </div>
-        <div class="post_tags">Tags:
+        <div class="post_tags postmeta">
+          tags:
                 <a href="/tag/fedora-ro.html">fedora-ro</a>
                 <a href="/tag/hacking.html">hacking</a>
                 <a href="/tag/linux.html">linux</a>
