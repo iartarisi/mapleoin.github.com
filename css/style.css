@@ -3,7 +3,7 @@ body {
     text-align: justify;
     /*! background-color: #545454; */
     margin: 1em 2em 0;
-    font-family: Trykker, sans-serif;
+    font-family: Noto Sans, sans-serif;
     overflow: auto;
     color: #545454;
 }
@@ -16,17 +16,17 @@ a {
     margin: 0;
     border: none;
     font-size: 1.2em;
-    font-family: Trocchi, serif;
+    font-family: Oxygen, serif;
     float: right;
     color: #545454;
 }
 h1 {
-    font-family: Trocchi, serif;
+    font-family: Oxygen, serif;
     font-style: italic;
 }
 h2 {
     margin-top: 2em;
-    font-family: Trocchi, serif;
+    font-family: Oxygen, serif;
     font-weight: normal;
 }
 
@@ -48,7 +48,7 @@ a:visited, a:hover {
     font-size: 1em;
     font-weight: normal;
     font-style: italic;
-    font-family: Trocchi, sans-serif;
+    font-family: Oxygen, sans-serif;
     color: #898;
 }
 
@@ -73,7 +73,7 @@ pre {
     border-top: .1em solid #080;
     margin: 0 1em 0 0;
     text-decoration: none;
-    font-family: Trocchi, serif;
+    font-family: Oxygen, serif;
 }
 #header a:hover, #header a:active {
     border-bottom: .1em solid #545454;
