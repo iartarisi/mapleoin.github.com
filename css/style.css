@@ -161,12 +161,6 @@ code {
     background-color: #efe;
     padding: 2px;
 }
-img.separator {
-    display: block;
-    clear: left;
-    margin: auto;
-    padding-top: 1em;
-}
 a.comments {
     float: right;
     color: #898;
