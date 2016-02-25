@@ -23,6 +23,49 @@
   </div>
 <div id="content">
     <div class="post">
+        <h2><a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class">Run py.test test case inside any python class</a></h2>
+        <div class="postmeta">Tuesday, February 23, 2016</div>
+        <div class="entry">
+            	<p>I wanted a way to run the current test I was editing when I know the name of the method, but I&#8217;m too lazy to scroll up and see which class it&#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.</p>
+
+	<p>Instead of typing:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+</pre>
+
+	<p>I can just type:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
+</pre>
+
+	<p>Woo py.test!</p>
+
+	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>&#34; or &#34;</code> interface like in the last example above.</p>
+        </div>
+        <div class="post_tags postmeta">
+          tags:
+                <a href="/tag/TIL.html">TIL</a>
+                <a href="/tag/py.test.html">py.test</a>
+                <a href="/tag/python.html">python</a>
+                <a href="/tag/testing.html">testing</a>
+        </div>
+        <a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class#disqus_thread" class="comments">Comments</a>
+    </div>
+    <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></h2>
         <div class="postmeta">Monday, February 15, 2016</div>
         <div class="entry">
@@ -689,7 +732,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn520fc3d1-08d5-40b1-9649-2a92df1c87ef">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn1047f690-f9f3-4ffe-8e23-c46e31ef5b84">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -735,7 +778,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 
 	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p id="fn520fc3d1-08d5-40b1-9649-2a92df1c87ef" class="footnote"><sup>3</sup>merci gheorghe!</p>
+	<p id="fn1047f690-f9f3-4ffe-8e23-c46e31ef5b84" class="footnote"><sup>3</sup>merci gheorghe!</p>
         </div>
         <div class="post_tags postmeta">
           tags:

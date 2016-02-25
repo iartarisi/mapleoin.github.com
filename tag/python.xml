@@ -5,8 +5,43 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Tue, 23 Feb 2016 00:37:24 +0200</pubDate>
+        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
         <generator>pyBlee!</generator>
+        <item>
+            <title>Run py.test test case inside any python class</title>
+            <link>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</link>
+            <author>mapleoin</author>
+            <description> 	&lt;p&gt;I wanted a way to run the current test I was editing when I know the name of the method, but I&amp;#8217;m too lazy to scroll up and see which class it&amp;#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.&lt;/p&gt;
+
+	&lt;p&gt;Instead of typing:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+&lt;/pre&gt;
+
+	&lt;p&gt;I can just type:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+&lt;/pre&gt;
+
+	&lt;p&gt;Or even:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k test_my
+&lt;/pre&gt;
+
+	&lt;p&gt;Or even:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
+&lt;/pre&gt;
+
+	&lt;p&gt;Woo py.test!&lt;/p&gt;
+
+	&lt;p&gt;&lt;span class="caps"&gt;FWIW&lt;/span&gt;, &lt;code&gt;nosetests&lt;/code&gt; can also do this with the &lt;code&gt;-m&lt;/code&gt; option which supports regexp. But &lt;span class="caps"&gt;AFAIK&lt;/span&gt; it does not support the human-friendly &lt;code&gt;&amp;#34; or &amp;#34;&lt;/code&gt; interface like in the last example above.&lt;/p&gt; </description>
+            <pubDate>Tue, 23 Feb 2016 19:20 GMT</pubDate>
+        </item>
         <item>
             <title>AST literal_eval</title>
             <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
@@ -646,7 +681,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn520fc3d1-08d5-40b1-9649-2a92df1c87ef"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn1047f690-f9f3-4ffe-8e23-c46e31ef5b84"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
 &lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -692,7 +727,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p id="fn520fc3d1-08d5-40b1-9649-2a92df1c87ef" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
+	&lt;p id="fn1047f690-f9f3-4ffe-8e23-c46e31ef5b84" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>

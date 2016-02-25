@@ -5,8 +5,43 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Tue, 23 Feb 2016 00:37:24 +0200</pubDate>
+        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
         <generator>pyBlee!</generator>
+        <item>
+            <title>Run py.test test case inside any python class</title>
+            <link>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</link>
+            <author>mapleoin</author>
+            <description> 	&lt;p&gt;I wanted a way to run the current test I was editing when I know the name of the method, but I&amp;#8217;m too lazy to scroll up and see which class it&amp;#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.&lt;/p&gt;
+
+	&lt;p&gt;Instead of typing:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+&lt;/pre&gt;
+
+	&lt;p&gt;I can just type:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+&lt;/pre&gt;
+
+	&lt;p&gt;Or even:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k test_my
+&lt;/pre&gt;
+
+	&lt;p&gt;Or even:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
+&lt;/pre&gt;
+
+	&lt;p&gt;Woo py.test!&lt;/p&gt;
+
+	&lt;p&gt;&lt;span class="caps"&gt;FWIW&lt;/span&gt;, &lt;code&gt;nosetests&lt;/code&gt; can also do this with the &lt;code&gt;-m&lt;/code&gt; option which supports regexp. But &lt;span class="caps"&gt;AFAIK&lt;/span&gt; it does not support the human-friendly &lt;code&gt;&amp;#34; or &amp;#34;&lt;/code&gt; interface like in the last example above.&lt;/p&gt; </description>
+            <pubDate>Tue, 23 Feb 2016 19:20 GMT</pubDate>
+        </item>
         <item>
             <title>HTTP Status Codes Reference</title>
             <link>http://mapleoin.github.io/perma/http-status-codes-reference</link>
@@ -445,19 +480,6 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
 
 	&lt;p&gt;A lot of the talks were recorded and are available over here (with more coming): &lt;a href="http://video.fosdem.org/2012/"&gt;&lt;span class="caps"&gt;FOSDEM&lt;/span&gt; 2012 videos&lt;/a&gt;. The quality of the recordings (esp. in the main room) is sometimes even better than being there live. The voice is clearer and there is no ambient noise. Also, as it was really cold in most of the rooms &amp;#8211; I had to keep my jacket and hat on.&lt;/p&gt; </description>
             <pubDate>Wed, 15 Feb 2012 13:06 GMT</pubDate>
-        </item>
-        <item>
-            <title>Data Visualizations</title>
-            <link>http://mapleoin.github.io/perma/data-visualizations</link>
-            <author>mapleoin</author>
-            <description> 	&lt;p&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /&gt; This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&amp;#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&amp;#8217;t sure that I was in the audience for it.&lt;/p&gt;
-
-	&lt;p&gt;There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&amp;#8217;d better leave it to a professional.&lt;/p&gt;
-
-	&lt;p&gt;The book is however very well structured and the quality of the content is very high while entirely theoretical; it won&amp;#8217;t try to tell you what to draw and when; just what a data visualization is, what they usually look like, what they look like when they&amp;#8217;re bad and what they look like when they&amp;#8217;re really good. Some interesting points are raised and explained; for example the fact that color can not be ordered. I think it would be a good high-school level introduction to data visualization and it has a lot of links which might prove useful to someone who would want to go deeper in this topic. On the other hand this book doesn&amp;#8217;t do much on it&amp;#8217;s own.&lt;/p&gt;
-
-	&lt;p&gt;Although this book is available in all the usual ebook formats (&lt;span class="caps"&gt;PDF&lt;/span&gt;, mobi and epub), it has a lot of really big and colourful graphics which don&amp;#8217;t really fit well on an ereader. The authors themselves suggest to look at them on your computer (which means that even though you can read the book on your ereader, you should stay close to a computer in order to comprehend the visualizations.&lt;/p&gt; </description>
-            <pubDate>Fri, 28 Oct 2011 00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

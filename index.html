@@ -22,6 +22,49 @@
   </div>
 <div id="content">
     <div class="post">
+        <h2><a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class">Run py.test test case inside any python class</a></h2>
+        <div class="postmeta">Tuesday, February 23, 2016</div>
+        <div class="entry">
+            	<p>I wanted a way to run the current test I was editing when I know the name of the method, but I&#8217;m too lazy to scroll up and see which class it&#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.</p>
+
+	<p>Instead of typing:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+</pre>
+
+	<p>I can just type:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
+</pre>
+
+	<p>Woo py.test!</p>
+
+	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>&#34; or &#34;</code> interface like in the last example above.</p>
+        </div>
+        <div class="post_tags postmeta">
+          tags:
+                <a href="/tag/TIL.html">TIL</a>
+                <a href="/tag/py.test.html">py.test</a>
+                <a href="/tag/python.html">python</a>
+                <a href="/tag/testing.html">testing</a>
+        </div>
+        <a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class#disqus_thread" class="comments">Comments</a>
+    </div>
+    <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></h2>
         <div class="postmeta">Tuesday, February 16, 2016</div>
         <div class="entry">
@@ -501,20 +544,6 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
                 <a href="/tag/fedora.html">fedora</a>
         </div>
         <a href="http://mapleoin.github.io/perma/FOSDEM-2012-review#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
-        <h2><a href="http://mapleoin.github.io/perma/data-visualizations">Data Visualizations</a></h2>
-        <div class="postmeta">Friday, October 28, 2011</div>
-        <div class="entry">
-            	<p><img src="&gt;http://covers.oreilly.com/images/9781449312282/s.gif" alt="" /> This book is a short introduction to Data Visualization. Everything you would expect (and which you probably already know) is in there: bar graphs, histograms, diagrams; use of color, shape, size, positioning, info graphics and youtube videos of Bruce Lee. I got this book because I was starting to work on a project which required generating a lot of graphs. However, I&#8217;m not sure that there was any new and helpful information to help me in my project contained in this book. In fact this was my biggest problem with this book: I wasn&#8217;t sure that I was in the audience for it.</p>
-
-	<p>There were two opposite take-aways. The first one was: there are some basic common-sense rules which you need to keep in mind when designing data visualizations (and which you probably already know from your Statistics 101 course). And the second one was: Data Visualization is really an art and it is a huge domain with a lot of possibilities, so if you want to design any advanced data visualization you&#8217;d better leave it to a professional.</p>
-
-	<p>The book is however very well structured and the quality of the content is very high while entirely theoretical; it won&#8217;t try to tell you what to draw and when; just what a data visualization is, what they usually look like, what they look like when they&#8217;re bad and what they look like when they&#8217;re really good. Some interesting points are raised and explained; for example the fact that color can not be ordered. I think it would be a good high-school level introduction to data visualization and it has a lot of links which might prove useful to someone who would want to go deeper in this topic. On the other hand this book doesn&#8217;t do much on it&#8217;s own.</p>
-
-	<p>Although this book is available in all the usual ebook formats (<span class="caps">PDF</span>, mobi and epub), it has a lot of really big and colourful graphics which don&#8217;t really fit well on an ereader. The authors themselves suggest to look at them on your computer (which means that even though you can read the book on your ereader, you should stay close to a computer in order to comprehend the visualizations.</p>
-        </div>
-        <a href="http://mapleoin.github.io/perma/data-visualizations#disqus_thread" class="comments">Comments</a>
     </div>
 </div>
 <div style="clear: right;"></div>

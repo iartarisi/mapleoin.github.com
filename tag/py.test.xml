@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="1.0">
+    <channel>
+        <title>Revolution blahg</title>
+        <link>http://mapleoin.github.io/</link>
+        <description>mapleoin's rambling blahg</description>
+        <language>en</language>
+        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <generator>pyBlee!</generator>
+        <item>
+            <title>Run py.test test case inside any python class</title>
+            <link>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</link>
+            <author>mapleoin</author>
+            <description> 	&lt;p&gt;I wanted a way to run the current test I was editing when I know the name of the method, but I&amp;#8217;m too lazy to scroll up and see which class it&amp;#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.&lt;/p&gt;
+
+	&lt;p&gt;Instead of typing:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+&lt;/pre&gt;
+
+	&lt;p&gt;I can just type:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+&lt;/pre&gt;
+
+	&lt;p&gt;Or even:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k test_my
+&lt;/pre&gt;
+
+	&lt;p&gt;Or even:&lt;/p&gt;
+
+&lt;pre&gt;
+$ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
+&lt;/pre&gt;
+
+	&lt;p&gt;Woo py.test!&lt;/p&gt;
+
+	&lt;p&gt;&lt;span class="caps"&gt;FWIW&lt;/span&gt;, &lt;code&gt;nosetests&lt;/code&gt; can also do this with the &lt;code&gt;-m&lt;/code&gt; option which supports regexp. But &lt;span class="caps"&gt;AFAIK&lt;/span&gt; it does not support the human-friendly &lt;code&gt;&amp;#34; or &amp;#34;&lt;/code&gt; interface like in the last example above.&lt;/p&gt; </description>
+            <pubDate>Tue, 23 Feb 2016 19:20 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

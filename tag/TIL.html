@@ -23,6 +23,49 @@
   </div>
 <div id="content">
     <div class="post">
+        <h2><a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class">Run py.test test case inside any python class</a></h2>
+        <div class="postmeta">Tuesday, February 23, 2016</div>
+        <div class="entry">
+            	<p>I wanted a way to run the current test I was editing when I know the name of the method, but I&#8217;m too lazy to scroll up and see which class it&#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.</p>
+
+	<p>Instead of typing:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+</pre>
+
+	<p>I can just type:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
+</pre>
+
+	<p>Woo py.test!</p>
+
+	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>&#34; or &#34;</code> interface like in the last example above.</p>
+        </div>
+        <div class="post_tags postmeta">
+          tags:
+                <a href="/tag/TIL.html">TIL</a>
+                <a href="/tag/py.test.html">py.test</a>
+                <a href="/tag/python.html">python</a>
+                <a href="/tag/testing.html">testing</a>
+        </div>
+        <a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class#disqus_thread" class="comments">Comments</a>
+    </div>
+    <div class="post">
         <h2><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></h2>
         <div class="postmeta">Tuesday, February 16, 2016</div>
         <div class="entry">

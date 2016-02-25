@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Noto Sans" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/pygments.css" />
+<link rel="stylesheet" type="text/css" href="/css/archive.css" />
+<link rel="shortcut icon" href="/favico.ico" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/tag/testing.xml" />
+<title>Revolution blahg 
+    | Run py.test test case inside any python class
+</title>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1><a href="/" class="title">Revolution blahg</a></h1>
+    <a href="/">home</a>
+    <a href="/archive">archive</a>
+    <a href="/about">about</a>
+  </div>
+<div id="content">
+    <div class="post">
+        <h2><a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class">Run py.test test case inside any python class</a></h2>
+        <div class="postmeta">Tuesday, February 23, 2016</div>
+        <div class="entry">
+            	<p>I wanted a way to run the current test I was editing when I know the name of the method, but I&#8217;m too lazy to scroll up and see which class it&#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.</p>
+
+	<p>Instead of typing:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
+</pre>
+
+	<p>I can just type:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my_thing
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k test_my
+</pre>
+
+	<p>Or even:</p>
+
+<pre>
+$ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
+</pre>
+
+	<p>Woo py.test!</p>
+
+	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>&#34; or &#34;</code> interface like in the last example above.</p>
+        </div>
+        <div class="post_tags postmeta">
+          tags:
+                <a href="/tag/TIL.html">TIL</a>
+                <a href="/tag/py.test.html">py.test</a>
+                <a href="/tag/python.html">python</a>
+                <a href="/tag/testing.html">testing</a>
+        </div>
+        <br />
+        <div id="disqus_thread"></div>
+        <script>
+    /*
+    var disqus_config = function () {
+        this.page.url = 'http://mapleoin.github.io/perma/pytest-run-one-test-inside-class';
+        this.page.identifier = 'pytest-run-one-test-inside-class';
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//revolutionblahg.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.</a>
+        </noscript>
+    </div>
+</div>
+<div style="clear: right;"></div>
+</div><!-- container -->
+<div id="smallprint"><a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5576939-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
