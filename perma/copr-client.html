@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
@@ -27,11 +27,11 @@
         <div class="postmeta">Monday, August 23, 2010</div>
 
         <div class="entry">
-            	<p>This last week I started working on the command line client to <a href="https://fedoraproject.org/wiki/Category:Copr">Copr</a>. Luckily, the <a href="https://fedorahosted.org/python-fedora">python-fedora</a> already has a lot of code in place to make the task of writing clients for TurboGears apps a lot easier. Some of <a href="http://admin.fedoraproject.org/pkgdb">the</a> <a href="http://admin.fedoraproject.org/updates">apps</a> <a href="http://admin.fedoraproject.org/accounts">in</a> infrastructure are already using this library, which make for some good examples.</p>
+            	<p>This last week I started working on the command line client to <a href="https://fedoraproject.org/wiki/Category%3ACopr">Copr</a>. Luckily, the <a href="https://fedorahosted.org/python-fedora">python-fedora</a> already has a lot of code in place to make the task of writing clients for TurboGears apps a lot easier. Some of <a href="http://admin.fedoraproject.org/pkgdb">the</a> <a href="http://admin.fedoraproject.org/updates">apps</a> <a href="http://admin.fedoraproject.org/accounts">in</a> infrastructure are already using this library, which make for some good examples.</p>
 
 	<p>So I&#8217;m building a client library and a client um&#8230; command line client. The command line client is basically one big <a href="http://docs.python.org/library/argparse.html">argparse</a> application that calls the functions in the client library and sometimes does a bit of formatting on the output. The client library implements a fedora.client.BaseClient that mostly just calls json methods on the Copr server.</p>
 
-	<p>It&#8217;s all pretty simple. The hard part is deciding what the command line client&#8217;s interface will look like. In argparse parlance, which ones should be the positional arguments and which should be the optional arguments. So far I&#8217;ve been inclined to use something that looks like a VCS&#8217;s interface. Here&#8217;s what it looks like so far:</p>
+	<p>It&#8217;s all pretty simple. The hard part is deciding what the command line client&#8217;s interface will look like. In argparse parlance, which ones should be the positional arguments and which should be the optional arguments. So far I&#8217;ve been inclined to use something that looks like a <span class="caps">VCS</span>&#8217;s interface. Here&#8217;s what it looks like so far:</p>
 
 <pre>
 $ python client/bin.py -h

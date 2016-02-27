@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@ $ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
 
 	<p>Woo py.test!</p>
 
-	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>&#34; or &#34;</code> interface like in the last example above.</p>
+	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>" or "</code> interface like in the last example above.</p>
         </div>
         <div class="post_tags postmeta">
           tags:
@@ -71,11 +71,13 @@ $ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
         <div class="postmeta">Monday, February 15, 2016</div>
 
         <div class="entry">
-            	<p><blockquote><br />Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.</p>
+            	<p><blockquote><br />
+Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.</p>
 
 	<p>This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.</p>
 
-	<p><cite>&#8212;From python&#8217;s <a href="https://docs.python.org/library/ast.html#ast.literal_eval">ast library</a></cite><br /></blockquote></p>
+	<p><cite>&#8212;From python&#8217;s <a href="https://docs.python.org/library/ast.html#ast.literal_eval">ast library</a></cite><br />
+</blockquote></p>
 
 	<p>I used to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.</p>
         </div>
@@ -96,10 +98,10 @@ $ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
 
 	<p>I found a way to change the timezone, that is used by most of python&#8217;s stdlib, by changing the <code>TZ</code> environment variable:</p>
 
-<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&amp;#8217;</span>
-<span class="s1">(&#39;</span>GMT<span class="p">&amp;</span><span class="c1">#8217;, &#39;BST&amp;#8217;)</span>
-$ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&amp;#8217; python -c &#39;</span>import time<span class="p">;</span> print<span class="o">(</span>time.tzname<span class="o">)</span><span class="p">&amp;</span><span class="c1">#8217;</span>
-<span class="o">(</span><span class="s1">&#39;CET&amp;#8217;, &#39;</span>CEST<span class="p">&amp;</span><span class="c1">#8217;)</span>
+<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
+<span class="o">(</span><span class="s1">&#39;GMT&#39;</span>, <span class="s1">&#39;BST&#39;</span><span class="o">)</span>
+$ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&#39;</span> python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
+<span class="o">(</span><span class="s1">&#39;CET&#39;</span>, <span class="s1">&#39;CEST&#39;</span><span class="o">)</span>
 </pre></div>
 </div>
         </div>
@@ -121,22 +123,22 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>A <em>very</em> simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="o">&amp;</span><span class="c1">#8216;etc/sysconfig/proxy&amp;#8217;</span>
-<span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="o">&amp;</span><span class="c1">#8216;root/.curlrc&amp;#8217;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/etc/sysconfig/proxy&#39;</span>
+<span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/root/.curlrc&#39;</span>
 <span class="k">def</span> <span class="nf">get_proxy</span><span class="p">():</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s1">&#39;http_proxy&amp;#8217; in contents:</span>
+        <span class="k">if</span> <span class="s1">&#39;http_proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
             <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;http_proxy = &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
             <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">proxy</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s1">&#39;&amp;#8212;proxy&amp;#8217; in contents:</span>
-            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217;&amp;#8212;proxy &#39;)[-1] </span>
+        <span class="k">if</span> <span class="s1">&#39;--proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
+            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;--proxy &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
             <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">proxy</span>
-    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;http_proxy&amp;#8217;)</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;http_proxy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -144,10 +146,10 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>In order to intercept calls to python&#8217;s <a href="http://docs.python.org/2/library/functions.html#open">open()</a>, we need to mock the <code>builtins.open</code> function:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&amp;#8217;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&#39;</span>
 <span class="k">def</span> <span class="nf">test_proxy_url_in_sysproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;,</span>
-                    <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;http_proxy = &amp;#8220; + TEST_PROXY)):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
+                    <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;http_proxy = &quot;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
          <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -155,9 +157,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>We&#8217;re good so far. Now we add the next natural test: we didn&#8217;t find anything in sysconfig, but we find the right proxy <span class="caps">URL</span> on our second try in <code>CURL_PROXY</code>:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;, return_value=io.StringIO()):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;,</span>
-                        <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217; &amp;#8212;proxy &#39; + TEST_PROXY)):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
+                        <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -170,9 +172,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>Not to worry though. <code>mock</code> <a href="http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.side_effect">side_effect</a> have got us covered!</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;,</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
                     <span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(),</span>
-                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217; &amp;#8212;proxy &#39; + TEST_PROXY)]):</span>
+                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -186,11 +188,11 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">):</span>
         <span class="k">yield</span>
 </pre></div>
 </div>
@@ -199,7 +201,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -214,14 +216,14 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
             <span class="n">open_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">open_file</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">yield</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -236,7 +238,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -254,9 +256,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>So the exception can be a normal <code>Exception</code> subclass, but we need an extra bit of information, the <code>filename</code> that wasn&#8217;t mocked. I&#8217;ll also hardcode an error message in there:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NotMocked</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">def</span> <span class="err">&lt;</span><span class="nf">i</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">NotMocked</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span>
-            <span class="o">&amp;</span><span class="c1">#8220;The file %s was opened, but not mocked.&amp;#8221; % filename)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NotMocked</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span>
+            <span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was opened, but not mocked.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
 </pre></div>
 </div>
@@ -267,7 +269,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
@@ -276,7 +278,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
             <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -300,9 +302,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
-            <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217;/dev/null&amp;#8217;)</span>
+            <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -318,7 +320,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
@@ -328,7 +330,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -339,7 +341,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
     <span class="k">try</span><span class="p">:</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;The file %s was not opened.&amp;#8221; % filename)</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotMocked</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span>
@@ -354,8 +356,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
-            <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217;/dev/null&amp;#8217;):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">):</span>
                 <span class="n">get_proxy</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
@@ -366,7 +368,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <pre>AssertionError: The file /dev/null was not opened.
 </pre>
 
-	<p>EDIT: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
+	<p><span class="caps">EDIT</span>: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
 
 	<p>So that&#8217;s about it, we now have a rock-solid <code>mock_open</code> function for mocking the builtin <code>open()</code>.</p>
 
@@ -374,22 +376,22 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-    <span class="o">&amp;</span><span class="c1">#8220;&amp;#8221;&amp;#8220;Mock the open() builtin function on a specific filename</span>
-<span class="o">.</span>
-    <span class="n">Let</span> <span class="n">execution</span> <span class="k">pass</span> <span class="n">through</span> <span class="n">to</span> <span class="nb">open</span><span class="p">()</span> <span class="n">on</span> <span class="n">files</span> <span class="n">different</span> <span class="n">than</span>
-    <span class="p">:</span><span class="n">filename</span><span class="p">:</span><span class="o">.</span> <span class="n">Return</span> <span class="n">a</span> <span class="n">StringIO</span> <span class="k">with</span> <span class="p">:</span><span class="n">contents</span><span class="p">:</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">file</span> <span class="n">was</span>
-    <span class="n">matched</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="p">:</span><span class="n">contents</span><span class="p">:</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">given</span> <span class="ow">or</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span>
-    <span class="n">a</span> <span class="n">StringIO</span> <span class="n">instance</span> <span class="n">simulating</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
-<span class="o">.</span>
-    <span class="n">If</span> <span class="p">:</span><span class="n">complain</span><span class="p">:</span> <span class="ow">is</span> <span class="bp">True</span> <span class="p">(</span><span class="n">default</span><span class="p">),</span> <span class="n">will</span> <span class="k">raise</span> <span class="n">an</span> <span class="ne">AssertionError</span> <span class="k">if</span>
-    <span class="p">:</span><span class="n">filename</span><span class="p">:</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">enclosed</span> <span class="n">block</span><span class="o">.</span> <span class="n">A</span> <span class="n">NotMocked</span>
-    <span class="n">exception</span> <span class="n">will</span> <span class="n">be</span> <span class="n">raised</span> <span class="k">if</span> <span class="nb">open</span><span class="p">()</span> <span class="n">was</span> <span class="n">called</span> <span class="k">with</span> <span class="n">a</span> <span class="nb">file</span> <span class="n">that</span> <span class="n">was</span>
-    <span class="ow">not</span> <span class="n">mocked</span> <span class="n">by</span> <span class="n">mock_open</span><span class="o">.</span>
-<span class="o">.</span>
-    <span class="o">&amp;</span><span class="c1">#8220;&amp;#8221;&amp;#8220;</span>
+    <span class="sd">&quot;&quot;&quot;Mock the open() builtin function on a specific filename</span>
+<span class="sd">.</span>
+<span class="sd">    Let execution pass through to open() on files different than</span>
+<span class="sd">    :filename:. Return a StringIO with :contents: if the file was</span>
+<span class="sd">    matched. If the :contents: parameter is not given or if it is None,</span>
+<span class="sd">    a StringIO instance simulating an empty file is returned.</span>
+<span class="sd">.</span>
+<span class="sd">    If :complain: is True (default), will raise an AssertionError if</span>
+<span class="sd">    :filename: was not opened in the enclosed block. A NotMocked</span>
+<span class="sd">    exception will be raised if open() was called with a file that was</span>
+<span class="sd">    not mocked by mock_open.</span>
+<span class="sd">.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
@@ -398,7 +400,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -410,7 +412,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;The file %s was not opened.&amp;#8221; % filename)</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotMocked</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span>
@@ -456,7 +458,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>Ok, so here&#8217;s what we&#8217;re testing: our model &#8212; the emphasis is on <i>our</i>, because we&#8217;re only testing our code. And mostly, we&#8217;re actually testing that the code in models.py corresponds with what&#8217;s in the database. All test methods must begin with the word <i>test</i>.</p>
 
-	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />Here&#8217;s the model:</p>
+	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />
+Here&#8217;s the model:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -467,12 +470,12 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="c1"># make sure they get to the database</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testunique</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -480,28 +483,29 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="c1"># make sure they get to the database</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>The second snippet only calls the <strong>setUp</strong> method once because there is only one other method. But that&#8217;s not very nice. Ideally we&#8217;d to be able to run each test individually, so maybe we can write a <strong>tearDown</strong> method to be run after each other method, to restore the database.</p>
 
-	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />Here is what it looks like now:</p>
+	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />
+Here is what it looks like now:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat2&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat2&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># make sure they get to the database</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat2</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;cat2&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat2</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;cat2&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">testunique</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -517,12 +521,13 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
+	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />
+We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">post1</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=&amp;</span><span class="c1">#8220;name&amp;#8221;,body=&amp;#8220;trala lala&amp;#8221;,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">post1</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
                 <span class="n">category</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -530,8 +535,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>Next, we need to do a bit of a <i>trivial</i> test to check that the title, the body and the right category get to the db</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;name&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;trala lala&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s2">&quot;trala lala&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -546,14 +551,15 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>No, wait. I think this looks a bit more professional:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">&amp;</span><span class="c1">#8211; self.post1.creation_time</span>
+        <span class="n">delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
-        <span class="n">delta_modified</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">&amp;</span><span class="c1">#8211; self.post1.modified_time</span>
+        <span class="n">delta_modified</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_</span><span class="p">(</span><span class="n">delta_modified</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 
-	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
+	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />
+This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
 
 <div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">modified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
@@ -574,22 +580,22 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>And then there&#8217;s more than one way I can think of to test the Category ForeignKey:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">class</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">class</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;name&amp;#8221;,</span>
-                <span class="n">body</span><span class="o">=&amp;</span><span class="c1">#8220;tralaalal&amp;#8221;, category=&amp;#8220;ooopsie!&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+                <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>In the end, I&#8217;ll go for the more general one, even though the second one is more excentric. So:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">class</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">class</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;name&amp;#8221;,</span>
-                <span class="n">body</span><span class="o">=&amp;</span><span class="c1">#8220;tralaalal&amp;#8221;, category=&amp;#8220;ooopsie!&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
+                <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
-	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name=&#34;name&#34;,body=&#34;tralaalal&#34;, category=&#34;ooopsie!&#34;)</code> and see if you get lucky.</p>
+	<p>Btw, if you don&#8217;t know the errors (like ValueError &#8212; I didn&#8217;t know it), you can always drop to a <i>manage.py console</i> and try to <code>Post.object.create(name="name",body="tralaalal", category="ooopsie!")</code> and see if you get lucky.</p>
 
 	<p>Ok, passing on to the Commentator class:</p>
 
@@ -600,23 +606,24 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 </pre></div>
 </div>
 
-	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />This should seem trivial by now:</p>
+	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />
+This should seem trivial by now:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;hacketyhack&amp;#8221;,</span>
-                <span class="n">email</span><span class="o">=&amp;</span><span class="c1">#8220;hackety@example.com&amp;#8221;, website=&amp;#8220;example.com&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hacketyhack&quot;</span><span class="p">,</span>
+                <span class="n">email</span><span class="o">=</span><span class="s2">&quot;hackety@example.com&quot;</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">testExist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;hacketyhack&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;hackety@example.com&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">website</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;example.com&amp;#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;hacketyhack&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="s2">&quot;hackety@example.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">comtor</span><span class="o">.</span><span class="n">website</span><span class="p">,</span> <span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
      <span class="k">def</span> <span class="nf">testUnique</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;hacketyhack&amp;#8221;, email=&amp;#8220;new@example.com&amp;#8221;,</span>
-                <span class="n">website</span><span class="o">=&amp;</span><span class="c1">#8220;example.com&amp;#8221;)</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;hacketyhack&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;new@example.com&quot;</span><span class="p">,</span>
+                <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">IntegrityError</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span>
-                <span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;nothackety&amp;#8221;, email=&amp;#8220;hackety@example.com&amp;#8221;,</span>
-                <span class="n">website</span><span class="o">=&amp;</span><span class="c1">#8220;example.com&amp;#8221;)</span>
+                <span class="n">name</span><span class="o">=</span><span class="s2">&quot;nothackety&quot;</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s2">&quot;hackety@example.com&quot;</span><span class="p">,</span>
+                <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 
@@ -635,25 +642,25 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cat</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;cat1&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=&amp;</span><span class="c1">#8220;name&amp;#8221;,body=&amp;#8220;trala lala&amp;#8221;,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cat</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
                 <span class="n">category</span><span class="o">=</span><span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=&amp;</span><span class="c1">#8220;hacketyhack&amp;#8221;,</span>
-                <span class="n">email</span><span class="o">=&amp;</span><span class="c1">#8220;hackety@example.com&amp;#8221;, website=&amp;#8220;example.com&amp;#8221;)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">Comment</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">body</span><span class="o">=&amp;</span><span class="c1">#8220;If the implementation is</span>
-        <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.&amp;</span><span class="c1">#8221;,</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hacketyhack&quot;</span><span class="p">,</span>
+                <span class="n">email</span><span class="o">=</span><span class="s2">&quot;hackety@example.com&quot;</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">com</span> <span class="o">=</span> <span class="n">Comment</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;If the implementation is</span>
+        <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.</span><span class="s2">&quot;,</span>
         <span class="n">post</span><span class="o">=</span><span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">author</span><span class="o">=</span><span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">def</span> <span class="nf">testExist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="o">&amp;</span><span class="c1">#8220;If the implementation is</span>
-        <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.&amp;</span><span class="c1">#8221;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s2">&quot;If the implementation is</span>
+        <span class="n">easy</span> <span class="n">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="o">.</span><span class="s2">&quot;)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">post</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">author</span><span class="p">,</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">approved</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">testTime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">delta_creation</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">&amp;</span><span class="c1">#8211; self.comm.creation_time</span>
+        <span class="n">delta_creation</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">comm</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_</span><span class="p">(</span><span class="n">delta_creation</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">testCreationTime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># what if it&amp;#8217;s a modification_time instead?</span>
+        <span class="c1"># what if it&#39;s a modification_time instead?</span>
         <span class="n">created</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">created</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">com</span><span class="o">.</span><span class="n">creation_time</span><span class="p">)</span>
@@ -664,27 +671,23 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>First, you&#8217;ll need to make a copy of django.test.simple (put it in your project&#8217;s directory for example). Then comment these lines:</p>
 
-<div class="Python"><div class="highlight"><pre>	<span class="o">&lt;</span><span class="n">ol</span><span class="o">&gt;</span>
-		<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">old_name</span> <span class="o">=</span> <span class="n">settings</span><span class="o">.</span><span class="n">DATABASE_NAME</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-		<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">connection</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-		<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">connection</span><span class="o">.</span><span class="n">creation</span><span class="o">.</span><span class="n">create_test_db</span><span class="p">(</span><span class="n">verbosity</span><span class="p">,</span> <span class="n">autoclobber</span><span class="o">=</span><span class="ow">not</span> <span class="n">interactive</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-	<span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+<div class="Python"><div class="highlight"><pre><span class="c1"># old_name = settings.DATABASE_NAME</span>
+<span class="c1"># from django.db import connection</span>
+<span class="c1"># connection.creation.create_test_db(verbosity, autoclobber=not interactive)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
-	<span class="o">&lt;</span><span class="n">ol</span><span class="o">&gt;</span>
-		<span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">connection</span><span class="o">.</span><span class="n">creation</span><span class="o">.</span><span class="n">destroy_test_db</span><span class="p">(</span><span class="n">old_name</span><span class="p">,</span> <span class="n">verbosity</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
-	<span class="o">&lt;/</span><span class="n">ol</span><span class="o">&gt;</span>
+<span class="c1"># connection.creation.destroy_test_db(old_name, verbosity)</span>
 </pre></div>
 </div>
 
 	<p>And now, add this to your settings.py file:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&amp;#8217;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
 </pre></div>
 </div>
 
 	<p>Be careful now. All the data in your database <strong>will</strong> be lost when you run <i>manage.py test</i> the next time. So back it up! First create a new database, say <i>backup</i> and then:</p>
 
-<div class="Bash"><div class="highlight"><pre>mysqldump -u DB_USER <span class="p">&amp;</span><span class="c1">#8212;password=DB_PASS DB_NAME|mysql -u DB_USER &amp;#8212;password=DB_PASSWD -h localhost backup</span>
+<div class="Bash"><div class="highlight"><pre>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
 </pre></div>
 </div>
 
@@ -693,11 +696,11 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>Here&#8217;s to show that it works (after I&#8217;ve made a little modification to the model, but not the database):</p>
 
 <div class="Bash"><div class="highlight"><pre>$ python manage.py <span class="nb">test</span>
-..&lt;span <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span>&gt;EEE&lt;/span&gt;..&lt;span <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span>&gt;EEEEEE&lt;/span&gt;................
-<span class="p">&amp;</span><span class="c1">#8212;&gt; lots of tracebacks &lt;&amp;#8212;</span>
-<span class="p">&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;</span>
+..EEE..EEEEEE................
+--&gt; lots of tracebacks &lt;--
+----------------------------------------------------------------------
 Ran <span class="m">29</span> tests in 10.149s
-&lt;span <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span>&gt;FAILED&lt;/span&gt; <span class="o">(</span><span class="nv">errors</span><span class="o">=</span>9<span class="o">)</span>
+FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</span>9<span class="o">)</span>
 </pre></div>
 </div>
 
@@ -740,55 +743,58 @@ Ran <span class="m">29</span> tests in 10.149s
 </pre></div>
 </div>
 
-	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.<br />Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
+	<p>Pe lângă faptul că toate tipurile de date au nume și <a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types">explicații</a> pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.<br />
+E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
+Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote"><a href="#fn569234c4-f47b-4a82-bce1-c0088b286040">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote" id="fnrev3e17eb104e744abca428a2d886059d1c"><a href="#fn3e17eb104e744abca428a2d886059d1c">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
- <span class="o">|</span> <span class="n">id</span>    <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>     <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">PRI</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">nume</span>  <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+-------+-------------+------+-----+---------+</span>
+ <span class="o">|</span> <span class="n">id</span>    <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>     <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">PRI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">nume</span>  <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_post</span><span class="p">;</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+---------------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span>         <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
- <span class="o">|</span> <span class="n">id</span>            <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>     <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">PRI</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    
- <span class="o">|</span> <span class="n">title</span>         <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">body</span>          <span class="o">|</span> <span class="kt">longtext</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">category_id</span>   <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>     <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">MUL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">published</span>     <span class="o">|</span> <span class="kt">tinyint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">creation_time</span> <span class="o">|</span> <span class="kt">datetime</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">modified_time</span> <span class="o">|</span> <span class="kt">datetime</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+---------------+-------------+------+-----+---------+</span>
+ <span class="o">|</span> <span class="n">id</span>            <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>     <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">PRI</span> <span class="o">|</span> <span class="no">NULL</span>    
+ <span class="o">|</span> <span class="n">title</span>         <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">body</span>          <span class="o">|</span> <span class="kt">longtext</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">category_id</span>   <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>     <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">MUL</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">published</span>     <span class="o">|</span> <span class="kt">tinyint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">creation_time</span> <span class="o">|</span> <span class="kt">datetime</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">modified_time</span> <span class="o">|</span> <span class="kt">datetime</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">+---------------+-------------+------+-----+---------+</span>
  <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_commentator</span><span class="p">;</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+---------+--------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span>   <span class="o">|</span> <span class="n">Type</span>         <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span> 
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
- <span class="o">|</span> <span class="n">id</span>      <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>      <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">PRI</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">name</span>    <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">UNI</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">email</span>   <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">UNI</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">website</span> <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+---------+--------------+------+-----+---------+</span>
+ <span class="o">|</span> <span class="n">id</span>      <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>      <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">PRI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">name</span>    <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">UNI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">email</span>   <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">UNI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">website</span> <span class="o">|</span> <span class="kt">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">+---------+--------------+------+-----+---------+</span>
  <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_comment</span><span class="p">;</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+---------------+------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span>         <span class="o">|</span> <span class="n">Type</span>       <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
- <span class="o">|</span> <span class="n">id</span>            <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">PRI</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span> 
- <span class="o">|</span> <span class="n">body</span>          <span class="o">|</span> <span class="kt">longtext</span>   <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">post_id</span>       <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">MUL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span> 
- <span class="o">|</span> <span class="n">author_id</span>     <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="n">MUL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">approved</span>      <span class="o">|</span> <span class="kt">tinyint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">|</span> <span class="n">modified_time</span> <span class="o">|</span> <span class="kt">datetime</span>   <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="o">&lt;</span><span class="n">span</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;caps&quot;</span><span class="o">&gt;</span><span class="no">NULL</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>    <span class="o">|</span>
- <span class="o">&lt;</span><span class="n">ins</span><span class="o">&gt;&amp;</span><span class="c1">#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-&lt;/ins&gt;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;&amp;#8212;+&amp;#8212;&amp;#8212;-+&amp;#8212;&amp;#8212;&amp;#8212;&amp;#8212;-+</span>
+ <span class="o">+---------------+------------+------+-----+---------+</span>
+ <span class="o">|</span> <span class="n">id</span>            <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">PRI</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span> 
+ <span class="o">|</span> <span class="n">body</span>          <span class="o">|</span> <span class="kt">longtext</span>   <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">post_id</span>       <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">MUL</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span> 
+ <span class="o">|</span> <span class="n">author_id</span>     <span class="o">|</span> <span class="kt">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>    <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span> <span class="n">MUL</span> <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">approved</span>      <span class="o">|</span> <span class="kt">tinyint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">|</span> <span class="n">modified_time</span> <span class="o">|</span> <span class="kt">datetime</span>   <span class="o">|</span> <span class="n">NO</span>   <span class="o">|</span>     <span class="o">|</span> <span class="no">NULL</span>    <span class="o">|</span>
+ <span class="o">+---------------+------------+------+-----+---------+</span>
 </pre></div>
 </div>
 
-	<p>TADA!<br />Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
+	<p><span class="caps">TADA</span>!<br />
+Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p id="fn569234c4-f47b-4a82-bce1-c0088b286040" class="footnote"><sup>3</sup>merci gheorghe!</p>
+	<p class="footnote" id="fn3e17eb104e744abca428a2d886059d1c"><sup>3</sup> merci gheorghe!</p>
         </div>
         <div class="post_tags postmeta">
           tags:
@@ -834,21 +840,27 @@ Ran <span class="m">29</span> tests in 10.149s
 
 	<p>Ia să încerc să fac și niște tabele din ce scrie mai sus.</p>
 
-	<p>Post<br /><code>id || title || body || category_id || created_at || published</code></p>
+	<p>Post<br />
+<code>id || title || body || category_id || created_at || published</code></p>
 
-	<p>Comment<br /><code>id || post_id || commentator_id || body || approved || created_at</code></p>
+	<p>Comment<br />
+<code>id || post_id || commentator_id || body || approved || created_at</code></p>
 
-	<p>Commentator<br /><code>id || name || email || website || gravatar_url</code></p>
+	<p>Commentator<br />
+<code>id || name || email || website || gravatar_url</code></p>
 
-	<p>Category<br /><code>id || name</code></p>
+	<p>Category<br />
+<code>id || name</code></p>
 
 	<p>Am renunțat la tabele și am improvizat o formatare. Sper să fie lizibil.</p>
 
 	<p>E evident ceea ce <strong>nu</strong> am făcut sper. Nu am lăsat commentatorii cu commenturile lor ceea ce ar fi dus la o relație cu 4 coloane redundante (nume, email, website, gravatar):</p>
 
-	<p>Comment<br />id || <span style="color:red;">autor || email || website || gravatar_url</span> || post_id || commentator_id || body || approved || created_at</p>
+	<p>Comment<br />
+id || <span style="color:red;">autor || email || website || gravatar_url</span> || post_id || commentator_id || body || approved || created_at</p>
 
-	<p>Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. <br />Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)</p>
+	<p>Pe parcurs o să mai adaug rating la posturi și alte lucruri care mai îmi vin în minte. Ratingul o să încerce să fie ceva complex cu sus/jos, dar asta mai târziu. <br />
+Deci? Ce părere aveți? Ce să mai adaug? Am greșit ceva? Mă încadrez în forma normală 5? :-)</p>
         </div>
         <div class="post_tags postmeta">
           tags:

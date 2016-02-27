@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 27 Feb 2016 19:33:14 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 21:28:05 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Run py.test test case inside any python class</title>
@@ -39,7 +39,7 @@ $ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
 
 	&lt;p&gt;Woo py.test!&lt;/p&gt;
 
-	&lt;p&gt;&lt;span class="caps"&gt;FWIW&lt;/span&gt;, &lt;code&gt;nosetests&lt;/code&gt; can also do this with the &lt;code&gt;-m&lt;/code&gt; option which supports regexp. But &lt;span class="caps"&gt;AFAIK&lt;/span&gt; it does not support the human-friendly &lt;code&gt;&amp;#34; or &amp;#34;&lt;/code&gt; interface like in the last example above.&lt;/p&gt; </description>
+	&lt;p&gt;&lt;span class="caps"&gt;FWIW&lt;/span&gt;, &lt;code&gt;nosetests&lt;/code&gt; can also do this with the &lt;code&gt;-m&lt;/code&gt; option which supports regexp. But &lt;span class="caps"&gt;AFAIK&lt;/span&gt; it does not support the human-friendly &lt;code&gt;" or "&lt;/code&gt; interface like in the last example above.&lt;/p&gt; </description>
             <pubDate>Tue, 23 Feb 2016 19:20 GMT</pubDate>
         </item>
     </channel>

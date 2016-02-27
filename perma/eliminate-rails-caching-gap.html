@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
@@ -27,7 +27,8 @@
         <div class="postmeta">Tuesday, September 23, 2008</div>
 
         <div class="entry">
-            	<p>Yesterday, while working on a soon-to-be <a href="http://en.wikipedia.org/wiki/Planet_(software)">planet</a> for my <span class="caps">LUG</span>, I came up with this ingenious way of eliminating the caching gap that the usual rails ActionController caches_page introduces when used with <a href="http://en.wikipedia.org/wiki/Cron">cron</a> to expire a page at a specified time interval. It&#8217;s amazingly simple. This works ideally for one-page systems (such as this planet), but can probably be extended for many pages.<br />While you would normally develop code like this to put in a cron job:</p>
+            	<p>Yesterday, while working on a soon-to-be <a href="http://en.wikipedia.org/wiki/Planet_(software)">planet</a> for my <span class="caps">LUG</span>, I came up with this ingenious way of eliminating the caching gap that the usual rails ActionController caches_page introduces when used with <a href="http://en.wikipedia.org/wiki/Cron">cron</a> to expire a page at a specified time interval. It&#8217;s amazingly simple. This works ideally for one-page systems (such as this planet), but can probably be extended for many pages.<br />
+While you would normally develop code like this to put in a cron job:</p>
 
 <div class="Bash"><div class="highlight"><pre>rm planet.html
 curl http://planet.example.com &gt; planet.html
@@ -45,7 +46,8 @@ curl http://planet.example.com &gt; planet.html <span class="p">&amp;</span> mv 
 
 	<p>Notice how the old page is saved <i>and</i> deleted, so rails produces a brand new one for curl and immediately after curl has started, the old page will be put back in the cache so no visitors will notice. After curl finishes it&#8217;s background job, we&#8217;ll have an updated planet and everyone will be happy.</p>
 
-	<p>I searched for days upon days to find the perfect (simplicity was my most important criteria here) caching method for this planet and finally here it is. Hope it helps.<br />This, together with something like rails&#8217;s <a href="http://feed-normalizer.rubyforge.org/">feed-normalizer</a> gem can make writing a rails planet aggregator a breeze.</p>
+	<p>I searched for days upon days to find the perfect (simplicity was my most important criteria here) caching method for this planet and finally here it is. Hope it helps.<br />
+This, together with something like rails&#8217;s <a href="http://feed-normalizer.rubyforge.org/">feed-normalizer</a> gem can make writing a rails planet aggregator a breeze.</p>
         </div>
         <br />
         <div id="disqus_thread"></div>

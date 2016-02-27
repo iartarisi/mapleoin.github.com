@@ -5,15 +5,15 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 27 Feb 2016 19:33:14 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 21:28:05 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>The late Fedora Summer coder</title>
             <link>http://mapleoin.github.io/perma/the-late-fedora-summer-coder</link>
             <guid>http://mapleoin.github.io/perma/the-late-fedora-summer-coder</guid>
-            <description> 	&lt;p&gt;I started my &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; last week. Although most people started almost two months ago, I chose (and was allowed to &amp;#8211; Yay, &lt;acronym title="Fedora Summer Coding"&gt;FSC&lt;/acronym&gt;!) a different schedule because I just finished college last week.&lt;/p&gt;
+            <description> 	&lt;p&gt;I started my &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010"&gt;Fedora Summer Coding&lt;/a&gt; last week. Although most people started almost two months ago, I chose (and was allowed to &amp;#8211; Yay, &lt;acronym title="Fedora Summer Coding"&gt;&lt;span class="caps"&gt;FSC&lt;/span&gt;&lt;/acronym&gt;!) a different schedule because I just finished college last week.&lt;/p&gt;
 
-	&lt;p&gt;This summer I&amp;#8217;ll be working on a new project for Fedora &amp;#8211; &lt;a href="https://fedoraproject.org/wiki/Category:Copr"&gt;Copr&lt;/a&gt;. Fedora Copr will allow any Fedorian to have their own package repository with packages built and hosted by &lt;a href="https://fedoraproject.org/wiki/Infrastructure"&gt;Fedora&amp;#8217;s Infrastructure&lt;/a&gt;. My mentor this summer will be &lt;a href="http://anonbadger.wordpress.com/"&gt;Toshio&lt;/a&gt;, I&amp;#8217;ve always enjoyed working with him and this summer will be no different. &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010_proposal_-_Copr_TG_app"&gt;Here&lt;/a&gt; is my actual &lt;acronym title="Fedora Summer Coding"&gt;FSC&lt;/acronym&gt; proposal. Although the things written in that proposal are turning out to be a bit inaccurate, it&amp;#8217;s still a good bird&amp;#8217;s eye view of what I&amp;#8217;m going to do this summer. &lt;/p&gt;
+	&lt;p&gt;This summer I&amp;#8217;ll be working on a new project for Fedora &amp;#8211; &lt;a href="https://fedoraproject.org/wiki/Category%3ACopr"&gt;Copr&lt;/a&gt;. Fedora Copr will allow any Fedorian to have their own package repository with packages built and hosted by &lt;a href="https://fedoraproject.org/wiki/Infrastructure"&gt;Fedora&amp;#8217;s Infrastructure&lt;/a&gt;. My mentor this summer will be &lt;a href="http://anonbadger.wordpress.com/"&gt;Toshio&lt;/a&gt;, I&amp;#8217;ve always enjoyed working with him and this summer will be no different. &lt;a href="https://fedoraproject.org/wiki/Summer_Coding_2010_proposal_-_Copr_TG_app"&gt;Here&lt;/a&gt; is my actual &lt;acronym title="Fedora Summer Coding"&gt;&lt;span class="caps"&gt;FSC&lt;/span&gt;&lt;/acronym&gt; proposal. Although the things written in that proposal are turning out to be a bit inaccurate, it&amp;#8217;s still a good bird&amp;#8217;s eye view of what I&amp;#8217;m going to do this summer. &lt;/p&gt;
 
 	&lt;p&gt;So about the first week. Things started really slow. I did a lot of orientation, certainly more than I thought I would. I hadn&amp;#8217;t used TurboGears2 before, though I had worked with TurboGears 1.x on &lt;a href="https://admin.fedoraproject.org/pkgdb"&gt;Fedora&amp;#8217;s pkgdb&lt;/a&gt;. When I started out I had only a TG2 automatically generated skeleton app &amp;#8211; well it&amp;#8217;s mostly the same now, though at least I now know a lot more about what&amp;#8217;s in there. The fact that I had to start it up myself meant I had to learn a lot of things about TG2 that I would&amp;#8217;ve normally just copied from other parts of a fully-functional project. And that was a great experience. In a way it&amp;#8217;s fulfilling to be able to &lt;em&gt;pioneer&lt;/em&gt; things in this way ;). I&amp;#8217;m trying to only ask my mentor questions about designing the actual app and solve my &amp;#8220;How do I &amp;#8230; in TurboGears/Python?&amp;#8221; questions elsewhere. My mentor has always given me a lot of independence when working on things and that feels really good, though at times I feel inexperienced. There&amp;#8217;s the thought that the project I&amp;#8217;m working on will be used by a lot of technical users and I&amp;#8217;m really not sure what my decisions&amp;#8217; impact will be on the whole project.&lt;/p&gt;
 
@@ -34,20 +34,20 @@
 
 	&lt;p&gt;Rezolvarea nu este să dezactivăm complet actualizarea metadatelor, pentru că am putea încerca să instalăm pachete a căror dependințe au fost actualizate și a căror versiune exactă nu se mai găsește în depozit =&amp;gt; &lt;em&gt;dependency hell&lt;/em&gt;.&lt;/p&gt;
 
-	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c &amp;#34;yum install yum-updatesd&amp;#34;&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
+	&lt;p&gt;Se pare că există un program &lt;em&gt;yum-updatesd&lt;/em&gt; (&lt;code&gt;su -c "yum install yum-updatesd"&lt;/code&gt;) care poate actualiza automat metadatele.&lt;/p&gt;
 
 	&lt;p&gt;După ce l-am instalat, putem modifica &lt;code&gt;/etc/yum/yum-updatesd.conf&lt;/code&gt; dacă vrem să facem lucruri dubioase, cum ar fi să îl lăsăm să instaleze actualizări automat &amp;#8212; pentru că trăim într-o utopie în care actualizările nu strică niciodată nimic &amp;#8212; sau, mai puțin dubios, doar să le descarce.&lt;/p&gt;
 
 	&lt;p&gt;Acum că am terminat cu setările, putem porni serviciul cu:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8220;service yum-updatesd start&amp;amp;#8221;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;service yum-updatesd start&amp;quot;&lt;/span&gt;
  $ cacamaca
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;p&gt;Și îl putem pune să se pornească automat la fiecare boot:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8220;chkconfig yum-updatesd on&amp;amp;#8221;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;chkconfig yum-updatesd on&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt; </description>
             <pubDate>Thu, 18 Mar 2010 14:00 GMT</pubDate>
@@ -121,26 +121,9 @@
 
 &lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; 
   def update_found&lt;span class="o"&gt;(&lt;/span&gt;self, version&lt;span class="o"&gt;)&lt;/span&gt;:
-  &lt;span class="nv"&gt;os&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;windows&amp;amp;#8217; if iswindows else &amp;#39;&lt;/span&gt;osx&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217; if isosx else &amp;#39;linux&amp;amp;#8217;&lt;/span&gt;
-  &lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://%s.kovidgoyal.net/download_%s&amp;amp;#8217;%(__appname__, os)&lt;/span&gt;
-&lt;span class="s1"&gt;  self.latest_version = &amp;#39;&lt;/span&gt;&amp;lt;br /&amp;gt;&lt;span class="s1"&gt;&amp;#39; + _(&amp;amp;#8217;&amp;lt;span style=&amp;quot;color:red; font-weight:bold&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;
-    &lt;span class="s1"&gt;&amp;#39;Latest version: &amp;lt;a href=&amp;quot;%s&amp;quot;&amp;gt;&amp;lt;span&amp;gt;s&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&amp;lt;/span&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;url, version&lt;span class="o"&gt;)&lt;/span&gt;
-  self.vanity.setText&lt;span class="o"&gt;(&lt;/span&gt;self.vanity_template%&lt;span class="se"&gt;\&lt;/span&gt;
-  &lt;span class="o"&gt;(&lt;/span&gt;dict&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;self.latest_version,
-  &lt;span class="nv"&gt;device&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;self.device_info&lt;span class="o"&gt;)))&lt;/span&gt;
-  self.vanity.update&lt;span class="o"&gt;()&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; config.get&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;new_version_notification&amp;amp;#8217;) and \&lt;/span&gt;
-&lt;span class="s1"&gt;  dynamic.get(&amp;#39;&lt;/span&gt;update to version %s&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;%version, True):&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; question_dialog&lt;span class="o"&gt;(&lt;/span&gt;self, _&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Update available&amp;amp;#8217;),&lt;/span&gt;
-&lt;span class="s1"&gt;  &amp;lt;em class=&amp;amp;#8221;&amp;amp;#8217;%s has been updated to version %s. &amp;#39;&lt;/span&gt;
-  &lt;span class="s1"&gt;&amp;#39;See the &amp;lt;a href=&amp;amp;#8220;http://calibre.kovidgoyal.net/wiki/&amp;amp;#8217;&lt;/span&gt;
-&lt;span class="s1"&gt;                    &amp;#39;&lt;/span&gt;Changelog&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8221;&amp;gt;new features&amp;lt;/a&amp;gt;. Visit the download pa&amp;amp;#8217;&lt;/span&gt;
-  &lt;span class="s1"&gt;&amp;#39;ge?&amp;amp;#8217;&amp;amp;#8221;&amp;gt;%(&amp;lt;/em&amp;gt;_appname__, version)):&lt;/span&gt;
-&lt;span class="s1"&gt;  url = &amp;#39;&lt;/span&gt;http://calibre.kovidgoyal.net/download_&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;+\&lt;/span&gt;
-  &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;windows&amp;amp;#8217; if iswindows else &amp;#39;&lt;/span&gt;osx&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217; if isosx else &amp;#39;linux&amp;amp;#8217;)&lt;/span&gt;
-  QDesktopServices.openUrl&lt;span class="o"&gt;(&lt;/span&gt;QUrl&lt;span class="o"&gt;(&lt;/span&gt;url&lt;span class="o"&gt;))&lt;/span&gt;
-  dynamic.set&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;update to version %s&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;%version, False)&lt;/span&gt;
-&amp;lt;/br&amp;gt;
+  &lt;span class="nv"&gt;os&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;windows&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; iswindows &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;osx&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; isosx &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;linux&amp;#39;&lt;/span&gt;
+  &lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://%s.kovidgoyal.net/download_%s&amp;#39;&lt;/span&gt;%&lt;span class="o"&gt;(&lt;/span&gt;__appname__, os&lt;span class="o"&gt;)&lt;/span&gt;
+  self.latest_version &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
@@ -149,7 +132,7 @@
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;no_update_check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CheckForUpdates&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="n"&gt;QObject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-  &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;acronym&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;#39;update_found(PyQt_PyObject&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="n"&gt;SIGNAL&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="n"&gt;acronym&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;), self.update_found)&lt;/span&gt;
+  &lt;span class="n"&gt;SIGNAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;update_found(PyQt_PyObject)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_found&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
   &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -173,24 +156,24 @@
 
 	&lt;p&gt;Ca să generăm petecul vom folosi gendiff din directorul de deasupra directorului rădăcină:&lt;/p&gt;
 
-&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;    $ cd ~/rpmbuild/&amp;lt;span class=&amp;quot;caps&amp;quot;&amp;gt;BUILD&amp;lt;/span&amp;gt;
+&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;    $ cd ~/rpmbuild/BUILD
     $ gendiff calibre .no_update
     diff -up calibre/src/calibre/gui2/main.py.no_update calibre/src/calibre/gui2/main.py
-    &amp;amp;#8212;- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
+    --- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
     +++ calibre/src/calibre/gui2/main.py	2009-11-16 14:22:10.400510757 +0200
-    &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt; -221,11 +221,11 &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt; class Main(MainWindow, Ui_MainWindow, De
+    @@ -221,11 +221,11 @@ class Main(MainWindow, Ui_MainWindow, De
     self.latest_version = &amp;#39; &amp;#39;
-    self.vanity.setText(self.vanity_template%dict(version=&amp;amp;#8217; &amp;#39;, device=&amp;amp;#8217; &amp;#39;))
+    self.vanity.setText(self.vanity_template%dict(version=&amp;#39; &amp;#39;, device=&amp;#39; &amp;#39;))
     self.device_info = &amp;#39; &amp;#39;
-    &amp;amp;#8211;        if not opts.no_update_check:
-    &amp;amp;#8211;            self.update_checker = CheckForUpdates()
-    &amp;amp;#8211;            QObject.connect(self.update_checker,
-    &amp;amp;#8211;                    &amp;lt;acronym title=&amp;quot;&amp;#39;update_found(PyQt_PyObject&amp;quot;&amp;gt;SIGNAL&amp;lt;/acronym&amp;gt;&amp;amp;#8217;), self.update_found)
-    &amp;amp;#8211;            self.update_checker.start()
+    -        if not opts.no_update_check:
+    -            self.update_checker = CheckForUpdates()
+    -            QObject.connect(self.update_checker,
+    -                    SIGNAL(&amp;#39;update_found(PyQt_PyObject)&amp;#39;), self.update_found)
+    -            self.update_checker.start()
     +        # if not opts.no_update_check:
     +        #     self.update_checker = CheckForUpdates()
     +        #     QObject.connect(self.update_checker,
-    +        #             &amp;lt;acronym title=&amp;quot;&amp;#39;update_found(PyQt_PyObject&amp;quot;&amp;gt;SIGNAL&amp;lt;/acronym&amp;gt;&amp;amp;#8217;), self.update_found)
+    +        #             SIGNAL(&amp;#39;update_found(PyQt_PyObject)&amp;#39;), self.update_found)
     +        #     self.update_checker.start()
     ####################### Status Bar #####################
     self.status_bar = StatusBar(self.jobs_dialog, self.system_tray_icon)
@@ -201,12 +184,12 @@
 	&lt;p&gt;Totul arată bine, deci putem să-l punem în surse:&lt;/p&gt;
 
 &lt;pre&gt;
-  $ gendiff calibre .no_update &amp;#38;gt; ~/rpmbuild/SOURCES/calibre-no-update.patch
+  $ gendiff calibre .no_update &amp;amp;gt; ~/rpmbuild/SOURCES/calibre-no-update.patch
 &lt;/pre&gt;
 
 	&lt;p&gt;Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:&lt;/p&gt;
 
-&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt; -1,6 +1,6 &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;
+&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  @@ -1,6 +1,6 @@
   Name:           calibre
   Version:        0.6.21
   -Release:        1%{?dist}
@@ -214,31 +197,25 @@
   Summary:        E-book converter and library management
   Group:          Applications/Multimedia
   License:        GPLv3
-  &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt; -18,6 +18,7 &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;
+  @@ -18,6 +18,7 @@
   Source1:        generate-tarball.sh
   Patch0:         %{name}-cssprofiles.patch
   Patch1:         %{name}-manpages.patch
   +Patch2:         %{name}-no-update.patch
-  BuildRoot:      &amp;lt;span style=&amp;quot;_tmppath;&amp;quot;&amp;gt;/&amp;lt;/span&amp;gt;{name&amp;lt;del&amp;gt;&amp;lt;span style=&amp;quot;version;text-align:left;&amp;quot;&amp;gt;/del&amp;gt;&amp;lt;/span&amp;gt;{release&amp;lt;del&amp;gt;root&amp;lt;/del&amp;gt;&amp;lt;span&amp;gt;(&amp;lt;/span&amp;gt;{__id_u} -n)
+  BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
   BuildRequires:  python &amp;gt;= 2.6
-  &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt; -72,6 +73,9 &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;
-  # don&amp;amp;#8217;t append calibre1 to the name of the manpages. No need to compress either
+  @@ -72,6 +73,9 @@
+  # don&amp;#39;t append calibre1 to the name of the manpages. No need to compress either
   %patch1 -p1 -b .manpages
-  +# don&amp;amp;#8217;t check for new upstream version (that&amp;amp;#8217;s what packagers do)
+  +# don&amp;#39;t check for new upstream version (that&amp;#39;s what packagers do)
   +%patch2 -p1 -b .no-update
   +
   # dos2unix newline conversion
-  %{__sed} -i &amp;#39;s/\r//&amp;amp;#8217; src/calibre/web/feeds/recipes/*
-  &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt; -239,6 +243,9 &amp;lt;code&amp;gt;&amp;lt;/code&amp;gt;
+  %{__sed} -i &amp;#39;s/\r//&amp;#39; src/calibre/web/feeds/recipes/*
+  @@ -239,6 +243,9 @@
   %{_mandir}/man1/*
   %changelog
-  +* Sat Nov  29 2009 Ionuț C. Arțăriși &amp;lt;mapleoin@fedoraproject.org&amp;gt; &amp;amp;#8211; 0.6.21-2
-    +- patch to stop checking for new upstream version
-    +
-    * Sat Nov  6 2009 Ionuț C. Arțăriși &amp;lt;mapleoin@fedoraproject.org&amp;gt; &amp;amp;#8211; 0.6.21-1
-      &amp;amp;#8211; new upstream version: http://calibre.kovidgoyal.net/wiki/Changelog#Version0.6.2106Nov2009
-      &amp;amp;#8211; added python-BeautifulSoup requirement
-&amp;lt;/mapleoin@fedoraproject.org&amp;gt;&amp;lt;/mapleoin@fedoraproject.org&amp;gt;
+  +* Sat Nov  29 2009 Ionuț C. Arțăriși 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
@@ -260,19 +237,21 @@
             <title>Linux - After install work</title>
             <link>http://mapleoin.github.io/perma/after-install-work</link>
             <guid>http://mapleoin.github.io/perma/after-install-work</guid>
-            <description> 	&lt;p&gt;It&amp;#8217;s distro-hopping season again and I chose debian this time. I might explain my reasons for that somewhere else. Here&amp;#8217;s a list of stuff I need to do on every install in order to get comfy with my new distro. (There&amp;#8217;s a sort of meme floating around).&lt;br /&gt;I use gnome!&lt;/p&gt;
+            <description> 	&lt;p&gt;It&amp;#8217;s distro-hopping season again and I chose debian this time. I might explain my reasons for that somewhere else. Here&amp;#8217;s a list of stuff I need to do on every install in order to get comfy with my new distro. (There&amp;#8217;s a sort of meme floating around).&lt;br /&gt;
+I use gnome!&lt;/p&gt;
 
-	&lt;p&gt;	&lt;ul&gt;
-		&lt;li&gt;Get 6 virtual desktops. &lt;/li&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Get 6 virtual desktops.&lt;/li&gt;
 		&lt;li&gt;Set some basic can&amp;#8217;t-live-without-keybindings Ctrl+_number_ for switching between desktops and Alt+T for launching a gnome-terminal.&lt;/li&gt;
 		&lt;li&gt;Clean up my desktop. I really hate every kind of clutter on my desktop, so I delete everything. Almost everything can just be deleted, except for the Home, Trash and Computer icons. Fire up &lt;code&gt;gconf-editor&lt;/code&gt; and go to &lt;em&gt;apps&amp;gt;nautilus&amp;gt;desktop&lt;/em&gt; to uncheck everything. While we&amp;#8217;re at it, let&amp;#8217;s also enabling deleting in &lt;em&gt;nautilus&lt;/em&gt; (it normally only lets you send stuff to Trash), by checking enable_delete in &lt;em&gt;nautilus&amp;gt;preferences&lt;/em&gt;. Nautilus&amp;gt;Edit&amp;gt;Preferences&amp;gt;Behaviour &amp;#8211; always open in browser windows &amp;#8211; so it doesn&amp;#8217;t spam me with 1000 windows to the world.&lt;/li&gt;
-		&lt;li&gt;Next is &lt;code&gt;&amp;#60;package manager=&amp;#34;&amp;#34;&amp;#62; install bash-completion&lt;/code&gt; and adding this to my &lt;em&gt;.bashrc&lt;/em&gt;: &lt;code&gt;. /etc/bash_completion&lt;/code&gt;.&lt;/li&gt;
+		&lt;li&gt;Next is &lt;code&gt;&amp;lt;package manager=""&amp;gt; install bash-completion&lt;/code&gt; and adding this to my &lt;em&gt;.bashrc&lt;/em&gt;: &lt;code&gt;. /etc/bash_completion&lt;/code&gt;.&lt;/li&gt;
 		&lt;li&gt;Time to get my .vimrc from wherever i happen to be keeping it at the time. you can check it out now &lt;a href="http://mapleoin.fedorapeople.org/vimrc"&gt;here&lt;/a&gt;.&lt;/li&gt;
 		&lt;li&gt;Nowadays, as I&amp;#8217;ve got really lazy, I also set up automatic login (you can do that from &lt;em&gt;System&amp;gt;Administration&amp;gt;Login Window&lt;/em&gt;. That basically bypasses gdm.&lt;/li&gt;
 		&lt;li&gt;Get myself into some better groups like: wheel/admin/sudo, storage/disk(so nautilus can mount disks), by editing &lt;code&gt;/etc/group&lt;/code&gt;.&lt;/li&gt;
 		&lt;li&gt;You might also want to take a look at http://art.gnome.org if you&amp;#8217;re the type. I know it&amp;#8217;s a bit outdated, but the interface is a whole lot better than *-look.org&lt;/li&gt;
-		&lt;li&gt;Here&amp;#8217;s a list of apps I use regularly: &lt;em&gt;Firefox, gnome-terminal, vim, ipython, git, xchat, evolution, pidgin, deluge, banshee/amarok, gnome-mplayer&lt;/em&gt;.&lt;/li&gt;
-	&lt;/ul&gt;&lt;br /&gt;&lt;/package&gt;&lt;/p&gt; </description>
+		&lt;li&gt;Here&amp;#8217;s a list of apps I use regularly: &lt;em&gt;Firefox, gnome-terminal, vim, ipython, git, xchat, evolution, pidgin, deluge, banshee/amarok, gnome-mplayer&lt;/em&gt;.&lt;br /&gt;
+&lt;/package&gt;&lt;/li&gt;
+	&lt;/ul&gt; </description>
             <pubDate>Fri, 19 Dec 2008 00:00 GMT</pubDate>
         </item>
     </channel>
