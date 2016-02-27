@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Run py.test test case inside any python class</title>
             <link>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</guid>
             <description> 	&lt;p&gt;I wanted a way to run the current test I was editing when I know the name of the method, but I&amp;#8217;m too lazy to scroll up and see which class it&amp;#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.&lt;/p&gt;
 
 	&lt;p&gt;Instead of typing:&lt;/p&gt;

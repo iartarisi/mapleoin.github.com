@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>HTTP Status Codes Reference</title>
             <link>http://mapleoin.github.io/perma/http-status-codes-reference</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/http-status-codes-reference</guid>
             <description> 	&lt;p&gt;I&amp;#8217;ve been using this reference for &lt;span class="caps"&gt;HTTP&lt;/span&gt; status codes lately: &lt;a href="http://www.restapitutorial.com/httpstatuscodes.html"&gt;http://www.restapitutorial.com/httpstatuscodes.html&lt;/a&gt;&lt;/p&gt;
 
 	&lt;p&gt;It&amp;#8217;s nice to be able to see all of them on one page and expand only the interesting ones.&lt;/p&gt;

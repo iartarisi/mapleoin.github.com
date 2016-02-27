@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Emacs la Ceata</title>
             <link>http://mapleoin.github.io/perma/emacs-in-ceata</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/emacs-in-ceata</guid>
             <description> 	&lt;p&gt;Să folosesc blogul ăsta și altfel decât până acum.&lt;/p&gt;
 
 	&lt;p&gt;Dacă mă are cineva în feed reader și vrea să meargă la o mică (o juma&amp;#8217; de duzină de oameni) prezentare emacs în politehnică, cu oamenii din &lt;a href="http://ceata.org"&gt;Ceata&lt;/a&gt; (probabil e stricat situl în momentul ăsta), știți cum să mă contactați. Întâlnirea va avea loc mâine probabil după ora 18 în sediul Cetei din unul din căminele din Poli.&lt;/p&gt;
@@ -21,7 +21,7 @@
         <item>
             <title>FUDCon Berlin</title>
             <link>http://mapleoin.github.io/perma/fudcon-berlin</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/fudcon-berlin</guid>
             <description> 	&lt;p&gt;I just got back from this year&amp;#8217;s &lt;acronym title="Europe, the Middle East and Africa"&gt;EMEA&lt;/acronym&gt; &lt;acronym title="Fedora Users and Developers Conference"&gt;FUDCON&lt;/acronym&gt; in Berlin with &lt;a href="http://nicubunu.blogspot.com"&gt;Nicu&lt;/a&gt; . I didn&amp;#8217;t have time to write anything while I was there because so much was happening all the time.&lt;/p&gt;
 
 	&lt;p&gt;&lt;img src="http://fedora.nicubunu.ro/photos/fudcon2009berlin/613-img_1477.jpg.medium.jpeg" alt="" /&gt;&lt;/p&gt;
@@ -48,7 +48,7 @@
         <item>
             <title>eLiberatica - the aftermath!</title>
             <link>http://mapleoin.github.io/perma/eLiberatica-aftermath</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/eLiberatica-aftermath</guid>
             <description> 	&lt;p&gt;Wow, what an event! It was way more awesome than I expected. This is probably one of the later posts to get to the planet from eLiberatica because I wanted to form a complete opinion on the event.&lt;/p&gt;
 
 	&lt;p&gt;eLiberatica is the first big open source and free software conference I&amp;#8217;ve been to. The scale of it is quite amazing for something this far East in Europe and especially for my country. Some high-profile guest even said that he was astonished at the presence of very influential, key &lt;span class="caps"&gt;FLOSS&lt;/span&gt; personalities that aren&amp;#8217;t present at some bigger events.&lt;br /&gt;the booths&lt;/p&gt;

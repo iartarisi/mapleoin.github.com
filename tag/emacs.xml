@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Emacs la Ceata</title>
             <link>http://mapleoin.github.io/perma/emacs-in-ceata</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/emacs-in-ceata</guid>
             <description> 	&lt;p&gt;Să folosesc blogul ăsta și altfel decât până acum.&lt;/p&gt;
 
 	&lt;p&gt;Dacă mă are cineva în feed reader și vrea să meargă la o mică (o juma&amp;#8217; de duzină de oameni) prezentare emacs în politehnică, cu oamenii din &lt;a href="http://ceata.org"&gt;Ceata&lt;/a&gt; (probabil e stricat situl în momentul ăsta), știți cum să mă contactați. Întâlnirea va avea loc mâine probabil după ora 18 în sediul Cetei din unul din căminele din Poli.&lt;/p&gt;

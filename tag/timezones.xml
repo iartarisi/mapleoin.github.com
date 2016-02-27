@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Change the system timezone for the python interpreter</title>
             <link>http://mapleoin.github.io/perma/change-external-timezone-in-python</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/change-external-timezone-in-python</guid>
             <description> 	&lt;p&gt;Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in &lt;span class="caps"&gt;GMT&lt;/span&gt; (which is mostly the same as &lt;span class="caps"&gt;UTC&lt;/span&gt;).&lt;/p&gt;
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Run py.test test case inside any python class</title>
             <link>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/pytest-run-one-test-inside-class</guid>
             <description> 	&lt;p&gt;I wanted a way to run the current test I was editing when I know the name of the method, but I&amp;#8217;m too lazy to scroll up and see which class it&amp;#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.&lt;/p&gt;
 
 	&lt;p&gt;Instead of typing:&lt;/p&gt;
@@ -45,7 +45,7 @@ $ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
         <item>
             <title>HTTP Status Codes Reference</title>
             <link>http://mapleoin.github.io/perma/http-status-codes-reference</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/http-status-codes-reference</guid>
             <description> 	&lt;p&gt;I&amp;#8217;ve been using this reference for &lt;span class="caps"&gt;HTTP&lt;/span&gt; status codes lately: &lt;a href="http://www.restapitutorial.com/httpstatuscodes.html"&gt;http://www.restapitutorial.com/httpstatuscodes.html&lt;/a&gt;&lt;/p&gt;
 
 	&lt;p&gt;It&amp;#8217;s nice to be able to see all of them on one page and expand only the interesting ones.&lt;/p&gt;
@@ -56,7 +56,7 @@ $ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
         <item>
             <title>AST literal_eval</title>
             <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/ast-literal-eval</guid>
             <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
 
 	&lt;p&gt;This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.&lt;/p&gt;
@@ -69,7 +69,7 @@ $ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
         <item>
             <title>Change the system timezone for the python interpreter</title>
             <link>http://mapleoin.github.io/perma/change-external-timezone-in-python</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/change-external-timezone-in-python</guid>
             <description> 	&lt;p&gt;Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in &lt;span class="caps"&gt;GMT&lt;/span&gt; (which is mostly the same as &lt;span class="caps"&gt;UTC&lt;/span&gt;).&lt;/p&gt;
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
@@ -85,7 +85,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>The XY Problem</title>
             <link>http://mapleoin.github.io/perma/xy-problem</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/xy-problem</guid>
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;

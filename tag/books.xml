@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/sql-and-relational-theory-master</guid>
             <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
@@ -25,7 +25,7 @@
         <item>
             <title>The Productive Programmer</title>
             <link>http://mapleoin.github.io/perma/productive-programmer-review</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/productive-programmer-review</guid>
             <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;#38;amp;tag=httpmapleoinb-20&amp;#38;amp;linkCode=as2&amp;#38;amp;camp=1789&amp;#38;amp;creative=390957&amp;#38;amp;creativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
 
 	&lt;p&gt;I&amp;#8217;ve already got a bunch of books piled up and waiting to be read, some of which I&amp;#8217;ve reached the middle of and some of which I&amp;#8217;ve read only the introduction to. I was bored today and this looked like an easy read that I could drop at any time. It is an easy read, but the fact is, it&amp;#8217;s very catchy. It draws you in and doesn&amp;#8217;t want to be let go. It&amp;#8217;s a great way to spend half a day.&lt;/p&gt;

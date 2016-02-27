@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="1.0">
+<rss version="2.0">
     <channel>
         <title>Revolution blahg</title>
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Thu, 25 Feb 2016 23:52:06 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>AST literal_eval</title>
             <link>http://mapleoin.github.io/perma/ast-literal-eval</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/ast-literal-eval</guid>
             <description> 	&lt;p&gt;&lt;blockquote&gt;&lt;br /&gt;Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.&lt;/p&gt;
 
 	&lt;p&gt;This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.&lt;/p&gt;
@@ -23,7 +23,7 @@
         <item>
             <title>Change the system timezone for the python interpreter</title>
             <link>http://mapleoin.github.io/perma/change-external-timezone-in-python</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/change-external-timezone-in-python</guid>
             <description> 	&lt;p&gt;Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in &lt;span class="caps"&gt;GMT&lt;/span&gt; (which is mostly the same as &lt;span class="caps"&gt;UTC&lt;/span&gt;).&lt;/p&gt;
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
@@ -39,7 +39,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>The XY Problem</title>
             <link>http://mapleoin.github.io/perma/xy-problem</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/xy-problem</guid>
             <description> 	&lt;p&gt;So there&amp;#8217;s a website devoted to &lt;a href="http://xyproblem.info/"&gt;The XY Problem&lt;/a&gt;:&lt;/p&gt;
 
 	&lt;blockquote&gt;
@@ -50,7 +50,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>Mocking python's file open() builtin</title>
             <link>http://mapleoin.github.io/perma/mocking-python-file-open</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/mocking-python-file-open</guid>
             <description> 	&lt;p&gt;I was working on a method to read some proxy information from several files today and then I wanted to test it.&lt;/p&gt;
 
 	&lt;p&gt;A &lt;em&gt;very&lt;/em&gt; simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:&lt;/p&gt;
@@ -355,7 +355,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>FOSDEM 2012 review</title>
             <link>http://mapleoin.github.io/perma/FOSDEM-2012-review</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/FOSDEM-2012-review</guid>
             <description> 	&lt;p&gt;I went to &lt;a href="http://fosdem.org"&gt;FOSDEM&lt;/a&gt; this year. Thanks &lt;a href="http://suse.com"&gt;SUSE&lt;/a&gt; for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&amp;#8217;s &lt;span class="caps"&gt;FOSDEM&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;&lt;span class="caps"&gt;SATURDAY&lt;/span&gt;&lt;/h4&gt;
@@ -438,7 +438,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/sql-and-relational-theory-master</guid>
             <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" alt="" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
@@ -453,7 +453,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>The Productive Programmer</title>
             <link>http://mapleoin.github.io/perma/productive-programmer-review</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/productive-programmer-review</guid>
             <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;#38;amp;tag=httpmapleoinb-20&amp;#38;amp;linkCode=as2&amp;#38;amp;camp=1789&amp;#38;amp;creative=390957&amp;#38;amp;creativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
 
 	&lt;p&gt;I&amp;#8217;ve already got a bunch of books piled up and waiting to be read, some of which I&amp;#8217;ve reached the middle of and some of which I&amp;#8217;ve read only the introduction to. I was bored today and this looked like an easy read that I could drop at any time. It is an easy read, but the fact is, it&amp;#8217;s very catchy. It draws you in and doesn&amp;#8217;t want to be let go. It&amp;#8217;s a great way to spend half a day.&lt;/p&gt;
@@ -464,7 +464,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>GSOC - it begins...</title>
             <link>http://mapleoin.github.io/perma/GSOC-it-begins</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/GSOC-it-begins</guid>
             <description> 	&lt;p&gt;My Fedora proposal got accepted to this year&amp;#8217;s Google Summer of Code Program. You can look at a short abstract &lt;a href="http://socghop.appspot.com/student_project/show/google/gsoc2009/redhat/t124024691190"&gt;here&lt;/a&gt; . Now I&amp;#8217;m going to try to explain what this project is about and what I did to prepare for being accepted, hopefully without going mad about how happy I am about it.&lt;/p&gt;
 
 	&lt;p&gt;I started work on the Fedora Project almost a year ago. One day I popped on the mailing list and then on the irc channel of the infrastructure team and asked for something to do. Luckily, Toshio Kuratomi was on the watch and after giving me a short tour of the various projects he could help me get familiar with, I picked the package database. Most of the work I&amp;#8217;ve done so far is in the &lt;a href="https://admin.fedoraproject.org/pkgdb/"&gt;pkgdb&lt;/a&gt; (the search capability is the most obvious thing I worked on). The overview on the front page describes it quite well; it&amp;#8217;s got package information and it&amp;#8217;s aimed at package developers. It&amp;#8217;s not a very famous part of the fedora project websites, certainly not as famous as something like packages.ubuntu.com is for ubuntu. But that&amp;#8217;s not what it was intended for, even if that&amp;#8217;s what attracted me to the project at first. I liked the exposure of such a website, but also the fact that, at the time, it was easier for me to understand what it did and how it worked :).&lt;/p&gt;
@@ -483,7 +483,7 @@ $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;
         <item>
             <title>testing a django blog's models</title>
             <link>http://mapleoin.github.io/perma/testing-django-models</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/testing-django-models</guid>
             <description> 	&lt;p&gt;This post is a continuation of &lt;a href="http://mapleoin.eu/perma/blog-database-schema-2/"&gt;this post&lt;/a&gt; and I&amp;#8217;ll be using that schema to write tests on top of. Here it is, for easy reference:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
@@ -758,7 +758,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
         <item>
             <title>blog database schema cu capsuni - Part 2</title>
             <link>http://mapleoin.github.io/perma/blog-database-schema-2</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/blog-database-schema-2</guid>
             <description> 	&lt;p&gt;Tocmai am reușit (am găsit timp &amp;#8212; furat timp) să scriu în django schema din &lt;a href="http://mapleoin.eu/perma/blog-database-schema"&gt;postul trecut&lt;/a&gt;. Simplicity is divine:&lt;/p&gt;
 
 &lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
@@ -785,7 +785,7 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;Pe lângă faptul că toate tipurile de date au nume și &lt;a href="http://docs.djangoproject.com/en/dev/ref/models/fields/#model-field-types"&gt;explicații&lt;/a&gt; pe care le poate înțelege oricine, django va folosi datele astea atunci când va construi interfața de administrare.&lt;br /&gt;E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat OOP-ul.&lt;br /&gt;Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi URLField.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn1047f690-f9f3-4ffe-8e23-c46e31ef5b84"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote"&gt;&lt;a href="#fn2e70fc16-4d5b-4a66-b850-8fa1b7840343"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
 &lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -831,13 +831,13 @@ FAILED &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;errors&lt;/spa
 
 	&lt;p&gt;TADA!&lt;br /&gt;Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p id="fn1047f690-f9f3-4ffe-8e23-c46e31ef5b84" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
+	&lt;p id="fn2e70fc16-4d5b-4a66-b850-8fa1b7840343" class="footnote"&gt;&lt;sup&gt;3&lt;/sup&gt;merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>
             <title>blog database schema cu capsuni</title>
             <link>http://mapleoin.github.io/perma/blog-database-schema</link>
-            <author>mapleoin</author>
+            <guid>http://mapleoin.github.io/perma/blog-database-schema</guid>
             <description> 	&lt;p&gt;Am reușit să-mi scriu schema bazei de date a viitorului meu blog. Ah, da, m-am apucat de treabă. O să folosesc django cred (și deja mi s-a spus că era previzibil) deși încă mai am timp să mă răzgândesc. N-am găsit în 2 minute un script care să-mi deseneze scheme, așa că pun relațiile în engleză aici. Come bash me!&lt;/p&gt;
 
 	&lt;h4&gt;Post&lt;/h4&gt;
