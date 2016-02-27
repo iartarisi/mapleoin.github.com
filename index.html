@@ -21,9 +21,10 @@
     <a href="/about">about</a>
   </div>
 <div id="content">
-    <div class="post">
+    <article id="pytest-run-one-test-inside-class">
         <h2><a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class">Run py.test test case inside any python class</a></h2>
         <div class="postmeta">Tuesday, February 23, 2016</div>
+
         <div class="entry">
             	<p>I wanted a way to run the current test I was editing when I know the name of the method, but I&#8217;m too lazy to scroll up and see which class it&#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.</p>
 
@@ -63,10 +64,11 @@ $ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
                 <a href="/tag/testing.html">testing</a>
         </div>
         <a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="http-status-codes-reference">
         <h2><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></h2>
         <div class="postmeta">Tuesday, February 16, 2016</div>
+
         <div class="entry">
             	<p>I&#8217;ve been using this reference for <span class="caps">HTTP</span> status codes lately: <a href="http://www.restapitutorial.com/httpstatuscodes.html">http://www.restapitutorial.com/httpstatuscodes.html</a></p>
 
@@ -81,10 +83,11 @@ $ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
                 <a href="/tag/API.html">API</a>
         </div>
         <a href="http://mapleoin.github.io/perma/http-status-codes-reference#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="ast-literal-eval">
         <h2><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></h2>
         <div class="postmeta">Monday, February 15, 2016</div>
+
         <div class="entry">
             	<p><blockquote><br />Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.</p>
 
@@ -101,19 +104,20 @@ $ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
                 <a href="/tag/programming.html">programming</a>
         </div>
         <a href="http://mapleoin.github.io/perma/ast-literal-eval#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="change-external-timezone-in-python">
         <h2><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></h2>
         <div class="postmeta">Saturday, February 13, 2016</div>
+
         <div class="entry">
             	<p>Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in <span class="caps">GMT</span> (which is mostly the same as <span class="caps">UTC</span>).</p>
 
 	<p>I found a way to change the timezone, that is used by most of python&#8217;s stdlib, by changing the <code>TZ</code> environment variable:</p>
 
-<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
-<span class="o">(</span><span class="s1">&#39;GMT&#39;</span>, <span class="s1">&#39;BST&#39;</span><span class="o">)</span>
-$ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&#39;</span> python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
-<span class="o">(</span><span class="s1">&#39;CET&#39;</span>, <span class="s1">&#39;CEST&#39;</span><span class="o">)</span>
+<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&amp;#8217;</span>
+<span class="s1">(&#39;</span>GMT<span class="p">&amp;</span><span class="c1">#8217;, &#39;BST&amp;#8217;)</span>
+$ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&amp;#8217; python -c &#39;</span>import time<span class="p">;</span> print<span class="o">(</span>time.tzname<span class="o">)</span><span class="p">&amp;</span><span class="c1">#8217;</span>
+<span class="o">(</span><span class="s1">&#39;CET&amp;#8217;, &#39;</span>CEST<span class="p">&amp;</span><span class="c1">#8217;)</span>
 </pre></div>
 </div>
         </div>
@@ -125,10 +129,11 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
                 <a href="/tag/TIL.html">TIL</a>
         </div>
         <a href="http://mapleoin.github.io/perma/change-external-timezone-in-python#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="xy-problem">
         <h2><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></h2>
         <div class="postmeta">Saturday, February 13, 2016</div>
+
         <div class="entry">
             	<p>So there&#8217;s a website devoted to <a href="http://xyproblem.info/">The XY Problem</a>:</p>
 
@@ -142,31 +147,32 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
                 <a href="/tag/TIL.html">TIL</a>
         </div>
         <a href="http://mapleoin.github.io/perma/xy-problem#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="mocking-python-file-open">
         <h2><a href="http://mapleoin.github.io/perma/mocking-python-file-open">Mocking python's file open() builtin</a></h2>
         <div class="postmeta">Thursday, November 15, 2012</div>
+
         <div class="entry">
             	<p>I was working on a method to read some proxy information from several files today and then I wanted to test it.</p>
 
 	<p>A <em>very</em> simplified version (the original has all the different files being processed in different functions on different rules and it actually has error handling) of this function is this:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/etc/sysconfig/proxy&#39;</span>
-<span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="s1">&#39;/root/.curlrc&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">SYS_PROXY</span> <span class="o">=</span> <span class="o">&amp;</span><span class="c1">#8216;etc/sysconfig/proxy&amp;#8217;</span>
+<span class="n">CURL_PROXY</span> <span class="o">=</span> <span class="o">&amp;</span><span class="c1">#8216;root/.curlrc&amp;#8217;</span>
 <span class="k">def</span> <span class="nf">get_proxy</span><span class="p">():</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s1">&#39;http_proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;http_proxy&amp;#8217; in contents:</span>
             <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;http_proxy = &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
             <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">proxy</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">contents</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s1">&#39;--proxy&#39;</span> <span class="ow">in</span> <span class="n">contents</span><span class="p">:</span>
-            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;--proxy &#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> 
+        <span class="k">if</span> <span class="s1">&#39;&amp;#8212;proxy&amp;#8217; in contents:</span>
+            <span class="n">proxy</span> <span class="o">=</span> <span class="n">contents</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217;&amp;#8212;proxy &#39;)[-1] </span>
             <span class="k">if</span> <span class="n">proxy</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">proxy</span>
-    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;http_proxy&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;http_proxy&amp;#8217;)</span>
 </pre></div>
 </div>
 
@@ -174,10 +180,10 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 	<p>In order to intercept calls to python&#8217;s <a href="http://docs.python.org/2/library/functions.html#open">open()</a>, we need to mock the <code>builtins.open</code> function:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&#39;</span>
+<div class="Python"><div class="highlight"><pre><span class="n">TEST_PROXY</span> <span class="o">=</span> <span class="s1">&#39;http://example.com:1111&amp;#8217;</span>
 <span class="k">def</span> <span class="nf">test_proxy_url_in_sysproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
-                    <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s2">&quot;http_proxy = &quot;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;,</span>
+                    <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;http_proxy = &amp;#8220; + TEST_PROXY)):</span>
          <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -185,9 +191,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>We&#8217;re good so far. Now we add the next natural test: we didn&#8217;t find anything in sysconfig, but we find the right proxy <span class="caps">URL</span> on our second try in <code>CURL_PROXY</code>:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span> <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()):</span>
-        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
-                        <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;, return_value=io.StringIO()):</span>
+        <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;,</span>
+                        <span class="n">return_value</span><span class="o">=</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217; &amp;#8212;proxy &#39; + TEST_PROXY)):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -200,9 +206,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>Not to worry though. <code>mock</code> <a href="http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.side_effect">side_effect</a> have got us covered!</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s2">&quot;builtins.open&quot;</span><span class="p">,</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;builtins.open&amp;#8221;,</span>
                     <span class="n">side_effect</span><span class="o">=</span><span class="p">[</span><span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(),</span>
-                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">)]):</span>
+                                 <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217; &amp;#8212;proxy &#39; + TEST_PROXY)]):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -216,11 +222,11 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file):</span>
         <span class="k">yield</span>
 </pre></div>
 </div>
@@ -229,7 +235,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -244,14 +250,14 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
             <span class="n">open_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
             <span class="k">return</span> <span class="n">open_file</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">yield</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
@@ -266,7 +272,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -284,9 +290,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 	<p>So the exception can be a normal <code>Exception</code> subclass, but we need an extra bit of information, the <code>filename</code> that wasn&#8217;t mocked. I&#8217;ll also hardcode an error message in there:</p>
 
 <div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">NotMocked</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">NotMocked</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span>
-            <span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was opened, but not mocked.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">def</span> <span class="err">&lt;</span><span class="nf">i</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NotMocked</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.&lt;</span><span class="n">i</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">i</span><span class="o">&gt;</span><span class="p">(</span>
+            <span class="o">&amp;</span><span class="c1">#8220;The file %s was opened, but not mocked.&amp;#8221; % filename)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
 </pre></div>
 </div>
@@ -297,7 +303,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
@@ -306,7 +312,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
             <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -330,9 +336,9 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
-            <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">)</span>
+            <span class="nb">open</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217;/dev/null&amp;#8217;)</span>
 </pre></div>
 </div>
 
@@ -348,7 +354,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
@@ -358,7 +364,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -369,7 +375,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
     <span class="k">try</span><span class="p">:</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;The file %s was not opened.&amp;#8221; % filename)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotMocked</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span>
@@ -384,8 +390,8 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_proxy_url_not_in_sysproxy_but_in_yastproxy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">SYS_PROXY</span><span class="p">):</span>
-        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; --proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
-            <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="s1">&#39;/dev/null&#39;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="n">CURL_PROXY</span><span class="p">,</span> <span class="s1">&#39; &amp;#8212;proxy &#39;</span> <span class="o">+</span> <span class="n">TEST_PROXY</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">mock_open</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8217;/dev/null&amp;#8217;):</span>
                 <span class="n">get_proxy</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">TEST_PROXY</span><span class="p">,</span> <span class="n">get_proxy</span><span class="p">())</span>
 </pre></div>
@@ -404,22 +410,22 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
 
 <div class="Python"><div class="highlight"><pre><span class="nd">@contextmanager</span>
 <span class="k">def</span> <span class="nf">mock_open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">contents</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">complain</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Mock the open() builtin function on a specific filename</span>
-<span class="sd">.</span>
-<span class="sd">    Let execution pass through to open() on files different than</span>
-<span class="sd">    :filename:. Return a StringIO with :contents: if the file was</span>
-<span class="sd">    matched. If the :contents: parameter is not given or if it is None,</span>
-<span class="sd">    a StringIO instance simulating an empty file is returned.</span>
-<span class="sd">.</span>
-<span class="sd">    If :complain: is True (default), will raise an AssertionError if</span>
-<span class="sd">    :filename: was not opened in the enclosed block. A NotMocked</span>
-<span class="sd">    exception will be raised if open() was called with a file that was</span>
-<span class="sd">    not mocked by mock_open.</span>
-<span class="sd">.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="o">&amp;</span><span class="c1">#8220;&amp;#8221;&amp;#8220;Mock the open() builtin function on a specific filename</span>
+<span class="o">.</span>
+    <span class="n">Let</span> <span class="n">execution</span> <span class="k">pass</span> <span class="n">through</span> <span class="n">to</span> <span class="nb">open</span><span class="p">()</span> <span class="n">on</span> <span class="n">files</span> <span class="n">different</span> <span class="n">than</span>
+    <span class="p">:</span><span class="n">filename</span><span class="p">:</span><span class="o">.</span> <span class="n">Return</span> <span class="n">a</span> <span class="n">StringIO</span> <span class="k">with</span> <span class="p">:</span><span class="n">contents</span><span class="p">:</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">file</span> <span class="n">was</span>
+    <span class="n">matched</span><span class="o">.</span> <span class="n">If</span> <span class="n">the</span> <span class="p">:</span><span class="n">contents</span><span class="p">:</span> <span class="n">parameter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">given</span> <span class="ow">or</span> <span class="k">if</span> <span class="n">it</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span>
+    <span class="n">a</span> <span class="n">StringIO</span> <span class="n">instance</span> <span class="n">simulating</span> <span class="n">an</span> <span class="n">empty</span> <span class="nb">file</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
+<span class="o">.</span>
+    <span class="n">If</span> <span class="p">:</span><span class="n">complain</span><span class="p">:</span> <span class="ow">is</span> <span class="bp">True</span> <span class="p">(</span><span class="n">default</span><span class="p">),</span> <span class="n">will</span> <span class="k">raise</span> <span class="n">an</span> <span class="ne">AssertionError</span> <span class="k">if</span>
+    <span class="p">:</span><span class="n">filename</span><span class="p">:</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">opened</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">enclosed</span> <span class="n">block</span><span class="o">.</span> <span class="n">A</span> <span class="n">NotMocked</span>
+    <span class="n">exception</span> <span class="n">will</span> <span class="n">be</span> <span class="n">raised</span> <span class="k">if</span> <span class="nb">open</span><span class="p">()</span> <span class="n">was</span> <span class="n">called</span> <span class="k">with</span> <span class="n">a</span> <span class="nb">file</span> <span class="n">that</span> <span class="n">was</span>
+    <span class="ow">not</span> <span class="n">mocked</span> <span class="n">by</span> <span class="n">mock_open</span><span class="o">.</span>
+<span class="o">.</span>
+    <span class="o">&amp;</span><span class="c1">#8220;&amp;#8221;&amp;#8220;</span>
     <span class="n">open_files</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">mock_file</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">&lt;</span><span class="n">sup</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;footnote&quot;</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#fn3a5e1ced-efaf-4d4c-9382-5df0897f2b94&quot;</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">(</span><span class="n">contents</span><span class="p">)</span>
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
@@ -428,7 +434,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
-    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
+    <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&amp;#8217;, mock_file)</span>
     <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">yield</span>
@@ -440,7 +446,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
         <span class="n">open_files</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The file </span><span class="si">%s</span><span class="s2"> was not opened.&quot;</span> <span class="o">%</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="o">&amp;</span><span class="c1">#8220;The file %s was not opened.&amp;#8221; % filename)</span>
     <span class="k">for</span> <span class="n">f_name</span> <span class="ow">in</span> <span class="n">open_files</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">complain</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">NotMocked</span><span class="p">(</span><span class="n">f_name</span><span class="p">)</span>
@@ -453,10 +459,11 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
                 <a href="/tag/python.html">python</a>
         </div>
         <a href="http://mapleoin.github.io/perma/mocking-python-file-open#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="FOSDEM-2012-review">
         <h2><a href="http://mapleoin.github.io/perma/FOSDEM-2012-review">FOSDEM 2012 review</a></h2>
         <div class="postmeta">Wednesday, February 15, 2012</div>
+
         <div class="entry">
             	<p>I went to <a href="http://fosdem.org">FOSDEM</a> this year. Thanks <a href="http://suse.com">SUSE</a> for sponsoring my trip! Here is a short review for the projects that I found interesting at this year&#8217;s <span class="caps">FOSDEM</span>.</p>
 
@@ -544,7 +551,7 @@ $ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe
                 <a href="/tag/fedora.html">fedora</a>
         </div>
         <a href="http://mapleoin.github.io/perma/FOSDEM-2012-review#disqus_thread" class="comments">Comments</a>
-    </div>
+    </article>
 </div>
 <div style="clear: right;"></div>
 </div><!-- container -->

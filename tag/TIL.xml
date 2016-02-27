@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 19:33:14 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Run py.test test case inside any python class</title>
@@ -74,10 +74,10 @@ $ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
-&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;amp;#8217;&lt;/span&gt;
+&lt;span class="s1"&gt;(&amp;#39;&lt;/span&gt;GMT&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;, &amp;#39;BST&amp;amp;#8217;)&lt;/span&gt;
+$ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;amp;#8217; python -c &amp;#39;&lt;/span&gt;import time&lt;span class="p"&gt;;&lt;/span&gt; print&lt;span class="o"&gt;(&lt;/span&gt;time.tzname&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;amp;#8217;, &amp;#39;&lt;/span&gt;CEST&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8217;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt; </description>
             <pubDate>Sat, 13 Feb 2016 23:24 GMT</pubDate>

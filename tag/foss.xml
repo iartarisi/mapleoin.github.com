@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sat, 27 Feb 2016 13:40:25 +0200</pubDate>
+        <pubDate>Sat, 27 Feb 2016 19:33:14 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
@@ -288,14 +288,14 @@ authentication:
 
 	&lt;p&gt;Acum că am terminat cu setările, putem porni serviciul cu:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;service yum-updatesd start&amp;quot;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8220;service yum-updatesd start&amp;amp;#8221;&lt;/span&gt;
  $ cacamaca
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 	&lt;p&gt;Și îl putem pune să se pornească automat la fiecare boot:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;chkconfig yum-updatesd on&amp;quot;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="c1"&gt;#8220;chkconfig yum-updatesd on&amp;amp;#8221;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt; </description>
             <pubDate>Thu, 18 Mar 2010 14:00 GMT</pubDate>

@@ -22,9 +22,10 @@
     <a href="/about">about</a>
   </div>
 <div id="content">
-    <div class="post">
+    <article id="ruby-koans">
         <h2><a href="http://mapleoin.github.io/perma/ruby-koans">Ruby koans</a></h2>
         <div class="postmeta">Sunday, August 22, 2010</div>
+
         <div class="entry">
             	<p>I had a great time today with <a href="http://www.rubykoans.com/">Ruby Koans</a>. It took me about 5 hours in all. A good way to spend a Sunday afternoon I suppose.</p>
 
@@ -42,10 +43,11 @@
                 <a href="/tag/hacking.html">hacking</a>
         </div>
         <a href="http://mapleoin.github.io/perma/ruby-koans#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="cum-sa-peticesti-un-rpm">
         <h2><a href="http://mapleoin.github.io/perma/cum-sa-peticesti-un-rpm">Cum să peticești un rpm (patch rpm)</a></h2>
         <div class="postmeta">Monday, November 30, 2009</div>
+
         <div class="entry">
             	<p>O să vă descriu cum am aplicat un petec pentru unul dintre pachetele pentru care sunt responsabil la fedora: calibre, în timp ce așteptam să-mi vină pizza http://www.fedoraproject.ro/am-lansat-fedora-12-avans . Petecul este răspunsul la un bug report: https://bugzilla.redhat.com/show_bug.cgi?id=537525 . Calibre verifică de fiecare dată când este pornit dacă pe situl oficial a apărut o nouă versiune și dacă a apărut, îl anunță pe utilizator printr-un pop-up că trebuie să actualizeze aplicația. Cum fedora are propriul management al pachetelor și deci și al actualizărilor, este recomandat ca pachetele noi să fie instalate folosind yum; deci mesajul trebuie eliminat.</p>
 
@@ -112,9 +114,26 @@
 
 <div class="Bash"><div class="highlight"><pre> 
   def update_found<span class="o">(</span>self, version<span class="o">)</span>:
-  <span class="nv">os</span> <span class="o">=</span> <span class="s1">&#39;windows&#39;</span> <span class="k">if</span> iswindows <span class="k">else</span> <span class="s1">&#39;osx&#39;</span> <span class="k">if</span> isosx <span class="k">else</span> <span class="s1">&#39;linux&#39;</span>
-  <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;http://%s.kovidgoyal.net/download_%s&#39;</span>%<span class="o">(</span>__appname__, os<span class="o">)</span>
-  self.latest_version <span class="o">=</span> <span class="err">&#39;</span>
+  <span class="nv">os</span> <span class="o">=</span> <span class="s1">&#39;windows&amp;#8217; if iswindows else &#39;</span>osx<span class="p">&amp;</span><span class="c1">#8217; if isosx else &#39;linux&amp;#8217;</span>
+  <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;http://%s.kovidgoyal.net/download_%s&amp;#8217;%(__appname__, os)</span>
+<span class="s1">  self.latest_version = &#39;</span>&lt;br /&gt;<span class="s1">&#39; + _(&amp;#8217;&lt;span style=&quot;color:red; font-weight:bold&quot;&gt;&#39;</span>
+    <span class="s1">&#39;Latest version: &lt;a href=&quot;%s&quot;&gt;&lt;span&gt;s&lt;/a&gt;&lt;/span&gt;&#39;</span><span class="o">)</span>&lt;/span&gt;<span class="o">(</span>url, version<span class="o">)</span>
+  self.vanity.setText<span class="o">(</span>self.vanity_template%<span class="se">\</span>
+  <span class="o">(</span>dict<span class="o">(</span><span class="nv">version</span><span class="o">=</span>self.latest_version,
+  <span class="nv">device</span><span class="o">=</span>self.device_info<span class="o">)))</span>
+  self.vanity.update<span class="o">()</span>
+  <span class="k">if</span> config.get<span class="o">(</span><span class="s1">&#39;new_version_notification&amp;#8217;) and \</span>
+<span class="s1">  dynamic.get(&#39;</span>update to version %s<span class="p">&amp;</span><span class="c1">#8217;%version, True):</span>
+  <span class="k">if</span> question_dialog<span class="o">(</span>self, _<span class="o">(</span><span class="s1">&#39;Update available&amp;#8217;),</span>
+<span class="s1">  &lt;em class=&amp;#8221;&amp;#8217;%s has been updated to version %s. &#39;</span>
+  <span class="s1">&#39;See the &lt;a href=&amp;#8220;http://calibre.kovidgoyal.net/wiki/&amp;#8217;</span>
+<span class="s1">                    &#39;</span>Changelog<span class="p">&amp;</span><span class="c1">#8221;&gt;new features&lt;/a&gt;. Visit the download pa&amp;#8217;</span>
+  <span class="s1">&#39;ge?&amp;#8217;&amp;#8221;&gt;%(&lt;/em&gt;_appname__, version)):</span>
+<span class="s1">  url = &#39;</span>http://calibre.kovidgoyal.net/download_<span class="p">&amp;</span><span class="c1">#8217;+\</span>
+  <span class="o">(</span><span class="s1">&#39;windows&amp;#8217; if iswindows else &#39;</span>osx<span class="p">&amp;</span><span class="c1">#8217; if isosx else &#39;linux&amp;#8217;)</span>
+  QDesktopServices.openUrl<span class="o">(</span>QUrl<span class="o">(</span>url<span class="o">))</span>
+  dynamic.set<span class="o">(</span><span class="err">&#39;</span>update to version %s<span class="p">&amp;</span><span class="c1">#8217;%version, False)</span>
+&lt;/br&gt;
 </pre></div>
 </div>
 
@@ -123,7 +142,7 @@
 <div class="Python"><div class="highlight"><pre>  <span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">no_update_check</span><span class="p">:</span>
   <span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span> <span class="o">=</span> <span class="n">CheckForUpdates</span><span class="p">()</span>
   <span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span><span class="p">,</span>
-  <span class="n">SIGNAL</span><span class="p">(</span><span class="s1">&#39;update_found(PyQt_PyObject)&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_found</span><span class="p">)</span>
+  <span class="o">&lt;</span><span class="n">acronym</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;&#39;update_found(PyQt_PyObject&quot;</span><span class="o">&gt;</span><span class="n">SIGNAL</span><span class="o">&lt;/</span><span class="n">acronym</span><span class="o">&gt;&amp;</span><span class="c1">#8217;), self.update_found)</span>
   <span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -147,24 +166,24 @@
 
 	<p>Ca să generăm petecul vom folosi gendiff din directorul de deasupra directorului rădăcină:</p>
 
-<div class="Diff"><div class="highlight"><pre>    $ cd ~/rpmbuild/BUILD
+<div class="Diff"><div class="highlight"><pre>    $ cd ~/rpmbuild/&lt;span class=&quot;caps&quot;&gt;BUILD&lt;/span&gt;
     $ gendiff calibre .no_update
     diff -up calibre/src/calibre/gui2/main.py.no_update calibre/src/calibre/gui2/main.py
-    --- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
+    &amp;#8212;- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
     +++ calibre/src/calibre/gui2/main.py	2009-11-16 14:22:10.400510757 +0200
-    @@ -221,11 +221,11 @@ class Main(MainWindow, Ui_MainWindow, De
+    &lt;code&gt;&lt;/code&gt; -221,11 +221,11 &lt;code&gt;&lt;/code&gt; class Main(MainWindow, Ui_MainWindow, De
     self.latest_version = &#39; &#39;
-    self.vanity.setText(self.vanity_template%dict(version=&#39; &#39;, device=&#39; &#39;))
+    self.vanity.setText(self.vanity_template%dict(version=&amp;#8217; &#39;, device=&amp;#8217; &#39;))
     self.device_info = &#39; &#39;
-    -        if not opts.no_update_check:
-    -            self.update_checker = CheckForUpdates()
-    -            QObject.connect(self.update_checker,
-    -                    SIGNAL(&#39;update_found(PyQt_PyObject)&#39;), self.update_found)
-    -            self.update_checker.start()
+    &amp;#8211;        if not opts.no_update_check:
+    &amp;#8211;            self.update_checker = CheckForUpdates()
+    &amp;#8211;            QObject.connect(self.update_checker,
+    &amp;#8211;                    &lt;acronym title=&quot;&#39;update_found(PyQt_PyObject&quot;&gt;SIGNAL&lt;/acronym&gt;&amp;#8217;), self.update_found)
+    &amp;#8211;            self.update_checker.start()
     +        # if not opts.no_update_check:
     +        #     self.update_checker = CheckForUpdates()
     +        #     QObject.connect(self.update_checker,
-    +        #             SIGNAL(&#39;update_found(PyQt_PyObject)&#39;), self.update_found)
+    +        #             &lt;acronym title=&quot;&#39;update_found(PyQt_PyObject&quot;&gt;SIGNAL&lt;/acronym&gt;&amp;#8217;), self.update_found)
     +        #     self.update_checker.start()
     ####################### Status Bar #####################
     self.status_bar = StatusBar(self.jobs_dialog, self.system_tray_icon)
@@ -180,7 +199,7 @@
 
 	<p>Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:</p>
 
-<div class="Diff"><div class="highlight"><pre>  @@ -1,6 +1,6 @@
+<div class="Diff"><div class="highlight"><pre>  &lt;code&gt;&lt;/code&gt; -1,6 +1,6 &lt;code&gt;&lt;/code&gt;
   Name:           calibre
   Version:        0.6.21
   -Release:        1%{?dist}
@@ -188,25 +207,31 @@
   Summary:        E-book converter and library management
   Group:          Applications/Multimedia
   License:        GPLv3
-  @@ -18,6 +18,7 @@
+  &lt;code&gt;&lt;/code&gt; -18,6 +18,7 &lt;code&gt;&lt;/code&gt;
   Source1:        generate-tarball.sh
   Patch0:         %{name}-cssprofiles.patch
   Patch1:         %{name}-manpages.patch
   +Patch2:         %{name}-no-update.patch
-  BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+  BuildRoot:      &lt;span style=&quot;_tmppath;&quot;&gt;/&lt;/span&gt;{name&lt;del&gt;&lt;span style=&quot;version;text-align:left;&quot;&gt;/del&gt;&lt;/span&gt;{release&lt;del&gt;root&lt;/del&gt;&lt;span&gt;(&lt;/span&gt;{__id_u} -n)
   BuildRequires:  python &gt;= 2.6
-  @@ -72,6 +73,9 @@
-  # don&#39;t append calibre1 to the name of the manpages. No need to compress either
+  &lt;code&gt;&lt;/code&gt; -72,6 +73,9 &lt;code&gt;&lt;/code&gt;
+  # don&amp;#8217;t append calibre1 to the name of the manpages. No need to compress either
   %patch1 -p1 -b .manpages
-  +# don&#39;t check for new upstream version (that&#39;s what packagers do)
+  +# don&amp;#8217;t check for new upstream version (that&amp;#8217;s what packagers do)
   +%patch2 -p1 -b .no-update
   +
   # dos2unix newline conversion
-  %{__sed} -i &#39;s/\r//&#39; src/calibre/web/feeds/recipes/*
-  @@ -239,6 +243,9 @@
+  %{__sed} -i &#39;s/\r//&amp;#8217; src/calibre/web/feeds/recipes/*
+  &lt;code&gt;&lt;/code&gt; -239,6 +243,9 &lt;code&gt;&lt;/code&gt;
   %{_mandir}/man1/*
   %changelog
-  +* Sat Nov  29 2009 Ionuț C. Arțăriși 
+  +* Sat Nov  29 2009 Ionuț C. Arțăriși &lt;mapleoin@fedoraproject.org&gt; &amp;#8211; 0.6.21-2
+    +- patch to stop checking for new upstream version
+    +
+    * Sat Nov  6 2009 Ionuț C. Arțăriși &lt;mapleoin@fedoraproject.org&gt; &amp;#8211; 0.6.21-1
+      &amp;#8211; new upstream version: http://calibre.kovidgoyal.net/wiki/Changelog#Version0.6.2106Nov2009
+      &amp;#8211; added python-BeautifulSoup requirement
+&lt;/mapleoin@fedoraproject.org&gt;&lt;/mapleoin@fedoraproject.org&gt;
 </pre></div>
 </div>
 
@@ -230,10 +255,11 @@
                 <a href="/tag/linux.html">linux</a>
         </div>
         <a href="http://mapleoin.github.io/perma/cum-sa-peticesti-un-rpm#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="productive-programmer-review">
         <h2><a href="http://mapleoin.github.io/perma/productive-programmer-review">The Productive Programmer</a></h2>
         <div class="postmeta">Friday, September 18, 2009</div>
+
         <div class="entry">
             	<p>Today I read <a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&#38;amp;tag=httpmapleoinb-20&#38;amp;linkCode=as2&#38;amp;camp=1789&#38;amp;creative=390957&#38;amp;creativeASIN=0596519788">The Productive Programmer</a> .</p>
 
@@ -248,10 +274,11 @@
                 <a href="/tag/books.html">books</a>
         </div>
         <a href="http://mapleoin.github.io/perma/productive-programmer-review#disqus_thread" class="comments">Comments</a>
-    </div>
-    <div class="post">
+    </article>
+    <article id="fedora-business-cards">
         <h2><a href="http://mapleoin.github.io/perma/fedora-business-cards">Fedora Business Cards</a></h2>
         <div class="postmeta">Friday, April 24, 2009</div>
+
         <div class="entry">
             	<p>A few days ago, me and a few friends from Fedora Romania decided we&#8217;d like some fedora business cards for the upcoming eLiberatica conference. <a href="http://ianweller.org">Ian Weller</a> had already developed an official <a href="https://fedoraproject.org/wiki/Business_cards">template</a> and even created a cool python generator script and packaged it.</p>
 
@@ -269,7 +296,7 @@
                 <a href="/tag/hacking.html">hacking</a>
         </div>
         <a href="http://mapleoin.github.io/perma/fedora-business-cards#disqus_thread" class="comments">Comments</a>
-    </div>
+    </article>
 </div>
 <div style="clear: right;"></div>
 </div><!-- container -->
