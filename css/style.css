@@ -60,9 +60,7 @@ pre {
     color: black;
     overflow: auto;
     padding: .7em;
-    border: 1px groove #ddd;
     margin: .7em;
-    background-color: #efe;
 }
 
 #header li {
@@ -152,7 +150,6 @@ article {
 
 code {
     font-family: monospace;
-    background-color: #efe;
     padding: 2px;
 }
 a.comments {
