@@ -46,13 +46,13 @@
 .sb { background-color: #fff0f0 } /* Literal.String.Backtick */
 .sc { color: #0040D0 } /* Literal.String.Char */
 .sd { color: #D04020 } /* Literal.String.Doc */
-.s2 { background-color: #fff0f0 } /* Literal.String.Double */
+.s1 { color: #D84141 } /* Literal.String.Double */
 .se { color: #606060; font-weight: bold; background-color: #fff0f0 } /* Literal.String.Escape */
 .sh { background-color: #fff0f0 } /* Literal.String.Heredoc */
 .si { background-color: #e0e0e0 } /* Literal.String.Interpol */
 .sx { color: #D02000; background-color: #fff0f0 } /* Literal.String.Other */
 .sr { color: #000000; background-color: #fff0ff } /* Literal.String.Regex */
-.s1 { background-color: #fff0f0 } /* Literal.String.Single */
+.s1 { color: #D84141 } /* Literal.String.Single */
 .ss { color: #A06000 } /* Literal.String.Symbol */
 .bp { color: #007020 } /* Name.Builtin.Pseudo */
 .vc { color: #306090 } /* Name.Variable.Class */
