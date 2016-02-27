@@ -113,7 +113,6 @@ ul {
     background: white;
     max-width: 760px;
     height: auto;
-    line-height: 1.6em;
     padding: 2em 0;
     margin: 0 auto;
 }
@@ -180,4 +179,8 @@ a.comments:hover, a.comments:visited {
 blockquote {
     font-style: italic;
     padding-left: 2em;
+}
+
+p {
+    line-height: 1.6;
 }
