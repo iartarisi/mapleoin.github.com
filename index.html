@@ -46,20 +46,21 @@
 
 	<h4>Some early Django history</h4>
 
-	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrev13f22078235a49d8b9cd914693266b00"><a href="#fn13f22078235a49d8b9cd914693266b00">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
+	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrev6fa41e572387432fa47322846f2b2811"><a href="#fn6fa41e572387432fa47322846f2b2811">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
 
 	<p>From there we can see how Django models were declared before the introduction of the internal <code>class Meta</code>. A Django Model class had a few special attributes. The <code>db_table</code> attribute held the <span class="caps">SQL</span> table name. A <code>fields</code> attribute was a tuple (!) of instances of field types (e.g. <code>CharField</code>, <code>IntegerField</code>, <code>ForeignKey</code>). These mapped to <span class="caps">SQL</span> table columns. One other interesting attribute was <code>admin</code> which was mostly used to describe how that model would behave in django&#8217;s admin interface. Now all these classes were defined in the <code>django.core.meta</code> package i.e. <code>meta.Model</code>, <code>meta.CharField</code>, <code>meta.ForeignKey</code>, <code>meta.Admin</code>. <em>That&#8217;s so meta!</em> (and probably where the name came from in the end)</p>
 
-	<p>In a <code>django-developers</code> mailing list thread from July 2005 titled <a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a> user <code>deelan</code> suggests bringing some of <a href="https://en.wikipedia.org/wiki/SQLObject%27s"><span class="caps">SQLO</span>bject</a> ideas to Django&#8217;s <span class="caps">ORM</span>. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&#8217;s attributes:</p>
+	<p>In a <code>django-developers</code> mailing list thread from July 2005 titled <cite><a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite> user <code>deelan</code> suggests bringing some of <a href="https://en.wikipedia.org/wiki/SQLObject%27s"><span class="caps">SQLO</span>bject</a> ideas to Django&#8217;s <span class="caps">ORM</span>. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&#8217;s attributes:</p>
 
 	<blockquote>
 		<p>it&#8217;s desiderable to avoid name clashes between fields, so it would be<br />
-good to have a way to wrap fields into a private namespace.</p>
+good to have a way to wrap fields into a private namespace.<br />
+<cite>&#8212; <code>deelan</code>, <a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite></p>
 	</blockquote>
 
-	<p>At the end of the thread, <a href="https://code.djangoproject.com/ticket/122">trac ticket 122</a> is created which seems to contain the first mention of a separate internal <code>Meta</code> class.</p>
+	<p>At the end of the thread, <a href="https://code.djangoproject.com/ticket/122">django ticket 122</a> is created which seems to contain the first mention of a separate internal <code>Meta</code> class.</p>
 
-	<p>What started off as a backwards-compatible change, soon turned backwards-incompatible and was <em>the first really big community-driven improvement to Django</em> as Adrian Holovaty will later describe it in the release announcement which included the change.</p>
+	<p>What started off as a backwards-compatible change, soon turned backwards-incompatible and was <q cite="https://groups.google.com/d/msg/django-developers/z_eGMWTJBqk/Fa3xur7J0jwJ">the first really big community-driven improvement to Django</q> as Adrian Holovaty will later describe it in the release announcement which included the change.</p>
 
 	<p>The first patch on <a href=":https://code.djangoproject.com/ticket/122">ticket 122</a> by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (<em>Build models using fieldname=FieldClass</em>) rather than in the <code>fields</code> list. So:</p>
 
@@ -92,32 +93,35 @@ good to have a way to wrap fields into a private namespace.</p>
 
 	<p>The decision over what goes in an inner class and what goes in the outer class seems to be left to the user. An optional <code>class Field</code> inner class would be supported so the fields would live there and the metadata would live as class attributes (this seemed to offer the advantage of being backwards-compatible with the <code>admin</code> class attribute while allowing tables to have a column that&#8217;s also named <code>admin</code>.</p>
 
-	<p>There are some other ideas thrown around and the syntax for ForeignKey is also discussed. At one point, Adrian Holovaty (<code>adrian</code>) intervenes to say (about the original <code>class Meta/class Field</code> suggestion):</p>
+	<p>There are some other ideas thrown around and the syntax for <code>ForeignKey</code> is also discussed. At one point, Adrian Holovaty (<code>adrian</code>) intervenes to say (about the original <code>class Meta/class Field</code> suggestion):</p>
 
 	<blockquote>
-		<p>It&#8217;s too flexible, to the point of confusion. Making it possible to do either class Meta or class Field or plain class attributes just smacks of &#8220;there&#8217;s more than one way to do it.&#8221; There should be one, clear, obvious way to do it. If we decide to change model syntax, let&#8217;s have class Meta for non-field info, and all fields are just attributes of the class.</p>
+		<p>It&#8217;s too flexible, to the point of confusion. Making it possible to do either class Meta or class Field or plain class attributes just smacks of &#8220;there&#8217;s more than one way to do it.&#8221; There should be one, clear, obvious way to do it. If we decide to change model syntax, let&#8217;s have class Meta for non-field info, and all fields are just attributes of the class.<br />
+<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment%3A9">django ticket 122, comment 9</a></cite></p>
 	</blockquote>
 
-	<p>The thread goes on from there. There are some detractors to the idea (citing performance and conformance to other python <span class="caps">API</span>s), there are discussions about implementation details and talking again about the ForeignKey syntax.</p>
+	<p>The thread goes on from there. There are some detractors to the idea (citing performance and conformance to other python <span class="caps">API</span>s), there are discussions about implementation details and talking again about the <code>ForeignKey</code> syntax.</p>
 
-	<p>Then, in a dramatic turn of events,  Adrian Holovaty <strong>closes the ticket as wontfix!</strong>:</p>
+	<p>Then, in a dramatic turn of events, Adrian Holovaty <strong>closes the ticket as wontfix!</strong>:</p>
 
 	<blockquote>
-		<p>Jacob [Kaplan-Moss] and I have talked this over at length, and we&#8217;ve decided the model syntax shouldn&#8217;t change. Using a fieldname=FieldClass syntax would require too much &#8220;magic&#8221; behind the scenes for minimal benefit.</p>
+		<p>Jacob [Kaplan-Moss] and I have talked this over at length, and we&#8217;ve decided the model syntax shouldn&#8217;t change. Using a fieldname=FieldClass syntax would require too much &#8220;magic&#8221; behind the scenes for minimal benefit.<br />
+<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment%3A33">django ticket 122, comment 33</a></cite></p>
 	</blockquote>
 
 	<p>It&#8217;s interesting, because <span class="caps">IMHO</span> this was a huge differentiator in terms of making django&#8217;s models <span class="caps">API</span> more human and was also what other frameworks like Rails and <span class="caps">SQLO</span>bject were doing at the time.</p>
 
-	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced the ticket.<sup class="footnote" id="fnrev3b8e11d011d1411e8c961748a3ff132c"><a href="#fn3b8e11d011d1411e8c961748a3ff132c">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the ForeignKey syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
+	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev0de7ffed970e4c0fa0c018a201a85966"><a href="#fn0de7ffed970e4c0fa0c018a201a85966">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
 
 	<p>The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with <em>Resolution</em> set to <em>fixed</em>.</p>
 
-	<p>Adrian will later announce the change in a <code>django-developers</code> mailing list post titled <a href="https://groups.google.com/d/msg/django-developers/z_eGMWTJBqk/Fa3xur7J0jwJ"><span class="caps">IMPORTANT</span>: Django model syntax is changing</a>. Here are some interesting fragments from that mailing list post:</p>
+	<p>Adrian will later announce the change in a <code>django-developers</code> mailing list post. Here are some interesting fragments from that mailing list post:</p>
 
 	<p><blockquote><br />
 I apologize for the backwards-incompatibility, but this is still unofficial software. ;-) Once we reach 1.0 &#8212; which is much closer now that the model syntax is changed &#8212; we&#8217;ll be very dedicated to backwards-compatibility.</p>
 
 	<p>I can&#8217;t think of any other backwards-incompatible changes that we&#8217;re planning before 1.0 (knock on wood). If this isn&#8217;t the last one, though, it&#8217;s at least the last <strong>major</strong> one.<br />
+<cite>&#8212; Adrian Holovaty, <a href="https://groups.google.com/d/msg/django-developers/z_eGMWTJBqk/Fa3xur7J0jwJ"><span class="caps">IMPORTANT</span>: Django model syntax is changing</a></cite><br />
 </blockquote></p>
 
 	<p>Things didn&#8217;t go as planned. In May 2006, came <a href="https://github.com/django/django/commit/f69cf70ed813a8cd7e1f963a14ae39103e8d5265">commit f69cf70e</a> which was exactly another <em>let&#8217;s-change-everything-in-one-huge-branch</em> commit which was released as part of Django <strong>0.95</strong>. As part of this <span class="caps">API</span> change, <code>class META</code> was renamed to <code>class Meta</code> (because it&#8217;s <em>easier on the eyes</em>). You can find the details on <a href="https://code.djangoproject.com/wiki/RemovingTheMagic">RemovingTheMagic wiki page</a>. It&#8217;s funny how in <a href="https://code.djangoproject.com/ticket/122">ticket 122</a> all the comments use the <code>Meta</code> capitalization, except for the last person (who I guess submitted the patch) who uses <code>META</code>. There was some discussion, both in the ticket and on <span class="caps">IRC</span>, about it and a few people had concerns that users of Django would actually want to have a field called <code>Meta</code> in their models and the inner class name would clash with that.</p>
@@ -126,12 +130,11 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>Anyway, so that&#8217;s the end of the story of how Django got its <code>class Meta</code>. Now what if I told you that all of this had already happened more than one year before in the <span class="caps">SQLO</span>bject project? Remember that first post to <code>django-developers</code> which said Django models should hold some of its attributes in a separate inner class like <span class="caps">SQLO</span>bject already does?</p>
 
-	<p>In April 2014, Ian Bicking (creator of <span class="caps">SQLO</span>bject) sent an email to the <code>sqlobject-discuss</code> mailing list titled <a href="https://sourceforge.net/p/sqlobject/mailman/message/7522562/">Metadata container</a>:</p>
+	<p>In April 2014, Ian Bicking (creator of <span class="caps">SQLO</span>bject) sent an email to the <code>sqlobject-discuss</code> mailing list:</p>
 
 	<blockquote>
-		<p>There&#8217;s a bunch of metadata right now that is being stored in various instance variables, all ad hoc like, and with no introspective interfaces.  I&#8217;d like to consolidate these into a single object/class that is separated from the <span class="caps">SQLO</span>bject class.  This way I don&#8217;t have to<br />
-worry about name clashes, and I don&#8217;t feel like every added little interface will be polluting people&#8217;s classes.  (Though most of the public methods that are there now will remain methods of the <span class="caps">SQLO</span>bject subclasses, just like they are now)  So I&#8217;m looking for feedback on how<br />
-that should work.</p>
+		<p>There&#8217;s a bunch of metadata right now that is being stored in various instance variables, all ad hoc like, and with no introspective interfaces.  I&#8217;d like to consolidate these into a single object/class that is separated from the <span class="caps">SQLO</span>bject class.  This way I don&#8217;t have to worry about name clashes, and I don&#8217;t feel like every added little interface will be polluting people&#8217;s classes.  (Though most of the public methods that are there now will remain methods of the <span class="caps">SQLO</span>bject subclasses, just like they are now)  So I&#8217;m looking for feedback on how that should work.<br />
+<cite>&#8212; Ian Bicking, <a href="https://sourceforge.net/p/sqlobject/mailman/message/7522562/">Metadata container</a></cite></p>
 	</blockquote>
 
 	<p>His code example:</p>
@@ -156,9 +159,9 @@ that should work.</p>
 
 	<p>Hope you&#8217;ve enjoyed the ride!</p>
 
-	<p class="footnote" id="fn13f22078235a49d8b9cd914693266b00"><sup>1</sup> because in 2005, people were less soft-spoken</p>
+	<p class="footnote" id="fn6fa41e572387432fa47322846f2b2811"><sup>1</sup> because in 2005, people were less soft-spoken</p>
 
-	<p class="footnote" id="fn3b8e11d011d1411e8c961748a3ff132c"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
+	<p class="footnote" id="fn0de7ffed970e4c0fa0c018a201a85966"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
         </div>
         <div class="post_tags postmeta">
           tags:
