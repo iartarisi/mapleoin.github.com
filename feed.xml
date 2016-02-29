@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Sun, 28 Feb 2016 21:26:45 +0200</pubDate>
+        <pubDate>Mon, 29 Feb 2016 10:54:53 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>The origins of the class Meta idiom in python</title>
@@ -31,7 +31,7 @@
 
 	&lt;h4&gt;Some early Django history&lt;/h4&gt;
 
-	&lt;p&gt;Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions &lt;code&gt;class Meta&lt;/code&gt; (actually &lt;code&gt;class META&lt;/code&gt;&lt;sup class="footnote" id="fnrevd06680c8e80f40c2afa0844d1aab49c2"&gt;&lt;a href="#fnd06680c8e80f40c2afa0844d1aab49c2"&gt;1&lt;/a&gt;&lt;/sup&gt;) in Django: &lt;a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4"&gt;commit 25264c86&lt;/a&gt;. There is a &lt;a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions"&gt;Release Notes wiki page&lt;/a&gt; which includes that change.&lt;/p&gt;
+	&lt;p&gt;Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions &lt;code&gt;class Meta&lt;/code&gt; (actually &lt;code&gt;class META&lt;/code&gt;&lt;sup class="footnote" id="fnrevaf22a372019147eeab1221a45c7a7f7d"&gt;&lt;a href="#fnaf22a372019147eeab1221a45c7a7f7d"&gt;1&lt;/a&gt;&lt;/sup&gt;) in Django: &lt;a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4"&gt;commit 25264c86&lt;/a&gt;. There is a &lt;a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions"&gt;Release Notes wiki page&lt;/a&gt; which includes that change.&lt;/p&gt;
 
 	&lt;p&gt;From there we can see how Django models were declared before the introduction of the internal &lt;code&gt;class Meta&lt;/code&gt;. A Django Model class had a few special attributes. The &lt;code&gt;db_table&lt;/code&gt; attribute held the &lt;span class="caps"&gt;SQL&lt;/span&gt; table name. A &lt;code&gt;fields&lt;/code&gt; attribute was a tuple (!) of instances of field types (e.g. &lt;code&gt;CharField&lt;/code&gt;, &lt;code&gt;IntegerField&lt;/code&gt;, &lt;code&gt;ForeignKey&lt;/code&gt;). These mapped to &lt;span class="caps"&gt;SQL&lt;/span&gt; table columns. One other interesting attribute was &lt;code&gt;admin&lt;/code&gt; which was mostly used to describe how that model would behave in django&amp;#8217;s admin interface. Now all these classes were defined in the &lt;code&gt;django.core.meta&lt;/code&gt; package i.e. &lt;code&gt;meta.Model&lt;/code&gt;, &lt;code&gt;meta.CharField&lt;/code&gt;, &lt;code&gt;meta.ForeignKey&lt;/code&gt;, &lt;code&gt;meta.Admin&lt;/code&gt;. &lt;em&gt;That&amp;#8217;s so meta!&lt;/em&gt; (and probably where the name came from in the end)&lt;/p&gt;
 
@@ -96,7 +96,7 @@ good to have a way to wrap fields into a private namespace.&lt;br /&gt;
 
 	&lt;p&gt;It&amp;#8217;s interesting, because &lt;span class="caps"&gt;IMHO&lt;/span&gt; this was a huge differentiator in terms of making django&amp;#8217;s models &lt;span class="caps"&gt;API&lt;/span&gt; more human and was also what other frameworks like Rails and &lt;span class="caps"&gt;SQLO&lt;/span&gt;bject were doing at the time.&lt;/p&gt;
 
-	&lt;p&gt;An &lt;a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt; discussion&lt;/a&gt; is then referenced in the ticket.&lt;sup class="footnote" id="fnrev77b11e0004ed42d0a441697203491a9b"&gt;&lt;a href="#fn77b11e0004ed42d0a441697203491a9b"&gt;2&lt;/a&gt;&lt;/sup&gt; From that discussion, it seems that &lt;code&gt;adrian&lt;/code&gt;&amp;#8217;s reasons for closing were mostly concerns about the &lt;code&gt;ForeignKey&lt;/code&gt; syntax and making a backwards-incompatible change to the model. &lt;code&gt;rmunn&lt;/code&gt; does a great job of moderating the discussion, clarifying the situation and everyone&amp;#8217;s opinions while strongly pushing for the new syntax.&lt;/p&gt;
+	&lt;p&gt;An &lt;a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt; discussion&lt;/a&gt; is then referenced in the ticket.&lt;sup class="footnote" id="fnrev963088ce28be487dbac945b0cb9d7beb"&gt;&lt;a href="#fn963088ce28be487dbac945b0cb9d7beb"&gt;2&lt;/a&gt;&lt;/sup&gt; From that discussion, it seems that &lt;code&gt;adrian&lt;/code&gt;&amp;#8217;s reasons for closing were mostly concerns about the &lt;code&gt;ForeignKey&lt;/code&gt; syntax and making a backwards-incompatible change to the model. &lt;code&gt;rmunn&lt;/code&gt; does a great job of moderating the discussion, clarifying the situation and everyone&amp;#8217;s opinions while strongly pushing for the new syntax.&lt;/p&gt;
 
 	&lt;p&gt;The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with &lt;em&gt;Resolution&lt;/em&gt; set to &lt;em&gt;fixed&lt;/em&gt;.&lt;/p&gt;
 
@@ -134,7 +134,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;&lt;span class="caps"&gt;SQLO&lt;/span&gt;bject&amp;#8217;s community did not seem nearly as animated as Django&amp;#8217;s. There were a couple of emails on the &lt;code&gt;sqlobject-discuss&lt;/code&gt; mailing list from Ian Bicking which included the proposal and asked for feedback. I suspect some discussion happened through some other channels, but this community was neither as big nor as good at docummenting its functioning as Django. (And sourceforge&amp;#8217;s interface to the mailing list archives and cvs logs does not make this easy to navigate).&lt;/p&gt;
 
-	&lt;p&gt;A year later, Ian Bicking takes part in the &lt;code&gt;django-developers&lt;/code&gt; mailinglist discussion where he makes some small syntax suggestions, but it does not seem that he made any other contributions to the design of the django models &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
+	&lt;p&gt;A year later, Ian Bicking takes part in the &lt;code&gt;django-developers&lt;/code&gt; mailinglist discussion where he makes some small syntax suggestions, but it does not seem that he made any other contributions to the design of this part of the Django models &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 
 	&lt;h4&gt;Conclusion&lt;/h4&gt;
 
@@ -144,9 +144,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;Hope you&amp;#8217;ve enjoyed the ride!&lt;/p&gt;
 
-	&lt;p class="footnote" id="fnd06680c8e80f40c2afa0844d1aab49c2"&gt;&lt;sup&gt;1&lt;/sup&gt; because in 2005, people were less soft-spoken&lt;/p&gt;
+	&lt;p class="footnote" id="fnaf22a372019147eeab1221a45c7a7f7d"&gt;&lt;sup&gt;1&lt;/sup&gt; because in 2005, people were less soft-spoken&lt;/p&gt;
 
-	&lt;p class="footnote" id="fn77b11e0004ed42d0a441697203491a9b"&gt;&lt;sup&gt;2&lt;/sup&gt; It&amp;#8217;s very fun, you should read it. At some point someone&amp;#8217;s cat catches a blue jay. And I think they meant it literally.&lt;/p&gt; </description>
+	&lt;p class="footnote" id="fn963088ce28be487dbac945b0cb9d7beb"&gt;&lt;sup&gt;2&lt;/sup&gt; It&amp;#8217;s very fun, you should read it. At some point someone&amp;#8217;s cat catches a blue jay. And I think they meant it literally.&lt;/p&gt; </description>
             <pubDate>Sun, 28 Feb 2016 00:00 GMT</pubDate>
         </item>
         <item>

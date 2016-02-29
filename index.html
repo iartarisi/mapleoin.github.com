@@ -46,7 +46,7 @@
 
 	<h4>Some early Django history</h4>
 
-	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevd06680c8e80f40c2afa0844d1aab49c2"><a href="#fnd06680c8e80f40c2afa0844d1aab49c2">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
+	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevaf22a372019147eeab1221a45c7a7f7d"><a href="#fnaf22a372019147eeab1221a45c7a7f7d">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
 
 	<p>From there we can see how Django models were declared before the introduction of the internal <code>class Meta</code>. A Django Model class had a few special attributes. The <code>db_table</code> attribute held the <span class="caps">SQL</span> table name. A <code>fields</code> attribute was a tuple (!) of instances of field types (e.g. <code>CharField</code>, <code>IntegerField</code>, <code>ForeignKey</code>). These mapped to <span class="caps">SQL</span> table columns. One other interesting attribute was <code>admin</code> which was mostly used to describe how that model would behave in django&#8217;s admin interface. Now all these classes were defined in the <code>django.core.meta</code> package i.e. <code>meta.Model</code>, <code>meta.CharField</code>, <code>meta.ForeignKey</code>, <code>meta.Admin</code>. <em>That&#8217;s so meta!</em> (and probably where the name came from in the end)</p>
 
@@ -111,7 +111,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>It&#8217;s interesting, because <span class="caps">IMHO</span> this was a huge differentiator in terms of making django&#8217;s models <span class="caps">API</span> more human and was also what other frameworks like Rails and <span class="caps">SQLO</span>bject were doing at the time.</p>
 
-	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev77b11e0004ed42d0a441697203491a9b"><a href="#fn77b11e0004ed42d0a441697203491a9b">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
+	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev963088ce28be487dbac945b0cb9d7beb"><a href="#fn963088ce28be487dbac945b0cb9d7beb">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
 
 	<p>The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with <em>Resolution</em> set to <em>fixed</em>.</p>
 
@@ -149,7 +149,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p><span class="caps">SQLO</span>bject&#8217;s community did not seem nearly as animated as Django&#8217;s. There were a couple of emails on the <code>sqlobject-discuss</code> mailing list from Ian Bicking which included the proposal and asked for feedback. I suspect some discussion happened through some other channels, but this community was neither as big nor as good at docummenting its functioning as Django. (And sourceforge&#8217;s interface to the mailing list archives and cvs logs does not make this easy to navigate).</p>
 
-	<p>A year later, Ian Bicking takes part in the <code>django-developers</code> mailinglist discussion where he makes some small syntax suggestions, but it does not seem that he made any other contributions to the design of the django models <span class="caps">API</span>.</p>
+	<p>A year later, Ian Bicking takes part in the <code>django-developers</code> mailinglist discussion where he makes some small syntax suggestions, but it does not seem that he made any other contributions to the design of this part of the Django models <span class="caps">API</span>.</p>
 
 	<h4>Conclusion</h4>
 
@@ -159,9 +159,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>Hope you&#8217;ve enjoyed the ride!</p>
 
-	<p class="footnote" id="fnd06680c8e80f40c2afa0844d1aab49c2"><sup>1</sup> because in 2005, people were less soft-spoken</p>
+	<p class="footnote" id="fnaf22a372019147eeab1221a45c7a7f7d"><sup>1</sup> because in 2005, people were less soft-spoken</p>
 
-	<p class="footnote" id="fn77b11e0004ed42d0a441697203491a9b"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
+	<p class="footnote" id="fn963088ce28be487dbac945b0cb9d7beb"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
         </div>
         <div class="post_tags postmeta">
           tags:
