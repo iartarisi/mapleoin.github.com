@@ -22,6 +22,91 @@
     <a href="/about">about</a>
   </div>
 <div id="content">
+    <article id="python-uk-business-days">
+        <h2><a href="http://mapleoin.github.io/perma/python-uk-business-days">Python UK business days with pandas</a></h2>
+        <div class="postmeta">Wednesday, March  2, 2016</div>
+
+        <div class="entry">
+            	<p>Here&#8217;s how to calculate UK business days (well at least for England &amp; Wales) using <a href="#">pandas</a> &#8216;s holiday calendar.</p>
+
+	<p>First you&#8217;ll need this calendar for UK holidays:</p>
+
+<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AbstractHolidayCalendar</span><span class="p">,</span> <span class="n">DateOffset</span><span class="p">,</span> <span class="n">EasterMonday</span><span class="p">,</span>
+    <span class="n">GoodFriday</span><span class="p">,</span> <span class="n">Holiday</span><span class="p">,</span> <span class="n">MO</span><span class="p">,</span>
+    <span class="n">next_monday</span><span class="p">,</span> <span class="n">next_monday_or_tuesday</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">EnglandAndWalesHolidayCalendar</span><span class="p">(</span><span class="n">AbstractHolidayCalendar</span><span class="p">):</span>
+    <span class="n">rules</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;New Years Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">observance</span><span class="o">=</span><span class="n">next_monday</span><span class="p">),</span>
+        <span class="n">GoodFriday</span><span class="p">,</span>
+        <span class="n">EasterMonday</span><span class="p">,</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Early May bank holiday&#39;</span><span class="p">,</span>
+                <span class="n">month</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">weekday</span><span class="o">=</span><span class="n">MO</span><span class="p">(</span><span class="mi">1</span><span class="p">))),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Spring bank holiday&#39;</span><span class="p">,</span>
+                <span class="n">month</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">weekday</span><span class="o">=</span><span class="n">MO</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Summer bank holiday&#39;</span><span class="p">,</span>
+                <span class="n">month</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">31</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">DateOffset</span><span class="p">(</span><span class="n">weekday</span><span class="o">=</span><span class="n">MO</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Christmas Day&#39;</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">observance</span><span class="o">=</span><span class="n">next_monday</span><span class="p">),</span>
+        <span class="n">Holiday</span><span class="p">(</span><span class="s1">&#39;Boxing Day&#39;</span><span class="p">,</span>
+                <span class="n">month</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">26</span><span class="p">,</span> <span class="n">observance</span><span class="o">=</span><span class="n">next_monday_or_tuesday</span><span class="p">)</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+
+	<p>It was tested with the dates from <a href="https://www.gov.uk/bank-holidays">gov.uk</a> so should be fine to use, but please let me know if you find anything wrong with it.</p>
+
+	<p>Now you can do stuff like:</p>
+
+<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CDay</span>
+<span class="n">business</span> <span class="o">=</span> <span class="n">CDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">EnglandAndWalesHolidayCalendar</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">five_business_days_later</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">business</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">five_business_days_later</span>
+<span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-03-09 00:00:00&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">five_business_days_later</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">-</span> <span class="n">business</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="o">+</span> <span class="n">business</span>
+<span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-12-28 00:00:00&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+
+	<p>You can also just retrieve the UK holidays for a specific year as a list of datetime objects using e.g.:</p>
+
+<div class="Python"><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">holidays</span> <span class="o">=</span> <span class="n">EnglandAndWalesHolidayCalendar</span><span class="p">()</span><span class="o">.</span><span class="n">holidays</span><span class="p">(</span>
+    <span class="n">start</span><span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">end</span><span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">holidays</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="p">[</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-01-01 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-03-25 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-03-28 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-05-02 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-05-30 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-08-29 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-12-26 00:00:00&#39;</span><span class="p">),</span> <span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;2016-12-27 00:00:00&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">holidays</span><span class="o">.</span><span class="n">to_pydatetime</span><span class="p">()</span>
+<span class="n">array</span><span class="p">([</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+       <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">h</span><span class="o">.</span><span class="n">to_native_types</span><span class="p">()</span>
+<span class="p">[</span><span class="s1">&#39;2016-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-03-25&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-03-28&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-05-02&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-05-30&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-08-29&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-12-26&#39;</span><span class="p">,</span> <span class="s1">&#39;2016-12-27&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+
+	<p>Pandas has all sorts of funny stuff you can do with <a href="http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">series</a> and <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html">time series</a> in particular. Also check <code>pandas</code>&#8217;s docs about <a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#custom-business-days-experimental">Custom Business Days</a> especially the warning about possible timezone issues.</p>
+
+	<p>If you don&#8217;t need the power of <code>pandas</code> or you just don&#8217;t like it (maybe because it pulls in a bazillion dependencies and includes a gazillion modules), <a href="https://github.com/novafloss/workalendar">workalendar</a> looks pretty good.</p>
+        </div>
+        <div class="post_tags postmeta">
+          tags:
+                <a href="/tag/TIL.html">TIL</a>
+                <a href="/tag/programming.html">programming</a>
+                <a href="/tag/python.html">python</a>
+                <a href="/tag/pandas.html">pandas</a>
+        </div>
+        <a href="http://mapleoin.github.io/perma/python-uk-business-days#disqus_thread" class="comments">Comments</a>
+    </article>
     <article id="python-class-meta">
         <h2><a href="http://mapleoin.github.io/perma/python-class-meta">The origins of the class Meta idiom in python</a></h2>
         <div class="postmeta">Sunday, February 28, 2016</div>
@@ -47,7 +132,7 @@
 
 	<h4>Some early Django history</h4>
 
-	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrev72820690fb2c45e4b11b1d195e12d62a"><a href="#fn72820690fb2c45e4b11b1d195e12d62a">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
+	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevdacb331b7b234a9e95816837b4be1f39"><a href="#fndacb331b7b234a9e95816837b4be1f39">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
 
 	<p>From there we can see how Django models were declared before the introduction of the internal <code>class Meta</code>. A Django Model class had a few special attributes. The <code>db_table</code> attribute held the <span class="caps">SQL</span> table name. A <code>fields</code> attribute was a tuple (!) of instances of field types (e.g. <code>CharField</code>, <code>IntegerField</code>, <code>ForeignKey</code>). These mapped to <span class="caps">SQL</span> table columns. One other interesting attribute was <code>admin</code> which was mostly used to describe how that model would behave in django&#8217;s admin interface. Now all these classes were defined in the <code>django.core.meta</code> package i.e. <code>meta.Model</code>, <code>meta.CharField</code>, <code>meta.ForeignKey</code>, <code>meta.Admin</code>. <em>That&#8217;s so meta!</em> (and probably where the name came from in the end)</p>
 
@@ -112,7 +197,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>It&#8217;s interesting, because <span class="caps">IMHO</span> this was a huge differentiator in terms of making django&#8217;s models <span class="caps">API</span> more human and was also what other frameworks like Rails and <span class="caps">SQLO</span>bject were doing at the time.</p>
 
-	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev0d9e25760fd94cad8b9592f9620b5f76"><a href="#fn0d9e25760fd94cad8b9592f9620b5f76">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
+	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev18f296c1c0e74f539eed6217c79e75e9"><a href="#fn18f296c1c0e74f539eed6217c79e75e9">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
 
 	<p>The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with <em>Resolution</em> set to <em>fixed</em>.</p>
 
@@ -160,9 +245,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>Hope you&#8217;ve enjoyed the ride!</p>
 
-	<p class="footnote" id="fn72820690fb2c45e4b11b1d195e12d62a"><sup>1</sup> because in 2005, people were less soft-spoken</p>
+	<p class="footnote" id="fndacb331b7b234a9e95816837b4be1f39"><sup>1</sup> because in 2005, people were less soft-spoken</p>
 
-	<p class="footnote" id="fn0d9e25760fd94cad8b9592f9620b5f76"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
+	<p class="footnote" id="fn18f296c1c0e74f539eed6217c79e75e9"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
         </div>
         <div class="post_tags postmeta">
           tags:
@@ -897,7 +982,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
 Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote" id="fnrev4965f8f4101349f59cbed6ff19a65cec"><a href="#fn4965f8f4101349f59cbed6ff19a65cec">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote" id="fnreva62273db2a934eff894b180710132149"><a href="#fna62273db2a934eff894b180710132149">3</a></sup> pentru tabelele rezultate:</p>
 
 <div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -944,7 +1029,7 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 	<p><span class="caps">TADA</span>!<br />
 Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p class="footnote" id="fn4965f8f4101349f59cbed6ff19a65cec"><sup>3</sup> merci gheorghe!</p>
+	<p class="footnote" id="fna62273db2a934eff894b180710132149"><sup>3</sup> merci gheorghe!</p>
         </div>
         <div class="post_tags postmeta">
           tags:

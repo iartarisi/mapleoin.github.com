@@ -8,9 +8,9 @@
 <link rel="stylesheet" type="text/css" href="/css/pygments.css" />
 <link rel="stylesheet" type="text/css" href="/css/archive.css" />
 <link rel="shortcut icon" href="/favico.ico" />
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/tag/TIL.xml" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 <title>Revolution blahg 
-    | Articles tagged TIL
+    | Python UK business days with pandas
 </title>
 </head>
 <body>
@@ -105,146 +105,34 @@
                 <a href="/tag/python.html">python</a>
                 <a href="/tag/pandas.html">pandas</a>
         </div>
-        <a href="http://mapleoin.github.io/perma/python-uk-business-days#disqus_thread" class="comments">Comments</a>
-    </article>
-    <article id="pytest-run-one-test-inside-class">
-        <h2><a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class">Run py.test test case inside any python class</a></h2>
-        <div class="postmeta">Tuesday, February 23, 2016</div>
+        <br />
+        <div id="disqus_thread"></div>
+        <script>
+    /*
+    var disqus_config = function () {
+        this.page.url = 'http://mapleoin.github.io/perma/python-uk-business-days';
+        this.page.identifier = 'python-uk-business-days';
+    };
+    */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
 
-        <div class="entry">
-            	<p>I wanted a way to run the current test I was editing when I know the name of the method, but I&#8217;m too lazy to scroll up and see which class it&#8217;s defined in and then have to type that out as well. So I found a way for py.test to run any test in any class in a file by just giving it the name of that test or part of its name.</p>
+        s.src = '//revolutionblahg.disqus.com/embed.js';
 
-	<p>Instead of typing:</p>
-
-<pre>
-$ py.test path/to/my/test/test_file.py::MySuperLongClassNameTest::test_my_thing
-</pre>
-
-	<p>I can just type:</p>
-
-<pre>
-$ py.test path/to/my/test/test_file.py -k test_my_thing
-</pre>
-
-	<p>Or even:</p>
-
-<pre>
-$ py.test path/to/my/test/test_file.py -k test_my
-</pre>
-
-	<p>Or even:</p>
-
-<pre>
-$ py.test path/to/my/test/test_file.py -k &#34;thing or stuff&#34;
-</pre>
-
-	<p>Woo py.test!</p>
-
-	<p><span class="caps">FWIW</span>, <code>nosetests</code> can also do this with the <code>-m</code> option which supports regexp. But <span class="caps">AFAIK</span> it does not support the human-friendly <code>" or "</code> interface like in the last example above.</p>
-        </div>
-        <div class="post_tags postmeta">
-          tags:
-                <a href="/tag/TIL.html">TIL</a>
-                <a href="/tag/py.test.html">py.test</a>
-                <a href="/tag/python.html">python</a>
-                <a href="/tag/testing.html">testing</a>
-        </div>
-        <a href="http://mapleoin.github.io/perma/pytest-run-one-test-inside-class#disqus_thread" class="comments">Comments</a>
-    </article>
-    <article id="http-status-codes-reference">
-        <h2><a href="http://mapleoin.github.io/perma/http-status-codes-reference">HTTP Status Codes Reference</a></h2>
-        <div class="postmeta">Tuesday, February 16, 2016</div>
-
-        <div class="entry">
-            	<p>I&#8217;ve been using this reference for <span class="caps">HTTP</span> status codes lately: <a href="http://www.restapitutorial.com/httpstatuscodes.html">http://www.restapitutorial.com/httpstatuscodes.html</a></p>
-
-	<p>It&#8217;s nice to be able to see all of them on one page and expand only the interesting ones.</p>
-
-	<p>Just found it the other day from someone mentioning it on StackOverflow. I notice now that it&#8217;s easily googleable. I hadn&#8217;t found it before because I always go straight to <a href="https://en.wikipedia.org/wiki/HTTP_418">Wikipedia</a>.</p>
-        </div>
-        <div class="post_tags postmeta">
-          tags:
-                <a href="/tag/TIL.html">TIL</a>
-                <a href="/tag/REST.html">REST</a>
-                <a href="/tag/API.html">API</a>
-        </div>
-        <a href="http://mapleoin.github.io/perma/http-status-codes-reference#disqus_thread" class="comments">Comments</a>
-    </article>
-    <article id="ast-literal-eval">
-        <h2><a href="http://mapleoin.github.io/perma/ast-literal-eval">AST literal_eval</a></h2>
-        <div class="postmeta">Monday, February 15, 2016</div>
-
-        <div class="entry">
-            	<p><blockquote><br />
-Safely evaluate an expression node or a Unicode or Latin-1 encoded string containing a Python literal or container display. The string or node provided may only consist of the following Python literal structures: strings, numbers, tuples, lists, dicts, booleans, and None.</p>
-
-	<p>This can be used for safely evaluating strings containing Python values from untrusted sources without the need to parse the values oneself. It is not capable of evaluating arbitrarily complex expressions, for example involving operators or indexing.</p>
-
-	<p><cite>&#8212;From python&#8217;s <a href="https://docs.python.org/library/ast.html#ast.literal_eval">ast library</a></cite><br />
-</blockquote></p>
-
-	<p>I used to discredit everything that meant converting a string to an arbitrary data structure. This is a nice third option which seems like it would be useful in the majority of cases.</p>
-        </div>
-        <div class="post_tags postmeta">
-          tags:
-                <a href="/tag/TIL.html">TIL</a>
-                <a href="/tag/python.html">python</a>
-                <a href="/tag/programming.html">programming</a>
-        </div>
-        <a href="http://mapleoin.github.io/perma/ast-literal-eval#disqus_thread" class="comments">Comments</a>
-    </article>
-    <article id="change-external-timezone-in-python">
-        <h2><a href="http://mapleoin.github.io/perma/change-external-timezone-in-python">Change the system timezone for the python interpreter</a></h2>
-        <div class="postmeta">Saturday, February 13, 2016</div>
-
-        <div class="entry">
-            	<p>Wrapping my head around timezones is hard. And testing the implications of working with different timezones is especially difficult since I now live in <span class="caps">GMT</span> (which is mostly the same as <span class="caps">UTC</span>).</p>
-
-	<p>I found a way to change the timezone, that is used by most of python&#8217;s stdlib, by changing the <code>TZ</code> environment variable:</p>
-
-<div class="Bash"><div class="highlight"><pre>$ python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
-<span class="o">(</span><span class="s1">&#39;GMT&#39;</span>, <span class="s1">&#39;BST&#39;</span><span class="o">)</span>
-$ <span class="nv">TZ</span><span class="o">=</span><span class="s1">&#39;Europe/Stockholm&#39;</span> python -c <span class="s1">&#39;import time; print(time.tzname)&#39;</span>
-<span class="o">(</span><span class="s1">&#39;CET&#39;</span>, <span class="s1">&#39;CEST&#39;</span><span class="o">)</span>
-</pre></div>
-</div>
-        </div>
-        <div class="post_tags postmeta">
-          tags:
-                <a href="/tag/programming.html">programming</a>
-                <a href="/tag/python.html">python</a>
-                <a href="/tag/timezones.html">timezones</a>
-                <a href="/tag/TIL.html">TIL</a>
-        </div>
-        <a href="http://mapleoin.github.io/perma/change-external-timezone-in-python#disqus_thread" class="comments">Comments</a>
-    </article>
-    <article id="xy-problem">
-        <h2><a href="http://mapleoin.github.io/perma/xy-problem">The XY Problem</a></h2>
-        <div class="postmeta">Saturday, February 13, 2016</div>
-
-        <div class="entry">
-            	<p>So there&#8217;s a website devoted to <a href="http://xyproblem.info/">The XY Problem</a>:</p>
-
-	<blockquote>
-		<p>The XY problem is asking about your attempted solution rather than<br />
-your actual problem. This leads to enormous amounts of wasted time and<br />
-energy, both on the part of people asking for help, and on the part of<br />
-those providing help.</p>
-	</blockquote>
-        </div>
-        <div class="post_tags postmeta">
-          tags:
-                <a href="/tag/programming.html">programming</a>
-                <a href="/tag/TIL.html">TIL</a>
-        </div>
-        <a href="http://mapleoin.github.io/perma/xy-problem#disqus_thread" class="comments">Comments</a>
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.</a>
+        </noscript>
     </article>
 </div>
 <div style="clear: right;"></div>
 </div><!-- container -->
 <div id="smallprint"><a rel="license" href="https://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.</div>
 
-<script id="dsq-count-scr" src="//revolutionblahg.disqus.com/count.js" async></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

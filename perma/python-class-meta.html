@@ -47,7 +47,7 @@
 
 	<h4>Some early Django history</h4>
 
-	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevfa65c99f6732492f805e1de258fa23cc"><a href="#fnfa65c99f6732492f805e1de258fa23cc">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
+	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevaf4ee8d80aa04674b5bd7d121b1a5a8e"><a href="#fnaf4ee8d80aa04674b5bd7d121b1a5a8e">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
 
 	<p>From there we can see how Django models were declared before the introduction of the internal <code>class Meta</code>. A Django Model class had a few special attributes. The <code>db_table</code> attribute held the <span class="caps">SQL</span> table name. A <code>fields</code> attribute was a tuple (!) of instances of field types (e.g. <code>CharField</code>, <code>IntegerField</code>, <code>ForeignKey</code>). These mapped to <span class="caps">SQL</span> table columns. One other interesting attribute was <code>admin</code> which was mostly used to describe how that model would behave in django&#8217;s admin interface. Now all these classes were defined in the <code>django.core.meta</code> package i.e. <code>meta.Model</code>, <code>meta.CharField</code>, <code>meta.ForeignKey</code>, <code>meta.Admin</code>. <em>That&#8217;s so meta!</em> (and probably where the name came from in the end)</p>
 
@@ -112,7 +112,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>It&#8217;s interesting, because <span class="caps">IMHO</span> this was a huge differentiator in terms of making django&#8217;s models <span class="caps">API</span> more human and was also what other frameworks like Rails and <span class="caps">SQLO</span>bject were doing at the time.</p>
 
-	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev7ed5a167d72749a28c457e50410e227a"><a href="#fn7ed5a167d72749a28c457e50410e227a">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
+	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev34b8a5e31ddd4cd4b540e944f5f3f4b7"><a href="#fn34b8a5e31ddd4cd4b540e944f5f3f4b7">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
 
 	<p>The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with <em>Resolution</em> set to <em>fixed</em>.</p>
 
@@ -160,9 +160,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>Hope you&#8217;ve enjoyed the ride!</p>
 
-	<p class="footnote" id="fnfa65c99f6732492f805e1de258fa23cc"><sup>1</sup> because in 2005, people were less soft-spoken</p>
+	<p class="footnote" id="fnaf4ee8d80aa04674b5bd7d121b1a5a8e"><sup>1</sup> because in 2005, people were less soft-spoken</p>
 
-	<p class="footnote" id="fn7ed5a167d72749a28c457e50410e227a"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
+	<p class="footnote" id="fn34b8a5e31ddd4cd4b540e944f5f3f4b7"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
         </div>
         <div class="post_tags postmeta">
           tags:
