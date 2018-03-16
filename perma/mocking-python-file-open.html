@@ -278,6 +278,8 @@
 
 	<p><span class="caps">EDIT</span>: Eric Moyer found a bug (and suggested a fix) in this implementation. When the same file is opened multiple times, the <code>open_files</code> list will contain the filename multiple times, but it will only get <code>remove</code>-ed once. This can be easily solved by making the <code>open_files</code> list a set instead.</p>
 
+	<p><span class="caps">EDIT</span> (March 14, 2018): Santiago Castro found another bug (and suggested a fix) in this implementation. If the call to <code>builtins.open()</code> raises an error, the mock will stay stopped for future calls. We need to wrap it in a try-finally block.</p>
+
 	<p>So that&#8217;s about it, we now have a rock-solid <code>mock_open</code> function for mocking the builtin <code>open()</code>.</p>
 
 	<p>Before we set it free, we need to add a nice docstring to it:</p>
@@ -304,8 +306,10 @@
             <span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">mocked_file</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
-            <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-            <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+	    <span class="k">try</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+	    <span class="k">finally</span><span class="p">:</span>
+                <span class="n">mocked_file</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
         <span class="n">open_files</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">f</span>
     <span class="n">mocked_file</span> <span class="o">=</span> <span class="n">mock</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;builtins.open&#39;</span><span class="p">,</span> <span class="n">mock_file</span><span class="p">)</span>
