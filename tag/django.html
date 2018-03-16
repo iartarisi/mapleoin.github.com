@@ -27,7 +27,7 @@
         <div class="postmeta">Sunday, February 28, 2016</div>
 
         <div class="entry">
-            	<p>So I keep finding this <code>class Meta</code> idiom in python <span class="caps">API</span>s lately. Found it in <a href="http://factoryboy.readthedocs.org/en/latest/index.html">factory-boy</a> and <a href="https://wtforms.readthedocs.org/en/latest/meta.html"><span class="caps">WTF</span>orms</a> and I suspected they both got it from <a href="https://docs.djangoproject.com/en/1.9/topics/db/models/#meta-options">Django</a>, but I googled and couldn&#8217;t find any explanations of the reason for it or where it came from or why they&#8217;re all it <code>class Meta</code>. So here it is!</p>
+            	<p>So I keep finding this <code>class Meta</code> idiom in python <span class="caps">API</span>s lately. Found it in <a href="http://factoryboy.readthedocs.org/en/latest/index.html">factory-boy</a> and <a href="https://wtforms.readthedocs.org/en/latest/meta.html"><span class="caps">WTF</span>orms</a> and I suspected they both got it from <a href="https://docs.djangoproject.com/en/1.9/topics/db/models/#meta-options">Django</a>, but I googled and couldn&#8217;t find any explanations of the reason for it or where it came from or why they all call it <code>class Meta</code>. So here it is!</p>
 
 	<h4>TL;DR What it is</h4>
 
@@ -35,7 +35,7 @@
 
 	<p>There&#8217;s nothing magical about this syntax at all, here&#8217;s an example from Django&#8217;s documentation:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ox</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ox</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">horn_length</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;horn_length&quot;</span><span class="p">]</span>
@@ -47,25 +47,25 @@
 
 	<h4>Some early Django history</h4>
 
-	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevdacb331b7b234a9e95816837b4be1f39"><a href="#fndacb331b7b234a9e95816837b4be1f39">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
+	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevd9ec3b3e17e549c6bccec804d6d0bc82-1"><a href="#fnd9ec3b3e17e549c6bccec804d6d0bc82-1">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
 
 	<p>From there we can see how Django models were declared before the introduction of the internal <code>class Meta</code>. A Django Model class had a few special attributes. The <code>db_table</code> attribute held the <span class="caps">SQL</span> table name. A <code>fields</code> attribute was a tuple (!) of instances of field types (e.g. <code>CharField</code>, <code>IntegerField</code>, <code>ForeignKey</code>). These mapped to <span class="caps">SQL</span> table columns. One other interesting attribute was <code>admin</code> which was mostly used to describe how that model would behave in django&#8217;s admin interface. Now all these classes were defined in the <code>django.core.meta</code> package i.e. <code>meta.Model</code>, <code>meta.CharField</code>, <code>meta.ForeignKey</code>, <code>meta.Admin</code>. <em>That&#8217;s so meta!</em> (and probably where the name came from in the end)</p>
 
-	<p>In a <code>django-developers</code> mailing list thread from July 2005 titled <cite><a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite> user <code>deelan</code> suggests bringing some of <a href="https://en.wikipedia.org/wiki/SQLObject"><span class="caps">SQLO</span>bject</a> &#8216;s ideas to Django&#8217;s <span class="caps">ORM</span>. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&#8217;s attributes:</p>
+	<p>In a <code>django-developers</code> mailing list thread from July 2005 titled <cite><a href="https://groups.google.com/forum/#!msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite> user <code>deelan</code> suggests bringing some of <a href="https://en.wikipedia.org/wiki/SQLObject"><span class="caps">SQLO</span>bject</a> &#8216;s ideas to Django&#8217;s <span class="caps">ORM</span>. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&#8217;s attributes:</p>
 
 	<blockquote>
 		<p>it&#8217;s desiderable to avoid name clashes between fields, so it would be<br />
 good to have a way to wrap fields into a private namespace.<br />
-<cite>&#8212; <code>deelan</code>, <a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite></p>
+<cite>&#8212; <code>deelan</code>, <a href="https://groups.google.com/forum/#!msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite></p>
 	</blockquote>
 
 	<p>At the end of the thread, <a href="https://code.djangoproject.com/ticket/122">django ticket 122</a> is created which seems to contain the first mention of a separate internal <code>Meta</code> class.</p>
 
 	<p>What started off as a backwards-compatible change, soon turned backwards-incompatible and was <q cite="https://groups.google.com/d/msg/django-developers/z_eGMWTJBqk/Fa3xur7J0jwJ">the first really big community-driven improvement to Django</q> as Adrian Holovaty will later describe it in the release announcement which included the change.</p>
 
-	<p>The first patch on <a href=":https://code.djangoproject.com/ticket/122">ticket 122</a> by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (<em>Build models using fieldname=FieldClass</em>) rather than in the <code>fields</code> list. So:</p>
+	<p>The first patch on <a href="%3Ahttps%3A//code.djangoproject.com/ticket/122">ticket 122</a> by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (<em>Build models using fieldname=FieldClass</em>) rather than in the <code>fields</code> list. So:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">question</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">maxlength</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">pub_date</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
 </pre></div>
@@ -73,7 +73,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>rather than:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">meta</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">maxlength</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>
         <span class="n">pub_date</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">),</span>
@@ -83,7 +83,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>But also that there should be two ways of defining a <code>ForeignKey</code>:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">ForeignKey</span> <span class="o">=</span> <span class="n">Poll</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;edit_inline&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;num_in_admin&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="n">ForeignKey</span> <span class="o">=</span> <span class="n">Poll</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;edit_inline&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;num_in_admin&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 <span class="o">.</span>
 <span class="c1">#the attribute name is irrelevant here:</span>
 <span class="n">anything</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="n">edit_inline</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_in_admin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -98,7 +98,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<blockquote>
 		<p>It&#8217;s too flexible, to the point of confusion. Making it possible to do either class Meta or class Field or plain class attributes just smacks of &#8220;there&#8217;s more than one way to do it.&#8221; There should be one, clear, obvious way to do it. If we decide to change model syntax, let&#8217;s have class Meta for non-field info, and all fields are just attributes of the class.<br />
-<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment%3A9">django ticket 122, comment 9</a></cite></p>
+<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment:9">django ticket 122, comment 9</a></cite></p>
 	</blockquote>
 
 	<p>The thread goes on from there. There are some detractors to the idea (citing performance and conformance to other python <span class="caps">API</span>s), there are discussions about implementation details and talking again about the <code>ForeignKey</code> syntax.</p>
@@ -107,12 +107,12 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<blockquote>
 		<p>Jacob [Kaplan-Moss] and I have talked this over at length, and we&#8217;ve decided the model syntax shouldn&#8217;t change. Using a fieldname=FieldClass syntax would require too much &#8220;magic&#8221; behind the scenes for minimal benefit.<br />
-<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment%3A33">django ticket 122, comment 33</a></cite></p>
+<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment:33">django ticket 122, comment 33</a></cite></p>
 	</blockquote>
 
 	<p>It&#8217;s interesting, because <span class="caps">IMHO</span> this was a huge differentiator in terms of making django&#8217;s models <span class="caps">API</span> more human and was also what other frameworks like Rails and <span class="caps">SQLO</span>bject were doing at the time.</p>
 
-	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev18f296c1c0e74f539eed6217c79e75e9"><a href="#fn18f296c1c0e74f539eed6217c79e75e9">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
+	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrevd9ec3b3e17e549c6bccec804d6d0bc82-2"><a href="#fnd9ec3b3e17e549c6bccec804d6d0bc82-2">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
 
 	<p>The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with <em>Resolution</em> set to <em>fixed</em>.</p>
 
@@ -140,7 +140,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>His code example:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="n">SQLObject</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="n">SQLObject</span><span class="p">):</span>
      <span class="k">class</span> <span class="nc">sqlmeta</span><span class="p">(</span><span class="n">SQLObject</span><span class="o">.</span><span class="n">sqlmeta</span><span class="p">):</span>
          <span class="n">table</span> <span class="o">=</span> <span class="s1">&#39;contact_table&#39;</span>
          <span class="n">cacheInstances</span> <span class="o">=</span> <span class="bp">False</span>
@@ -160,9 +160,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>Hope you&#8217;ve enjoyed the ride!</p>
 
-	<p class="footnote" id="fndacb331b7b234a9e95816837b4be1f39"><sup>1</sup> because in 2005, people were less soft-spoken</p>
+	<p class="footnote" id="fnd9ec3b3e17e549c6bccec804d6d0bc82-1"><sup>1</sup> because in 2005, people were less soft-spoken</p>
 
-	<p class="footnote" id="fn18f296c1c0e74f539eed6217c79e75e9"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
+	<p class="footnote" id="fnd9ec3b3e17e549c6bccec804d6d0bc82-2"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
         </div>
         <div class="post_tags postmeta">
           tags:
@@ -179,7 +179,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
         <div class="entry">
             	<p>This post is a continuation of <a href="http://mapleoin.eu/perma/blog-database-schema-2/">this post</a> and I&#8217;ll be using that schema to write tests on top of. Here it is, for easy reference:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -207,14 +207,14 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 	<p>One of the most annoying things which took me a while to figure out was that the <strong>setUp</strong> method is run <i>every time</i> before one of the other methods is run. That means that if you want to test for uniqueness, you <i>have to</i> build a <strong>tearDown</strong> method if you want to run any other independent tests. This is why snippet A won&#8217;t work, but snippet B will.<br />
 Here&#8217;s the model:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<h4>snippet A</h4>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -227,7 +227,7 @@ Here&#8217;s the model:</p>
 
 	<h4>snippet B</h4>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
 <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">testexist</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -242,7 +242,7 @@ Here&#8217;s the model:</p>
 	<p>However, there is an easier way to not have to write a <strong>tearDown</strong> method and that is using the <strong>django.test</strong> module which is an extention to unittest. All you have to do is <strong>import django.test</strong> instead of <strong>unittest</strong> and make every test object a sublclass of <strong>django.test.TestCase</strong> instead of <strong>unittest.TestCase</strong>.<br />
 Here is what it looks like now:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CategoryTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat2&quot;</span><span class="p">)</span>
@@ -257,7 +257,7 @@ Here is what it looks like now:</p>
 
 	<p>Now, let&#8217;s test the <strong>Post class</strong>:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Category</span><span class="p">)</span>
@@ -270,7 +270,7 @@ Here is what it looks like now:</p>
 	<p>There&#8217;s a bunch more stuff to test here, like the fact that everything gets to the database (title, body, category) and that everything has it&#8217;s right type/class.<br />
 We setUp a post, but also a category, since the test will be independent, but needs a Category to generate a Post.</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PostTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post1</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
@@ -280,7 +280,7 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	<p>Next, we need to do a bit of a <i>trivial</i> test to check that the title, the body and the right category get to the db</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtrivial</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="s2">&quot;trala lala&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="p">,</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
@@ -289,14 +289,14 @@ We setUp a post, but also a category, since the test will be independent, but ne
 
 	<p>I think this is a good way to test that the creation_time and modified_time are newly generated datetime.datetime objects:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">hour</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>No, wait. I think this looks a bit more professional:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testtime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">delta</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assert_</span><span class="p">(</span><span class="n">delta</span><span class="o">.</span><span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
         <span class="n">delta_modified</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
@@ -307,7 +307,7 @@ We setUp a post, but also a category, since the test will be independent, but ne
 	<p>So now, we&#8217;re looking for datetime objects that were generated less than 10 seconds ago. That&#8217;s really very generous since the time it takes to run the test from the time the <i>setUp</i> method is run is in the range of microseconds.<br />
 This test doesn&#8217;t show the true difference between modified and creation time. Modification time is changed every time the object is <i>saved</i> to the database while creation time is not. So let&#8217;s write a new test based on that knowledge:</p>
 
-<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">testModifiedVsCreation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">modified</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">modified_time</span>
         <span class="n">created</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">creation_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
@@ -318,15 +318,15 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>Testing for a boolean value is really easy:</p>
 
-<div class="Python"><div class="highlight"><pre> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">testpublished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">published</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 
 	<p>And then there&#8217;s more than one way I can think of to test the Category ForeignKey:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
                 <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
 </pre></div>
@@ -334,8 +334,8 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>In the end, I&#8217;ll go for the more general one, even though the second one is more excentric. So:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">__class__</span><span class="p">)</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testcategory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cat1</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">post1</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
                 <span class="n">body</span><span class="o">=</span><span class="s2">&quot;tralaalal&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;ooopsie!&quot;</span><span class="p">)</span>
 </pre></div>
@@ -345,7 +345,7 @@ This test doesn&#8217;t show the true difference between modified and creation t
 
 	<p>Ok, passing on to the Commentator class:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Commentator</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Commentator</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">EmailField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">website</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">(</span><span class="n">verify_exists</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -355,7 +355,7 @@ This test doesn&#8217;t show the true difference between modified and creation t
 	<p>We&#8217;re only going to test that the data gets to the database and that the <i>name</i> and <i>email</i> fields are unique. At this stage we can&#8217;t test the validation of the <i>email</i> and <i>website</i> fields. We&#8217;ll be doing that later, when we write the <a href="http://docs.djangoproject.com/en/dev/ref/forms/validation/">forms</a>.<br />
 This should seem trivial by now:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentatorTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">comtor</span> <span class="o">=</span> <span class="n">Commentator</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;hacketyhack&quot;</span><span class="p">,</span>
                 <span class="n">email</span><span class="o">=</span><span class="s2">&quot;hackety@example.com&quot;</span><span class="p">,</span> <span class="n">website</span><span class="o">=</span><span class="s2">&quot;example.com&quot;</span><span class="p">)</span>
@@ -375,7 +375,7 @@ This should seem trivial by now:</p>
 
 	<p>Now, let&#8217;s get to testing the Comment class:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
     <span class="n">post</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Post</span><span class="p">)</span>
     <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Commentator</span><span class="p">)</span>
@@ -386,7 +386,7 @@ This should seem trivial by now:</p>
 
 	<p>There won&#8217;t be anything new here. And this is when and why testing is <i>boring</i>. But, hey! A man&#8217;s gotta do, what a man&#8217;s gotta do.</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CommentTest</span><span class="p">(</span><span class="n">django</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cat</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;cat1&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">post</span> <span class="o">=</span> <span class="n">Post</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="n">body</span><span class="o">=</span><span class="s2">&quot;trala lala&quot;</span><span class="p">,</span>
@@ -417,7 +417,7 @@ This should seem trivial by now:</p>
 
 	<p>First, you&#8217;ll need to make a copy of django.test.simple (put it in your project&#8217;s directory for example). Then comment these lines:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="c1"># old_name = settings.DATABASE_NAME</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="c1"># old_name = settings.DATABASE_NAME</span>
 <span class="c1"># from django.db import connection</span>
 <span class="c1"># connection.creation.create_test_db(verbosity, autoclobber=not interactive)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="n">verbosity</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
@@ -427,13 +427,13 @@ This should seem trivial by now:</p>
 
 	<p>And now, add this to your settings.py file:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="n">TEST_RUNNER</span> <span class="o">=</span> <span class="s1">&#39;myproject.simple.run_tests&#39;</span>
 </pre></div>
 </div>
 
 	<p>Be careful now. All the data in your database <strong>will</strong> be lost when you run <i>manage.py test</i> the next time. So back it up! First create a new database, say <i>backup</i> and then:</p>
 
-<div class="Bash"><div class="highlight"><pre>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
+<div class="Bash"><div class="highlight"><pre><span></span>mysqldump -u DB_USER --password<span class="o">=</span>DB_PASS DB_NAME<span class="p">|</span>mysql -u DB_USER --password<span class="o">=</span>DB_PASSWD -h localhost backup
 </pre></div>
 </div>
 
@@ -441,12 +441,12 @@ This should seem trivial by now:</p>
 
 	<p>Here&#8217;s to show that it works (after I&#8217;ve made a little modification to the model, but not the database):</p>
 
-<div class="Bash"><div class="highlight"><pre>$ python manage.py <span class="nb">test</span>
+<div class="Bash"><div class="highlight"><pre><span></span>$ python manage.py <span class="nb">test</span>
 ..EEE..EEEEEE................
 --&gt; lots of tracebacks &lt;--
 ----------------------------------------------------------------------
-Ran <span class="m">29</span> tests in 10.149s
-FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</span>9<span class="o">)</span>
+Ran <span class="m">29</span> tests in <span class="m">10</span>.149s
+FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</span><span class="m">9</span><span class="o">)</span>
 </pre></div>
 </div>
 
@@ -467,7 +467,7 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
         <div class="entry">
             	<p>Tocmai am reușit (am găsit timp &#8212; furat timp) să scriu în django schema din <a href="http://mapleoin.eu/perma/blog-database-schema">postul trecut</a>. Simplicity is divine:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -493,9 +493,9 @@ FAILED <span class="o">(</span><span class="nv">errors</span><span class="o">=</
 E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
 Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote" id="fnreva62273db2a934eff894b180710132149"><a href="#fna62273db2a934eff894b180710132149">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote" id="fnreve24e7ece36594b7dbf449a897152e2eb-1"><a href="#fne24e7ece36594b7dbf449a897152e2eb-1">3</a></sup> pentru tabelele rezultate:</p>
 
-<div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
+<div class="MySQL"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -540,7 +540,7 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 	<p><span class="caps">TADA</span>!<br />
 Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p class="footnote" id="fna62273db2a934eff894b180710132149"><sup>3</sup> merci gheorghe!</p>
+	<p class="footnote" id="fne24e7ece36594b7dbf449a897152e2eb-1"><sup>3</sup> merci gheorghe!</p>
         </div>
         <div class="post_tags postmeta">
           tags:

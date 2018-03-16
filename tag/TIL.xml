@@ -5,17 +5,17 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 02 Mar 2016 23:39:31 +0200</pubDate>
+        <pubDate>Fri, 16 Mar 2018 12:18:22 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Python UK business days with pandas</title>
             <link>http://mapleoin.github.io/perma/python-uk-business-days</link>
             <guid>http://mapleoin.github.io/perma/python-uk-business-days</guid>
-            <description> 	&lt;p&gt;Here&amp;#8217;s how to calculate UK business days (well at least for England &amp;amp; Wales) using &lt;a href="#"&gt;pandas&lt;/a&gt; &amp;#8216;s holiday calendar.&lt;/p&gt;
+            <description> 	&lt;p&gt;Here&amp;#8217;s how to calculate UK business days (well at least for England &amp;amp; Wales) using &lt;a href="http://pandas.pydata.org"&gt;pandas&lt;/a&gt;&amp;#8217;s holiday calendar.&lt;/p&gt;
 
 	&lt;p&gt;First you&amp;#8217;ll need this calendar for UK holidays:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pandas.tseries.holiday&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pandas.tseries.holiday&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="n"&gt;AbstractHolidayCalendar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DateOffset&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;EasterMonday&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="n"&gt;GoodFriday&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Holiday&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MO&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="n"&gt;next_monday&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;next_monday_or_tuesday&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -37,11 +37,12 @@
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
 	&lt;p&gt;It was tested with the dates from &lt;a href="https://www.gov.uk/bank-holidays"&gt;gov.uk&lt;/a&gt; so should be fine to use, but please let me know if you find anything wrong with it.&lt;/p&gt;
 
 	&lt;p&gt;Now you can do stuff like:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pandas.tseries.offsets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;CDay&lt;/span&gt;
 &lt;span class="n"&gt;business&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CDay&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;calendar&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;EnglandAndWalesHolidayCalendar&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -59,7 +60,7 @@
 
 	&lt;p&gt;You can also just retrieve the UK holidays for a specific year as a list of datetime objects using e.g.:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;holidays&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;EnglandAndWalesHolidayCalendar&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;holidays&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;holidays&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;EnglandAndWalesHolidayCalendar&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;holidays&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="n"&gt;start&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2016&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2016&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;span class="o"&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;holidays&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tolist&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
@@ -110,7 +111,7 @@ $ py.test path/to/my/test/test_file.py -k test_my
 	&lt;p&gt;Or even:&lt;/p&gt;
 
 &lt;pre&gt;
-$ py.test path/to/my/test/test_file.py -k &amp;#34;thing or stuff&amp;#34;
+$ py.test path/to/my/test/test_file.py -k &amp;quot;thing or stuff&amp;quot;
 &lt;/pre&gt;
 
 	&lt;p&gt;Woo py.test!&lt;/p&gt;
@@ -152,7 +153,7 @@ Safely evaluate an expression node or a Unicode or Latin-1 encoded string contai
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;

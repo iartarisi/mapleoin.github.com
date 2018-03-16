@@ -39,11 +39,13 @@
 
 	<p>It relies heavily on the DeltaCloud project.</p>
 
+
 	<h4>Open Clouds with <a href="http://deltacloud.apache.org/">DeltaCloud</a></h4>
 
 	<h5>Michal Fojtik &#8211; Red Hat</h5>
 
 	<p>DeltaCloud aims to be a <span class="caps">REST</span>ful <span class="caps">API</span> that is able to abstract all of the other public or private cloud <span class="caps">API</span>s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.</p>
+
 
 	<h4><span class="caps">DMTF</span> <span class="caps">CIMI</span> and Apache DeltaCloud</h4>
 
@@ -51,11 +53,13 @@
 
 	<p>The <span class="caps">CIMI</span> <span class="caps">API</span> is a specification for interacting with various cloud-resources. A lot of very big companies are part of the <span class="caps">DMTF</span> Cloud Management Working Group: Red Hat, VMware Inc., Oracle, <span class="caps">IBM</span>, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud <span class="caps">API</span>. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the <span class="caps">CIMI</span> <span class="caps">API</span>.</p>
 
+
 	<h4>Infrastructure as an opensource project</h4>
 
 	<h5>Ryan Lane &#8211; Wikimedia Foundation</h5>
 
 	<p>The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.</p>
+
 
 	<h4>Orchestration for the cloud &#8211; <a href="https://juju.ubuntu.com/">Juju</a></h4>
 
@@ -63,9 +67,11 @@
 
 	<p>Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.</p>
 
+
 	<h4>OpenStack developers meeting</h4>
 
 	<p>This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, <span class="caps">SUSE</span> and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.</p>
+
 
 	<h4>Rethinking system and distro development</h4>
 
@@ -79,6 +85,7 @@
 
 	<p>Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).</p>
 
+
 	<h4><span class="caps">SUNDAY</span></h4>
 
 	<h4>Continuos Integration/ Continuos Delivery</h4>
@@ -91,7 +98,10 @@
 
 	<h5>Sylvain Lebresne</h5>
 
+
 	<p>A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.</p>
+
+
 
 	<h4><a href="http://freedomboxfoundation.org/">Freedom, Out of the Box!</a></h4>
 
@@ -119,7 +129,7 @@
         <div class="postmeta">Monday, September 26, 2011</div>
 
         <div class="entry">
-            	<p><a href="http://oreilly.com/catalog/0636920010005/" class="img"><img alt="" src="&gt;http://covers.oreilly.com/images/0636920010005/s.gif" /></a> This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.</p>
+            	<p><a href="http://oreilly.com/catalog/0636920010005/"><img alt="" src="&gt;http://covers.oreilly.com/images/0636920010005/s.gif" /></a> This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.</p>
 
 	<p>C. J. Date&#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.</p>
 
@@ -145,7 +155,7 @@
         <div class="entry">
             	<p>Tocmai am reușit (am găsit timp &#8212; furat timp) să scriu în django schema din <a href="http://mapleoin.eu/perma/blog-database-schema">postul trecut</a>. Simplicity is divine:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">nume</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
@@ -171,9 +181,9 @@
 E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat <span class="caps">OOP</span>-ul.<br />
 Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi <span class="caps">URLF</span>ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește <a href="http://en.wikipedia.org/wiki/HTTP_404">404</a>. Așa că de-acum n-o să mai poată nimeni să pună <a href="http://en.wikipedia.org/wiki/Metasyntactic_variable">variabile metasintactice</a> de genu: <i>caca</i>, <i>mumu</i> și altele în field-ul ăla!</p>
 
-	<p>Și acum un mysql describe<sup class="footnote" id="fnreva62273db2a934eff894b180710132149"><a href="#fna62273db2a934eff894b180710132149">3</a></sup> pentru tabelele rezultate:</p>
+	<p>Și acum un mysql describe<sup class="footnote" id="fnreve24e7ece36594b7dbf449a897152e2eb-1"><a href="#fne24e7ece36594b7dbf449a897152e2eb-1">3</a></sup> pentru tabelele rezultate:</p>
 
-<div class="MySQL"><div class="highlight"><pre><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
+<div class="MySQL"><div class="highlight"><pre><span></span><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">describe</span> <span class="n">revolution</span><span class="p">.</span><span class="n">blahg_category</span><span class="p">;</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
  <span class="o">|</span> <span class="n">Field</span> <span class="o">|</span> <span class="n">Type</span>        <span class="o">|</span> <span class="no">Null</span> <span class="o">|</span> <span class="k">Key</span> <span class="o">|</span> <span class="k">Default</span> <span class="o">|</span>
  <span class="o">+-------+-------------+------+-----+---------+</span>
@@ -218,7 +228,7 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 	<p><span class="caps">TADA</span>!<br />
 Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.</p>
 
-	<p class="footnote" id="fna62273db2a934eff894b180710132149"><sup>3</sup> merci gheorghe!</p>
+	<p class="footnote" id="fne24e7ece36594b7dbf449a897152e2eb-1"><sup>3</sup> merci gheorghe!</p>
         </div>
         <div class="post_tags postmeta">
           tags:

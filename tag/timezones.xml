@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 02 Mar 2016 23:39:31 +0200</pubDate>
+        <pubDate>Fri, 16 Mar 2018 12:18:22 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Change the system timezone for the python interpreter</title>
@@ -15,7 +15,7 @@
 
 	&lt;p&gt;I found a way to change the timezone, that is used by most of python&amp;#8217;s stdlib, by changing the &lt;code&gt;TZ&lt;/code&gt; environment variable:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GMT&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;BST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
 $ &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Europe/Stockholm&amp;#39;&lt;/span&gt; python -c &lt;span class="s1"&gt;&amp;#39;import time; print(time.tzname)&amp;#39;&lt;/span&gt;
 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CET&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;CEST&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;

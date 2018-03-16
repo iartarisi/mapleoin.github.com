@@ -27,11 +27,11 @@
         <div class="postmeta">Wednesday, March  2, 2016</div>
 
         <div class="entry">
-            	<p>Here&#8217;s how to calculate UK business days (well at least for England &amp; Wales) using <a href="#">pandas</a> &#8216;s holiday calendar.</p>
+            	<p>Here&#8217;s how to calculate UK business days (well at least for England &amp; Wales) using <a href="http://pandas.pydata.org">pandas</a>&#8217;s holiday calendar.</p>
 
 	<p>First you&#8217;ll need this calendar for UK holidays:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="p">(</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pandas.tseries.holiday</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">AbstractHolidayCalendar</span><span class="p">,</span> <span class="n">DateOffset</span><span class="p">,</span> <span class="n">EasterMonday</span><span class="p">,</span>
     <span class="n">GoodFriday</span><span class="p">,</span> <span class="n">Holiday</span><span class="p">,</span> <span class="n">MO</span><span class="p">,</span>
     <span class="n">next_monday</span><span class="p">,</span> <span class="n">next_monday_or_tuesday</span><span class="p">)</span>
@@ -53,11 +53,12 @@
 </pre></div>
 </div>
 
+
 	<p>It was tested with the dates from <a href="https://www.gov.uk/bank-holidays">gov.uk</a> so should be fine to use, but please let me know if you find anything wrong with it.</p>
 
 	<p>Now you can do stuff like:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="kn">from</span> <span class="nn">pandas.tseries.offsets</span> <span class="kn">import</span> <span class="n">CDay</span>
 <span class="n">business</span> <span class="o">=</span> <span class="n">CDay</span><span class="p">(</span><span class="n">calendar</span><span class="o">=</span><span class="n">EnglandAndWalesHolidayCalendar</span><span class="p">())</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
@@ -75,7 +76,7 @@
 
 	<p>You can also just retrieve the UK holidays for a specific year as a list of datetime objects using e.g.:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">holidays</span> <span class="o">=</span> <span class="n">EnglandAndWalesHolidayCalendar</span><span class="p">()</span><span class="o">.</span><span class="n">holidays</span><span class="p">(</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">holidays</span> <span class="o">=</span> <span class="n">EnglandAndWalesHolidayCalendar</span><span class="p">()</span><span class="o">.</span><span class="n">holidays</span><span class="p">(</span>
     <span class="n">start</span><span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
     <span class="n">end</span><span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">holidays</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>

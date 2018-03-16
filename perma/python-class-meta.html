@@ -27,7 +27,7 @@
         <div class="postmeta">Sunday, February 28, 2016</div>
 
         <div class="entry">
-            	<p>So I keep finding this <code>class Meta</code> idiom in python <span class="caps">API</span>s lately. Found it in <a href="http://factoryboy.readthedocs.org/en/latest/index.html">factory-boy</a> and <a href="https://wtforms.readthedocs.org/en/latest/meta.html"><span class="caps">WTF</span>orms</a> and I suspected they both got it from <a href="https://docs.djangoproject.com/en/1.9/topics/db/models/#meta-options">Django</a>, but I googled and couldn&#8217;t find any explanations of the reason for it or where it came from or why they&#8217;re all it <code>class Meta</code>. So here it is!</p>
+            	<p>So I keep finding this <code>class Meta</code> idiom in python <span class="caps">API</span>s lately. Found it in <a href="http://factoryboy.readthedocs.org/en/latest/index.html">factory-boy</a> and <a href="https://wtforms.readthedocs.org/en/latest/meta.html"><span class="caps">WTF</span>orms</a> and I suspected they both got it from <a href="https://docs.djangoproject.com/en/1.9/topics/db/models/#meta-options">Django</a>, but I googled and couldn&#8217;t find any explanations of the reason for it or where it came from or why they all call it <code>class Meta</code>. So here it is!</p>
 
 	<h4>TL;DR What it is</h4>
 
@@ -35,7 +35,7 @@
 
 	<p>There&#8217;s nothing magical about this syntax at all, here&#8217;s an example from Django&#8217;s documentation:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Ox</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ox</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">horn_length</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;horn_length&quot;</span><span class="p">]</span>
@@ -47,25 +47,25 @@
 
 	<h4>Some early Django history</h4>
 
-	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrevaf4ee8d80aa04674b5bd7d121b1a5a8e"><a href="#fnaf4ee8d80aa04674b5bd7d121b1a5a8e">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
+	<p>Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions <code>class Meta</code> (actually <code>class META</code><sup class="footnote" id="fnrev96264adb4ca3441c928a5d17499d9342-1"><a href="#fn96264adb4ca3441c928a5d17499d9342-1">1</a></sup>) in Django: <a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4">commit 25264c86</a>. There is a <a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions">Release Notes wiki page</a> which includes that change.</p>
 
 	<p>From there we can see how Django models were declared before the introduction of the internal <code>class Meta</code>. A Django Model class had a few special attributes. The <code>db_table</code> attribute held the <span class="caps">SQL</span> table name. A <code>fields</code> attribute was a tuple (!) of instances of field types (e.g. <code>CharField</code>, <code>IntegerField</code>, <code>ForeignKey</code>). These mapped to <span class="caps">SQL</span> table columns. One other interesting attribute was <code>admin</code> which was mostly used to describe how that model would behave in django&#8217;s admin interface. Now all these classes were defined in the <code>django.core.meta</code> package i.e. <code>meta.Model</code>, <code>meta.CharField</code>, <code>meta.ForeignKey</code>, <code>meta.Admin</code>. <em>That&#8217;s so meta!</em> (and probably where the name came from in the end)</p>
 
-	<p>In a <code>django-developers</code> mailing list thread from July 2005 titled <cite><a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite> user <code>deelan</code> suggests bringing some of <a href="https://en.wikipedia.org/wiki/SQLObject"><span class="caps">SQLO</span>bject</a> &#8216;s ideas to Django&#8217;s <span class="caps">ORM</span>. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&#8217;s attributes:</p>
+	<p>In a <code>django-developers</code> mailing list thread from July 2005 titled <cite><a href="https://groups.google.com/forum/#!msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite> user <code>deelan</code> suggests bringing some of <a href="https://en.wikipedia.org/wiki/SQLObject"><span class="caps">SQLO</span>bject</a> &#8216;s ideas to Django&#8217;s <span class="caps">ORM</span>. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&#8217;s attributes:</p>
 
 	<blockquote>
 		<p>it&#8217;s desiderable to avoid name clashes between fields, so it would be<br />
 good to have a way to wrap fields into a private namespace.<br />
-<cite>&#8212; <code>deelan</code>, <a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite></p>
+<cite>&#8212; <code>deelan</code>, <a href="https://groups.google.com/forum/#!msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ">Cleaner approach to <span class="caps">ORM</span> fields description</a></cite></p>
 	</blockquote>
 
 	<p>At the end of the thread, <a href="https://code.djangoproject.com/ticket/122">django ticket 122</a> is created which seems to contain the first mention of a separate internal <code>Meta</code> class.</p>
 
 	<p>What started off as a backwards-compatible change, soon turned backwards-incompatible and was <q cite="https://groups.google.com/d/msg/django-developers/z_eGMWTJBqk/Fa3xur7J0jwJ">the first really big community-driven improvement to Django</q> as Adrian Holovaty will later describe it in the release announcement which included the change.</p>
 
-	<p>The first patch on <a href=":https://code.djangoproject.com/ticket/122">ticket 122</a> by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (<em>Build models using fieldname=FieldClass</em>) rather than in the <code>fields</code> list. So:</p>
+	<p>The first patch on <a href="%3Ahttps%3A//code.djangoproject.com/ticket/122">ticket 122</a> by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (<em>Build models using fieldname=FieldClass</em>) rather than in the <code>fields</code> list. So:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">question</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">maxlength</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">pub_date</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
 </pre></div>
@@ -73,7 +73,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>rather than:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Poll</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span>
         <span class="n">meta</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">maxlength</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>
         <span class="n">pub_date</span> <span class="o">=</span> <span class="n">meta</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">),</span>
@@ -83,7 +83,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<p>But also that there should be two ways of defining a <code>ForeignKey</code>:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="n">ForeignKey</span> <span class="o">=</span> <span class="n">Poll</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;edit_inline&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;num_in_admin&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="n">ForeignKey</span> <span class="o">=</span> <span class="n">Poll</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;edit_inline&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span> <span class="s1">&#39;num_in_admin&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 <span class="o">.</span>
 <span class="c1">#the attribute name is irrelevant here:</span>
 <span class="n">anything</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Poll</span><span class="p">,</span> <span class="n">edit_inline</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_in_admin</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -98,7 +98,7 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<blockquote>
 		<p>It&#8217;s too flexible, to the point of confusion. Making it possible to do either class Meta or class Field or plain class attributes just smacks of &#8220;there&#8217;s more than one way to do it.&#8221; There should be one, clear, obvious way to do it. If we decide to change model syntax, let&#8217;s have class Meta for non-field info, and all fields are just attributes of the class.<br />
-<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment%3A9">django ticket 122, comment 9</a></cite></p>
+<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment:9">django ticket 122, comment 9</a></cite></p>
 	</blockquote>
 
 	<p>The thread goes on from there. There are some detractors to the idea (citing performance and conformance to other python <span class="caps">API</span>s), there are discussions about implementation details and talking again about the <code>ForeignKey</code> syntax.</p>
@@ -107,12 +107,12 @@ good to have a way to wrap fields into a private namespace.<br />
 
 	<blockquote>
 		<p>Jacob [Kaplan-Moss] and I have talked this over at length, and we&#8217;ve decided the model syntax shouldn&#8217;t change. Using a fieldname=FieldClass syntax would require too much &#8220;magic&#8221; behind the scenes for minimal benefit.<br />
-<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment%3A33">django ticket 122, comment 33</a></cite></p>
+<cite>&#8212; Adrian Holovaty, <a href="https://code.djangoproject.com/ticket/122#comment:33">django ticket 122, comment 33</a></cite></p>
 	</blockquote>
 
 	<p>It&#8217;s interesting, because <span class="caps">IMHO</span> this was a huge differentiator in terms of making django&#8217;s models <span class="caps">API</span> more human and was also what other frameworks like Rails and <span class="caps">SQLO</span>bject were doing at the time.</p>
 
-	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev34b8a5e31ddd4cd4b540e944f5f3f4b7"><a href="#fn34b8a5e31ddd4cd4b540e944f5f3f4b7">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
+	<p>An <a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"><span class="caps">IRC</span> discussion</a> is then referenced in the ticket.<sup class="footnote" id="fnrev96264adb4ca3441c928a5d17499d9342-2"><a href="#fn96264adb4ca3441c928a5d17499d9342-2">2</a></sup> From that discussion, it seems that <code>adrian</code>&#8217;s reasons for closing were mostly concerns about the <code>ForeignKey</code> syntax and making a backwards-incompatible change to the model. <code>rmunn</code> does a great job of moderating the discussion, clarifying the situation and everyone&#8217;s opinions while strongly pushing for the new syntax.</p>
 
 	<p>The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with <em>Resolution</em> set to <em>fixed</em>.</p>
 
@@ -140,7 +140,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>His code example:</p>
 
-<div class="Python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="n">SQLObject</span><span class="p">):</span>
+<div class="Python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Contact</span><span class="p">(</span><span class="n">SQLObject</span><span class="p">):</span>
      <span class="k">class</span> <span class="nc">sqlmeta</span><span class="p">(</span><span class="n">SQLObject</span><span class="o">.</span><span class="n">sqlmeta</span><span class="p">):</span>
          <span class="n">table</span> <span class="o">=</span> <span class="s1">&#39;contact_table&#39;</span>
          <span class="n">cacheInstances</span> <span class="o">=</span> <span class="bp">False</span>
@@ -160,9 +160,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	<p>Hope you&#8217;ve enjoyed the ride!</p>
 
-	<p class="footnote" id="fnaf4ee8d80aa04674b5bd7d121b1a5a8e"><sup>1</sup> because in 2005, people were less soft-spoken</p>
+	<p class="footnote" id="fn96264adb4ca3441c928a5d17499d9342-1"><sup>1</sup> because in 2005, people were less soft-spoken</p>
 
-	<p class="footnote" id="fn34b8a5e31ddd4cd4b540e944f5f3f4b7"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
+	<p class="footnote" id="fn96264adb4ca3441c928a5d17499d9342-2"><sup>2</sup> It&#8217;s very fun, you should read it. At some point someone&#8217;s cat catches a blue jay. And I think they meant it literally.</p>
         </div>
         <div class="post_tags postmeta">
           tags:

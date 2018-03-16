@@ -30,7 +30,7 @@
             	<p>Yesterday, while working on a soon-to-be <a href="http://en.wikipedia.org/wiki/Planet_(software)">planet</a> for my <span class="caps">LUG</span>, I came up with this ingenious way of eliminating the caching gap that the usual rails ActionController caches_page introduces when used with <a href="http://en.wikipedia.org/wiki/Cron">cron</a> to expire a page at a specified time interval. It&#8217;s amazingly simple. This works ideally for one-page systems (such as this planet), but can probably be extended for many pages.<br />
 While you would normally develop code like this to put in a cron job:</p>
 
-<div class="Bash"><div class="highlight"><pre>rm planet.html
+<div class="Bash"><div class="highlight"><pre><span></span>rm planet.html
 curl http://planet.example.com &gt; planet.html
 </pre></div>
 </div>
@@ -39,7 +39,7 @@ curl http://planet.example.com &gt; planet.html
 
 	<p>In order to eliminate the gap <i>and</i> acquire the new page, this is what must be done:</p>
 
-<div class="Bash"><div class="highlight"><pre>mv planet.html oldplanet
+<div class="Bash"><div class="highlight"><pre><span></span>mv planet.html oldplanet
 curl http://planet.example.com &gt; planet.html <span class="p">&amp;</span> mv oldplanet planet.html
 </pre></div>
 </div>

@@ -5,13 +5,13 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 02 Mar 2016 23:39:31 +0200</pubDate>
+        <pubDate>Fri, 16 Mar 2018 12:18:22 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>The origins of the class Meta idiom in python</title>
             <link>http://mapleoin.github.io/perma/python-class-meta</link>
             <guid>http://mapleoin.github.io/perma/python-class-meta</guid>
-            <description> 	&lt;p&gt;So I keep finding this &lt;code&gt;class Meta&lt;/code&gt; idiom in python &lt;span class="caps"&gt;API&lt;/span&gt;s lately. Found it in &lt;a href="http://factoryboy.readthedocs.org/en/latest/index.html"&gt;factory-boy&lt;/a&gt; and &lt;a href="https://wtforms.readthedocs.org/en/latest/meta.html"&gt;&lt;span class="caps"&gt;WTF&lt;/span&gt;orms&lt;/a&gt; and I suspected they both got it from &lt;a href="https://docs.djangoproject.com/en/1.9/topics/db/models/#meta-options"&gt;Django&lt;/a&gt;, but I googled and couldn&amp;#8217;t find any explanations of the reason for it or where it came from or why they&amp;#8217;re all it &lt;code&gt;class Meta&lt;/code&gt;. So here it is!&lt;/p&gt;
+            <description> 	&lt;p&gt;So I keep finding this &lt;code&gt;class Meta&lt;/code&gt; idiom in python &lt;span class="caps"&gt;API&lt;/span&gt;s lately. Found it in &lt;a href="http://factoryboy.readthedocs.org/en/latest/index.html"&gt;factory-boy&lt;/a&gt; and &lt;a href="https://wtforms.readthedocs.org/en/latest/meta.html"&gt;&lt;span class="caps"&gt;WTF&lt;/span&gt;orms&lt;/a&gt; and I suspected they both got it from &lt;a href="https://docs.djangoproject.com/en/1.9/topics/db/models/#meta-options"&gt;Django&lt;/a&gt;, but I googled and couldn&amp;#8217;t find any explanations of the reason for it or where it came from or why they all call it &lt;code&gt;class Meta&lt;/code&gt;. So here it is!&lt;/p&gt;
 
 	&lt;h4&gt;TL;DR What it is&lt;/h4&gt;
 
@@ -19,7 +19,7 @@
 
 	&lt;p&gt;There&amp;#8217;s nothing magical about this syntax at all, here&amp;#8217;s an example from Django&amp;#8217;s documentation:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ox&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Ox&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;horn_length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IntegerField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
     &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;ordering&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;horn_length&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -31,25 +31,25 @@
 
 	&lt;h4&gt;Some early Django history&lt;/h4&gt;
 
-	&lt;p&gt;Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions &lt;code&gt;class Meta&lt;/code&gt; (actually &lt;code&gt;class META&lt;/code&gt;&lt;sup class="footnote" id="fnrevdacb331b7b234a9e95816837b4be1f39"&gt;&lt;a href="#fndacb331b7b234a9e95816837b4be1f39"&gt;1&lt;/a&gt;&lt;/sup&gt;) in Django: &lt;a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4"&gt;commit 25264c86&lt;/a&gt;. There is a &lt;a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions"&gt;Release Notes wiki page&lt;/a&gt; which includes that change.&lt;/p&gt;
+	&lt;p&gt;Now for the longer story. I did some software archaeology, which should totally be a thing!, and discovered the first commit which mentions &lt;code&gt;class Meta&lt;/code&gt; (actually &lt;code&gt;class META&lt;/code&gt;&lt;sup class="footnote" id="fnrevd9ec3b3e17e549c6bccec804d6d0bc82-1"&gt;&lt;a href="#fnd9ec3b3e17e549c6bccec804d6d0bc82-1"&gt;1&lt;/a&gt;&lt;/sup&gt;) in Django: &lt;a href="https://github.com/django/django/commit/25264c86048d442a4885dfebae94510e2fa0c1e4"&gt;commit 25264c86&lt;/a&gt;. There is a &lt;a href="https://code.djangoproject.com/wiki/ModelSyntaxChangeInstructions"&gt;Release Notes wiki page&lt;/a&gt; which includes that change.&lt;/p&gt;
 
 	&lt;p&gt;From there we can see how Django models were declared before the introduction of the internal &lt;code&gt;class Meta&lt;/code&gt;. A Django Model class had a few special attributes. The &lt;code&gt;db_table&lt;/code&gt; attribute held the &lt;span class="caps"&gt;SQL&lt;/span&gt; table name. A &lt;code&gt;fields&lt;/code&gt; attribute was a tuple (!) of instances of field types (e.g. &lt;code&gt;CharField&lt;/code&gt;, &lt;code&gt;IntegerField&lt;/code&gt;, &lt;code&gt;ForeignKey&lt;/code&gt;). These mapped to &lt;span class="caps"&gt;SQL&lt;/span&gt; table columns. One other interesting attribute was &lt;code&gt;admin&lt;/code&gt; which was mostly used to describe how that model would behave in django&amp;#8217;s admin interface. Now all these classes were defined in the &lt;code&gt;django.core.meta&lt;/code&gt; package i.e. &lt;code&gt;meta.Model&lt;/code&gt;, &lt;code&gt;meta.CharField&lt;/code&gt;, &lt;code&gt;meta.ForeignKey&lt;/code&gt;, &lt;code&gt;meta.Admin&lt;/code&gt;. &lt;em&gt;That&amp;#8217;s so meta!&lt;/em&gt; (and probably where the name came from in the end)&lt;/p&gt;
 
-	&lt;p&gt;In a &lt;code&gt;django-developers&lt;/code&gt; mailing list thread from July 2005 titled &lt;cite&gt;&lt;a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ"&gt;Cleaner approach to &lt;span class="caps"&gt;ORM&lt;/span&gt; fields description&lt;/a&gt;&lt;/cite&gt; user &lt;code&gt;deelan&lt;/code&gt; suggests bringing some of &lt;a href="https://en.wikipedia.org/wiki/SQLObject"&gt;&lt;span class="caps"&gt;SQLO&lt;/span&gt;bject&lt;/a&gt; &amp;#8216;s ideas to Django&amp;#8217;s &lt;span class="caps"&gt;ORM&lt;/span&gt;. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&amp;#8217;s attributes:&lt;/p&gt;
+	&lt;p&gt;In a &lt;code&gt;django-developers&lt;/code&gt; mailing list thread from July 2005 titled &lt;cite&gt;&lt;a href="https://groups.google.com/forum/#!msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ"&gt;Cleaner approach to &lt;span class="caps"&gt;ORM&lt;/span&gt; fields description&lt;/a&gt;&lt;/cite&gt; user &lt;code&gt;deelan&lt;/code&gt; suggests bringing some of &lt;a href="https://en.wikipedia.org/wiki/SQLObject"&gt;&lt;span class="caps"&gt;SQLO&lt;/span&gt;bject&lt;/a&gt; &amp;#8216;s ideas to Django&amp;#8217;s &lt;span class="caps"&gt;ORM&lt;/span&gt;. This seems to be the first seed of the idea of having an inner class in Django to store part of a model&amp;#8217;s attributes:&lt;/p&gt;
 
 	&lt;blockquote&gt;
 		&lt;p&gt;it&amp;#8217;s desiderable to avoid name clashes between fields, so it would be&lt;br /&gt;
 good to have a way to wrap fields into a private namespace.&lt;br /&gt;
-&lt;cite&gt;&amp;#8212; &lt;code&gt;deelan&lt;/code&gt;, &lt;a href="https://groups.google.com/forum/#%21msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ"&gt;Cleaner approach to &lt;span class="caps"&gt;ORM&lt;/span&gt; fields description&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;cite&gt;&amp;#8212; &lt;code&gt;deelan&lt;/code&gt;, &lt;a href="https://groups.google.com/forum/#!msg/django-developers/IZdH8K8IbLA/AIJGlt8d3icJ"&gt;Cleaner approach to &lt;span class="caps"&gt;ORM&lt;/span&gt; fields description&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 	&lt;/blockquote&gt;
 
 	&lt;p&gt;At the end of the thread, &lt;a href="https://code.djangoproject.com/ticket/122"&gt;django ticket 122&lt;/a&gt; is created which seems to contain the first mention of a separate internal &lt;code&gt;Meta&lt;/code&gt; class.&lt;/p&gt;
 
 	&lt;p&gt;What started off as a backwards-compatible change, soon turned backwards-incompatible and was &lt;q cite="https://groups.google.com/d/msg/django-developers/z_eGMWTJBqk/Fa3xur7J0jwJ"&gt;the first really big community-driven improvement to Django&lt;/q&gt; as Adrian Holovaty will later describe it in the release announcement which included the change.&lt;/p&gt;
 
-	&lt;p&gt;The first patch on &lt;a href=":https://code.djangoproject.com/ticket/122"&gt;ticket 122&lt;/a&gt; by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (&lt;em&gt;Build models using fieldname=FieldClass&lt;/em&gt;) rather than in the &lt;code&gt;fields&lt;/code&gt; list. So:&lt;/p&gt;
+	&lt;p&gt;The first patch on &lt;a href="%3Ahttps%3A//code.djangoproject.com/ticket/122"&gt;ticket 122&lt;/a&gt; by Matthew Marshall started by suggesting that fields should be able to be defined directly on the model class, as class attributes (&lt;em&gt;Build models using fieldname=FieldClass&lt;/em&gt;) rather than in the &lt;code&gt;fields&lt;/code&gt; list. So:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;question&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;maxlength&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="n"&gt;pub_date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTimeField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date published&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -57,7 +57,7 @@ good to have a way to wrap fields into a private namespace.&lt;br /&gt;
 
 	&lt;p&gt;rather than:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;fields&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;maxlength&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
         &lt;span class="n"&gt;pub_date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;meta&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTimeField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date published&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -67,7 +67,7 @@ good to have a way to wrap fields into a private namespace.&lt;br /&gt;
 
 	&lt;p&gt;But also that there should be two ways of defining a &lt;code&gt;ForeignKey&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;edit_inline&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;num_in_admin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;edit_inline&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;num_in_admin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="o"&gt;.&lt;/span&gt;
 &lt;span class="c1"&gt;#the attribute name is irrelevant here:&lt;/span&gt;
 &lt;span class="n"&gt;anything&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Poll&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;edit_inline&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_in_admin&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -82,7 +82,7 @@ good to have a way to wrap fields into a private namespace.&lt;br /&gt;
 
 	&lt;blockquote&gt;
 		&lt;p&gt;It&amp;#8217;s too flexible, to the point of confusion. Making it possible to do either class Meta or class Field or plain class attributes just smacks of &amp;#8220;there&amp;#8217;s more than one way to do it.&amp;#8221; There should be one, clear, obvious way to do it. If we decide to change model syntax, let&amp;#8217;s have class Meta for non-field info, and all fields are just attributes of the class.&lt;br /&gt;
-&lt;cite&gt;&amp;#8212; Adrian Holovaty, &lt;a href="https://code.djangoproject.com/ticket/122#comment%3A9"&gt;django ticket 122, comment 9&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;cite&gt;&amp;#8212; Adrian Holovaty, &lt;a href="https://code.djangoproject.com/ticket/122#comment:9"&gt;django ticket 122, comment 9&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 	&lt;/blockquote&gt;
 
 	&lt;p&gt;The thread goes on from there. There are some detractors to the idea (citing performance and conformance to other python &lt;span class="caps"&gt;API&lt;/span&gt;s), there are discussions about implementation details and talking again about the &lt;code&gt;ForeignKey&lt;/code&gt; syntax.&lt;/p&gt;
@@ -91,12 +91,12 @@ good to have a way to wrap fields into a private namespace.&lt;br /&gt;
 
 	&lt;blockquote&gt;
 		&lt;p&gt;Jacob [Kaplan-Moss] and I have talked this over at length, and we&amp;#8217;ve decided the model syntax shouldn&amp;#8217;t change. Using a fieldname=FieldClass syntax would require too much &amp;#8220;magic&amp;#8221; behind the scenes for minimal benefit.&lt;br /&gt;
-&lt;cite&gt;&amp;#8212; Adrian Holovaty, &lt;a href="https://code.djangoproject.com/ticket/122#comment%3A33"&gt;django ticket 122, comment 33&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
+&lt;cite&gt;&amp;#8212; Adrian Holovaty, &lt;a href="https://code.djangoproject.com/ticket/122#comment:33"&gt;django ticket 122, comment 33&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;
 	&lt;/blockquote&gt;
 
 	&lt;p&gt;It&amp;#8217;s interesting, because &lt;span class="caps"&gt;IMHO&lt;/span&gt; this was a huge differentiator in terms of making django&amp;#8217;s models &lt;span class="caps"&gt;API&lt;/span&gt; more human and was also what other frameworks like Rails and &lt;span class="caps"&gt;SQLO&lt;/span&gt;bject were doing at the time.&lt;/p&gt;
 
-	&lt;p&gt;An &lt;a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt; discussion&lt;/a&gt; is then referenced in the ticket.&lt;sup class="footnote" id="fnrev18f296c1c0e74f539eed6217c79e75e9"&gt;&lt;a href="#fn18f296c1c0e74f539eed6217c79e75e9"&gt;2&lt;/a&gt;&lt;/sup&gt; From that discussion, it seems that &lt;code&gt;adrian&lt;/code&gt;&amp;#8217;s reasons for closing were mostly concerns about the &lt;code&gt;ForeignKey&lt;/code&gt; syntax and making a backwards-incompatible change to the model. &lt;code&gt;rmunn&lt;/code&gt; does a great job of moderating the discussion, clarifying the situation and everyone&amp;#8217;s opinions while strongly pushing for the new syntax.&lt;/p&gt;
+	&lt;p&gt;An &lt;a href="https://code.djangoproject.com/attachment/ticket/122/modeldiscuss_cleanedup.txt"&gt;&lt;span class="caps"&gt;IRC&lt;/span&gt; discussion&lt;/a&gt; is then referenced in the ticket.&lt;sup class="footnote" id="fnrevd9ec3b3e17e549c6bccec804d6d0bc82-2"&gt;&lt;a href="#fnd9ec3b3e17e549c6bccec804d6d0bc82-2"&gt;2&lt;/a&gt;&lt;/sup&gt; From that discussion, it seems that &lt;code&gt;adrian&lt;/code&gt;&amp;#8217;s reasons for closing were mostly concerns about the &lt;code&gt;ForeignKey&lt;/code&gt; syntax and making a backwards-incompatible change to the model. &lt;code&gt;rmunn&lt;/code&gt; does a great job of moderating the discussion, clarifying the situation and everyone&amp;#8217;s opinions while strongly pushing for the new syntax.&lt;/p&gt;
 
 	&lt;p&gt;The trac ticket is reopened as a consequence and it looks like smooth-sailing from the on. Some days later the new syntax is merged and the ticket is once again closed, this time with &lt;em&gt;Resolution&lt;/em&gt; set to &lt;em&gt;fixed&lt;/em&gt;.&lt;/p&gt;
 
@@ -124,7 +124,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;His code example:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Contact&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SQLObject&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Contact&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SQLObject&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
      &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;sqlmeta&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SQLObject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sqlmeta&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
          &lt;span class="n"&gt;table&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;contact_table&amp;#39;&lt;/span&gt;
          &lt;span class="n"&gt;cacheInstances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
@@ -144,9 +144,9 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;Hope you&amp;#8217;ve enjoyed the ride!&lt;/p&gt;
 
-	&lt;p class="footnote" id="fndacb331b7b234a9e95816837b4be1f39"&gt;&lt;sup&gt;1&lt;/sup&gt; because in 2005, people were less soft-spoken&lt;/p&gt;
+	&lt;p class="footnote" id="fnd9ec3b3e17e549c6bccec804d6d0bc82-1"&gt;&lt;sup&gt;1&lt;/sup&gt; because in 2005, people were less soft-spoken&lt;/p&gt;
 
-	&lt;p class="footnote" id="fn18f296c1c0e74f539eed6217c79e75e9"&gt;&lt;sup&gt;2&lt;/sup&gt; It&amp;#8217;s very fun, you should read it. At some point someone&amp;#8217;s cat catches a blue jay. And I think they meant it literally.&lt;/p&gt; </description>
+	&lt;p class="footnote" id="fnd9ec3b3e17e549c6bccec804d6d0bc82-2"&gt;&lt;sup&gt;2&lt;/sup&gt; It&amp;#8217;s very fun, you should read it. At some point someone&amp;#8217;s cat catches a blue jay. And I think they meant it literally.&lt;/p&gt; </description>
             <pubDate>Sun, 28 Feb 2016 00:00 GMT</pubDate>
         </item>
         <item>
@@ -165,11 +165,13 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
 
+
 	&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
 	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -177,11 +179,13 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 
+
 	&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
 
 	&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
 
 	&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
+
 
 	&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
 
@@ -189,9 +193,11 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
 
+
 	&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
 
 	&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
+
 
 	&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
 
@@ -205,6 +211,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
 
+
 	&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
 
 	&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
@@ -217,7 +224,10 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
 
 	&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
 
+
 	&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
+
+
 
 	&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
 
@@ -236,7 +246,7 @@ I apologize for the backwards-incompatibility, but this is still unofficial soft
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
             <guid>http://mapleoin.github.io/perma/sql-and-relational-theory-master</guid>
-            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
 
@@ -351,7 +361,7 @@ authentication:
 
 	&lt;p&gt;If anyone wants to check out what Copr looks like so far, you&amp;#8217;ll just have to install TurboGears 2.0.x and then:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ bzr branch bzr://bzr.fedorahosted.org/bzr/copr/devel
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ bzr branch bzr://bzr.fedorahosted.org/bzr/copr/devel
  $ &lt;span class="nb"&gt;cd&lt;/span&gt; devel
  $ python setup.py develop
  $ paster setup-app development.ini
@@ -428,14 +438,15 @@ authentication:
 
 	&lt;p&gt;Acum că am terminat cu setările, putem porni serviciul cu:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;service yum-updatesd start&amp;quot;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;service yum-updatesd start&amp;quot;&lt;/span&gt;
  $ cacamaca
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
+
 	&lt;p&gt;Și îl putem pune să se pornească automat la fiecare boot:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;chkconfig yum-updatesd on&amp;quot;&lt;/span&gt;
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ su -c &lt;span class="s2"&gt;&amp;quot;chkconfig yum-updatesd on&amp;quot;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt; </description>
             <pubDate>Thu, 18 Mar 2010 14:00 GMT</pubDate>
@@ -450,7 +461,7 @@ authentication:
 
 	&lt;p&gt;It was not my first time trying to make a package for fedora. I think this is actually my third time. I&amp;#8217;d given up before, scared by all the different tools and scattered documentation. In a previous life, I had made some &lt;a href="http://aur.archlinux.org/"&gt;&lt;span class="caps"&gt;AUR&lt;/span&gt;&lt;/a&gt; packages, but the experience is a lot different. I&amp;#8217;m now starting to get used to all the different tools that I was scared of before, like mock and rpmlint and I can now find my way around the fedora wiki for package related information. There is a wealth of information in the wiki, but you need a lot of patience.&lt;/p&gt;
 
-	&lt;p&gt;I started slow, with quite a complex application to package: &lt;a href="http://calibre.kovidgoyal.net/"&gt;Calibre&lt;/a&gt;. Having all those different distros is great when you&amp;#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&amp;#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing &lt;a href="http://news.ycombinator.org"&gt;Hacker News&lt;/a&gt; as usual when I found a link to &lt;a href="http://developers.facebook.com/news.php?blog=1&amp;amp;amp%3Bstory=301"&gt;facebook&amp;#8217;s opensourcing of their web server framework&lt;/a&gt; . I just rushed to the download and installation instructions page and I quickly got it packaged. I&amp;#8217;m not saying it&amp;#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&amp;#8217;s fun to think that you&amp;#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&amp;#8217;ve found someone willing to sponsor me into the &lt;strong&gt;packager&lt;/strong&gt; group. Anyone in a package-review mood? ;)&lt;/p&gt;
+	&lt;p&gt;I started slow, with quite a complex application to package: &lt;a href="http://calibre.kovidgoyal.net/"&gt;Calibre&lt;/a&gt;. Having all those different distros is great when you&amp;#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&amp;#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing &lt;a href="http://news.ycombinator.org"&gt;Hacker News&lt;/a&gt; as usual when I found a link to &lt;a href="http://developers.facebook.com/news.php?blog=1&amp;amp;story=301"&gt;facebook&amp;#8217;s opensourcing of their web server framework&lt;/a&gt; . I just rushed to the download and installation instructions page and I quickly got it packaged. I&amp;#8217;m not saying it&amp;#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&amp;#8217;s fun to think that you&amp;#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&amp;#8217;ve found someone willing to sponsor me into the &lt;strong&gt;packager&lt;/strong&gt; group. Anyone in a package-review mood? ;)&lt;/p&gt;
 
 	&lt;p&gt;My journey into the packaging world has been enlightening so far and the good thing is I&amp;#8217;m just beginning. There&amp;#8217;s a whole new world to be discovered out there and also another part of the fedora community.&lt;/p&gt; </description>
             <pubDate>Fri, 11 Sep 2009 10:00 GMT</pubDate>

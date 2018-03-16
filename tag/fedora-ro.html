@@ -37,14 +37,15 @@
 
 	<p>Acum că am terminat cu setările, putem porni serviciul cu:</p>
 
-<div class="Bash"><div class="highlight"><pre> $ su -c <span class="s2">&quot;service yum-updatesd start&quot;</span>
+<div class="Bash"><div class="highlight"><pre><span></span> $ su -c <span class="s2">&quot;service yum-updatesd start&quot;</span>
  $ cacamaca
 </pre></div>
 </div>
 
+
 	<p>Și îl putem pune să se pornească automat la fiecare boot:</p>
 
-<div class="Bash"><div class="highlight"><pre> $ su -c <span class="s2">&quot;chkconfig yum-updatesd on&quot;</span>
+<div class="Bash"><div class="highlight"><pre><span></span> $ su -c <span class="s2">&quot;chkconfig yum-updatesd on&quot;</span>
 </pre></div>
 </div>
         </div>
@@ -71,7 +72,7 @@
 
 	<p>și să le despachetăm:</p>
 
-<div class="Bash"><div class="highlight"><pre>  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
+<div class="Bash"><div class="highlight"><pre><span></span>  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
 </pre></div>
 </div>
 
@@ -113,7 +114,7 @@
 
 <pre>
   $ cd rpmbuild/BUILD/calibre/
-  $ find .|xargs grep &#34;has been updated&#34;
+  $ find .|xargs grep &quot;has been updated&quot;
 </pre>
 
 	<p>Dacă ignorăm fișierele de localizare, vom afla sursa pop-up-ului:</p>
@@ -124,7 +125,7 @@
 
 	<p>Mergând în fișierul respectiv vedem că acel cod face parte dintr-o funcție numită update_found:</p>
 
-<div class="Bash"><div class="highlight"><pre> 
+<div class="Bash"><div class="highlight"><pre><span></span> 
   def update_found<span class="o">(</span>self, version<span class="o">)</span>:
   <span class="nv">os</span> <span class="o">=</span> <span class="s1">&#39;windows&#39;</span> <span class="k">if</span> iswindows <span class="k">else</span> <span class="s1">&#39;osx&#39;</span> <span class="k">if</span> isosx <span class="k">else</span> <span class="s1">&#39;linux&#39;</span>
   <span class="nv">url</span> <span class="o">=</span> <span class="s1">&#39;http://%s.kovidgoyal.net/download_%s&#39;</span>%<span class="o">(</span>__appname__, os<span class="o">)</span>
@@ -134,7 +135,7 @@
 
 	<p>Ne interesează ca modificarea pe care o vom aduce să fie cât mai lizibilă pentru cei care vor modifica pachetul nostru mai târziu și să fie cât mai ușor de revenit la versiunea nemodificată. Dacă ne uităm mai atent în main, găsim următorul cod:</p>
 
-<div class="Python"><div class="highlight"><pre>  <span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">no_update_check</span><span class="p">:</span>
+<div class="Python"><div class="highlight"><pre><span></span>  <span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">no_update_check</span><span class="p">:</span>
   <span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span> <span class="o">=</span> <span class="n">CheckForUpdates</span><span class="p">()</span>
   <span class="n">QObject</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update_checker</span><span class="p">,</span>
   <span class="n">SIGNAL</span><span class="p">(</span><span class="s1">&#39;update_found(PyQt_PyObject)&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_found</span><span class="p">)</span>
@@ -161,7 +162,7 @@
 
 	<p>Ca să generăm petecul vom folosi gendiff din directorul de deasupra directorului rădăcină:</p>
 
-<div class="Diff"><div class="highlight"><pre>    $ cd ~/rpmbuild/BUILD
+<div class="Diff"><div class="highlight"><pre><span></span>    $ cd ~/rpmbuild/BUILD
     $ gendiff calibre .no_update
     diff -up calibre/src/calibre/gui2/main.py.no_update calibre/src/calibre/gui2/main.py
     --- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
@@ -194,7 +195,7 @@
 
 	<p>Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:</p>
 
-<div class="Diff"><div class="highlight"><pre>  @@ -1,6 +1,6 @@
+<div class="Diff"><div class="highlight"><pre><span></span>  @@ -1,6 +1,6 @@
   Name:           calibre
   Version:        0.6.21
   -Release:        1%{?dist}
@@ -234,7 +235,7 @@
 	<p>Și putem reinstala noul pachet:</p>
 
 <pre>
-  $ su -c &#34;yum localinstall -y --nogpgcheck ~/rpmbuild/RPMS/x86_64/calibre-0.6.21-2.fc12.x86_64.rpm&#34;
+  $ su -c &quot;yum localinstall -y --nogpgcheck ~/rpmbuild/RPMS/x86_64/calibre-0.6.21-2.fc12.x86_64.rpm&quot;
 </pre>
         </div>
         <div class="post_tags postmeta">

@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 02 Mar 2016 23:39:31 +0200</pubDate>
+        <pubDate>Fri, 16 Mar 2018 12:18:22 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>Ruby koans</title>
@@ -36,7 +36,7 @@
 
 	&lt;p&gt;și să le despachetăm:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  $ rpm -ivh calibre-0.6.21-1.fc12.src.rpm
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 
@@ -78,7 +78,7 @@
 
 &lt;pre&gt;
   $ cd rpmbuild/BUILD/calibre/
-  $ find .|xargs grep &amp;#34;has been updated&amp;#34;
+  $ find .|xargs grep &amp;quot;has been updated&amp;quot;
 &lt;/pre&gt;
 
 	&lt;p&gt;Dacă ignorăm fișierele de localizare, vom afla sursa pop-up-ului:&lt;/p&gt;
@@ -89,7 +89,7 @@
 
 	&lt;p&gt;Mergând în fișierul respectiv vedem că acel cod face parte dintr-o funcție numită update_found:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; 
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; 
   def update_found&lt;span class="o"&gt;(&lt;/span&gt;self, version&lt;span class="o"&gt;)&lt;/span&gt;:
   &lt;span class="nv"&gt;os&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;windows&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; iswindows &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;osx&amp;#39;&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; isosx &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;linux&amp;#39;&lt;/span&gt;
   &lt;span class="nv"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://%s.kovidgoyal.net/download_%s&amp;#39;&lt;/span&gt;%&lt;span class="o"&gt;(&lt;/span&gt;__appname__, os&lt;span class="o"&gt;)&lt;/span&gt;
@@ -99,7 +99,7 @@
 
 	&lt;p&gt;Ne interesează ca modificarea pe care o vom aduce să fie cât mai lizibilă pentru cei care vor modifica pachetul nostru mai târziu și să fie cât mai ușor de revenit la versiunea nemodificată. Dacă ne uităm mai atent în main, găsim următorul cod:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;no_update_check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;opts&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;no_update_check&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
   &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CheckForUpdates&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
   &lt;span class="n"&gt;QObject&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_checker&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
   &lt;span class="n"&gt;SIGNAL&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;update_found(PyQt_PyObject)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_found&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -126,7 +126,7 @@
 
 	&lt;p&gt;Ca să generăm petecul vom folosi gendiff din directorul de deasupra directorului rădăcină:&lt;/p&gt;
 
-&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;    $ cd ~/rpmbuild/BUILD
+&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    $ cd ~/rpmbuild/BUILD
     $ gendiff calibre .no_update
     diff -up calibre/src/calibre/gui2/main.py.no_update calibre/src/calibre/gui2/main.py
     --- calibre/src/calibre/gui2/main.py.no_update	2009-11-16 14:21:55.200387171 +0200
@@ -159,7 +159,7 @@
 
 	&lt;p&gt;Acum trebuie să modificăm spec-ul, adăugând un nou petec, incrementând release-ul, menționând motivul pentru petec și scriind modificarea în Changelog:&lt;/p&gt;
 
-&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;  @@ -1,6 +1,6 @@
+&lt;div class="Diff"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  @@ -1,6 +1,6 @@
   Name:           calibre
   Version:        0.6.21
   -Release:        1%{?dist}
@@ -199,7 +199,7 @@
 	&lt;p&gt;Și putem reinstala noul pachet:&lt;/p&gt;
 
 &lt;pre&gt;
-  $ su -c &amp;#34;yum localinstall -y --nogpgcheck ~/rpmbuild/RPMS/x86_64/calibre-0.6.21-2.fc12.x86_64.rpm&amp;#34;
+  $ su -c &amp;quot;yum localinstall -y --nogpgcheck ~/rpmbuild/RPMS/x86_64/calibre-0.6.21-2.fc12.x86_64.rpm&amp;quot;
 &lt;/pre&gt; </description>
             <pubDate>Mon, 30 Nov 2009 12:00 GMT</pubDate>
         </item>
@@ -207,13 +207,13 @@
             <title>The Productive Programmer</title>
             <link>http://mapleoin.github.io/perma/productive-programmer-review</link>
             <guid>http://mapleoin.github.io/perma/productive-programmer-review</guid>
-            <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;amp;amp%3Btag=httpmapleoinb-20&amp;amp;amp%3BlinkCode=as2&amp;amp;amp%3Bcamp=1789&amp;amp;amp%3Bcreative=390957&amp;amp;amp%3BcreativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
+            <description> 	&lt;p&gt;Today I read &lt;a href="http://www.amazon.com/gp/product/0596519788?ie=UTF8&amp;amp;tag=httpmapleoinb-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0596519788"&gt;The Productive Programmer&lt;/a&gt; .&lt;/p&gt;
 
 	&lt;p&gt;I&amp;#8217;ve already got a bunch of books piled up and waiting to be read, some of which I&amp;#8217;ve reached the middle of and some of which I&amp;#8217;ve read only the introduction to. I was bored today and this looked like an easy read that I could drop at any time. It is an easy read, but the fact is, it&amp;#8217;s very catchy. It draws you in and doesn&amp;#8217;t want to be let go. It&amp;#8217;s a great way to spend half a day.&lt;/p&gt;
 
 	&lt;p&gt;This could have been another one of those &amp;#8220;94 things you need to know&amp;#8221; books, but I think this title is way better. The tips are divided into 2 big sections and a few separate chapters within each one, giving the book some structure. One of the strange things about it is that its advice spans across 3 different platforms (*nix, OS X and Windows) and they&amp;#8217;re all mingled together in the same chapter. I was put off by this at first, but after I&amp;#8217;d gotten into the book a bit I realized that it is, in fact, a good idea. The whole theme of the book is programmer productivity and the reason it has this title and not a cheesy title with numbers like &amp;#8220;94.3 productivity tips for programmers&amp;#8221; is that the tips aren&amp;#8217;t what&amp;#8217;s important. The book is there to hit people in the head with and open their minds. You aren&amp;#8217;t supposed to just use the tips provided, that&amp;#8217;s unimportant. What&amp;#8217;s important is that you have a shock and realize that you&amp;#8217;ve been the wrong kind of lazy as a programmer. You&amp;#8217;ve stopped automating, you&amp;#8217;ve become a machine; in the author&amp;#8217;s own words, computers have started &amp;#8220;getting together late at night to make fun of their users&amp;#8221;. As soon as I realized what this book was really about, I started reading the Windows tips as well. I also stopped a few times to look in my distro&amp;#8217;s repository for tools that I had known of, but never used before, only now understanding their true purpose. There are many applications that seem just trendy at first, until you realize that even a small productivity boost is a big productivity boost. (Go check out &lt;i&gt;gnome-do&lt;/i&gt; , I&amp;#8217;d heard about it years ago, but never tried it until now).&lt;br /&gt;
-The book contains tips ranging from application launchers, Firefox&amp;#8217;s magic address bar, bash scripting commands to office productivity tips for killing distractions. Once again, the mindset is important, not the tips themselves. The big take-away from this book is beginning to constantly judge everything you do as a programmer. This isn&amp;#8217;t new advice (at least for those who have read &lt;a href="http://www.amazon.com/gp/product/020161622X?ie=UTF8&amp;amp;amp%3Btag=httpmapleoinb-20&amp;amp;amp%3BlinkCode=as2&amp;amp;amp%3Bcamp=1789&amp;amp;amp%3Bcreative=390957&amp;amp;amp%3BcreativeASIN=020161622X"&gt;The Pragmatic Programmer&lt;/a&gt;&amp;#8221;, which by the way is mentioned several times in this book), but I find it&amp;#8217;s better emphasized in this book. At one point in the book, the author explains how it took his team one hour to devise a Ruby script to automate some simple task that would&amp;#8217;ve required 10 minutes if done manually and finally only needed doing 5 times. One could say there was a loss in productivity, but as the author points out, one would be wrong. Those 50 minutes would&amp;#8217;ve been spent with the brain turned off, whereas the hour writing the script was spent &lt;i&gt;learning&lt;/i&gt;, focusing, practicing, gaining knowledge that can later be used on a different project. Some of us would probably have gotten bored in those 50 minutes and fallen into procrastination. That doesn&amp;#8217;t happen when you&amp;#8217;ve got a complex problem to solve.&lt;br /&gt;
-That was the first part of the book, &lt;i&gt;Mechanics&lt;/i&gt;. The second part, &lt;i&gt;Practice&lt;/i&gt; is a bit harder to read, as it&amp;#8217;s not just disparaged tips on very different applications. They&amp;#8217;re quite two separate books actually. The majority of the examples in Part IIare java (they&amp;#8217;re mostly readable even for someone who doesn&amp;#8217;t speak the exact dialect of &lt;span class="caps"&gt;OOP&lt;/span&gt; that java uses) and this part is mostly about software &lt;i&gt;construction&lt;/i&gt; as &lt;a href="http://www.amazon.com/gp/product/0735619670?ie=UTF8&amp;amp;amp%3Btag=httpmapleoinb-20&amp;amp;amp%3BlinkCode=as2&amp;amp;amp%3Bcamp=1789&amp;amp;amp%3Bcreative=390957&amp;amp;amp%3BcreativeASIN=0735619670"&gt;Steve McConnell&lt;/a&gt; would say, but it&amp;#8217;s also about Java. I learned a new acronym: &lt;acronym title="You Ain’t Gonna Need It"&gt;&lt;span class="caps"&gt;YAGNI&lt;/span&gt;&lt;/acronym&gt; which basically means that thinking ahead is bad. This is probably one of the advices that I feel the least guilty about, but which I sometime observe in people around me. Never program a feature you don&amp;#8217;t urgently have a need for.&lt;br /&gt;
+The book contains tips ranging from application launchers, Firefox&amp;#8217;s magic address bar, bash scripting commands to office productivity tips for killing distractions. Once again, the mindset is important, not the tips themselves. The big take-away from this book is beginning to constantly judge everything you do as a programmer. This isn&amp;#8217;t new advice (at least for those who have read &lt;a href="http://www.amazon.com/gp/product/020161622X?ie=UTF8&amp;amp;tag=httpmapleoinb-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=020161622X"&gt;The Pragmatic Programmer&lt;/a&gt;&amp;#8221;, which by the way is mentioned several times in this book), but I find it&amp;#8217;s better emphasized in this book. At one point in the book, the author explains how it took his team one hour to devise a Ruby script to automate some simple task that would&amp;#8217;ve required 10 minutes if done manually and finally only needed doing 5 times. One could say there was a loss in productivity, but as the author points out, one would be wrong. Those 50 minutes would&amp;#8217;ve been spent with the brain turned off, whereas the hour writing the script was spent &lt;i&gt;learning&lt;/i&gt;, focusing, practicing, gaining knowledge that can later be used on a different project. Some of us would probably have gotten bored in those 50 minutes and fallen into procrastination. That doesn&amp;#8217;t happen when you&amp;#8217;ve got a complex problem to solve.&lt;br /&gt;
+That was the first part of the book, &lt;i&gt;Mechanics&lt;/i&gt;. The second part, &lt;i&gt;Practice&lt;/i&gt; is a bit harder to read, as it&amp;#8217;s not just disparaged tips on very different applications. They&amp;#8217;re quite two separate books actually. The majority of the examples in Part IIare java (they&amp;#8217;re mostly readable even for someone who doesn&amp;#8217;t speak the exact dialect of &lt;span class="caps"&gt;OOP&lt;/span&gt; that java uses) and this part is mostly about software &lt;i&gt;construction&lt;/i&gt; as &lt;a href="http://www.amazon.com/gp/product/0735619670?ie=UTF8&amp;amp;tag=httpmapleoinb-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0735619670"&gt;Steve McConnell&lt;/a&gt; would say, but it&amp;#8217;s also about Java. I learned a new acronym: &lt;acronym title="You Ain’t Gonna Need It"&gt;&lt;span class="caps"&gt;YAGNI&lt;/span&gt;&lt;/acronym&gt; which basically means that thinking ahead is bad. This is probably one of the advices that I feel the least guilty about, but which I sometime observe in people around me. Never program a feature you don&amp;#8217;t urgently have a need for.&lt;br /&gt;
 One of the good points of this book is the originality with which the ideas are expressed. Most of these ideas aren&amp;#8217;t new, especially to anyone who&amp;#8217;s read other software engineering books. The text is spiced up with little narratives of different adventures from the author&amp;#8217;s experience as a consultant and there is also an &lt;i&gt;Ancient Philosophers&lt;/i&gt; chapter and an explanation of the PacMan game&amp;#8217;s way of functioning (although I didn&amp;#8217;t understand how that&amp;#8217;s supposed to make the game less enjoyable).&lt;/p&gt; </description>
             <pubDate>Fri, 18 Sep 2009 14:00 GMT</pubDate>
         </item>

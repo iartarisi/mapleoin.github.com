@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 02 Mar 2016 23:39:31 +0200</pubDate>
+        <pubDate>Fri, 16 Mar 2018 12:18:22 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
@@ -23,11 +23,13 @@
 
 	&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
 
+
 	&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
 	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -35,11 +37,13 @@
 
 	&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 
+
 	&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
 
 	&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
 
 	&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
+
 
 	&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
 
@@ -47,9 +51,11 @@
 
 	&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
 
+
 	&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
 
 	&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
+
 
 	&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
 
@@ -63,6 +69,7 @@
 
 	&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
 
+
 	&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
 
 	&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
@@ -75,7 +82,10 @@
 
 	&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
 
+
 	&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
+
+
 
 	&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
 
@@ -121,7 +131,7 @@
 
 	&lt;p&gt;If anyone wants to check out what Copr looks like so far, you&amp;#8217;ll just have to install TurboGears 2.0.x and then:&lt;/p&gt;
 
-&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt; $ bzr branch bzr://bzr.fedorahosted.org/bzr/copr/devel
+&lt;div class="Bash"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; $ bzr branch bzr://bzr.fedorahosted.org/bzr/copr/devel
  $ &lt;span class="nb"&gt;cd&lt;/span&gt; devel
  $ python setup.py develop
  $ paster setup-app development.ini
@@ -194,7 +204,7 @@
 
 	&lt;p&gt;It was not my first time trying to make a package for fedora. I think this is actually my third time. I&amp;#8217;d given up before, scared by all the different tools and scattered documentation. In a previous life, I had made some &lt;a href="http://aur.archlinux.org/"&gt;&lt;span class="caps"&gt;AUR&lt;/span&gt;&lt;/a&gt; packages, but the experience is a lot different. I&amp;#8217;m now starting to get used to all the different tools that I was scared of before, like mock and rpmlint and I can now find my way around the fedora wiki for package related information. There is a wealth of information in the wiki, but you need a lot of patience.&lt;/p&gt;
 
-	&lt;p&gt;I started slow, with quite a complex application to package: &lt;a href="http://calibre.kovidgoyal.net/"&gt;Calibre&lt;/a&gt;. Having all those different distros is great when you&amp;#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&amp;#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing &lt;a href="http://news.ycombinator.org"&gt;Hacker News&lt;/a&gt; as usual when I found a link to &lt;a href="http://developers.facebook.com/news.php?blog=1&amp;amp;amp%3Bstory=301"&gt;facebook&amp;#8217;s opensourcing of their web server framework&lt;/a&gt; . I just rushed to the download and installation instructions page and I quickly got it packaged. I&amp;#8217;m not saying it&amp;#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&amp;#8217;s fun to think that you&amp;#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&amp;#8217;ve found someone willing to sponsor me into the &lt;strong&gt;packager&lt;/strong&gt; group. Anyone in a package-review mood? ;)&lt;/p&gt;
+	&lt;p&gt;I started slow, with quite a complex application to package: &lt;a href="http://calibre.kovidgoyal.net/"&gt;Calibre&lt;/a&gt;. Having all those different distros is great when you&amp;#8217;re a packager, because you have somewhere to look for help and the Debian package of calibre helped me a lot. It took me about two days to get a somewhat acceptable version of calibre packaged, which I then posted to redhat&amp;#8217;s bugzilla. The following days I found more small apps to be packaged and it became easier and easier for me to do it. Last night for example, I was just browsing &lt;a href="http://news.ycombinator.org"&gt;Hacker News&lt;/a&gt; as usual when I found a link to &lt;a href="http://developers.facebook.com/news.php?blog=1&amp;amp;story=301"&gt;facebook&amp;#8217;s opensourcing of their web server framework&lt;/a&gt; . I just rushed to the download and installation instructions page and I quickly got it packaged. I&amp;#8217;m not saying it&amp;#8217;s perfect, it probably needs a lot of improvement, but it was fun to do. It&amp;#8217;s fun to think that you&amp;#8217;re making things easier for someone and learning a lot at the same time. I now have 5 packages waiting to be reviewed and I&amp;#8217;ve found someone willing to sponsor me into the &lt;strong&gt;packager&lt;/strong&gt; group. Anyone in a package-review mood? ;)&lt;/p&gt;
 
 	&lt;p&gt;My journey into the packaging world has been enlightening so far and the good thing is I&amp;#8217;m just beginning. There&amp;#8217;s a whole new world to be discovered out there and also another part of the fedora community.&lt;/p&gt; </description>
             <pubDate>Fri, 11 Sep 2009 10:00 GMT</pubDate>

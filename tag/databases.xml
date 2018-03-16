@@ -5,7 +5,7 @@
         <link>http://mapleoin.github.io/</link>
         <description>mapleoin's rambling blahg</description>
         <language>en</language>
-        <pubDate>Wed, 02 Mar 2016 23:39:31 +0200</pubDate>
+        <pubDate>Fri, 16 Mar 2018 12:18:22 +0200</pubDate>
         <generator>pyBlee!</generator>
         <item>
             <title>FOSDEM 2012 review</title>
@@ -23,11 +23,13 @@
 
 	&lt;p&gt;It relies heavily on the DeltaCloud project.&lt;/p&gt;
 
+
 	&lt;h4&gt;Open Clouds with &lt;a href="http://deltacloud.apache.org/"&gt;DeltaCloud&lt;/a&gt;&lt;/h4&gt;
 
 	&lt;h5&gt;Michal Fojtik &amp;#8211; Red Hat&lt;/h5&gt;
 
 	&lt;p&gt;DeltaCloud aims to be a &lt;span class="caps"&gt;REST&lt;/span&gt;ful &lt;span class="caps"&gt;API&lt;/span&gt; that is able to abstract all of the other public or private cloud &lt;span class="caps"&gt;API&lt;/span&gt;s, allowing for the development of cloud-independent software.  The project says it wants to be truly independent (esp. from Red Hat). It was accepted as a top-level Apache project.&lt;/p&gt;
+
 
 	&lt;h4&gt;&lt;span class="caps"&gt;DMTF&lt;/span&gt; &lt;span class="caps"&gt;CIMI&lt;/span&gt; and Apache DeltaCloud&lt;/h4&gt;
 
@@ -35,11 +37,13 @@
 
 	&lt;p&gt;The &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt; is a specification for interacting with various cloud-resources. A lot of very big companies are part of the &lt;span class="caps"&gt;DMTF&lt;/span&gt; Cloud Management Working Group: Red Hat, VMware Inc., Oracle, &lt;span class="caps"&gt;IBM&lt;/span&gt;, Microsoft Corporation, Huawei, Fujitsu, Dell. It is currently being implemented as part of the DeltaCloud &lt;span class="caps"&gt;API&lt;/span&gt;. The presenter also showed some implementation details: a lot of the code is shared between the DeltaCloud and the &lt;span class="caps"&gt;CIMI&lt;/span&gt; &lt;span class="caps"&gt;API&lt;/span&gt;.&lt;/p&gt;
 
+
 	&lt;h4&gt;Infrastructure as an opensource project&lt;/h4&gt;
 
 	&lt;h5&gt;Ryan Lane &amp;#8211; Wikimedia Foundation&lt;/h5&gt;
 
 	&lt;p&gt;The talk went into some detail about the whole Wikimedia setup. It is built on top of open source projects and aims to be entirely free and available to anyone who wants to know more about it. The speaker presented some of the issues that the Wikimedia organization faced when they decided to give full root access to their machines to volunteers and how to allow for different levels of trust.&lt;/p&gt;
+
 
 	&lt;h4&gt;Orchestration for the cloud &amp;#8211; &lt;a href="https://juju.ubuntu.com/"&gt;Juju&lt;/a&gt;&lt;/h4&gt;
 
@@ -47,9 +51,11 @@
 
 	&lt;p&gt;Juju is a system for building recipes of configurations and packages that can then be deployed on openstack/EC2 systems. The project aims to integrate with tools like chef and puppet to be able to manage deploying, connecting, configuring and running suites of applications in the cloud.&lt;/p&gt;
 
+
 	&lt;h4&gt;OpenStack developers meeting&lt;/h4&gt;
 
 	&lt;p&gt;This was a rather informal discussion. 4 major distros were present: Fedora, Ubuntu, &lt;span class="caps"&gt;SUSE&lt;/span&gt; and Debian, but also some other contributors. Upstream asked about the problems that distributions face, some minor one-time occurrences were discussed briefly. Stefano Maffulli, the openstack community manager was also present and there were some heated discussions about the way the project is governed. There are still a lot of things being discussed behind closed doors. Negotiations about the future of the project and fund-gathering is done with only a few big companies at a very high level. The community, on the other hand, was very vocal about wanting to rule itself with no enterprise interference.&lt;/p&gt;
+
 
 	&lt;h4&gt;Rethinking system and distro development&lt;/h4&gt;
 
@@ -63,6 +69,7 @@
 
 	&lt;p&gt;Someone from the audience mentioned that a lot of the ideas in the talk are already implemented in NixOS(nixos.org) (which looks like a very interesting project in itself).&lt;/p&gt;
 
+
 	&lt;h4&gt;&lt;span class="caps"&gt;SUNDAY&lt;/span&gt;&lt;/h4&gt;
 
 	&lt;h4&gt;Continuos Integration/ Continuos Delivery&lt;/h4&gt;
@@ -75,7 +82,10 @@
 
 	&lt;h5&gt;Sylvain Lebresne&lt;/h5&gt;
 
+
 	&lt;p&gt;A lot of interesting concepts about the optimizations that were made in the Cassandra project in order to speed up writes and make reads twice as fast (almost as fast as reads): different levels of caching, queuing writes, merge sorting the read cache with the physical data on reads etc.&lt;/p&gt;
+
+
 
 	&lt;h4&gt;&lt;a href="http://freedomboxfoundation.org/"&gt;Freedom, Out of the Box!&lt;/a&gt;&lt;/h4&gt;
 
@@ -94,7 +104,7 @@
             <title>SQL and Relation Theory Master Class</title>
             <link>http://mapleoin.github.io/perma/sql-and-relational-theory-master</link>
             <guid>http://mapleoin.github.io/perma/sql-and-relational-theory-master</guid>
-            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/" class="img"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
+            <description> 	&lt;p&gt;&lt;a href="http://oreilly.com/catalog/0636920010005/"&gt;&lt;img alt="" src="&amp;gt;http://covers.oreilly.com/images/0636920010005/s.gif" /&gt;&lt;/a&gt; This video course is perhaps the best way to meet the famous C. J. Date and his astonishingly comprehensive style. The lectures are a great introduction to database theory while at the same time they lay a very solid foundation for any database practitioners or theorists. The author introduces some very useful theoretical notions that are essential to grasping the more subtle concepts of database design and he does so in a high-class fashion.&lt;/p&gt;
 
 	&lt;p&gt;C. J. Date&amp;#8217;s style of explaining and teaching, which can also be seen in his books, is didactic and very thorough while at the same time astonishingly clear. Many times while reading the book that these videos are based on and even afterward while watching the videos, I had to stop in order to reflect at the great volume of information that I had absorbed in a surprisingly simple manner. These videos are full of very deep notions about databases and can really benefit from reviewing at a later time, just to cement the knowledge or reflect on certain topics which come up during everyday practice.&lt;/p&gt;
 
@@ -111,7 +121,7 @@
             <guid>http://mapleoin.github.io/perma/blog-database-schema-2</guid>
             <description> 	&lt;p&gt;Tocmai am reușit (am găsit timp &amp;#8212; furat timp) să scriu în django schema din &lt;a href="http://mapleoin.eu/perma/blog-database-schema"&gt;postul trecut&lt;/a&gt;. Simplicity is divine:&lt;/p&gt;
 
-&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+&lt;div class="Python"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Category&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;nume&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -137,9 +147,9 @@
 E interesant că trebuie să declari toate tabelele în ordine. La început pusesem Categoria ultima și n-o găsea când vroia să facă ForeignKey-ul de la Post. M-a cam răsfățat &lt;span class="caps"&gt;OOP&lt;/span&gt;-ul.&lt;br /&gt;
 Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi &lt;span class="caps"&gt;URLF&lt;/span&gt;ield.verify_exists care verifică toate url-urile introduse și le refuză dacă primește &lt;a href="http://en.wikipedia.org/wiki/HTTP_404"&gt;404&lt;/a&gt;. Așa că de-acum n-o să mai poată nimeni să pună &lt;a href="http://en.wikipedia.org/wiki/Metasyntactic_variable"&gt;variabile metasintactice&lt;/a&gt; de genu: &lt;i&gt;caca&lt;/i&gt;, &lt;i&gt;mumu&lt;/i&gt; și altele în field-ul ăla!&lt;/p&gt;
 
-	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote" id="fnreva62273db2a934eff894b180710132149"&gt;&lt;a href="#fna62273db2a934eff894b180710132149"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
+	&lt;p&gt;Și acum un mysql describe&lt;sup class="footnote" id="fnreve24e7ece36594b7dbf449a897152e2eb-1"&gt;&lt;a href="#fne24e7ece36594b7dbf449a897152e2eb-1"&gt;3&lt;/a&gt;&lt;/sup&gt; pentru tabelele rezultate:&lt;/p&gt;
 
-&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;div class="MySQL"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mysql&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;describe&lt;/span&gt; &lt;span class="n"&gt;revolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;blahg_category&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;        &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
  &lt;span class="o"&gt;+-------+-------------+------+-----+---------+&lt;/span&gt;
@@ -184,7 +194,7 @@ Alt lucru fain e că de pe acum se pregătesc feature-uri interesante cum ar fi 
 	&lt;p&gt;&lt;span class="caps"&gt;TADA&lt;/span&gt;!&lt;br /&gt;
 Trebuie să studiez de ce se strică formatarea (de fapt știu de ce, trebuie să scot textile din blockul ăla), dar ideea de bază e clară.&lt;/p&gt;
 
-	&lt;p class="footnote" id="fna62273db2a934eff894b180710132149"&gt;&lt;sup&gt;3&lt;/sup&gt; merci gheorghe!&lt;/p&gt; </description>
+	&lt;p class="footnote" id="fne24e7ece36594b7dbf449a897152e2eb-1"&gt;&lt;sup&gt;3&lt;/sup&gt; merci gheorghe!&lt;/p&gt; </description>
             <pubDate>Mon, 22 Sep 2008 00:00 GMT</pubDate>
         </item>
         <item>
